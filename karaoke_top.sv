@@ -4,52 +4,46 @@
 // 2025-11-15
 
 module karaoke_top (
-    input  wire        pdm_clk,
-    input  wire        reset_n,
-    input  wire        pdm_data,
-    output wire [15:0] audio_sample,
-    output wire        audio_valid
+    input  logic        pdm_data,
+    input  logic        reset_n,
+    output logic        clk,                // goes to the microphone
+    output logic [15:0] audio_sample,
+    output logic        audio_valid
 );
     
+
+    clk_gen clk(reset_n, clk);
+
     // use default params (no normalization)
     cic cic_decimator (
-        .clk(pdm_clk),
+        .clk(clk),
         .rst_n(reset_n),
         .pdm_in(pdm_data),
-        .dout(audio_sample),
-        .dout_valid(audio_valid)
+        .dout(cic_out),
+        .dout_valid(cic_out_valid)
     );
 
-    /*  // skeleton instantiations for next filters 
     // halfband x4
-    halfband_filter my_hb_filter (
-        .clk(pdm_clk),
+    hb1 halfbandx4 (
+        .clk(clk),
         .rst_n(reset_n),
-        .din(audio_sample),
-        .din_valid(audio_valid),
-        .dout(),            // connect to next stage or output as needed
-        .dout_valid()      // connect to next stage or output as needed
+        .x_in(cic_out),
+        .y_out(hb1_out)
     );
 
     // halfband x3
-    halfband_filter my_hb_filter_2 (
-        .clk(pdm_clk),
+    hb2 halfbandx3 (
+        .clk(clk),
         .rst_n(reset_n),
-        .din(),            // connect to previous stage output
-        .din_valid(),      // connect to previous stage valid
-        .dout(),           // connect to next stage or output as needed
-        .dout_valid()      // connect to next stage or output as needed
+        .x_in(hb1_out),
+        .y_out(hb2_out)
     );
 
-    // fir x1, just fixing drooping and attenuation
-    fir_filter my_fir_filter (
-        .clk(pdm_clk),
+    // fir x1, fixing drooping and attenuation
+    fir generic_fir (
+        .clk(clk),
         .rst_n(reset_n),
-        .din(),            // connect to previous stage output
-        .din_valid(),      // connect to previous stage valid
-        .dout(),           // final audio output
-        .dout_valid()      // final audio valid
+        .noisy_signal(hb2_out),
+        .filtered_signal(audio_sample)
     );
-
-    */
 endmodule
