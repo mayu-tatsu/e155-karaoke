@@ -1,12 +1,12 @@
 
-PAR: Place And Route Radiant Software (64-bit) 2025.1.0.39.0.
-PARed on: Sun Nov 16 19:47:49 2025
+PAR: Place And Route Radiant Software (64-bit) 2024.2.0.3.0.
+PARed on: Mon Nov 17 01:45:56 2025
 
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
 	e155_karaoke_impl_1_map.udb e155_karaoke_impl_1_par.dir/5_1.udb 
 
 Loading e155_karaoke_impl_1_map.udb ...
-Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2025.1/ispfpga.
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2024.2/ispfpga.
 Package Status:                     Preliminary    Version 1.5.
 Performance Hardware Data Status:   Advanced       Version 1.0.
 
@@ -19,22 +19,22 @@ Package: SG48
 Performance Grade:   High-Performance_1.2V
 
 Constraint Summary
-   Total number of constraints: 0
+   Total number of constraints: 4
    Total number of constraints dropped: 0
 
-Number of Signals: 647
-Number of Connections: 1417
+Number of Signals: 2595
+Number of Connections: 5016
 Device utilization summary:
 
-   SLICE (est.)     197/2640          7% used
-     LUT            325/5280          6% used
-     REG            192/5280          4% used
+   SLICE (est.)     674/2640         26% used
+     LUT           1306/5280         25% used
+     REG            386/5280          7% used
    PIO               20/56           36% used
                      20/36           55% bonded
    IOLOGIC            0/56            0% used
-   DSP                0/8             0% used
+   DSP                8/8           100% used
    I2C                0/2             0% used
-   HFOSC              0/1             0% used
+   HFOSC              1/1           100% used
    LFOSC              0/1             0% used
    LEDDA_IP           0/1             0% used
    RGBA_DRV           0/1             0% used
@@ -49,40 +49,41 @@ Device utilization summary:
    OPENDRAIN          0/3             0% used
 
 Pin Constraint Summary:
-   0 out of 20 pins locked (0% locked).
+   3 out of 20 pins locked (15% locked).
 .
-................
+...............
 Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
 
 
-................
-Finished Placer Phase 0 (AP).  CPU time: 0 secs , REAL time: 0 secs 
+.................
+Finished Placer Phase 0 (AP).  CPU time: 1 secs , REAL time: 0 secs 
 
-Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs 
+Starting Placer Phase 1. CPU time: 1 secs , REAL time: 0 secs 
 ..  ..
 ....................
 
-Placer score = 39963.
+Placer score = 213197.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            177/2640          6% used
+   SLICE            673/2640         25% used
 
-Finished Placer Phase 1. CPU time: 1 secs , REAL time: 5 secs 
+Finished Placer Phase 1. CPU time: 9 secs , REAL time: 10 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  133750
-Finished Placer Phase 2.  CPU time: 1 secs , REAL time: 5 secs 
+Placer score =  213799
+Finished Placer Phase 2.  CPU time: 9 secs , REAL time: 10 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "pdm_clk_c" from comp "pdm_clk" on CLK_PIN site "35 (PR13B)", clk load = 102, ce load = 0, sr load = 0
-  PRIMARY "cic_decimator.combs_output_vld_N_247" from F0 on comp "cic_decimator.SLICE_233" on site "R13C31D", clk load = 0, ce load = 0, sr load = 102
+  PRIMARY "clk_generation.clk_48mhz" from comp "clk_generation.hf_osc.osc_inst" on site "HFOSC_R1C32", clk load = 17, ce load = 0, sr load = 0
+  PRIMARY "combs_output_vld_N_5389" from F0 on comp "generic_fir.SLICE_780" on site "R14C2C", clk load = 0, ce load = 0, sr load = 237
+  PRIMARY "clk_c" from Q0 on comp "clk_generation.SLICE_566" on site "R13C2A", clk load = 220, ce load = 0, sr load = 0
 
-  PRIMARY  : 2 out of 8 (25%)
+  PRIMARY  : 3 out of 8 (37%)
 
 --------------- End of Clock Report ---------------
 
@@ -97,24 +98,19 @@ I/O Bank Usage Summary:
 +----------+----------------+------------+------------+------------+
 | I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
 +----------+----------------+------------+------------+------------+
-| 0        | 2 / 14 ( 14%)  | 3.3V       |            |            |
-| 1        | 14 / 14 (100%) | 3.3V       |            |            |
-| 2        | 4 / 8 ( 50%)   | 3.3V       |            |            |
+| 0        | 1 / 14 (  7%)  | 3.3V       |            |            |
+| 1        | 11 / 14 ( 78%) | 3.3V       |            |            |
+| 2        | 8 / 8 (100%)   | 3.3V       |            |            |
 +----------+----------------+------------+------------+------------+
 
-Total Placer CPU time: 1 secs , REAL time: 5 secs 
+Total Placer CPU time: 9 secs , REAL time: 10 secs 
 
 
-Checksum -- place: d3310cdfff2d6ef22344fae31ae34d4fac4ea3d0
+Checksum -- place: 41f864d9fc9976c48bf3c48eaba9cab1f4b48985
 Writing design to file e155_karaoke_impl_1_par.dir/5_1.udb ...
 
 
------------------------------------------------------------------
-INFO - par: ASE feature is off due to non timing-driven settings.  
------------------------------------------------------------------
-
-
-Start NBR router at 19:47:54 11/16/25
+Start NBR router at 01:46:06 11/17/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -133,52 +129,49 @@ Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
 2 global clock signals routed
-532 connections routed (of 1291 total) (41.21%)
+1556 connections routed (of 4848 total) (32.10%)
 ---------------------------------------------------------
 Clock routing summary:
-Primary clocks (2 used out of 8 available):
-#4  Signal "cic_decimator.combs_output_vld_N_247"
-       Control loads: 102   out of   102 routed (100.00%)
-#7  Signal "pdm_clk_c"
-       Clock   loads: 102   out of   102 routed (100.00%)
+Primary clocks (3 used out of 8 available):
+#0  Signal "combs_output_vld_N_5389"
+       Control loads: 237   out of   237 routed (100.00%)
+#4  Signal "clk_generation.clk_48mhz"
+       Clock   loads: 17    out of    17 routed (100.00%)
+#5  Signal "clk_c"
+       Clock   loads: 0     out of   220 routed (  0.00%)
+       Data    loads: 0     out of     2 routed (  0.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
-
-Start NBR section for initial routing at 19:47:55 11/16/25
-Level 4, iteration 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-33(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+
+Start NBR section for initial routing at 01:46:07 11/17/25
+Level 4, iteration 1
+24(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.531ns/0.000ns; real time: 3 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 19:47:55 11/16/25
+Start NBR section for normal routing at 01:46:09 11/17/25
 Level 4, iteration 1
-8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 2
-8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 3
-4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 4
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 5
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 6
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.531ns/0.000ns; real time: 3 secs 
 
-Start NBR section for post-routing at 19:47:55 11/16/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 01:46:09 11/17/25
+
+Start NBR section for post-routing at 01:46:09 11/17/25
 
 End NBR router with 0 unrouted connection(s)
 
-Checksum -- route: fec792ee198ac5d93d892e92f3d2031b339894
+Checksum -- route: 1674e4a8971a9134c7013dcfb1945e2a9bcff776
 
-Total CPU time 0 secs 
-Total REAL time: 0 secs 
+Total CPU time 3 secs 
+Total REAL time: 4 secs 
 Completely routed.
-End of route.  1291 routed (100.00%); 0 unrouted.
+End of route.  4848 routed (100.00%); 0 unrouted.
 
 Writing design to file e155_karaoke_impl_1_par.dir/5_1.udb ...
 
@@ -188,17 +181,17 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Estimated worst slack<setup/<ns>> = <n/a>
-PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
-PAR_SUMMARY::Estimated worst slack<hold/<ns>> = <n/a>
-PAR_SUMMARY::Timing score<hold/<ns>> = <n/a>
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 2.531
+PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
+PAR_SUMMARY::Estimated worst slack<hold/<ns>> = 1.913
+PAR_SUMMARY::Timing score<hold/<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
 Note: user must run 'timing' for timing closure signoff.
 
-Total CPU  Time: 2 secs 
-Total REAL Time: 6 secs 
-Peak Memory Usage: 110.01 MB
+Total CPU  Time: 13 secs 
+Total REAL Time: 14 secs 
+Peak Memory Usage: 156.33 MB
 
 
 par done!
@@ -207,4 +200,4 @@ Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2025 Lattice Semiconductor Corporation,  All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.

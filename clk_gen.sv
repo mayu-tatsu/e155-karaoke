@@ -16,6 +16,7 @@ module clk_gen(
 
 	// 2.304 MHz clock divider
 	// 48,000,000 / 2,304,000 = 480,000 / 2,304 = 20.833
+	// 2400000
 
     // might be worth to look into the PLL in the future for cleaner clock
 
@@ -26,9 +27,9 @@ module clk_gen(
 		if (~reset) begin
 			counter_2_304mhz     <= 32'b0;
 			clk_divided_2_304mhz <= 1'b0;
-		end
-		else if (counter_2_304mhz < 32'd240000) counter_2_304mhz <= counter_2_304mhz + 1;
-		else begin
+		end else if (counter_2_304mhz < 32'd21) begin 
+			counter_2_304mhz <= counter_2_304mhz + 1;
+		end else begin
 			counter_2_304mhz     <= 32'b0;
 			clk_divided_2_304mhz <= ~clk_divided_2_304mhz;
 		end

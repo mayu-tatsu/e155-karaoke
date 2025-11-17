@@ -35,19 +35,22 @@
 
 
 
-
 -drc_cfg 35103300 20
 -use_io_insertion 1
 
 -resolve_mixed_drivers 0
--path "C:/lscc/radiant/2025.1/ispfpga/ice40tp/data" "C:/Users/mayut/source/e155/e155-karaoke/impl_1" "C:/Users/mayut/source/e155/e155-karaoke" "C:/Users/mayut/source/e155/e155-karaoke/testbench"
--ver "C:/lscc/radiant/2025.1/ip/pmi/pmi_iCE40UP.v"
--lib pmi -vhd "C:/lscc/radiant/2025.1/ip/pmi/pmi_iCE40UP.vhd"
--sver "C:/Users/mayut/source/e155/e155-karaoke/karaoke_top.sv"
-"C:/Users/mayut/source/e155/e155-karaoke/cic.sv"
+-path "C:/lscc/radiant/2024.2/ispfpga/ice40tp/data" "C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1" "C:/Users/mtatsumi/my_designs/e155-karaoke"
+-ver "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd"
+-sver "C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv"
+"C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv"
+"C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv"
+"C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv"
+"C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv"
+"C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv"
 
 
--path "C:/Users/mayut/source/e155/e155-karaoke"
+-path "C:/Users/mtatsumi/my_designs/e155-karaoke"
 -top karaoke_top
 -udb "e155_karaoke_impl_1_rtl.udb"
 -output_hdl "e155_karaoke_impl_1.vm"

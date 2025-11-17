@@ -1,23 +1,69 @@
 ----------------------------------------------------------------------
 Report for cell karaoke_top.TECH
-Register bits:  192 of 5280 (3.636%)
+Register bits:  386 of 5280 (7.311%)
 I/O cells:      20
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               CCU2        72          100.0
-                            FD1P3XZ       192          100.0
-                                 IB         3          100.0
-                               LUT4       127          100.0
-                                 OB        17          100.0
+                               CCU2       489          100.0
+                            FD1P3XZ       386          100.0
+                              HSOSC         1          100.0
+                                 IB         2          100.0
+                               LUT4       175          100.0
+                              MAC16         8          100.0
+                                 OB        18          100.0
 SUB MODULES
                                 cic         1
-                              TOTAL       412
+                            clk_gen         1
+                                fir         1
+                                hb1         1
+                                hb2         1
+                              TOTAL      1084
 ----------------------------------------------------------------------
 Report for cell cic.v1
 Instance Path : cic_decimator
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        72          100.0
-                            FD1P3XZ       192          100.0
-                               LUT4       127          100.0
-                              TOTAL       391
+                                FA2         8            1.6
+                            FD1P3XZ        30            7.8
+                               LUT4        20           11.4
+                              TOTAL        58
+----------------------------------------------------------------------
+Report for cell hb1.v1
+Instance Path : halfbandx4
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        81           16.6
+                            FD1P3XZ        28            7.3
+                               LUT4        23           13.1
+                              MAC16         2           25.0
+                              TOTAL       134
+----------------------------------------------------------------------
+Report for cell clk_gen.v1
+Instance Path : clk_generation
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        17            3.5
+                            FD1P3XZ        33            8.5
+                              HSOSC         1          100.0
+                               LUT4        44           25.1
+                              TOTAL        95
+----------------------------------------------------------------------
+Report for cell fir.v1
+Instance Path : generic_fir
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2       233           47.6
+                            FD1P3XZ       259           67.1
+                               LUT4        47           26.9
+                              MAC16         3           37.5
+                              TOTAL       542
+----------------------------------------------------------------------
+Report for cell hb2.v1
+Instance Path : halfbandx3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2       145           29.7
+                            FD1P3XZ        36            9.3
+                               LUT4        30           17.1
+                              MAC16         3           37.5
+                              TOTAL       214

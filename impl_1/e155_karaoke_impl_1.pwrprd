@@ -1,0 +1,15 @@
+Property_Name=CLOCK_NAME_clk_generation/clk_48mhz
+Property_Type=String
+Property_Value=clk_generation/clk_48mhz
+Property_Name=CLOCK_POINT_NAME_clk_generation/clk_48mhz
+Property_Type=String
+Property_Value=
+Property_Name=CLOCK_NETNAME_clk_generation/clk_48mhz
+Property_Type=String
+Property_Value=clk_generation.clk_48mhz
+Property_Name=REQUIRED_FREQUENCY_clk_generation/clk_48mhz
+Property_Type=Float
+Property_Value=48.0008
+Property_Name=ACTUAL_FREQUENCY_clk_generation/clk_48mhz
+Property_Type=Float
+Property_Value=48.0954

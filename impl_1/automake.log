@@ -1,8 +1,8 @@
 
 timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m   -pwrprd -html -rpt "e155_karaoke_impl_1.twr" "e155_karaoke_impl_1.udb" 
-timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt e155_karaoke_impl_1.twr e155_karaoke_impl_1.udb -gui -msgset C:/Users/mayut/source/e155/e155-karaoke/promote.xml
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt e155_karaoke_impl_1.twr e155_karaoke_impl_1.udb -gui -msgset C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml
 Starting design reading...
-Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2025.1/ispfpga.
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2024.2/ispfpga.
 Package Status:                     Preliminary    Version 1.5.
 Performance Hardware Data Status:   Advanced       Version 1.0.
 Loading udb::Database ...
@@ -14,7 +14,7 @@ Performance Grade:   High-Performance_1.2V
 
 
 
-Successfully loading udb, 0.03 seconds
+Successfully loading udb, 0.06 seconds
 
 Initializing timer
 Starting design annotation....
@@ -22,13 +22,13 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  102  counted  1178  covered  0
+Connections ignored  285  counted  4048  covered  233
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
-Total CPU Time: 0 secs 
+Total CPU Time: 1 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 105 MB
+Peak Memory Usage: 124 MB
 
- 0.873405s wall, 0.265625s user + 0.031250s system = 0.296875s CPU (34.0%)
+ 1.335010s wall, 1.250000s user + 0.078125s system = 1.328125s CPU (99.5%)
 
