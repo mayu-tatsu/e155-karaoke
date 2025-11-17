@@ -45,12 +45,6 @@
       project_directory=""
       project_type="Executable"
       target_reset_script="Reset();" />
-    <folder
-      Name="arm_math"
-      exclude=""
-      filter=""
-      path="lib/arm_math"
-      recurse="No" />
     <folder Name="CMSIS Files">
       <file file_name="STM32L4xx/Device/Include/stm32l4xx.h" />
       <file file_name="STM32L4xx/Device/Source/system_stm32l4xx.c">
@@ -60,19 +54,138 @@
           default_const_section=".init_rodata" />
       </file>
     </folder>
-    <folder
-      Name="dsp"
-      exclude=""
-      filter=""
-      path="lib/arm_math/dsp"
-      recurse="No" />
-    <folder Name="lib" exclude="" filter="" path="lib" recurse="No" />
-    <folder
-      Name="mcu_peripherals"
-      exclude=""
-      filter=""
-      path="lib/mcu_peripherals"
-      recurse="No" />
+    <folder Name="lib">
+      <folder Name="arm_math">
+        <configuration Name="Debug" arm_keep_preprocessor_output="Yes" />
+        <folder Name="dsp">
+          <folder Name="TransformFunctions">
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_bitreversal.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_bitreversal2.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_bitreversal_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_f64.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_init_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_init_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_init_f64.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_init_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_init_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_init_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_init_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_init_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_init_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix2_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_init_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_init_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_init_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_init_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix4_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix8_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_cfft_radix8_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_dct4_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_dct4_init_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_dct4_init_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_dct4_init_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_dct4_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_dct4_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_init_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_init_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_init_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_init_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_mfcc_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_fast_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_fast_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_fast_f64.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_fast_init_f16.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_fast_init_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_fast_init_f64.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_init_f32.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_init_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_init_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_q15.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/arm_rfft_q31.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/CMakeLists.txt" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/TransformFunctions.c" />
+            <file file_name="lib/arm_math/dsp/TransformFunctions/TransformFunctionsF16.c" />
+          </folder>
+          <file file_name="lib/arm_math/dsp/arm_cmplx_mag_f32.c" />
+          <file file_name="lib/arm_math/dsp/arm_max_f32.c" />
+          <file file_name="lib/arm_math/dsp/arm_sin_f32.c" />
+          <file file_name="lib/arm_math/dsp/basic_math_functions.h" />
+          <file file_name="lib/arm_math/dsp/basic_math_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/bayes_functions.h" />
+          <file file_name="lib/arm_math/dsp/bayes_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/complex_math_functions.h" />
+          <file file_name="lib/arm_math/dsp/complex_math_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/controller_functions.h" />
+          <file file_name="lib/arm_math/dsp/controller_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/debug.h" />
+          <file file_name="lib/arm_math/dsp/distance_functions.h" />
+          <file file_name="lib/arm_math/dsp/distance_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/fast_math_functions.h" />
+          <file file_name="lib/arm_math/dsp/fast_math_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/filtering_functions.h" />
+          <file file_name="lib/arm_math/dsp/filtering_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/interpolation_functions.h" />
+          <file file_name="lib/arm_math/dsp/interpolation_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/matrix_functions.h" />
+          <file file_name="lib/arm_math/dsp/matrix_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/none.h" />
+          <file file_name="lib/arm_math/dsp/quaternion_math_functions.h" />
+          <file file_name="lib/arm_math/dsp/statistics_functions.h" />
+          <file file_name="lib/arm_math/dsp/statistics_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/support_functions.h" />
+          <file file_name="lib/arm_math/dsp/support_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/svm_defines.h" />
+          <file file_name="lib/arm_math/dsp/svm_functions.h" />
+          <file file_name="lib/arm_math/dsp/svm_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/transform_functions.h" />
+          <file file_name="lib/arm_math/dsp/transform_functions_f16.h" />
+          <file file_name="lib/arm_math/dsp/utils.h" />
+          <file file_name="lib/arm_math/dsp/window_functions.h" />
+        </folder>
+        <file file_name="lib/arm_math/arm_common_tables.c" />
+        <file file_name="lib/arm_math/arm_common_tables.h" />
+        <file file_name="lib/arm_math/arm_common_tables_f16.h" />
+        <file file_name="lib/arm_math/arm_const_structs.c" />
+        <file file_name="lib/arm_math/arm_const_structs.h" />
+        <file file_name="lib/arm_math/arm_const_structs_f16.h" />
+        <file file_name="lib/arm_math/arm_helium_utils.h" />
+        <file file_name="lib/arm_math/arm_math.h" />
+        <file file_name="lib/arm_math/arm_math_f16.h" />
+        <file file_name="lib/arm_math/arm_math_memory.h" />
+        <file file_name="lib/arm_math/arm_math_types.h" />
+        <file file_name="lib/arm_math/arm_math_types_f16.h" />
+      </folder>
+      <folder Name="mcu_peripherals">
+        <file file_name="lib/mcu_peripherals/STM32L432KC.h" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_FLASH.c" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_FLASH.h" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_GPIO.c" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_GPIO.h" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_RCC.c" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_RCC.h" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_SPI.c" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_SPI.h" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_TIM.c" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_TIM.h" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_USART.c" />
+        <file file_name="lib/mcu_peripherals/STM32L432KC_USART.h" />
+      </folder>
+      <file file_name="lib/frequency_determiner.h" />
+    </folder>
     <folder Name="Script Files">
       <file file_name="STM32L4xx/Scripts/STM32L4xx_Target.js">
         <configuration Name="Common" file_type="Reset Script" />
@@ -81,7 +194,9 @@
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="src/frequency_determiner.c" />
-      <file file_name="main.c" />
+      <file file_name="main.c">
+        <configuration Name="Debug" c_files_are_cpp="No" />
+      </file>
     </folder>
     <folder Name="System Files">
       <file file_name="SEGGER_THUMB_Startup.s" />

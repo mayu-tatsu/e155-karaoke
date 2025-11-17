@@ -1,7 +1,7 @@
 /*
-Name:  Quinn Miyamoto
-Email: qmiyamoto@g.hmc.edu
-Date:  November 16, 2025
+Name(s):  Quinn Miyamoto, Mayu Tatsumi
+Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
+Date:     November 16, 2025
 
 Purpose: 
 */
@@ -14,26 +14,29 @@ Purpose:
 int main(void)
 {
 
-  configureFlash();
-  configureClock();
+  // 
+  //configureFlash();
+  //configureClock();
+
+  
+  
+  //
+  float32_t note_frequency;
 
 
-
-
+  // TEST CODE
+  // FAKE INPUT SINE WAVE 
   float32_t input_fft[FFT_LENGTH];
   float32_t frequency = 500.0;
-
-
-  // input sine wave test
   for(int i = 0; i < FFT_LENGTH; i++)
   {
     input_fft[i] =  arm_sin_f32(2 * PI * frequency * i / SAMPLING_RATE);
   }
 
+  // 
+  note_frequency = frequency_determiner(input_fft);
 
-
-  //frequency_determiner(input_fft);
-
-  while(1);
+  // DEBUGGING CODE
+  printf("%f", note_frequency);
 
 }

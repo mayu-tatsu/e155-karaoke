@@ -1,7 +1,10 @@
+/*
+Name(s):  Quinn Miyamoto, Mayu Tatsumi
+Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
+Date:     November 16, 2025
 
-
-
-
+Purpose: 
+*/
 
 #ifndef FREQUENCY_DETERMINER_H
 #define FREQUENCY_DETERMINER_H
@@ -19,6 +22,6 @@
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-void frequency_determiner(float32_t input_fft[FFT_LENGTH]);
+float32_t frequency_determiner(float32_t input_fft[]);
 
 #endif
