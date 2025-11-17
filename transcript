@@ -1,0 +1,118 @@
+# Reading pref.tcl
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# ** Error: License checkout has been disallowed because
+# only one session is allowed to run on an uncounted nodelocked
+## ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.cic_tb(fast)
+vsim -gui work.cic_tb -voptargs=+acc
+# End time: 20:02:18 on Nov 16,2025, Elapsed time: 0:00:26
+# Errors: 0, Warnings: 1
+# vsim -gui work.cic_tb -voptargs="+acc" 
+# Start time: 20:02:18 on Nov 16,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.cic_tb(fast)
+# Loading work.cic(fast)
+add wave  \
+sim:/cic_tb/PDM_CLK_PERIOD \
+sim:/cic_tb/DECIMATION \
+sim:/cic_tb/OUTPUT_PERIOD \
+sim:/cic_tb/pdm_clk \
+sim:/cic_tb/rst_n \
+sim:/cic_tb/pdm_in \
+sim:/cic_tb/dout \
+sim:/cic_tb/dout_valid \
+sim:/cic_tb/phase \
+sim:/cic_tb/phase_increment \
+sim:/cic_tb/test_freq \
+sim:/cic_tb/pdm_sample_rate \
+sim:/cic_tb/signal_amplitude \
+sim:/cic_tb/sigma_delta_integrator \
+sim:/cic_tb/audio_sample \
+sim:/cic_tb/valid_count \
+sim:/cic_tb/total_cycles
+run 100000000
+# 
+# CIC Decimator Testbench
+# PDM Clock Period: 434 ns (2.304 MHz)
+# Decimation Factor: 12
+# Output Sample Rate: 0.192 kHz
+# Test Signal: 1000.0 Hz sine wave
+# 
+# Time=4340000 ns: Reset released
+# 
+# Time=10633000 ns: dout_valid asserted, dout=-35 (0xffdd)
+# Time=15841000 ns: dout_valid asserted, dout=-273 (0xfeef)
+# Time=21049000 ns: dout_valid asserted, dout=-124 (0xff84)
+# Time=26257000 ns: dout_valid asserted, dout=202 (0x00ca)
+# Time=31465000 ns: dout_valid asserted, dout=730 (0x02da)
+# Time=36673000 ns: dout_valid asserted, dout=991 (0x03df)
+# Time=41881000 ns: dout_valid asserted, dout=1224 (0x04c8)
+# Time=47089000 ns: dout_valid asserted, dout=1604 (0x0644)
+# Time=52297000 ns: dout_valid asserted, dout=1837 (0x072d)
+# Time=57505000 ns: dout_valid asserted, dout=2052 (0x0804)
+# Time=62713000 ns: dout_valid asserted, dout=2220 (0x08ac)
+# Time=67921000 ns: dout_valid asserted, dout=2652 (0x0a5c)
+# Time=73129000 ns: dout_valid asserted, dout=2825 (0x0b09)
+# Time=78337000 ns: dout_valid asserted, dout=3012 (0x0bc4)
+# Time=83545000 ns: dout_valid asserted, dout=3402 (0x0d4a)
+# Time=88753000 ns: dout_valid asserted, dout=3528 (0x0dc8)
+# Time=93961000 ns: dout_valid asserted, dout=3894 (0x0f36)
+# Time=99169000 ns: dout_valid asserted, dout=4048 (0x0fd0)
+run 1000000000
+# Time=104377000 ns: dout_valid asserted, dout=4305 (0x10d1)
+# Time=109585000 ns: dout_valid asserted, dout=4595 (0x11f3)
+# Time=114793000 ns: dout_valid asserted, dout=4715 (0x126b)
+# Time=120001000 ns: dout_valid asserted, dout=4891 (0x131b)
+# Time=125209000 ns: dout_valid asserted, dout=5221 (0x1465)
+# Time=130417000 ns: dout_valid asserted, dout=5486 (0x156e)
+# Time=135625000 ns: dout_valid asserted, dout=5520 (0x1590)
+# Time=140833000 ns: dout_valid asserted, dout=5842 (0x16d2)
+# Time=146041000 ns: dout_valid asserted, dout=5957 (0x1745)
+# Time=151249000 ns: dout_valid asserted, dout=6169 (0x1819)
+# Time=156457000 ns: dout_valid asserted, dout=6399 (0x18ff)
+# Time=161665000 ns: dout_valid asserted, dout=6588 (0x19bc)
+# Time=166873000 ns: dout_valid asserted, dout=6679 (0x1a17)
+# Time=172081000 ns: dout_valid asserted, dout=6883 (0x1ae3)
+# Time=177289000 ns: dout_valid asserted, dout=6922 (0x1b0a)
+# Time=182497000 ns: dout_valid asserted, dout=7124 (0x1bd4)
+# Time=187705000 ns: dout_valid asserted, dout=7266 (0x1c62)
+# Time=192913000 ns: dout_valid asserted, dout=7380 (0x1cd4)
+# Time=198121000 ns: dout_valid asserted, dout=7546 (0x1d7a)
+# Time=203329000 ns: dout_valid asserted, dout=7559 (0x1d87)
+# Time=208537000 ns: dout_valid asserted, dout=7755 (0x1e4b)
+# Time=213745000 ns: dout_valid asserted, dout=7791 (0x1e6f)
+# Time=218953000 ns: dout_valid asserted, dout=7951 (0x1f0f)
+# Time=224161000 ns: dout_valid asserted, dout=8071 (0x1f87)
+# Time=229369000 ns: dout_valid asserted, dout=8057 (0x1f79)
+# Time=234577000 ns: dout_valid asserted, dout=8063 (0x1f7f)
+# Time=239785000 ns: dout_valid asserted, dout=8128 (0x1fc0)
+# Time=244993000 ns: dout_valid asserted, dout=8271 (0x204f)
+# Time=250201000 ns: dout_valid asserted, dout=8187 (0x1ffb)
+# Time=255409000 ns: dout_valid asserted, dout=8229 (0x2025)
+# Time=260617000 ns: dout_valid asserted, dout=8296 (0x2068)
+# 
+# Test Complete
+# Total clock cycles: 610
+# Valid outputs received: 49
+# Expected outputs: ~50
+# 
+# *** TEST PASSED: Received expected number of outputs ***
+# ** Note: $finish    : C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv(118)
+#    Time: 264740 ns  Iteration: 0  Instance: /cic_tb
+# 1
+# Break in Module cic_tb at C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv line 118

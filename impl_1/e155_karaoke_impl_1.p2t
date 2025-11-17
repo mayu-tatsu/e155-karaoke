@@ -1,0 +1,9 @@
+-w
+-gui
+-msgset "C:/Users/mayut/source/e155/e155-karaoke/promote.xml"
+-n 1
+-t 1
+-s 1
+-cores 1
+-hsp m
+-exp parPathBased=ON

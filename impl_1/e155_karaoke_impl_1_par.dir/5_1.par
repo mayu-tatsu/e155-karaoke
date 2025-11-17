@@ -1,0 +1,210 @@
+
+PAR: Place And Route Radiant Software (64-bit) 2025.1.0.39.0.
+PARed on: Sun Nov 16 19:47:49 2025
+
+Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
+	e155_karaoke_impl_1_map.udb e155_karaoke_impl_1_par.dir/5_1.udb 
+
+Loading e155_karaoke_impl_1_map.udb ...
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2025.1/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+Performance Hardware Data Status:   Advanced       Version 1.0.
+
+
+
+Design:  karaoke_top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:   High-Performance_1.2V
+
+Constraint Summary
+   Total number of constraints: 0
+   Total number of constraints dropped: 0
+
+Number of Signals: 647
+Number of Connections: 1417
+Device utilization summary:
+
+   SLICE (est.)     197/2640          7% used
+     LUT            325/5280          6% used
+     REG            192/5280          4% used
+   PIO               20/56           36% used
+                     20/36           55% bonded
+   IOLOGIC            0/56            0% used
+   DSP                0/8             0% used
+   I2C                0/2             0% used
+   HFOSC              0/1             0% used
+   LFOSC              0/1             0% used
+   LEDDA_IP           0/1             0% used
+   RGBA_DRV           0/1             0% used
+   FILTER             0/2             0% used
+   SRAM               0/4             0% used
+   WARMBOOT           0/1             0% used
+   SPI                0/2             0% used
+   EBR                0/30            0% used
+   PLL                0/1             0% used
+   RGBOUTBUF          0/3             0% used
+   I3C                0/2             0% used
+   OPENDRAIN          0/3             0% used
+
+Pin Constraint Summary:
+   0 out of 20 pins locked (0% locked).
+.
+................
+Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
+
+
+................
+Finished Placer Phase 0 (AP).  CPU time: 0 secs , REAL time: 0 secs 
+
+Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs 
+..  ..
+....................
+
+Placer score = 39963.
+
+Device SLICE utilization summary after final SLICE packing:
+   SLICE            177/2640          6% used
+
+Finished Placer Phase 1. CPU time: 1 secs , REAL time: 5 secs 
+
+Starting Placer Phase 2.
+.
+
+Placer score =  133750
+Finished Placer Phase 2.  CPU time: 1 secs , REAL time: 5 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clocks :
+  PRIMARY "pdm_clk_c" from comp "pdm_clk" on CLK_PIN site "35 (PR13B)", clk load = 102, ce load = 0, sr load = 0
+  PRIMARY "cic_decimator.combs_output_vld_N_247" from F0 on comp "cic_decimator.SLICE_233" on site "R13C31D", clk load = 0, ce load = 0, sr load = 102
+
+  PRIMARY  : 2 out of 8 (25%)
+
+--------------- End of Clock Report ---------------
+
+
+I/O Usage Summary (final):
+   20 out of 56 (35.7%) I/O sites used.
+   20 out of 36 (55.6%) bonded I/O sites used.
+   Number of I/O components: 20; differential: 0
+   Number of Vref pins used: 0
+
+I/O Bank Usage Summary:
++----------+----------------+------------+------------+------------+
+| I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+----------------+------------+------------+------------+
+| 0        | 2 / 14 ( 14%)  | 3.3V       |            |            |
+| 1        | 14 / 14 (100%) | 3.3V       |            |            |
+| 2        | 4 / 8 ( 50%)   | 3.3V       |            |            |
++----------+----------------+------------+------------+------------+
+
+Total Placer CPU time: 1 secs , REAL time: 5 secs 
+
+
+Checksum -- place: d3310cdfff2d6ef22344fae31ae34d4fac4ea3d0
+Writing design to file e155_karaoke_impl_1_par.dir/5_1.udb ...
+
+
+-----------------------------------------------------------------
+INFO - par: ASE feature is off due to non timing-driven settings.  
+-----------------------------------------------------------------
+
+
+Start NBR router at 19:47:54 11/16/25
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in timing report. You should always run the timing    
+      tool to verify your design.                                
+*****************************************************************
+
+Starting routing resource preassignment
+Preassignment Summary:
+--------------------------------------------------------------------------------
+2 global clock signals routed
+532 connections routed (of 1291 total) (41.21%)
+---------------------------------------------------------
+Clock routing summary:
+Primary clocks (2 used out of 8 available):
+#4  Signal "cic_decimator.combs_output_vld_N_247"
+       Control loads: 102   out of   102 routed (100.00%)
+#7  Signal "pdm_clk_c"
+       Clock   loads: 102   out of   102 routed (100.00%)
+---------------------------------------------------------
+--------------------------------------------------------------------------------
+Completed routing resource preassignment
+
+Start NBR section for initial routing at 19:47:55 11/16/25
+Level 4, iteration 1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Routing in Serial Mode ......
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+33(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+
+Info: Initial congestion level at 75.00% usage is 0
+Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
+
+Start NBR section for normal routing at 19:47:55 11/16/25
+Level 4, iteration 1
+8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 2
+8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 3
+4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 4
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 5
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 6
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+
+Start NBR section for post-routing at 19:47:55 11/16/25
+
+End NBR router with 0 unrouted connection(s)
+
+Checksum -- route: fec792ee198ac5d93d892e92f3d2031b339894
+
+Total CPU time 0 secs 
+Total REAL time: 0 secs 
+Completely routed.
+End of route.  1291 routed (100.00%); 0 unrouted.
+
+Writing design to file e155_karaoke_impl_1_par.dir/5_1.udb ...
+
+
+All signals are completely routed.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = <n/a>
+PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
+PAR_SUMMARY::Estimated worst slack<hold/<ns>> = <n/a>
+PAR_SUMMARY::Timing score<hold/<ns>> = <n/a>
+PAR_SUMMARY::Number of errors = 0
+
+Note: user must run 'timing' for timing closure signoff.
+
+Total CPU  Time: 2 secs 
+Total REAL Time: 6 secs 
+Peak Memory Usage: 110.01 MB
+
+
+par done!
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2025 Lattice Semiconductor Corporation,  All rights reserved.

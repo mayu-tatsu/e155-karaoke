@@ -1,0 +1,22 @@
+---------------------------------------------------
+Report for cell karaoke_top
+   Instance path: karaoke_top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        325        100.0
+                               LUTGATE	        181        100.0
+                                LUTCCU	        144        100.0
+                                 IOBUF	         20        100.0
+                                PFUREG	        192        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                                   cic	          1        83.1
+---------------------------------------------------
+Report for cell cic
+   Instance path: karaoke_top/cic_decimator
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        270        83.1
+                               LUTGATE	        126        69.6
+                                LUTCCU	        144        100.0
+                                PFUREG	        192        100.0

@@ -1,0 +1,15 @@
+C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module cic_tb
+
+Top level modules:
+	cic_tb
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/cic.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/cic.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module cic
+
+Top level modules:
+	cic
+
+} {} {}}

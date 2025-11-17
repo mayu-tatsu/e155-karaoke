@@ -1,0 +1,23 @@
+----------------------------------------------------------------------
+Report for cell karaoke_top.TECH
+Register bits:  192 of 5280 (3.636%)
+I/O cells:      20
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2        72          100.0
+                            FD1P3XZ       192          100.0
+                                 IB         3          100.0
+                               LUT4       127          100.0
+                                 OB        17          100.0
+SUB MODULES
+                                cic         1
+                              TOTAL       412
+----------------------------------------------------------------------
+Report for cell cic.v1
+Instance Path : cic_decimator
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        72          100.0
+                            FD1P3XZ       192          100.0
+                               LUT4       127          100.0
+                              TOTAL       391
