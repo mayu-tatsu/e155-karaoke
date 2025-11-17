@@ -15,6 +15,8 @@
 // normalization is resource-heavy (at least 1 DSP block) -> optional.
 // IMPORTANT: in software, remember to divide samples by 20736 to get actual audio values
 
+// Based on this Scala (SpinalHDL) reference: https://github.dev/tomverbeure/pdm/tree/master/modeling/pdm2pcm
+
 module cic #(
     parameter int R           = 12,      // decimation factor, default 12
     parameter int N           = 4,       // # stages, default 4
