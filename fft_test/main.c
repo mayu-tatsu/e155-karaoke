@@ -8,35 +8,34 @@ Purpose:
 
 #include "lib/mcu_peripherals/STM32L432KC.h"
 #include "lib/arm_math/arm_math.h"
+#include "lib/mcu_configuration.h"
+#include "lib/dma_configuration.h"
 #include "lib/frequency_determiner.h"
 
 // 
 int main(void)
 {
 
-  // 
-  //configureFlash();
-  //configureClock();
+  // sets up the MCU with all basic functionalities
+  mcu_configuration();
+  dma_configuration();
 
-  
-  
-  //
-  float32_t note_frequency;
-
-
+  // TODO: DELETE
   // TEST CODE
-  // FAKE INPUT SINE WAVE 
-  float32_t input_fft[FFT_LENGTH];
+  // SIMULATED INPUT SINE WAVE 
+  float32_t input_signal[FFT_LENGTH];
   float32_t frequency = 500.0;
   for(int i = 0; i < FFT_LENGTH; i++)
   {
-    input_fft[i] =  arm_sin_f32(2 * PI * frequency * i / SAMPLING_RATE);
+    input_signal[i] =  arm_sin_f32(2 * PI * frequency * i / SAMPLING_RATE);
   }
 
-  // 
-  note_frequency = frequency_determiner(input_fft);
+  // determines the frequency of the detected audio
+  float32_t note_frequency;
+  note_frequency = frequency_determiner(input_signal);
 
+  // TODO: DELETE
   // DEBUGGING CODE
-  printf("%f", note_frequency);
+  //printf("%f", note_frequency);
 
 }

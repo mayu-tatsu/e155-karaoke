@@ -1,27 +1,23 @@
 /*
 Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
-Date:     November 16, 2025
+Date:     November 17, 2025
 
-Purpose: To allow the frequency determining function to actually be used.
+Purpose: To allow the DMA configuration function to actually be used.
 */
 
-#ifndef FREQUENCY_DETERMINER_H
-#define FREQUENCY_DETERMINER_H
+#ifndef DMA_CONFIGURATION_H
+#define DMA_CONFIGURATION_H
 
 #include "mcu_peripherals/STM32L432KC.h"
-#include "arm_math/arm_math.h"
 #include "stdio.h"
 #include <stdint.h>
 #include <stm32l432xx.h>
-
-#define FFT_LENGTH    256
-#define SAMPLING_RATE 16000
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-float32_t frequency_determiner(float32_t input_signal[]);
+void dma_configuration(void);
 
 #endif
