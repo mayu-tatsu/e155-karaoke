@@ -30,7 +30,23 @@
 #define _ARM_COMMON_TABLES_H
 
 #include "arm_math_types.h"
-#include "dsp/fast_math_functions.h"
+//#include "dsp/fast_math_functions.h"
+
+  /**
+   * @brief Macros required for SINE and COSINE Fast math approximations
+   */
+
+#define FAST_MATH_TABLE_SIZE  512
+#define FAST_MATH_Q31_SHIFT   (32 - 10)
+#define FAST_MATH_Q15_SHIFT   (16 - 10)
+  
+#ifndef PI
+  #define PI               3.14159265358979f
+#endif
+
+#ifndef PI_F64 
+  #define PI_F64 3.14159265358979323846
+#endif
 
 #ifdef   __cplusplus
 extern "C"

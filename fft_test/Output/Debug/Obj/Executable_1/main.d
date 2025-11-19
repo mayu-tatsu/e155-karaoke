@@ -58,6 +58,10 @@ Output/Debug/Obj/Executable_1/main.o: \
  C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/support_functions.h \
  C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/quaternion_math_functions.h \
  C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/window_functions.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_configuration.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/dma_configuration.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/arm_math.h \
  C:\Users\peppe\OneDrive\Desktop\fft_test\lib/frequency_determiner.h \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/mcu_peripherals/STM32L432KC.h \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math.h
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/frequency_determiner.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/note_determiner.h

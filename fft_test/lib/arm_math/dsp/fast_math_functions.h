@@ -77,7 +77,7 @@ extern "C"
    */
   float32_t arm_sin_f32(
   float32_t x);
-
+  
 
   /**
    * @brief  Fast approximation to the trigonometric sine function for Q31 data.
