@@ -7,35 +7,46 @@ Purpose: To set up the MCU as desired.
 */
 
 #include "../lib/mcu_configuration.h"
+#include "../lib/dma_configuration.h"
 
 // enables all basic MCU peripherals
 void mcu_configuration(void)
 {
 
-  // 
+  // configures the system clock
   configureFlash();
   configureClock();
 
-  // 
+  // enables all GPIO ports
   RCC->AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN | RCC_AHB2ENR_GPIOCEN);
 
-  // "clock divide" = master clock frequency / desired baud rate
-  // the phase for the SPI clock is 1 and the polarity is 0
+  // configures the SPI peripheral
+  // most notably, sets the clock phase to one and the clock polarity to zero
   initSPI(1, 0, 0);
 
-  // Load and done pins
-  pinMode(PA5, GPIO_OUTPUT);  // LOAD
-  pinMode(PA6, GPIO_INPUT);   // DONE
+  // assigns two GPIO pins to act as the Load and Done signals
+  pinMode(LOAD, GPIO_OUTPUT);
+  pinMode(DONE, GPIO_INPUT);
   
-  // debugging LEDs
-  pinMode(PA9, GPIO_OUTPUT);
-  pinMode(PA10, GPIO_OUTPUT);
-  digitalWrite(PA9, 0);
-  digitalWrite(PA10, 0);
+  // TODO: DELETE
+  // DEBUGGING CODE
+  //pinMode(PA9, GPIO_OUTPUT);
+  //pinMode(PA10, GPIO_OUTPUT);
+  //digitalWrite(PA9, 0);
+  //digitalWrite(PA10, 0);
 
-  // Artificial chip select signal to allow 8-bit CE-based SPI decoding on the logic analyzers.
-  pinMode(PA11, GPIO_OUTPUT);
-  digitalWrite(PA11, 1);
+  // assigns a GPIO pin to act as the Chip Select signal
+  pinMode(CS, GPIO_OUTPUT);
+  digitalWrite(CS, 1);
+
+  // enables the system configuration controller
+  RCC -> APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+
+  // enables global interrupts
+  __enable_irq();
+  
+  // configures the DMA peripheral as desired
+  dma_configuration();
 
 }
 

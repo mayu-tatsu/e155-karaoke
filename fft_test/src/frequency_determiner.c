@@ -26,7 +26,7 @@ float32_t frequency_determiner(float32_t input_signal[])
   arm_mean_f32(input_signal, FFT_LENGTH, &input_signal_mean);
 
   // increments through each of the input signal samples
-  for(int i = 0; i < FFT_LENGTH; i++)
+  for (int i = 0; i < FFT_LENGTH; i++)
   {
     // performs Z-Score normalization on the input signal to maintain amplitude measurement accuracy
     normalized_signal[i] = ((input_signal[i] - input_signal_mean) / input_signal_standard_deviation);
@@ -57,7 +57,7 @@ float32_t frequency_determiner(float32_t input_signal[])
   float32_t maximum_magnitude;
   uint32_t  maximum_magnitude_index;
   arm_max_f32(output_fft_magnitude, (FFT_LENGTH / 2), &maximum_magnitude, &maximum_magnitude_index);
-  
+
   // returns the dominant frequency
   return ((float32_t)maximum_magnitude_index * SAMPLING_RATE / FFT_LENGTH);
 

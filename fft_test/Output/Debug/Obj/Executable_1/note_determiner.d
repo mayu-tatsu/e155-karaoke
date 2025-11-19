@@ -1,6 +1,6 @@
-Output/Debug/Obj/Executable_1/mcu_configuration.o: \
- C:\Users\peppe\OneDrive\Desktop\fft_test\src\mcu_configuration.c \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/mcu_configuration.h \
+Output/Debug/Obj/Executable_1/note_determiner.o: \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\src\note_determiner.c \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/lib/note_determiner.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/mcu_peripherals/STM32L432KC.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/stdio.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/__SEGGER_RTL.h \
@@ -22,7 +22,6 @@ Output/Debug/Obj/Executable_1/mcu_configuration.o: \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/mcu_peripherals/STM32L432KC_FLASH.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/mcu_peripherals/STM32L432KC_USART.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/mcu_peripherals/STM32L432KC_SPI.h \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/dma_configuration.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h \
@@ -59,5 +58,4 @@ Output/Debug/Obj/Executable_1/mcu_configuration.o: \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/filtering_functions.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/support_functions.h \
  C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/quaternion_math_functions.h \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/window_functions.h \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/frequency_determiner.h
+ C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/window_functions.h
