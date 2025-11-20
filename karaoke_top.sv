@@ -16,8 +16,10 @@ module karaoke_top (
     input  logic        sck,            // clk input from MCU
     input  logic        sdi,            // unused (for future expansion)
     output logic        done,          // unused (for future expansion)
-    output logic        sdo
+    output logic        sdo,
+	output logic        led
 );
+
     
     logic               pdm_data_sync;
 	
@@ -75,7 +77,8 @@ module karaoke_top (
         .pcm_out(audio_sample),
         .audio_valid(audio_valid),
         .sck(sck),
-        .sdo(sdo)
+        .sdo(sdo),
+		.led(led)
     );
     
 endmodule

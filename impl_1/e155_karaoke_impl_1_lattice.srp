@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Nov 20 06:05:36 2025
+Thu Nov 20 10:33:29 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/e155_karaoke_impl_1_lattice.synproj -logfile e155_karaoke_impl_1_lattice.srp -gui -msgset C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml 
@@ -120,7 +120,6 @@ Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv
-Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv
 VHDL library: pmi
 VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
@@ -178,7 +177,6 @@ Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv. VER
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv. VERI-1482
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/spi.sv. VERI-1482
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/hb.sv. VERI-1482
-Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
@@ -209,66 +207,66 @@ INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/spi.sv(13
 		N                         4
 		M                         1
 		OUT_WIDTH                 16
-		NORMALIZE                 1'b0
+		NORMALIZE                 1'b1
 		ACC_WIDTH                 21
 		GAIN_INT                  331776
 		POS_ONE                   2'sb01
 		MIN_ONE                   2'sb11
-		SCALE_FRAC                24
-		RECIPROCAL                51
+		SCALE_FRAC                19
+		RECIPROCAL                1583
 
 	[Parameter Settings for Instance(s): hf_osc]
 	(Module: HSOSC)
 		CLKHF_DIV                 "0b00"
 
 [Parameter Setting Section End]
-Constant propagated thru Read Port :read_port_240.
+Constant propagated thru Read Port :read_port_241.
 
-Constant propagated thru Read Port :read_port_288.
+Constant propagated thru Read Port :read_port_289.
 
-Constant propagated thru Read Port :read_port_336.
+Constant propagated thru Read Port :read_port_337.
 
-Constant propagated thru Write Port :clk_write_port_348.
+Constant propagated thru Write Port :clk_write_port_349.
 
-Constant propagated thru Write Port :clk_write_port_354.
+Constant propagated thru Write Port :clk_write_port_355.
 
-Constant propagated thru Write Port :clk_write_port_360.
+Constant propagated thru Write Port :clk_write_port_361.
 
-Constant propagated thru Read Port :read_port_408.
+Constant propagated thru Read Port :read_port_409.
 
-Constant propagated thru Read Port :read_port_504.
+Constant propagated thru Read Port :read_port_505.
 
-Constant propagated thru Read Port :read_port_552.
+Constant propagated thru Read Port :read_port_553.
 
-Constant propagated thru Write Port :clk_write_port_558.
+Constant propagated thru Write Port :clk_write_port_559.
 
-Constant propagated thru Write Port :clk_write_port_570.
+Constant propagated thru Write Port :clk_write_port_571.
 
-Constant propagated thru Write Port :clk_write_port_576.
+Constant propagated thru Write Port :clk_write_port_577.
 
-Constant propagated thru Read Port :read_port_624.
+Constant propagated thru Read Port :read_port_625.
 
-Constant propagated thru Read Port :read_port_672.
+Constant propagated thru Read Port :read_port_673.
 
-Constant propagated thru Read Port :read_port_768.
+Constant propagated thru Read Port :read_port_769.
 
-Constant propagated thru Write Port :clk_write_port_774.
+Constant propagated thru Write Port :clk_write_port_775.
 
-Constant propagated thru Write Port :clk_write_port_780.
+Constant propagated thru Write Port :clk_write_port_781.
 
-Constant propagated thru Write Port :clk_write_port_792.
+Constant propagated thru Write Port :clk_write_port_793.
 
-Constant propagated thru Read Port :read_port_840.
+Constant propagated thru Read Port :read_port_841.
 
-Constant propagated thru Read Port :read_port_888.
+Constant propagated thru Read Port :read_port_889.
 
-Constant propagated thru Read Port :read_port_936.
+Constant propagated thru Read Port :read_port_937.
 
-Constant propagated thru Write Port :clk_write_port_990.
+Constant propagated thru Write Port :clk_write_port_991.
 
-Constant propagated thru Write Port :clk_write_port_996.
+Constant propagated thru Write Port :clk_write_port_997.
 
-Constant propagated thru Write Port :clk_write_port_1002.
+Constant propagated thru Write Port :clk_write_port_1003.
 
 WARNING <35001771> - synthesis: Initial value found on net gnd will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net pwr will be ignored due to unrecognized driver type
@@ -287,307 +285,318 @@ CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/product
 CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[8][32:0] stuck at '0': 1, 0
 CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[9][32:0] stuck at '0': 1, 0
 CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[12][32:0] stuck at '0': 0
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/products[6]_res18 stuck at '0': 0
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res14 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res10 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res9 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res13 stuck at '0': 1
 CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res7 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res12 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res32 stuck at '0': 2, 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res10 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res5 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \cic_decimator/comb_out_res4_res11 stuck at '0': 5
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/products[6]_res36 stuck at '0': 0
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res37 stuck at '0': 2, 1
 
-The number of registers created due to operator pipelining is 5.
+The number of registers created due to operator pipelining is 16.
 
 CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdi
-WARNING <35935040> - synthesis: Register \halfband/sym_pairs[6]_res9_ret0_i0_i2 clock is stuck at Zero. VDB-5040
-Optimized async. reset : \generic_fir/p0_shiftadd_N_15352 on data cone feeding flop : 
+WARNING <35935040> - synthesis: Register \halfband/sym_pairs[6]_res7_ret1_i0_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \halfband/sym_pairs[6]_res5_ret0_i0_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \halfband/sym_pairs[6]_res5_ret0_i0_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \halfband/sym_pairs[6]_res5_ret0_i0_i1 clock is stuck at Zero. VDB-5040
+Optimized async. reset : \spi_interface/shifting_N_15209 on data cone feeding flop : 
 
 
- \cic_decimator/\i1037/comb_delay_3_0_20
+ \cic_decimator/\i1038/comb_delay_3_0_20
 
 
- \cic_decimator/\i1037/comb_delay_3_0_19
+ \cic_decimator/\i1038/comb_delay_3_0_19
 
 
- \cic_decimator/\i1037/comb_delay_3_0_18
+ \cic_decimator/\i1038/comb_delay_3_0_18
 
 
- \cic_decimator/\i1037/comb_delay_3_0_17
+ \cic_decimator/\i1038/comb_delay_3_0_17
 
 
- \cic_decimator/\i1037/comb_delay_3_0_16
+ \cic_decimator/\i1038/comb_delay_3_0_16
 
 
- \cic_decimator/\i1037/comb_delay_3_0_15
+ \cic_decimator/\i1038/comb_delay_3_0_15
 
 
- \cic_decimator/\i1037/comb_delay_3_0_14
+ \cic_decimator/\i1038/comb_delay_3_0_14
 
 
- \cic_decimator/\i1037/comb_delay_3_0_13
+ \cic_decimator/\i1038/comb_delay_3_0_13
 
 
- \cic_decimator/\i1037/comb_delay_3_0_12
+ \cic_decimator/\i1038/comb_delay_3_0_12
 
 
- \cic_decimator/\i1037/comb_delay_3_0_11
+ \cic_decimator/\i1038/comb_delay_3_0_11
 
 
- \cic_decimator/\i1037/comb_delay_3_0_10
+ \cic_decimator/\i1038/comb_delay_3_0_10
 
 
- \cic_decimator/\i1037/comb_delay_3_0_9
+ \cic_decimator/\i1038/comb_delay_3_0_9
 
 
- \cic_decimator/\i1037/comb_delay_3_0_8
+ \cic_decimator/\i1038/comb_delay_3_0_8
 
 
- \cic_decimator/\i1037/comb_delay_3_0_7
+ \cic_decimator/\i1038/comb_delay_3_0_7
 
 
- \cic_decimator/\i1037/comb_delay_3_0_6
+ \cic_decimator/\i1038/comb_delay_3_0_6
 
 
- \cic_decimator/\i1037/comb_delay_3_0_5
+ \cic_decimator/\i1038/comb_delay_3_0_5
 
 
- \cic_decimator/\i1037/comb_delay_3_0_4
+ \cic_decimator/\i1038/comb_delay_3_0_4
 
 
- \cic_decimator/\i1037/comb_delay_3_0_3
+ \cic_decimator/\i1038/comb_delay_3_0_3
 
 
- \cic_decimator/\i1037/comb_delay_3_0_2
+ \cic_decimator/\i1038/comb_delay_3_0_2
 
 
- \cic_decimator/\i1037/comb_delay_3_0_1
+ \cic_decimator/\i1038/comb_delay_3_0_1
 
 
- \cic_decimator/\i1037/comb_delay_3_0_0
+ \cic_decimator/\i1038/comb_delay_3_0_0
 
 
- \cic_decimator/\i1036/comb_delay_2_0_20
+ \cic_decimator/\i1037/comb_delay_2_0_20
 
 
- \cic_decimator/\i1036/comb_delay_2_0_19
+ \cic_decimator/\i1037/comb_delay_2_0_19
 
 
- \cic_decimator/\i1036/comb_delay_2_0_18
+ \cic_decimator/\i1037/comb_delay_2_0_18
 
 
- \cic_decimator/\i1036/comb_delay_2_0_17
+ \cic_decimator/\i1037/comb_delay_2_0_17
 
 
- \cic_decimator/\i1036/comb_delay_2_0_16
+ \cic_decimator/\i1037/comb_delay_2_0_16
 
 
- \cic_decimator/\i1036/comb_delay_2_0_15
+ \cic_decimator/\i1037/comb_delay_2_0_15
 
 
- \cic_decimator/\i1036/comb_delay_2_0_14
+ \cic_decimator/\i1037/comb_delay_2_0_14
 
 
- \cic_decimator/\i1036/comb_delay_2_0_13
+ \cic_decimator/\i1037/comb_delay_2_0_13
 
 
- \cic_decimator/\i1036/comb_delay_2_0_12
+ \cic_decimator/\i1037/comb_delay_2_0_12
 
 
- \cic_decimator/\i1036/comb_delay_2_0_11
+ \cic_decimator/\i1037/comb_delay_2_0_11
 
 
- \cic_decimator/\i1036/comb_delay_2_0_10
+ \cic_decimator/\i1037/comb_delay_2_0_10
 
 
- \cic_decimator/\i1036/comb_delay_2_0_9
+ \cic_decimator/\i1037/comb_delay_2_0_9
 
 
- \cic_decimator/\i1036/comb_delay_2_0_8
+ \cic_decimator/\i1037/comb_delay_2_0_8
 
 
- \cic_decimator/\i1036/comb_delay_2_0_7
+ \cic_decimator/\i1037/comb_delay_2_0_7
 
 
- \cic_decimator/\i1036/comb_delay_2_0_6
+ \cic_decimator/\i1037/comb_delay_2_0_6
 
 
- \cic_decimator/\i1036/comb_delay_2_0_5
+ \cic_decimator/\i1037/comb_delay_2_0_5
 
 
- \cic_decimator/\i1036/comb_delay_2_0_4
+ \cic_decimator/\i1037/comb_delay_2_0_4
 
 
- \cic_decimator/\i1036/comb_delay_2_0_3
+ \cic_decimator/\i1037/comb_delay_2_0_3
 
 
- \cic_decimator/\i1036/comb_delay_2_0_2
+ \cic_decimator/\i1037/comb_delay_2_0_2
 
 
- \cic_decimator/\i1036/comb_delay_2_0_1
+ \cic_decimator/\i1037/comb_delay_2_0_1
 
 
- \cic_decimator/\i1036/comb_delay_2_0_0
+ \cic_decimator/\i1037/comb_delay_2_0_0
 
 
- \cic_decimator/\i1035/comb_delay_0_0_20
+ \cic_decimator/\i1036/comb_delay_0_0_20
 
 
- \cic_decimator/\i1035/comb_delay_0_0_19
+ \cic_decimator/\i1036/comb_delay_0_0_19
 
 
- \cic_decimator/\i1035/comb_delay_0_0_18
+ \cic_decimator/\i1036/comb_delay_0_0_18
 
 
- \cic_decimator/\i1035/comb_delay_0_0_17
+ \cic_decimator/\i1036/comb_delay_0_0_17
 
 
- \cic_decimator/\i1035/comb_delay_0_0_16
+ \cic_decimator/\i1036/comb_delay_0_0_16
 
 
- \cic_decimator/\i1035/comb_delay_0_0_15
+ \cic_decimator/\i1036/comb_delay_0_0_15
 
 
- \cic_decimator/\i1035/comb_delay_0_0_14
+ \cic_decimator/\i1036/comb_delay_0_0_14
 
 
- \cic_decimator/\i1035/comb_delay_0_0_13
+ \cic_decimator/\i1036/comb_delay_0_0_13
 
 
- \cic_decimator/\i1035/comb_delay_0_0_12
+ \cic_decimator/\i1036/comb_delay_0_0_12
 
 
- \cic_decimator/\i1035/comb_delay_0_0_11
+ \cic_decimator/\i1036/comb_delay_0_0_11
 
 
- \cic_decimator/\i1035/comb_delay_0_0_10
+ \cic_decimator/\i1036/comb_delay_0_0_10
 
 
- \cic_decimator/\i1035/comb_delay_0_0_9
+ \cic_decimator/\i1036/comb_delay_0_0_9
 
 
- \cic_decimator/\i1035/comb_delay_0_0_8
+ \cic_decimator/\i1036/comb_delay_0_0_8
 
 
- \cic_decimator/\i1035/comb_delay_0_0_7
+ \cic_decimator/\i1036/comb_delay_0_0_7
 
 
- \cic_decimator/\i1035/comb_delay_0_0_6
+ \cic_decimator/\i1036/comb_delay_0_0_6
 
 
- \cic_decimator/\i1035/comb_delay_0_0_5
+ \cic_decimator/\i1036/comb_delay_0_0_5
 
 
- \cic_decimator/\i1035/comb_delay_0_0_4
+ \cic_decimator/\i1036/comb_delay_0_0_4
 
 
- \cic_decimator/\i1035/comb_delay_0_0_3
+ \cic_decimator/\i1036/comb_delay_0_0_3
 
 
- \cic_decimator/\i1035/comb_delay_0_0_2
+ \cic_decimator/\i1036/comb_delay_0_0_2
 
 
- \cic_decimator/\i1035/comb_delay_0_0_1
+ \cic_decimator/\i1036/comb_delay_0_0_1
 
 
- \cic_decimator/\i1035/comb_delay_0_0_0
+ \cic_decimator/\i1036/comb_delay_0_0_0
 
 
- \cic_decimator/\i1034/comb_delay_1_0_20
+ \cic_decimator/\i1035/comb_delay_1_0_20
 
 
- \cic_decimator/\i1034/comb_delay_1_0_19
+ \cic_decimator/\i1035/comb_delay_1_0_19
 
 
- \cic_decimator/\i1034/comb_delay_1_0_18
+ \cic_decimator/\i1035/comb_delay_1_0_18
 
 
- \cic_decimator/\i1034/comb_delay_1_0_17
+ \cic_decimator/\i1035/comb_delay_1_0_17
 
 
- \cic_decimator/\i1034/comb_delay_1_0_16
+ \cic_decimator/\i1035/comb_delay_1_0_16
 
 
- \cic_decimator/\i1034/comb_delay_1_0_15
+ \cic_decimator/\i1035/comb_delay_1_0_15
 
 
- \cic_decimator/\i1034/comb_delay_1_0_14
+ \cic_decimator/\i1035/comb_delay_1_0_14
 
 
- \cic_decimator/\i1034/comb_delay_1_0_13
+ \cic_decimator/\i1035/comb_delay_1_0_13
 
 
- \cic_decimator/\i1034/comb_delay_1_0_12
+ \cic_decimator/\i1035/comb_delay_1_0_12
 
 
- \cic_decimator/\i1034/comb_delay_1_0_11
+ \cic_decimator/\i1035/comb_delay_1_0_11
 
 
- \cic_decimator/\i1034/comb_delay_1_0_10
+ \cic_decimator/\i1035/comb_delay_1_0_10
 
 
- \cic_decimator/\i1034/comb_delay_1_0_9
+ \cic_decimator/\i1035/comb_delay_1_0_9
 
 
- \cic_decimator/\i1034/comb_delay_1_0_8
+ \cic_decimator/\i1035/comb_delay_1_0_8
 
 
- \cic_decimator/\i1034/comb_delay_1_0_7
+ \cic_decimator/\i1035/comb_delay_1_0_7
 
 
- \cic_decimator/\i1034/comb_delay_1_0_6
+ \cic_decimator/\i1035/comb_delay_1_0_6
 
 
- \cic_decimator/\i1034/comb_delay_1_0_5
+ \cic_decimator/\i1035/comb_delay_1_0_5
 
 
- \cic_decimator/\i1034/comb_delay_1_0_4
+ \cic_decimator/\i1035/comb_delay_1_0_4
 
 
- \cic_decimator/\i1034/comb_delay_1_0_3
+ \cic_decimator/\i1035/comb_delay_1_0_3
 
 
- \cic_decimator/\i1034/comb_delay_1_0_2
+ \cic_decimator/\i1035/comb_delay_1_0_2
 
 
- \cic_decimator/\i1034/comb_delay_1_0_1
+ \cic_decimator/\i1035/comb_delay_1_0_1
 
 
- \cic_decimator/\i1034/comb_delay_1_0_0
+ \cic_decimator/\i1035/comb_delay_1_0_0
 
 
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_res31__i1 is a one-to-one match with \generic_fir/sym_pairs[15]_i240.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i5.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i241 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i2.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i242 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i3.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i243 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i4.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i244 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i5.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i245 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i6.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i246 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i7.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i247 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i8.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i248 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i9.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i249 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i10.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i250 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i11.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i251 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i12.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i252 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i13.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i253 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i14.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i254 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i15.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i255 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i16.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i1 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i4.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i3 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i1.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i3.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_res28__i1 is a one-to-one match with \generic_fir/sym_pairs[15]_i240.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i249 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i10.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i250 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i11.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i243 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i4.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i251 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i12.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i252 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i13.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i253 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i14.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i255 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i16.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i254 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i15.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i244 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i5.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i245 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i6.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i241 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i2.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i11.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i248 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i9.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i247 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i8.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i246 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i7.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i242 is a one-to-one match with \generic_fir/sym_pairs[15]_res28__i3.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res7_ret1_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res7_ret1_i0_i5.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i2 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i10.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i3 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i9.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i5 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i7.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i6 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i5.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res7_ret1_i0_i1 is a one-to-one match with \halfband/sym_pairs[6]_res7_ret1_i0_i4.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res7_ret1_i0_i3 is a one-to-one match with \halfband/sym_pairs[6]_res7_ret1_i0_i1.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i6.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res7_ret1_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res7_ret1_i0_i3.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i2 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i3.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i2.
 
 ################### Begin Area Report (karaoke_top)######################
-Number of register bits => 2316 of 5280 (43 % )
-CCU2 => 1447
-FD1P3XZ => 2316
+Number of register bits => 2230 of 5280 (42 % )
+CCU2 => 1437
+FD1P3XZ => 2230
 HSOSC => 1
 IB => 3
 INV => 1
-LUT4 => 334
+LUT4 => 351
 MAC16 => 8
-OB => 20
+OB => 21
 ################### End Area Report ##################
-Number of odd-length carry chains : 67
-Number of even-length carry chains : 55
+Number of odd-length carry chains : 62
+Number of even-length carry chains : 60
 
 ################### Begin Clock Report ######################
 Clock Nets
@@ -598,12 +607,12 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : generic_fir/p0_shiftadd_N_15352, loads : 999
-  Net : generic_fir/maxfan_replicated_net_999, loads : 999
+  Net : spi_interface/shifting_N_15209, loads : 999
+  Net : spi_interface/maxfan_replicated_net_999, loads : 999
   Net : halfband/hb_out_valid, loads : 528
-  Net : cic_decimator/cic_out_valid, loads : 460
-  Net : generic_fir/maxfan_replicated_net_1292, loads : 292
-  Net : cic_decimator/new_decim_valid, loads : 101
+  Net : cic_decimator/cic_out_valid, loads : 379
+  Net : spi_interface/maxfan_replicated_net_1223, loads : 223
+  Net : cic_decimator/new_decim_valid, loads : 106
   Net : generic_fir/sym_pairs[11][16], loads : 47
   Net : generic_fir/sym_pairs[8][16], loads : 46
   Net : generic_fir/sym_pairs[9][16], loads : 45
@@ -616,10 +625,10 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 165 MB
+Peak Memory Usage: 170 MB
 
 --------------------------------------------------------------
 Total CPU Time: 7 secs 
-Total REAL Time: 13 secs 
+Total REAL Time: 14 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: 1cce476b5a2b1ac287493142d3fe4edeb9eeea5
+Checksum -- synthesis -- netlist: a529bf3b46fb680c6775bf19987fa375837ddedc

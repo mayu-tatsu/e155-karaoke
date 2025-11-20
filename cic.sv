@@ -22,7 +22,7 @@ module cic #(
     parameter int N           = 4,       // # stages, default 6
     parameter int M           = 1,       // differential delay (comb), default 1
     parameter int OUT_WIDTH   = 16,      // desired output width
-    parameter bit NORMALIZE   = 0        // enable normalization to compensate CIC gain, default off
+    parameter bit NORMALIZE   = 1        // enable normalization to compensate CIC gain, default off
 ) (
     input  logic                        clk,        // pdm clock
     input  logic                        reset_n,    // active-low reset
@@ -145,8 +145,8 @@ module cic #(
 
 
     // OUTPUT ASSIGNMENTS & optional normalization (assign as param)
-    localparam int SCALE_FRAC = 24;     // fractional bits used in reciprocal multiplier, u can choose but 24 is good balance
-    localparam int RECIPROCAL = 51;    // reciprocal = round(2^SCALE_FRAC / GAIN_INT) = round(2^24 / 331776) = 51
+    localparam int SCALE_FRAC = 19;     // fractional bits used in reciprocal multiplier, u can choose but 24 is good balance
+    localparam int RECIPROCAL = 1583;    // reciprocal = round(2^SCALE_FRAC / GAIN_INT) = round(2^19 / 331776) = 1883
 
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin

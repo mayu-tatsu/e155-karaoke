@@ -1,6 +1,7 @@
 ldc_set_location -site {34} [get_ports reset_n]
 ldc_set_location -site {9} [get_ports clk]
-ldc_set_location -site {21} [get_ports sck]
 ldc_set_location -site {12} [get_ports sdo]
 ldc_set_location -site {18} [get_ports pdm_data]
 ldc_set_location -site {27} [get_ports done]
+ldc_set_location -site {42} [get_ports led]
+ldc_set_location -site {21} [get_ports sck]

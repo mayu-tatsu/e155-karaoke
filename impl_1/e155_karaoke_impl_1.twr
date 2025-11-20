@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Thu Nov 20 06:07:05 2025
+Thu Nov 20 10:34:58 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -52,7 +52,7 @@ create_clock -name {clk_generator/clk_48mhz} -period 20.8333 [get_pins {clk_gene
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 0.289488%
+Constraint Coverage: 0.292915%
 
 
 1.3  Overall Summary
@@ -76,8 +76,8 @@ Clocked but unconstrained timing end points
           Listing 3 End Points          |           Type           
 -------------------------------------------------------------------
 clk_generator/cycle_counter__i0/SR      |           No arrival time
-clk_generator/clk_out/SR                |           No arrival time
 clk_generator/cycle_counter__i1/SR      |           No arrival time
+clk_generator/clk_out/SR                |           No arrival time
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
@@ -101,19 +101,19 @@ create_generated_clock,
 -------------------------------------------------------------------
      Listing 10 Start or End Points     |           Type           
 -------------------------------------------------------------------
-sck                                     |                     input
-reset_n                                 |                     input
 pdm_data                                |                     input
+reset_n                                 |                     input
+sck                                     |                     input
 sdi                                     |                     input
 audio_sample[14]                        |                    output
 audio_sample[15]                        |                    output
 audio_sample[13]                        |                    output
-clk                                     |                    output
-audio_sample[0]                         |                    output
-audio_valid                             |                    output
+audio_sample[2]                         |                    output
+audio_sample[3]                         |                    output
+audio_sample[4]                         |                    output
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        23
+Number of I/O ports without constraint  |                        24
                                         |                          
 -------------------------------------------------------------------
 
@@ -164,18 +164,18 @@ Clock Domain Crossing
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-clk_generator/cycle_counter__i1/SP       |    7.629 ns 
-clk_generator/counter_97__i0/SR          |    9.981 ns 
-{clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}              
-                                         |    9.981 ns 
-{clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}              
-                                         |    9.981 ns 
-clk_generator/counter_97__i5/SR          |    9.981 ns 
-clk_generator/cycle_counter__i0/D        |   10.272 ns 
-clk_generator/clk_out/D                  |   11.184 ns 
-clk_generator/counter_97__i5/D           |   14.637 ns 
-clk_generator/counter_97__i4/D           |   14.914 ns 
-clk_generator/counter_97__i3/D           |   15.191 ns 
+clk_generator/cycle_counter__i1/SP       |    6.717 ns 
+clk_generator/counter_119__i0/SR         |    9.664 ns 
+{clk_generator/counter_119__i1/SR   clk_generator/counter_119__i2/SR}              
+                                         |    9.664 ns 
+{clk_generator/counter_119__i3/SR   clk_generator/counter_119__i4/SR}              
+                                         |    9.664 ns 
+clk_generator/counter_119__i5/SR         |    9.664 ns 
+clk_generator/cycle_counter__i0/D        |   10.550 ns 
+clk_generator/clk_out/D                  |   10.867 ns 
+clk_generator/counter_119__i5/D          |   14.637 ns 
+clk_generator/counter_119__i4/D          |   14.914 ns 
+clk_generator/counter_119__i3/D          |   15.191 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -198,15 +198,15 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R10C31C)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R8C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 79.0% (route), 21.0% (logic)
+Delay Ratio      : 80.3% (route), 19.7% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 7.629 ns  (Passed)
+Path Slack       : 6.717 ns  (Passed)
 
 
 Source Clock Path
@@ -214,25 +214,26 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4434                                          NET DELAY           2.432                 14.738  4       
-clk_generator/i650_2_lut_3_lut_3_lut/B->clk_generator/i650_2_lut_3_lut_3_lut/Z
-                                          SLICE_R9C31C       C0_TO_F0_DELAY      0.449                 15.187  1       
-clk_generator/n4508                                          NET DELAY           3.318                 18.505  1       
-clk_generator/cycle_counter__i1/SP                           ENDPOINT            0.000                 18.505  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.449                 12.623  4       
+clk_generator/n4637                                          NET DELAY           2.432                 15.055  4       
+clk_generator/i843_2_lut_3_lut_3_lut/B->clk_generator/i843_2_lut_3_lut_3_lut/Z
+                                          SLICE_R9C31D       C0_TO_F0_DELAY      0.449                 15.504  1       
+clk_generator/n4804                                          NET DELAY           3.913                 19.417  1       
+clk_generator/cycle_counter__i1/SP                           ENDPOINT            0.000                 19.417  1       
 
 
 Destination Clock Path
@@ -246,24 +247,24 @@ clk_generator/cycle_counter__i1/CK                           CLOCK PIN          
                                                              Setup time       -(0.198)                 26.134  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          26.134  
-Arrival Time                                                                                        -(18.504)  
+Arrival Time                                                                                        -(19.416)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    7.629  
+Path Slack  (Passed)                                                                                    6.717  
 
 
 
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/counter_97__i0/SR  (SLICE_R11C31A)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i0/SR  (SLICE_R10C31A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -271,25 +272,26 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-clk_generator/counter_97__i0/SR                              ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+clk_generator/counter_119__i0/SR                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -298,29 +300,29 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN           0.000                 26.332  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : {clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}  (SLICE_R11C31B)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : {clk_generator/counter_119__i1/SR   clk_generator/counter_119__i2/SR}  (SLICE_R10C31B)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -328,26 +330,27 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-{clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}
-                                                             ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+{clk_generator/counter_119__i1/SR   clk_generator/counter_119__i2/SR}
+                                                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -356,30 +359,30 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : {clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : {clk_generator/counter_119__i3/SR   clk_generator/counter_119__i4/SR}  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -387,26 +390,27 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-{clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}
-                                                             ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+{clk_generator/counter_119__i3/SR   clk_generator/counter_119__i4/SR}
+                                                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -415,30 +419,30 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/counter_97__i5/SR  (SLICE_R11C31D)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i5/SR  (SLICE_R10C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -446,25 +450,26 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-clk_generator/counter_97__i5/SR                              ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+clk_generator/counter_119__i5/SR                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -473,29 +478,29 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-clk_generator/counter_97__i5/CK                              CLOCK PIN           0.000                 26.332  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C31D)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C30A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.3% (route), 26.7% (logic)
+Delay Ratio      : 72.6% (route), 27.4% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 10.272 ns  (Passed)
+Path Slack       : 10.550 ns  (Passed)
 
 
 Source Clock Path
@@ -503,25 +508,26 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4434                                          NET DELAY           3.080                 15.386  4       
-clk_generator/i572_2_lut_3_lut/B->clk_generator/i572_2_lut_3_lut/Z
-                                          SLICE_R8C31D       B0_TO_F0_DELAY      0.476                 15.862  1       
-clk_generator/n9_2[0]                                        NET DELAY           0.000                 15.862  1       
-clk_generator/cycle_counter__i0/D                            ENDPOINT            0.000                 15.862  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.449                 12.623  4       
+clk_generator/n4637                                          NET DELAY           2.485                 15.108  4       
+clk_generator/i665_2_lut_3_lut/B->clk_generator/i665_2_lut_3_lut/Z
+                                          SLICE_R8C30A       B0_TO_F0_DELAY      0.476                 15.584  1       
+clk_generator/n9[0]                                          NET DELAY           0.000                 15.584  1       
+clk_generator/cycle_counter__i0/D                            ENDPOINT            0.000                 15.584  1       
 
 
 Destination Clock Path
@@ -535,24 +541,24 @@ clk_generator/cycle_counter__i0/CK                           CLOCK PIN          
                                                              Setup time       -(0.198)                 26.134  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          26.134  
-Arrival Time                                                                                        -(15.861)  
+Arrival Time                                                                                        -(15.583)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   10.272  
+Path Slack  (Passed)                                                                                   10.550  
 
 
 
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/clk_out/D  (SLICE_R9C31C)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/clk_out/D  (SLICE_R9C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 70.8% (route), 29.2% (logic)
+Delay Ratio      : 71.7% (route), 28.3% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 11.184 ns  (Passed)
+Path Slack       : 10.867 ns  (Passed)
 
 
 Source Clock Path
@@ -560,25 +566,26 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4434                                          NET DELAY           2.168                 14.474  4       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.449                 12.623  4       
+clk_generator/n4637                                          NET DELAY           2.168                 14.791  4       
 clk_generator/i1_2_lut/B->clk_generator/i1_2_lut/Z
-                                          SLICE_R9C31C       D1_TO_F1_DELAY      0.476                 14.950  1       
-clk_generator/n4437                                          NET DELAY           0.000                 14.950  1       
-clk_generator/clk_out/D                                      ENDPOINT            0.000                 14.950  1       
+                                          SLICE_R9C31D       D1_TO_F1_DELAY      0.476                 15.267  1       
+clk_generator/n4642                                          NET DELAY           0.000                 15.267  1       
+clk_generator/clk_out/D                                      ENDPOINT            0.000                 15.267  1       
 
 
 Destination Clock Path
@@ -592,17 +599,17 @@ clk_generator/clk_out/CK                                     CLOCK PIN          
                                                              Setup time       -(0.198)                 26.134  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          26.134  
-Arrival Time                                                                                        -(14.949)  
+Arrival Time                                                                                        -(15.266)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   11.184  
+Path Slack  (Passed)                                                                                   10.867  
 
 
 
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i5/D  (SLICE_R11C31D)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i5/D  (SLICE_R10C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 7
@@ -617,34 +624,34 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                  5.499  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN               0.000                  5.499  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
-                                          SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
-clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
-                                          SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
-clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
-                                          SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6902                                          NET DELAY               0.000                  9.806  2       
-clk_generator/counter_97_add_4_5/CI0->clk_generator/counter_97_add_4_5/CO0
-                                          SLICE_R11C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-clk_generator/n47446                                         NET DELAY               0.000                 10.083  2       
-clk_generator/counter_97_add_4_5/CI1->clk_generator/counter_97_add_4_5/CO1
-                                          SLICE_R11C31C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-clk_generator/n6904                                          NET DELAY               0.661                 11.021  2       
-clk_generator/counter_97_add_4_7/D0->clk_generator/counter_97_add_4_7/S0
-                                          SLICE_R11C31D      D0_TO_F0_DELAY          0.476                 11.497  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/CO1
+                                          SLICE_R10C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+clk_generator/n7193                                          NET DELAY               0.000                  9.252  2       
+clk_generator/counter_119_add_4_3/CI0->clk_generator/counter_119_add_4_3/CO0
+                                          SLICE_R10C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+clk_generator/n47595                                         NET DELAY               0.000                  9.529  2       
+clk_generator/counter_119_add_4_3/CI1->clk_generator/counter_119_add_4_3/CO1
+                                          SLICE_R10C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+clk_generator/n7195                                          NET DELAY               0.000                  9.806  2       
+clk_generator/counter_119_add_4_5/CI0->clk_generator/counter_119_add_4_5/CO0
+                                          SLICE_R10C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+clk_generator/n47598                                         NET DELAY               0.000                 10.083  2       
+clk_generator/counter_119_add_4_5/CI1->clk_generator/counter_119_add_4_5/CO1
+                                          SLICE_R10C31C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+clk_generator/n7197                                          NET DELAY               0.661                 11.021  2       
+clk_generator/counter_119_add_4_7/D0->clk_generator/counter_119_add_4_7/S0
+                                          SLICE_R10C31D      D0_TO_F0_DELAY          0.476                 11.497  1       
 clk_generator/n29[5]                                         NET DELAY               0.000                 11.497  1       
-clk_generator/counter_97__i5/D                               ENDPOINT                0.000                 11.497  1       
+clk_generator/counter_119__i5/D                              ENDPOINT                0.000                 11.497  1       
 
 
 Destination Clock Path
@@ -653,7 +660,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                 26.332  8       
-clk_generator/counter_97__i5/CK                              CLOCK PIN               0.000                 26.332  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN               0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
@@ -667,8 +674,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i4/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i4/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 6
@@ -683,31 +690,31 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                  5.499  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN               0.000                  5.499  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
-                                          SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
-clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
-                                          SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
-clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
-                                          SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6902                                          NET DELAY               0.000                  9.806  2       
-clk_generator/counter_97_add_4_5/CI0->clk_generator/counter_97_add_4_5/CO0
-                                          SLICE_R11C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-clk_generator/n47446                                         NET DELAY               0.661                 10.744  2       
-clk_generator/counter_97_add_4_5/D1->clk_generator/counter_97_add_4_5/S1
-                                          SLICE_R11C31C      D1_TO_F1_DELAY          0.476                 11.220  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/CO1
+                                          SLICE_R10C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+clk_generator/n7193                                          NET DELAY               0.000                  9.252  2       
+clk_generator/counter_119_add_4_3/CI0->clk_generator/counter_119_add_4_3/CO0
+                                          SLICE_R10C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+clk_generator/n47595                                         NET DELAY               0.000                  9.529  2       
+clk_generator/counter_119_add_4_3/CI1->clk_generator/counter_119_add_4_3/CO1
+                                          SLICE_R10C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+clk_generator/n7195                                          NET DELAY               0.000                  9.806  2       
+clk_generator/counter_119_add_4_5/CI0->clk_generator/counter_119_add_4_5/CO0
+                                          SLICE_R10C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+clk_generator/n47598                                         NET DELAY               0.661                 10.744  2       
+clk_generator/counter_119_add_4_5/D1->clk_generator/counter_119_add_4_5/S1
+                                          SLICE_R10C31C      D1_TO_F1_DELAY          0.476                 11.220  1       
 clk_generator/n29[4]                                         NET DELAY               0.000                 11.220  1       
-clk_generator/counter_97__i4/D                               ENDPOINT                0.000                 11.220  1       
+clk_generator/counter_119__i4/D                              ENDPOINT                0.000                 11.220  1       
 
 
 Destination Clock Path
@@ -716,7 +723,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                 26.332  8       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN               0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -731,8 +738,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i3/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i3/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 5
@@ -747,28 +754,28 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                  5.499  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN               0.000                  5.499  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
-                                          SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
-clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
-                                          SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
-clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
-                                          SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6902                                          NET DELAY               0.661                 10.467  2       
-clk_generator/counter_97_add_4_5/D0->clk_generator/counter_97_add_4_5/S0
-                                          SLICE_R11C31C      D0_TO_F0_DELAY          0.476                 10.943  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/CO1
+                                          SLICE_R10C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+clk_generator/n7193                                          NET DELAY               0.000                  9.252  2       
+clk_generator/counter_119_add_4_3/CI0->clk_generator/counter_119_add_4_3/CO0
+                                          SLICE_R10C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+clk_generator/n47595                                         NET DELAY               0.000                  9.529  2       
+clk_generator/counter_119_add_4_3/CI1->clk_generator/counter_119_add_4_3/CO1
+                                          SLICE_R10C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+clk_generator/n7195                                          NET DELAY               0.661                 10.467  2       
+clk_generator/counter_119_add_4_5/D0->clk_generator/counter_119_add_4_5/S0
+                                          SLICE_R10C31C      D0_TO_F0_DELAY          0.476                 10.943  1       
 clk_generator/n29[3]                                         NET DELAY               0.000                 10.943  1       
-clk_generator/counter_97__i3/D                               ENDPOINT                0.000                 10.943  1       
+clk_generator/counter_119__i3/D                              ENDPOINT                0.000                 10.943  1       
 
 
 Destination Clock Path
@@ -777,7 +784,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                 26.332  8       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN               0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -810,13 +817,13 @@ Path Slack  (Passed)                                                            
 clk_generator/cycle_counter__i1/D        |    1.743 ns 
 clk_generator/cycle_counter__i0/D        |    1.743 ns 
 clk_generator/clk_out/D                  |    1.913 ns 
-clk_generator/counter_97__i0/D           |    1.913 ns 
-clk_generator/counter_97__i1/D           |    1.913 ns 
-clk_generator/counter_97__i2/D           |    1.913 ns 
-clk_generator/counter_97__i3/D           |    1.913 ns 
-clk_generator/counter_97__i4/D           |    1.913 ns 
-clk_generator/counter_97__i5/D           |    1.913 ns 
-clk_generator/cycle_counter__i1/SP       |    3.351 ns 
+clk_generator/counter_119__i0/D          |    1.913 ns 
+clk_generator/counter_119__i1/D          |    1.913 ns 
+clk_generator/counter_119__i2/D          |    1.913 ns 
+clk_generator/counter_119__i3/D          |    1.913 ns 
+clk_generator/counter_119__i4/D          |    1.913 ns 
+clk_generator/counter_119__i5/D          |    1.913 ns 
+clk_generator/cycle_counter__i1/SP       |    3.714 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -839,8 +846,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : clk_generator/cycle_counter__i1/Q  (SLICE_R10C31C)
-Path End         : clk_generator/cycle_counter__i1/D  (SLICE_R10C31C)
+Path Begin       : clk_generator/cycle_counter__i1/Q  (SLICE_R8C31D)
+Path End         : clk_generator/cycle_counter__i1/D  (SLICE_R8C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -862,11 +869,11 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/cycle_counter__i1/CK->clk_generator/cycle_counter__i1/Q
-                                          SLICE_R10C31C      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+                                          SLICE_R8C31D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/cycle_counter[1]                               NET DELAY        0.712                  4.575  2       
-clk_generator/i201_2_lut/A->clk_generator/i201_2_lut/Z
-                                          SLICE_R10C31C      D1_TO_F1_DELAY   0.252                  4.827  1       
-clk_generator/divisor_1__N_73[1]                             NET DELAY        0.000                  4.827  1       
+clk_generator/i228_2_lut/A->clk_generator/i228_2_lut/Z
+                                          SLICE_R8C31D       D0_TO_F0_DELAY   0.252                  4.827  1       
+clk_generator/divisor_1__N_67[1]                             NET DELAY        0.000                  4.827  1       
 clk_generator/cycle_counter__i1/D                            ENDPOINT         0.000                  4.827  1       
 
 
@@ -890,8 +897,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31C)
-Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C31D)
+Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31D)
+Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C30A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -913,11 +920,11 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/clk_out/CK->clk_generator/clk_out/Q
-                                          SLICE_R9C31C       CLK_TO_Q1_DELAY  0.779                  3.863  1243    
-cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1243    
-clk_generator/i572_2_lut_3_lut/A->clk_generator/i572_2_lut_3_lut/Z
-                                          SLICE_R8C31D       D0_TO_F0_DELAY   0.252                  4.827  1       
-clk_generator/n9_2[0]                                        NET DELAY        0.000                  4.827  1       
+                                          SLICE_R9C31D       CLK_TO_Q1_DELAY  0.779                  3.863  1201    
+cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1201    
+clk_generator/i665_2_lut_3_lut/A->clk_generator/i665_2_lut_3_lut/Z
+                                          SLICE_R8C30A       D0_TO_F0_DELAY   0.252                  4.827  1       
+clk_generator/n9[0]                                          NET DELAY        0.000                  4.827  1       
 clk_generator/cycle_counter__i0/D                            ENDPOINT         0.000                  4.827  1       
 
 
@@ -941,8 +948,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31C)
-Path End         : clk_generator/clk_out/D  (SLICE_R9C31C)
+Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31D)
+Path End         : clk_generator/clk_out/D  (SLICE_R9C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -964,11 +971,11 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/clk_out/CK->clk_generator/clk_out/Q
-                                          SLICE_R9C31C       CLK_TO_Q1_DELAY  0.779                  3.863  1243    
-cic_decimator/clk_c                                          NET DELAY        0.882                  4.745  1243    
+                                          SLICE_R9C31D       CLK_TO_Q1_DELAY  0.779                  3.863  1201    
+cic_decimator/clk_c                                          NET DELAY        0.882                  4.745  1201    
 clk_generator/i1_2_lut/A->clk_generator/i1_2_lut/Z
-                                          SLICE_R9C31C       C1_TO_F1_DELAY   0.252                  4.997  1       
-clk_generator/n4437                                          NET DELAY        0.000                  4.997  1       
+                                          SLICE_R9C31D       C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/n4642                                          NET DELAY        0.000                  4.997  1       
 clk_generator/clk_out/D                                      ENDPOINT         0.000                  4.997  1       
 
 
@@ -992,8 +999,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i0/D  (SLICE_R11C31A)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i0/D  (SLICE_R10C31A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -1008,19 +1015,19 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i0/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY  0.779                  3.863  2       
 clk_generator/counter[0]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/S1
-                                          SLICE_R11C31A      C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/S1
+                                          SLICE_R10C31A      C1_TO_F1_DELAY   0.252                  4.997  1       
 clk_generator/n29[0]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i0/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i0/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1029,7 +1036,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i0/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1043,8 +1050,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i1/Q  (SLICE_R11C31B)
-Path End         : clk_generator/counter_97__i1/D  (SLICE_R11C31B)
+Path Begin       : clk_generator/counter_119__i1/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i1/D  (SLICE_R10C31B)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -1059,20 +1066,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i1/CK->clk_generator/counter_97__i1/Q
-                                          SLICE_R11C31B      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i1/CK->clk_generator/counter_119__i1/Q
+                                          SLICE_R10C31B      CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/counter[1]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_3/C0->clk_generator/counter_97_add_4_3/S0
-                                          SLICE_R11C31B      C0_TO_F0_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_3/C0->clk_generator/counter_119_add_4_3/S0
+                                          SLICE_R10C31B      C0_TO_F0_DELAY   0.252                  4.997  1       
 clk_generator/n29[1]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i1/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i1/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1081,7 +1088,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1096,8 +1103,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i2/Q  (SLICE_R11C31B)
-Path End         : clk_generator/counter_97__i2/D  (SLICE_R11C31B)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i2/D  (SLICE_R10C31B)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -1112,20 +1119,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i2/CK->clk_generator/counter_97__i2/Q
-                                          SLICE_R11C31B      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY  0.779                  3.863  2       
 clk_generator/counter[2]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_3/C1->clk_generator/counter_97_add_4_3/S1
-                                          SLICE_R11C31B      C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_3/C1->clk_generator/counter_119_add_4_3/S1
+                                          SLICE_R10C31B      C1_TO_F1_DELAY   0.252                  4.997  1       
 clk_generator/n29[2]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i2/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i2/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1134,7 +1141,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1149,8 +1156,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i3/Q  (SLICE_R11C31C)
-Path End         : clk_generator/counter_97__i3/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i3/Q  (SLICE_R10C31C)
+Path End         : clk_generator/counter_119__i3/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -1165,20 +1172,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i3/CK->clk_generator/counter_97__i3/Q
-                                          SLICE_R11C31C      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i3/CK->clk_generator/counter_119__i3/Q
+                                          SLICE_R10C31C      CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/counter[3]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_5/C0->clk_generator/counter_97_add_4_5/S0
-                                          SLICE_R11C31C      C0_TO_F0_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_5/C0->clk_generator/counter_119_add_4_5/S0
+                                          SLICE_R10C31C      C0_TO_F0_DELAY   0.252                  4.997  1       
 clk_generator/n29[3]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i3/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i3/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1187,7 +1194,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1202,8 +1209,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i4/Q  (SLICE_R11C31C)
-Path End         : clk_generator/counter_97__i4/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i4/Q  (SLICE_R10C31C)
+Path End         : clk_generator/counter_119__i4/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -1218,20 +1225,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i4/CK->clk_generator/counter_97__i4/Q
-                                          SLICE_R11C31C      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i4/CK->clk_generator/counter_119__i4/Q
+                                          SLICE_R10C31C      CLK_TO_Q1_DELAY  0.779                  3.863  2       
 clk_generator/counter[4]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_5/C1->clk_generator/counter_97_add_4_5/S1
-                                          SLICE_R11C31C      C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_5/C1->clk_generator/counter_119_add_4_5/S1
+                                          SLICE_R10C31C      C1_TO_F1_DELAY   0.252                  4.997  1       
 clk_generator/n29[4]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i4/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i4/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1240,7 +1247,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1255,8 +1262,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i5/Q  (SLICE_R11C31D)
-Path End         : clk_generator/counter_97__i5/D  (SLICE_R11C31D)
+Path Begin       : clk_generator/counter_119__i5/Q  (SLICE_R10C31D)
+Path End         : clk_generator/counter_119__i5/D  (SLICE_R10C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -1271,19 +1278,19 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i5/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i5/CK->clk_generator/counter_97__i5/Q
-                                          SLICE_R11C31D      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i5/CK->clk_generator/counter_119__i5/Q
+                                          SLICE_R10C31D      CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/counter[5]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_7/C0->clk_generator/counter_97_add_4_7/S0
-                                          SLICE_R11C31D      C0_TO_F0_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_7/C0->clk_generator/counter_119_add_4_7/S0
+                                          SLICE_R10C31D      C0_TO_F0_DELAY   0.252                  4.997  1       
 clk_generator/n29[5]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i5/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i5/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1292,7 +1299,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i5/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1306,15 +1313,15 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31C)
-Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R10C31C)
+Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31D)
+Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R8C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
-Delay Ratio      : 68.8% (route), 31.2% (logic)
+Delay Ratio      : 71.9% (route), 28.1% (logic)
 Clock Skew       : 0.000 ns 
 Hold Constraint  : 0.000 ns 
-Path Slack       : 3.351 ns  (Passed)
+Path Slack       : 3.714 ns  (Passed)
 
 
 Source Clock Path
@@ -1329,12 +1336,12 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/clk_out/CK->clk_generator/clk_out/Q
-                                          SLICE_R9C31C       CLK_TO_Q1_DELAY  0.779                  3.863  1243    
-cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1243    
-clk_generator/i650_2_lut_3_lut_3_lut/A->clk_generator/i650_2_lut_3_lut_3_lut/Z
-                                          SLICE_R9C31C       D0_TO_F0_DELAY   0.266                  4.841  1       
-clk_generator/n4508                                          NET DELAY        1.594                  6.435  1       
-clk_generator/cycle_counter__i1/SP                           ENDPOINT         0.000                  6.435  1       
+                                          SLICE_R9C31D       CLK_TO_Q1_DELAY  0.779                  3.863  1201    
+cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1201    
+clk_generator/i843_2_lut_3_lut_3_lut/A->clk_generator/i843_2_lut_3_lut_3_lut/Z
+                                          SLICE_R9C31D       D0_TO_F0_DELAY   0.266                  4.841  1       
+clk_generator/n4804                                          NET DELAY        1.957                  6.798  1       
+clk_generator/cycle_counter__i1/SP                           ENDPOINT         0.000                  6.798  1       
 
 
 Destination Clock Path
@@ -1348,9 +1355,9 @@ clk_generator/cycle_counter__i1/CK                           CLOCK PIN        0.
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 Required Time                                                                                       -3.084  
-Arrival Time                                                                                         6.435  
+Arrival Time                                                                                         6.798  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 3.351  
+Path Slack  (Passed)                                                                                 3.714  
 
 
 

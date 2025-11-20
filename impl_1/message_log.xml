@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+    </Task>
     <Task name="PAR">
         <Message>
             <ID>71003020</ID>
@@ -560,25 +567,7 @@
         <Message>
             <ID>35001747</ID>
             <Severity>256</Severity>
-            <Dynamic>\halfband/products[6]_res18</Dynamic>
-            <Dynamic>0</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res14</Dynamic>
-            <Dynamic>1</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res10</Dynamic>
-            <Dynamic>1</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res9</Dynamic>
+            <Dynamic>\halfband/sym_pairs[6]_res13</Dynamic>
             <Dynamic>1</Dynamic>
         </Message>
         <Message>
@@ -590,13 +579,31 @@
         <Message>
             <ID>35001747</ID>
             <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res12</Dynamic>
+            <Dynamic>\halfband/sym_pairs[6]_res10</Dynamic>
             <Dynamic>1</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>256</Severity>
-            <Dynamic>\generic_fir/products[15]_res32</Dynamic>
+            <Dynamic>\halfband/sym_pairs[6]_res5</Dynamic>
+            <Dynamic>1</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>\cic_decimator/comb_out_res4_res11</Dynamic>
+            <Dynamic>5</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>\halfband/products[6]_res36</Dynamic>
+            <Dynamic>0</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>\generic_fir/products[15]_res37</Dynamic>
             <Dynamic>2, 1</Dynamic>
         </Message>
         <Message>
@@ -607,7 +614,25 @@
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res9_ret0_i0_i2</Dynamic>
+            <Dynamic>\halfband/sym_pairs[6]_res7_ret1_i0_i2</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\halfband/sym_pairs[6]_res5_ret0_i0_i8</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\halfband/sym_pairs[6]_res5_ret0_i0_i4</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\halfband/sym_pairs[6]_res5_ret0_i0_i1</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
     </Task>

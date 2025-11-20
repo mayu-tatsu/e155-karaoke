@@ -18,7 +18,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>../../impl_1/e155_karaoke_impl_1.bin</File>
-			<FileTime>11/20/25 04:36:05</FileTime>
+			<FileTime>11/20/25 07:51:49</FileTime>
 			<JedecChecksum>0x194E</JedecChecksum>
 			<MemoryType>External SPI Flash Memory (SPI FLASH)</MemoryType>
 			<Operation>Erase,Program,Verify</Operation>

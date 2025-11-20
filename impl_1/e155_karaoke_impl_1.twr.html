@@ -46,7 +46,7 @@ if (a)
 <A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Thu Nov 20 06:07:05 2025
+Thu Nov 20 10:34:58 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -97,7 +97,7 @@ create_clock -name {clk_generator/clk_48mhz} -period 20.8333 [get_pins {clk_gene
 
 <A name="Timing_rpt_ConstraintCoverage"></A><B><U><big>1.2  Constraint Coverage</big></U></B>
 
-Constraint Coverage: 0.289488%
+Constraint Coverage: 0.292915%
 
 <A name="Timing_rpt_OverallSummary"></A><B><U><big>1.3  Overall Summary</big></U></B>
 
@@ -118,8 +118,8 @@ Clocked but unconstrained timing end points
           Listing 3 End Points          |           Type           
 -------------------------------------------------------------------
 clk_generator/cycle_counter__i0/SR      |           No arrival time
-clk_generator/clk_out/SR                |           No arrival time
 clk_generator/cycle_counter__i1/SR      |           No arrival time
+clk_generator/clk_out/SR                |           No arrival time
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
@@ -142,19 +142,19 @@ create_generated_clock,
 -------------------------------------------------------------------
      Listing 10 Start or End Points     |           Type           
 -------------------------------------------------------------------
-sck                                     |                     input
-reset_n                                 |                     input
 pdm_data                                |                     input
+reset_n                                 |                     input
+sck                                     |                     input
 sdi                                     |                     input
 audio_sample[14]                        |                    output
 audio_sample[15]                        |                    output
 audio_sample[13]                        |                    output
-clk                                     |                    output
-audio_sample[0]                         |                    output
-audio_valid                             |                    output
+audio_sample[2]                         |                    output
+audio_sample[3]                         |                    output
+audio_sample[4]                         |                    output
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        23
+Number of I/O ports without constraint  |                        24
                                         |                          
 -------------------------------------------------------------------
 
@@ -200,18 +200,18 @@ Clock Domain Crossing
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-clk_generator/cycle_counter__i1/SP       |    7.629 ns 
-clk_generator/counter_97__i0/SR          |    9.981 ns 
-{clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}              
-                                         |    9.981 ns 
-{clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}              
-                                         |    9.981 ns 
-clk_generator/counter_97__i5/SR          |    9.981 ns 
-clk_generator/cycle_counter__i0/D        |   10.272 ns 
-clk_generator/clk_out/D                  |   11.184 ns 
-clk_generator/counter_97__i5/D           |   14.637 ns 
-clk_generator/counter_97__i4/D           |   14.914 ns 
-clk_generator/counter_97__i3/D           |   15.191 ns 
+clk_generator/cycle_counter__i1/SP       |    6.717 ns 
+clk_generator/counter_119__i0/SR         |    9.664 ns 
+{clk_generator/counter_119__i1/SR   clk_generator/counter_119__i2/SR}              
+                                         |    9.664 ns 
+{clk_generator/counter_119__i3/SR   clk_generator/counter_119__i4/SR}              
+                                         |    9.664 ns 
+clk_generator/counter_119__i5/SR         |    9.664 ns 
+clk_generator/cycle_counter__i0/D        |   10.550 ns 
+clk_generator/clk_out/D                  |   10.867 ns 
+clk_generator/counter_119__i5/D          |   14.637 ns 
+clk_generator/counter_119__i4/D          |   14.914 ns 
+clk_generator/counter_119__i3/D          |   15.191 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -233,15 +233,15 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R10C31C)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R8C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 79.0% (route), 21.0% (logic)
+Delay Ratio      : 80.3% (route), 19.7% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 7.629 ns  (Passed)
+Path Slack       : 6.717 ns  (Passed)
 
 
 Source Clock Path
@@ -257,8 +257,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -294,7 +294,8 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
@@ -304,27 +305,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/Q",
-        "phy_name":"clk_generator.SLICE_2866/Q0"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/SP",
-        "phy_name":"clk_generator.SLICE_3057/CE"
+        "phy_name":"clk_generator.SLICE_2836/CE"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/cycle_counter__i0/CK",
-            "phy_name":"clk_generator.SLICE_2866/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/cycle_counter__i0/Q",
-            "phy_name":"clk_generator.SLICE_2866/Q0"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -333,86 +334,86 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/cycle_counter[0]",
-            "phy_name":"clk_generator.cycle_counter[0]"
+            "log_name":"clk_generator/counter[2]",
+            "phy_name":"clk_generator.counter[2]"
         },
-        "arrive":9.240,
-        "delay":2.353
+        "arrive":9.557,
+        "delay":2.670
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i3_4_lut/C",
-            "phy_name":"clk_generator.SLICE_3057/D0"
+            "log_name":"clk_generator/i9849_3_lut/C",
+            "phy_name":"clk_generator.SLICE_3037/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i3_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F0"
+            "log_name":"clk_generator/i9849_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3037/F0"
         },
-        "arrive":9.689,
+        "arrive":10.006,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9",
-            "phy_name":"clk_generator.n9"
+            "log_name":"clk_generator/n21697",
+            "phy_name":"clk_generator.n21697"
         },
-        "arrive":11.857,
+        "arrive":12.174,
         "delay":2.168
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i5_4_lut/A",
-            "phy_name":"clk_generator.SLICE_3049/D1"
+            "log_name":"clk_generator/i1_4_lut/C",
+            "phy_name":"clk_generator.SLICE_3030/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i5_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3049/F1"
+            "log_name":"clk_generator/i1_4_lut/Z",
+            "phy_name":"clk_generator.SLICE_3030/F1"
         },
-        "arrive":12.306,
+        "arrive":12.623,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4434",
-            "phy_name":"clk_generator.n4434"
+            "log_name":"clk_generator/n4637",
+            "phy_name":"clk_generator.n4637"
         },
-        "arrive":14.738,
+        "arrive":15.055,
         "delay":2.432
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i650_2_lut_3_lut_3_lut/B",
-            "phy_name":"clk_generator.SLICE_3053/C0"
+            "log_name":"clk_generator/i843_2_lut_3_lut_3_lut/B",
+            "phy_name":"clk_generator.SLICE_3034/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i650_2_lut_3_lut_3_lut/Z",
-            "phy_name":"clk_generator.SLICE_3053/F0"
+            "log_name":"clk_generator/i843_2_lut_3_lut_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3034/F0"
         },
-        "arrive":15.187,
+        "arrive":15.504,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4508",
-            "phy_name":"clk_generator.n4508"
+            "log_name":"clk_generator/n4804",
+            "phy_name":"clk_generator.n4804"
         },
-        "arrive":18.505,
-        "delay":3.318
+        "arrive":19.417,
+        "delay":3.913
     },
     {
         "type":"site_delay",
@@ -426,7 +427,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":18.505,
+        "arrive":19.417,
         "delay":0.000
     }
     ]
@@ -435,19 +436,19 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4434                                          NET DELAY           2.432                 14.738  4       
-clk_generator/i650_2_lut_3_lut_3_lut/B->clk_generator/i650_2_lut_3_lut_3_lut/Z
-                                          SLICE_R9C31C       C0_TO_F0_DELAY      0.449                 15.187  1       
-clk_generator/n4508                                          NET DELAY           3.318                 18.505  1       
-clk_generator/cycle_counter__i1/SP                           ENDPOINT            0.000                 18.505  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.449                 12.623  4       
+clk_generator/n4637                                          NET DELAY           2.432                 15.055  4       
+clk_generator/i843_2_lut_3_lut_3_lut/B->clk_generator/i843_2_lut_3_lut_3_lut/Z
+                                          SLICE_R9C31D       C0_TO_F0_DELAY      0.449                 15.504  1       
+clk_generator/n4804                                          NET DELAY           3.913                 19.417  1       
+clk_generator/cycle_counter__i1/SP                           ENDPOINT            0.000                 19.417  1       
 
 
 Destination Clock Path
@@ -464,7 +465,7 @@ Destination Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/CK",
-        "phy_name":"clk_generator.SLICE_3057/CLK"
+        "phy_name":"clk_generator.SLICE_2836/CLK"
     },
     "path_sections":[
     {
@@ -521,24 +522,24 @@ clk_generator/cycle_counter__i1/CK                           CLOCK PIN          
                                                              Setup time       -(0.198)                 26.134  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          26.134  
-Arrival Time                                                                                        -(18.504)  
+Arrival Time                                                                                        -(19.416)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    7.629  
+Path Slack  (Passed)                                                                                    6.717  
 
 
 
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/counter_97__i0/SR  (SLICE_R11C31A)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i0/SR  (SLICE_R10C31A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -554,8 +555,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -591,7 +592,8 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
@@ -601,27 +603,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/Q",
-        "phy_name":"clk_generator.SLICE_2866/Q0"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/SR",
-        "phy_name":"clk_generator.SLICE_1358/LSR"
+        "log_name":"clk_generator/counter_119__i0/SR",
+        "phy_name":"clk_generator.SLICE_1334/LSR"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/cycle_counter__i0/CK",
-            "phy_name":"clk_generator.SLICE_2866/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/cycle_counter__i0/Q",
-            "phy_name":"clk_generator.SLICE_2866/Q0"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -630,85 +632,85 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/cycle_counter[0]",
-            "phy_name":"clk_generator.cycle_counter[0]"
+            "log_name":"clk_generator/counter[2]",
+            "phy_name":"clk_generator.counter[2]"
         },
-        "arrive":9.240,
-        "delay":2.353
+        "arrive":9.557,
+        "delay":2.670
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i3_4_lut/C",
-            "phy_name":"clk_generator.SLICE_3057/D0"
+            "log_name":"clk_generator/i9849_3_lut/C",
+            "phy_name":"clk_generator.SLICE_3037/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i3_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F0"
+            "log_name":"clk_generator/i9849_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3037/F0"
         },
-        "arrive":9.689,
+        "arrive":10.006,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9",
-            "phy_name":"clk_generator.n9"
+            "log_name":"clk_generator/n21697",
+            "phy_name":"clk_generator.n21697"
         },
-        "arrive":11.857,
+        "arrive":12.174,
         "delay":2.168
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i5_4_lut/A",
-            "phy_name":"clk_generator.SLICE_3049/D1"
+            "log_name":"clk_generator/i1_4_lut/C",
+            "phy_name":"clk_generator.SLICE_3030/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i5_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3049/F1"
+            "log_name":"clk_generator/i1_4_lut/Z",
+            "phy_name":"clk_generator.SLICE_3030/F1"
         },
-        "arrive":12.333,
+        "arrive":12.650,
         "delay":0.476
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4434",
-            "phy_name":"clk_generator.n4434"
+            "log_name":"clk_generator/n4637",
+            "phy_name":"clk_generator.n4637"
         },
-        "arrive":12.637,
+        "arrive":12.954,
         "delay":0.304
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i15367_2_lut/A",
-            "phy_name":"clk_generator.SLICE_3048/C0"
+            "log_name":"clk_generator/i15606_2_lut/A",
+            "phy_name":"clk_generator.SLICE_3029/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i15367_2_lut/Z",
-            "phy_name":"clk_generator.SLICE_3048/F0"
+            "log_name":"clk_generator/i15606_2_lut/Z",
+            "phy_name":"clk_generator.SLICE_3029/F0"
         },
-        "arrive":13.086,
+        "arrive":13.403,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n261",
-            "phy_name":"clk_generator.n261"
+            "log_name":"clk_generator/n268",
+            "phy_name":"clk_generator.n268"
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":2.736
     },
     {
@@ -723,7 +725,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":0.000
     }
     ]
@@ -732,19 +734,19 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-clk_generator/counter_97__i0/SR                              ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+clk_generator/counter_119__i0/SR                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -760,8 +762,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/CK",
-        "phy_name":"clk_generator.SLICE_1358/CLK"
+        "log_name":"clk_generator/counter_119__i0/CK",
+        "phy_name":"clk_generator.SLICE_1334/CLK"
     },
     "path_sections":[
     {
@@ -813,29 +815,29 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN           0.000                 26.332  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : {clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}  (SLICE_R11C31B)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : {clk_generator/counter_119__i1/SR   clk_generator/counter_119__i2/SR}  (SLICE_R10C31B)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -851,8 +853,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -888,7 +890,8 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
@@ -898,27 +901,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/Q",
-        "phy_name":"clk_generator.SLICE_2866/Q0"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"{clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}",
-        "phy_name":"clk_generator.SLICE_1357/LSR"
+        "log_name":"{clk_generator/counter_119__i1/SR   clk_generator/counter_119__i2/SR}",
+        "phy_name":"clk_generator.SLICE_1333/LSR"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/cycle_counter__i0/CK",
-            "phy_name":"clk_generator.SLICE_2866/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/cycle_counter__i0/Q",
-            "phy_name":"clk_generator.SLICE_2866/Q0"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -927,85 +930,85 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/cycle_counter[0]",
-            "phy_name":"clk_generator.cycle_counter[0]"
+            "log_name":"clk_generator/counter[2]",
+            "phy_name":"clk_generator.counter[2]"
         },
-        "arrive":9.240,
-        "delay":2.353
+        "arrive":9.557,
+        "delay":2.670
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i3_4_lut/C",
-            "phy_name":"clk_generator.SLICE_3057/D0"
+            "log_name":"clk_generator/i9849_3_lut/C",
+            "phy_name":"clk_generator.SLICE_3037/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i3_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F0"
+            "log_name":"clk_generator/i9849_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3037/F0"
         },
-        "arrive":9.689,
+        "arrive":10.006,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9",
-            "phy_name":"clk_generator.n9"
+            "log_name":"clk_generator/n21697",
+            "phy_name":"clk_generator.n21697"
         },
-        "arrive":11.857,
+        "arrive":12.174,
         "delay":2.168
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i5_4_lut/A",
-            "phy_name":"clk_generator.SLICE_3049/D1"
+            "log_name":"clk_generator/i1_4_lut/C",
+            "phy_name":"clk_generator.SLICE_3030/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i5_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3049/F1"
+            "log_name":"clk_generator/i1_4_lut/Z",
+            "phy_name":"clk_generator.SLICE_3030/F1"
         },
-        "arrive":12.333,
+        "arrive":12.650,
         "delay":0.476
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4434",
-            "phy_name":"clk_generator.n4434"
+            "log_name":"clk_generator/n4637",
+            "phy_name":"clk_generator.n4637"
         },
-        "arrive":12.637,
+        "arrive":12.954,
         "delay":0.304
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i15367_2_lut/A",
-            "phy_name":"clk_generator.SLICE_3048/C0"
+            "log_name":"clk_generator/i15606_2_lut/A",
+            "phy_name":"clk_generator.SLICE_3029/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i15367_2_lut/Z",
-            "phy_name":"clk_generator.SLICE_3048/F0"
+            "log_name":"clk_generator/i15606_2_lut/Z",
+            "phy_name":"clk_generator.SLICE_3029/F0"
         },
-        "arrive":13.086,
+        "arrive":13.403,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n261",
-            "phy_name":"clk_generator.n261"
+            "log_name":"clk_generator/n268",
+            "phy_name":"clk_generator.n268"
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":2.736
     },
     {
@@ -1020,7 +1023,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":0.000
     }
     ]
@@ -1029,20 +1032,20 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-{clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}
-                                                             ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+{clk_generator/counter_119__i1/SR   clk_generator/counter_119__i2/SR}
+                                                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -1058,8 +1061,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i1/CK",
-        "phy_name":"clk_generator.SLICE_1357/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -1111,30 +1114,30 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : {clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : {clk_generator/counter_119__i3/SR   clk_generator/counter_119__i4/SR}  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -1150,8 +1153,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -1187,7 +1190,8 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
@@ -1197,27 +1201,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/Q",
-        "phy_name":"clk_generator.SLICE_2866/Q0"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"{clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}",
-        "phy_name":"clk_generator.SLICE_1356/LSR"
+        "log_name":"{clk_generator/counter_119__i3/SR   clk_generator/counter_119__i4/SR}",
+        "phy_name":"clk_generator.SLICE_1332/LSR"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/cycle_counter__i0/CK",
-            "phy_name":"clk_generator.SLICE_2866/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/cycle_counter__i0/Q",
-            "phy_name":"clk_generator.SLICE_2866/Q0"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -1226,85 +1230,85 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/cycle_counter[0]",
-            "phy_name":"clk_generator.cycle_counter[0]"
+            "log_name":"clk_generator/counter[2]",
+            "phy_name":"clk_generator.counter[2]"
         },
-        "arrive":9.240,
-        "delay":2.353
+        "arrive":9.557,
+        "delay":2.670
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i3_4_lut/C",
-            "phy_name":"clk_generator.SLICE_3057/D0"
+            "log_name":"clk_generator/i9849_3_lut/C",
+            "phy_name":"clk_generator.SLICE_3037/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i3_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F0"
+            "log_name":"clk_generator/i9849_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3037/F0"
         },
-        "arrive":9.689,
+        "arrive":10.006,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9",
-            "phy_name":"clk_generator.n9"
+            "log_name":"clk_generator/n21697",
+            "phy_name":"clk_generator.n21697"
         },
-        "arrive":11.857,
+        "arrive":12.174,
         "delay":2.168
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i5_4_lut/A",
-            "phy_name":"clk_generator.SLICE_3049/D1"
+            "log_name":"clk_generator/i1_4_lut/C",
+            "phy_name":"clk_generator.SLICE_3030/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i5_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3049/F1"
+            "log_name":"clk_generator/i1_4_lut/Z",
+            "phy_name":"clk_generator.SLICE_3030/F1"
         },
-        "arrive":12.333,
+        "arrive":12.650,
         "delay":0.476
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4434",
-            "phy_name":"clk_generator.n4434"
+            "log_name":"clk_generator/n4637",
+            "phy_name":"clk_generator.n4637"
         },
-        "arrive":12.637,
+        "arrive":12.954,
         "delay":0.304
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i15367_2_lut/A",
-            "phy_name":"clk_generator.SLICE_3048/C0"
+            "log_name":"clk_generator/i15606_2_lut/A",
+            "phy_name":"clk_generator.SLICE_3029/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i15367_2_lut/Z",
-            "phy_name":"clk_generator.SLICE_3048/F0"
+            "log_name":"clk_generator/i15606_2_lut/Z",
+            "phy_name":"clk_generator.SLICE_3029/F0"
         },
-        "arrive":13.086,
+        "arrive":13.403,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n261",
-            "phy_name":"clk_generator.n261"
+            "log_name":"clk_generator/n268",
+            "phy_name":"clk_generator.n268"
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":2.736
     },
     {
@@ -1319,7 +1323,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":0.000
     }
     ]
@@ -1328,20 +1332,20 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-{clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}
-                                                             ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+{clk_generator/counter_119__i3/SR   clk_generator/counter_119__i4/SR}
+                                                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -1357,8 +1361,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/CK",
-        "phy_name":"clk_generator.SLICE_1356/CLK"
+        "log_name":"clk_generator/counter_119__i3/CK",
+        "phy_name":"clk_generator.SLICE_1332/CLK"
     },
     "path_sections":[
     {
@@ -1410,30 +1414,30 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/counter_97__i5/SR  (SLICE_R11C31D)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i5/SR  (SLICE_R10C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.2% (route), 26.8% (logic)
+Delay Ratio      : 74.0% (route), 26.0% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 9.981 ns  (Passed)
+Path Slack       : 9.664 ns  (Passed)
 
 
 Source Clock Path
@@ -1449,8 +1453,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -1486,7 +1490,8 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
@@ -1496,27 +1501,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/Q",
-        "phy_name":"clk_generator.SLICE_2866/Q0"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/SR",
-        "phy_name":"clk_generator.SLICE_1355/LSR"
+        "log_name":"clk_generator/counter_119__i5/SR",
+        "phy_name":"clk_generator.SLICE_1331/LSR"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/cycle_counter__i0/CK",
-            "phy_name":"clk_generator.SLICE_2866/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/cycle_counter__i0/Q",
-            "phy_name":"clk_generator.SLICE_2866/Q0"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -1525,85 +1530,85 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/cycle_counter[0]",
-            "phy_name":"clk_generator.cycle_counter[0]"
+            "log_name":"clk_generator/counter[2]",
+            "phy_name":"clk_generator.counter[2]"
         },
-        "arrive":9.240,
-        "delay":2.353
+        "arrive":9.557,
+        "delay":2.670
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i3_4_lut/C",
-            "phy_name":"clk_generator.SLICE_3057/D0"
+            "log_name":"clk_generator/i9849_3_lut/C",
+            "phy_name":"clk_generator.SLICE_3037/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i3_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F0"
+            "log_name":"clk_generator/i9849_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3037/F0"
         },
-        "arrive":9.689,
+        "arrive":10.006,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9",
-            "phy_name":"clk_generator.n9"
+            "log_name":"clk_generator/n21697",
+            "phy_name":"clk_generator.n21697"
         },
-        "arrive":11.857,
+        "arrive":12.174,
         "delay":2.168
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i5_4_lut/A",
-            "phy_name":"clk_generator.SLICE_3049/D1"
+            "log_name":"clk_generator/i1_4_lut/C",
+            "phy_name":"clk_generator.SLICE_3030/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i5_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3049/F1"
+            "log_name":"clk_generator/i1_4_lut/Z",
+            "phy_name":"clk_generator.SLICE_3030/F1"
         },
-        "arrive":12.333,
+        "arrive":12.650,
         "delay":0.476
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4434",
-            "phy_name":"clk_generator.n4434"
+            "log_name":"clk_generator/n4637",
+            "phy_name":"clk_generator.n4637"
         },
-        "arrive":12.637,
+        "arrive":12.954,
         "delay":0.304
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i15367_2_lut/A",
-            "phy_name":"clk_generator.SLICE_3048/C0"
+            "log_name":"clk_generator/i15606_2_lut/A",
+            "phy_name":"clk_generator.SLICE_3029/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i15367_2_lut/Z",
-            "phy_name":"clk_generator.SLICE_3048/F0"
+            "log_name":"clk_generator/i15606_2_lut/Z",
+            "phy_name":"clk_generator.SLICE_3029/F0"
         },
-        "arrive":13.086,
+        "arrive":13.403,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n261",
-            "phy_name":"clk_generator.n261"
+            "log_name":"clk_generator/n268",
+            "phy_name":"clk_generator.n268"
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":2.736
     },
     {
@@ -1618,7 +1623,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":15.822,
+        "arrive":16.139,
         "delay":0.000
     }
     ]
@@ -1627,19 +1632,19 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
-clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
-                                          SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
-clk_generator/counter_97__i5/SR                              ENDPOINT            0.000                 15.822  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.476                 12.650  4       
+clk_generator/n4637                                          NET DELAY           0.304                 12.954  4       
+clk_generator/i15606_2_lut/A->clk_generator/i15606_2_lut/Z
+                                          SLICE_R9C31B       C0_TO_F0_DELAY      0.449                 13.403  4       
+clk_generator/n268                                           NET DELAY           2.736                 16.139  4       
+clk_generator/counter_119__i5/SR                             ENDPOINT            0.000                 16.139  1       
 
 
 Destination Clock Path
@@ -1655,8 +1660,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/CK",
-        "phy_name":"clk_generator.SLICE_1355/CLK"
+        "log_name":"clk_generator/counter_119__i5/CK",
+        "phy_name":"clk_generator.SLICE_1331/CLK"
     },
     "path_sections":[
     {
@@ -1708,29 +1713,29 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT          0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                 26.332  8       
-clk_generator/counter_97__i5/CK                              CLOCK PIN           0.000                 26.332  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN           0.000                 26.332  1       
                                                              Uncertainty      -(0.000)                 26.332  
                                                              Setup time       -(0.529)                 25.803  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          25.803  
-Arrival Time                                                                                        -(15.821)  
+Arrival Time                                                                                        -(16.138)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                    9.981  
+Path Slack  (Passed)                                                                                    9.664  
 
 
 
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C31D)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C30A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 73.3% (route), 26.7% (logic)
+Delay Ratio      : 72.6% (route), 27.4% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 10.272 ns  (Passed)
+Path Slack       : 10.550 ns  (Passed)
 
 
 Source Clock Path
@@ -1746,8 +1751,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -1783,7 +1788,8 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
@@ -1793,27 +1799,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/Q",
-        "phy_name":"clk_generator.SLICE_2866/Q0"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i0/D",
-        "phy_name":"clk_generator.SLICE_2866/DI0"
+        "phy_name":"clk_generator.SLICE_2834/DI0"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/cycle_counter__i0/CK",
-            "phy_name":"clk_generator.SLICE_2866/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/cycle_counter__i0/Q",
-            "phy_name":"clk_generator.SLICE_2866/Q0"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -1822,85 +1828,85 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/cycle_counter[0]",
-            "phy_name":"clk_generator.cycle_counter[0]"
+            "log_name":"clk_generator/counter[2]",
+            "phy_name":"clk_generator.counter[2]"
         },
-        "arrive":9.240,
-        "delay":2.353
+        "arrive":9.557,
+        "delay":2.670
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i3_4_lut/C",
-            "phy_name":"clk_generator.SLICE_3057/D0"
+            "log_name":"clk_generator/i9849_3_lut/C",
+            "phy_name":"clk_generator.SLICE_3037/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i3_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F0"
+            "log_name":"clk_generator/i9849_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3037/F0"
         },
-        "arrive":9.689,
+        "arrive":10.006,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9",
-            "phy_name":"clk_generator.n9"
+            "log_name":"clk_generator/n21697",
+            "phy_name":"clk_generator.n21697"
         },
-        "arrive":11.857,
+        "arrive":12.174,
         "delay":2.168
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i5_4_lut/A",
-            "phy_name":"clk_generator.SLICE_3049/D1"
+            "log_name":"clk_generator/i1_4_lut/C",
+            "phy_name":"clk_generator.SLICE_3030/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i5_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3049/F1"
+            "log_name":"clk_generator/i1_4_lut/Z",
+            "phy_name":"clk_generator.SLICE_3030/F1"
         },
-        "arrive":12.306,
+        "arrive":12.623,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4434",
-            "phy_name":"clk_generator.n4434"
+            "log_name":"clk_generator/n4637",
+            "phy_name":"clk_generator.n4637"
         },
-        "arrive":15.386,
-        "delay":3.080
+        "arrive":15.108,
+        "delay":2.485
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i572_2_lut_3_lut/B",
-            "phy_name":"clk_generator.SLICE_2866/B0"
+            "log_name":"clk_generator/i665_2_lut_3_lut/B",
+            "phy_name":"clk_generator.SLICE_2834/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i572_2_lut_3_lut/Z",
-            "phy_name":"clk_generator.SLICE_2866/F0"
+            "log_name":"clk_generator/i665_2_lut_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_2834/F0"
         },
-        "arrive":15.862,
+        "arrive":15.584,
         "delay":0.476
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9_2[0]",
-            "phy_name":"clk_generator.n9_2[0]"
+            "log_name":"clk_generator/n9[0]",
+            "phy_name":"clk_generator.n9[0]"
         },
-        "arrive":15.862,
+        "arrive":15.584,
         "delay":0.000
     },
     {
@@ -1915,7 +1921,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":15.862,
+        "arrive":15.584,
         "delay":0.000
     }
     ]
@@ -1924,19 +1930,19 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4434                                          NET DELAY           3.080                 15.386  4       
-clk_generator/i572_2_lut_3_lut/B->clk_generator/i572_2_lut_3_lut/Z
-                                          SLICE_R8C31D       B0_TO_F0_DELAY      0.476                 15.862  1       
-clk_generator/n9_2[0]                                        NET DELAY           0.000                 15.862  1       
-clk_generator/cycle_counter__i0/D                            ENDPOINT            0.000                 15.862  1       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.449                 12.623  4       
+clk_generator/n4637                                          NET DELAY           2.485                 15.108  4       
+clk_generator/i665_2_lut_3_lut/B->clk_generator/i665_2_lut_3_lut/Z
+                                          SLICE_R8C30A       B0_TO_F0_DELAY      0.476                 15.584  1       
+clk_generator/n9[0]                                          NET DELAY           0.000                 15.584  1       
+clk_generator/cycle_counter__i0/D                            ENDPOINT            0.000                 15.584  1       
 
 
 Destination Clock Path
@@ -1953,7 +1959,7 @@ Destination Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "phy_name":"clk_generator.SLICE_2834/CLK"
     },
     "path_sections":[
     {
@@ -2010,24 +2016,24 @@ clk_generator/cycle_counter__i0/CK                           CLOCK PIN          
                                                              Setup time       -(0.198)                 26.134  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          26.134  
-Arrival Time                                                                                        -(15.861)  
+Arrival Time                                                                                        -(15.583)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   10.272  
+Path Slack  (Passed)                                                                                   10.550  
 
 
 
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/cycle_counter__i0/Q  (SLICE_R8C31D)
-Path End         : clk_generator/clk_out/D  (SLICE_R9C31C)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/clk_out/D  (SLICE_R9C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 4
-Delay Ratio      : 70.8% (route), 29.2% (logic)
+Delay Ratio      : 71.7% (route), 28.3% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 11.184 ns  (Passed)
+Path Slack       : 10.867 ns  (Passed)
 
 
 Source Clock Path
@@ -2043,8 +2049,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -2080,7 +2086,8 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY           5.499                  5.499  8       
-clk_generator/cycle_counter__i0/CK                           CLOCK PIN           0.000                  5.499  1       
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
@@ -2090,27 +2097,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/cycle_counter__i0/Q",
-        "phy_name":"clk_generator.SLICE_2866/Q0"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/D",
-        "phy_name":"clk_generator.SLICE_3053/DI1"
+        "phy_name":"clk_generator.SLICE_3034/DI1"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/cycle_counter__i0/CK",
-            "phy_name":"clk_generator.SLICE_2866/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/cycle_counter__i0/Q",
-            "phy_name":"clk_generator.SLICE_2866/Q0"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -2119,60 +2126,60 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/cycle_counter[0]",
-            "phy_name":"clk_generator.cycle_counter[0]"
+            "log_name":"clk_generator/counter[2]",
+            "phy_name":"clk_generator.counter[2]"
         },
-        "arrive":9.240,
-        "delay":2.353
+        "arrive":9.557,
+        "delay":2.670
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i3_4_lut/C",
-            "phy_name":"clk_generator.SLICE_3057/D0"
+            "log_name":"clk_generator/i9849_3_lut/C",
+            "phy_name":"clk_generator.SLICE_3037/B0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i3_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F0"
+            "log_name":"clk_generator/i9849_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3037/F0"
         },
-        "arrive":9.689,
+        "arrive":10.006,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9",
-            "phy_name":"clk_generator.n9"
+            "log_name":"clk_generator/n21697",
+            "phy_name":"clk_generator.n21697"
         },
-        "arrive":11.857,
+        "arrive":12.174,
         "delay":2.168
     },
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i5_4_lut/A",
-            "phy_name":"clk_generator.SLICE_3049/D1"
+            "log_name":"clk_generator/i1_4_lut/C",
+            "phy_name":"clk_generator.SLICE_3030/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i5_4_lut/Z",
-            "phy_name":"clk_generator.SLICE_3049/F1"
+            "log_name":"clk_generator/i1_4_lut/Z",
+            "phy_name":"clk_generator.SLICE_3030/F1"
         },
-        "arrive":12.306,
+        "arrive":12.623,
         "delay":0.449
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4434",
-            "phy_name":"clk_generator.n4434"
+            "log_name":"clk_generator/n4637",
+            "phy_name":"clk_generator.n4637"
         },
-        "arrive":14.474,
+        "arrive":14.791,
         "delay":2.168
     },
     {
@@ -2180,24 +2187,24 @@ Data Path
         "pin0":
         {
             "log_name":"clk_generator/i1_2_lut/B",
-            "phy_name":"clk_generator.SLICE_3053/D1"
+            "phy_name":"clk_generator.SLICE_3034/D1"
         },
         "pin1":
         {
             "log_name":"clk_generator/i1_2_lut/Z",
-            "phy_name":"clk_generator.SLICE_3053/F1"
+            "phy_name":"clk_generator.SLICE_3034/F1"
         },
-        "arrive":14.950,
+        "arrive":15.267,
         "delay":0.476
     },
     {
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4437",
-            "phy_name":"clk_generator.n4437"
+            "log_name":"clk_generator/n4642",
+            "phy_name":"clk_generator.n4642"
         },
-        "arrive":14.950,
+        "arrive":15.267,
         "delay":0.000
     },
     {
@@ -2212,7 +2219,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":14.950,
+        "arrive":15.267,
         "delay":0.000
     }
     ]
@@ -2221,19 +2228,19 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-clk_generator/cycle_counter__i0/CK->clk_generator/cycle_counter__i0/Q
-                                          SLICE_R8C31D       CLK_TO_Q0_DELAY     1.388                  6.887  3       
-clk_generator/cycle_counter[0]                               NET DELAY           2.353                  9.240  3       
-clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
-                                          SLICE_R10C31C      D0_TO_F0_DELAY      0.449                  9.689  1       
-clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
-clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
-                                          SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4434                                          NET DELAY           2.168                 14.474  4       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY     1.388                  6.887  2       
+clk_generator/counter[2]                                     NET DELAY           2.670                  9.557  2       
+clk_generator/i9849_3_lut/C->clk_generator/i9849_3_lut/Z
+                                          SLICE_R9C31C       B0_TO_F0_DELAY      0.449                 10.006  1       
+clk_generator/n21697                                         NET DELAY           2.168                 12.174  1       
+clk_generator/i1_4_lut/C->clk_generator/i1_4_lut/Z
+                                          SLICE_R9C31A       D1_TO_F1_DELAY      0.449                 12.623  4       
+clk_generator/n4637                                          NET DELAY           2.168                 14.791  4       
 clk_generator/i1_2_lut/B->clk_generator/i1_2_lut/Z
-                                          SLICE_R9C31C       D1_TO_F1_DELAY      0.476                 14.950  1       
-clk_generator/n4437                                          NET DELAY           0.000                 14.950  1       
-clk_generator/clk_out/D                                      ENDPOINT            0.000                 14.950  1       
+                                          SLICE_R9C31D       D1_TO_F1_DELAY      0.476                 15.267  1       
+clk_generator/n4642                                          NET DELAY           0.000                 15.267  1       
+clk_generator/clk_out/D                                      ENDPOINT            0.000                 15.267  1       
 
 
 Destination Clock Path
@@ -2250,7 +2257,7 @@ Destination Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/CK",
-        "phy_name":"clk_generator.SLICE_3053/CLK"
+        "phy_name":"clk_generator.SLICE_3034/CLK"
     },
     "path_sections":[
     {
@@ -2307,17 +2314,17 @@ clk_generator/clk_out/CK                                     CLOCK PIN          
                                                              Setup time       -(0.198)                 26.134  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                          26.134  
-Arrival Time                                                                                        -(14.949)  
+Arrival Time                                                                                        -(15.266)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   11.184  
+Path Slack  (Passed)                                                                                   10.867  
 
 
 
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i5/D  (SLICE_R11C31D)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i5/D  (SLICE_R10C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 7
@@ -2340,8 +2347,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/CK",
-        "phy_name":"clk_generator.SLICE_1358/CLK"
+        "log_name":"clk_generator/counter_119__i0/CK",
+        "phy_name":"clk_generator.SLICE_1334/CLK"
     },
     "path_sections":[
     {
@@ -2377,7 +2384,7 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                  5.499  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN               0.000                  5.499  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
@@ -2387,27 +2394,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/Q",
-        "phy_name":"clk_generator.SLICE_1358/Q1"
+        "log_name":"clk_generator/counter_119__i0/Q",
+        "phy_name":"clk_generator.SLICE_1334/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/D",
-        "phy_name":"clk_generator.SLICE_1355/DI0"
+        "log_name":"clk_generator/counter_119__i5/D",
+        "phy_name":"clk_generator.SLICE_1331/DI0"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i0/CK",
-            "phy_name":"clk_generator.SLICE_1358/CLK"
+            "log_name":"clk_generator/counter_119__i0/CK",
+            "phy_name":"clk_generator.SLICE_1334/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i0/Q",
-            "phy_name":"clk_generator.SLICE_1358/Q1"
+            "log_name":"clk_generator/counter_119__i0/Q",
+            "phy_name":"clk_generator.SLICE_1334/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -2426,13 +2433,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/C1",
-            "phy_name":"clk_generator.SLICE_1358/C1"
+            "log_name":"clk_generator/counter_119_add_4_1/C1",
+            "phy_name":"clk_generator.SLICE_1334/C1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/CO1",
-            "phy_name":"clk_generator.SLICE_1358/COUT1"
+            "log_name":"clk_generator/counter_119_add_4_1/CO1",
+            "phy_name":"clk_generator.SLICE_1334/COUT1"
         },
         "arrive":9.252,
         "delay":0.343
@@ -2441,8 +2448,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n6900",
-            "phy_name":"clk_generator.n6900"
+            "log_name":"clk_generator/n7193",
+            "phy_name":"clk_generator.n7193"
         },
         "arrive":9.252,
         "delay":0.000
@@ -2451,13 +2458,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CI0",
-            "phy_name":"clk_generator.SLICE_1357/CIN0"
+            "log_name":"clk_generator/counter_119_add_4_3/CI0",
+            "phy_name":"clk_generator.SLICE_1333/CIN0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CO0",
-            "phy_name":"clk_generator.SLICE_1357/COUT0"
+            "log_name":"clk_generator/counter_119_add_4_3/CO0",
+            "phy_name":"clk_generator.SLICE_1333/COUT0"
         },
         "arrive":9.529,
         "delay":0.277
@@ -2466,8 +2473,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n47443",
-            "phy_name":"clk_generator.n47443"
+            "log_name":"clk_generator/n47595",
+            "phy_name":"clk_generator.n47595"
         },
         "arrive":9.529,
         "delay":0.000
@@ -2476,13 +2483,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CI1",
-            "phy_name":"clk_generator.SLICE_1357/CIN1"
+            "log_name":"clk_generator/counter_119_add_4_3/CI1",
+            "phy_name":"clk_generator.SLICE_1333/CIN1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CO1",
-            "phy_name":"clk_generator.SLICE_1357/COUT1"
+            "log_name":"clk_generator/counter_119_add_4_3/CO1",
+            "phy_name":"clk_generator.SLICE_1333/COUT1"
         },
         "arrive":9.806,
         "delay":0.277
@@ -2491,8 +2498,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n6902",
-            "phy_name":"clk_generator.n6902"
+            "log_name":"clk_generator/n7195",
+            "phy_name":"clk_generator.n7195"
         },
         "arrive":9.806,
         "delay":0.000
@@ -2501,13 +2508,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/CI0",
-            "phy_name":"clk_generator.SLICE_1356/CIN0"
+            "log_name":"clk_generator/counter_119_add_4_5/CI0",
+            "phy_name":"clk_generator.SLICE_1332/CIN0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/CO0",
-            "phy_name":"clk_generator.SLICE_1356/COUT0"
+            "log_name":"clk_generator/counter_119_add_4_5/CO0",
+            "phy_name":"clk_generator.SLICE_1332/COUT0"
         },
         "arrive":10.083,
         "delay":0.277
@@ -2516,8 +2523,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n47446",
-            "phy_name":"clk_generator.n47446"
+            "log_name":"clk_generator/n47598",
+            "phy_name":"clk_generator.n47598"
         },
         "arrive":10.083,
         "delay":0.000
@@ -2526,13 +2533,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/CI1",
-            "phy_name":"clk_generator.SLICE_1356/CIN1"
+            "log_name":"clk_generator/counter_119_add_4_5/CI1",
+            "phy_name":"clk_generator.SLICE_1332/CIN1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/CO1",
-            "phy_name":"clk_generator.SLICE_1356/COUT1"
+            "log_name":"clk_generator/counter_119_add_4_5/CO1",
+            "phy_name":"clk_generator.SLICE_1332/COUT1"
         },
         "arrive":10.360,
         "delay":0.277
@@ -2541,8 +2548,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n6904",
-            "phy_name":"clk_generator.n6904"
+            "log_name":"clk_generator/n7197",
+            "phy_name":"clk_generator.n7197"
         },
         "arrive":11.021,
         "delay":0.661
@@ -2551,13 +2558,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_7/D0",
-            "phy_name":"clk_generator.SLICE_1355/D0"
+            "log_name":"clk_generator/counter_119_add_4_7/D0",
+            "phy_name":"clk_generator.SLICE_1331/D0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_7/S0",
-            "phy_name":"clk_generator.SLICE_1355/F0"
+            "log_name":"clk_generator/counter_119_add_4_7/S0",
+            "phy_name":"clk_generator.SLICE_1331/F0"
         },
         "arrive":11.497,
         "delay":0.476
@@ -2593,28 +2600,28 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
-                                          SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
-clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
-                                          SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
-clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
-                                          SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6902                                          NET DELAY               0.000                  9.806  2       
-clk_generator/counter_97_add_4_5/CI0->clk_generator/counter_97_add_4_5/CO0
-                                          SLICE_R11C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-clk_generator/n47446                                         NET DELAY               0.000                 10.083  2       
-clk_generator/counter_97_add_4_5/CI1->clk_generator/counter_97_add_4_5/CO1
-                                          SLICE_R11C31C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-clk_generator/n6904                                          NET DELAY               0.661                 11.021  2       
-clk_generator/counter_97_add_4_7/D0->clk_generator/counter_97_add_4_7/S0
-                                          SLICE_R11C31D      D0_TO_F0_DELAY          0.476                 11.497  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/CO1
+                                          SLICE_R10C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+clk_generator/n7193                                          NET DELAY               0.000                  9.252  2       
+clk_generator/counter_119_add_4_3/CI0->clk_generator/counter_119_add_4_3/CO0
+                                          SLICE_R10C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+clk_generator/n47595                                         NET DELAY               0.000                  9.529  2       
+clk_generator/counter_119_add_4_3/CI1->clk_generator/counter_119_add_4_3/CO1
+                                          SLICE_R10C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+clk_generator/n7195                                          NET DELAY               0.000                  9.806  2       
+clk_generator/counter_119_add_4_5/CI0->clk_generator/counter_119_add_4_5/CO0
+                                          SLICE_R10C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+clk_generator/n47598                                         NET DELAY               0.000                 10.083  2       
+clk_generator/counter_119_add_4_5/CI1->clk_generator/counter_119_add_4_5/CO1
+                                          SLICE_R10C31C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+clk_generator/n7197                                          NET DELAY               0.661                 11.021  2       
+clk_generator/counter_119_add_4_7/D0->clk_generator/counter_119_add_4_7/S0
+                                          SLICE_R10C31D      D0_TO_F0_DELAY          0.476                 11.497  1       
 clk_generator/n29[5]                                         NET DELAY               0.000                 11.497  1       
-clk_generator/counter_97__i5/D                               ENDPOINT                0.000                 11.497  1       
+clk_generator/counter_119__i5/D                              ENDPOINT                0.000                 11.497  1       
 
 
 Destination Clock Path
@@ -2630,8 +2637,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/CK",
-        "phy_name":"clk_generator.SLICE_1355/CLK"
+        "log_name":"clk_generator/counter_119__i5/CK",
+        "phy_name":"clk_generator.SLICE_1331/CLK"
     },
     "path_sections":[
     {
@@ -2683,7 +2690,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                 26.332  8       
-clk_generator/counter_97__i5/CK                              CLOCK PIN               0.000                 26.332  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN               0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
@@ -2697,8 +2704,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i4/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i4/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 6
@@ -2721,8 +2728,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/CK",
-        "phy_name":"clk_generator.SLICE_1358/CLK"
+        "log_name":"clk_generator/counter_119__i0/CK",
+        "phy_name":"clk_generator.SLICE_1334/CLK"
     },
     "path_sections":[
     {
@@ -2758,7 +2765,7 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                  5.499  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN               0.000                  5.499  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
@@ -2768,27 +2775,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/Q",
-        "phy_name":"clk_generator.SLICE_1358/Q1"
+        "log_name":"clk_generator/counter_119__i0/Q",
+        "phy_name":"clk_generator.SLICE_1334/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i4/D",
-        "phy_name":"clk_generator.SLICE_1356/DI1"
+        "log_name":"clk_generator/counter_119__i4/D",
+        "phy_name":"clk_generator.SLICE_1332/DI1"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i0/CK",
-            "phy_name":"clk_generator.SLICE_1358/CLK"
+            "log_name":"clk_generator/counter_119__i0/CK",
+            "phy_name":"clk_generator.SLICE_1334/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i0/Q",
-            "phy_name":"clk_generator.SLICE_1358/Q1"
+            "log_name":"clk_generator/counter_119__i0/Q",
+            "phy_name":"clk_generator.SLICE_1334/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -2807,13 +2814,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/C1",
-            "phy_name":"clk_generator.SLICE_1358/C1"
+            "log_name":"clk_generator/counter_119_add_4_1/C1",
+            "phy_name":"clk_generator.SLICE_1334/C1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/CO1",
-            "phy_name":"clk_generator.SLICE_1358/COUT1"
+            "log_name":"clk_generator/counter_119_add_4_1/CO1",
+            "phy_name":"clk_generator.SLICE_1334/COUT1"
         },
         "arrive":9.252,
         "delay":0.343
@@ -2822,8 +2829,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n6900",
-            "phy_name":"clk_generator.n6900"
+            "log_name":"clk_generator/n7193",
+            "phy_name":"clk_generator.n7193"
         },
         "arrive":9.252,
         "delay":0.000
@@ -2832,13 +2839,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CI0",
-            "phy_name":"clk_generator.SLICE_1357/CIN0"
+            "log_name":"clk_generator/counter_119_add_4_3/CI0",
+            "phy_name":"clk_generator.SLICE_1333/CIN0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CO0",
-            "phy_name":"clk_generator.SLICE_1357/COUT0"
+            "log_name":"clk_generator/counter_119_add_4_3/CO0",
+            "phy_name":"clk_generator.SLICE_1333/COUT0"
         },
         "arrive":9.529,
         "delay":0.277
@@ -2847,8 +2854,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n47443",
-            "phy_name":"clk_generator.n47443"
+            "log_name":"clk_generator/n47595",
+            "phy_name":"clk_generator.n47595"
         },
         "arrive":9.529,
         "delay":0.000
@@ -2857,13 +2864,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CI1",
-            "phy_name":"clk_generator.SLICE_1357/CIN1"
+            "log_name":"clk_generator/counter_119_add_4_3/CI1",
+            "phy_name":"clk_generator.SLICE_1333/CIN1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CO1",
-            "phy_name":"clk_generator.SLICE_1357/COUT1"
+            "log_name":"clk_generator/counter_119_add_4_3/CO1",
+            "phy_name":"clk_generator.SLICE_1333/COUT1"
         },
         "arrive":9.806,
         "delay":0.277
@@ -2872,8 +2879,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n6902",
-            "phy_name":"clk_generator.n6902"
+            "log_name":"clk_generator/n7195",
+            "phy_name":"clk_generator.n7195"
         },
         "arrive":9.806,
         "delay":0.000
@@ -2882,13 +2889,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/CI0",
-            "phy_name":"clk_generator.SLICE_1356/CIN0"
+            "log_name":"clk_generator/counter_119_add_4_5/CI0",
+            "phy_name":"clk_generator.SLICE_1332/CIN0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/CO0",
-            "phy_name":"clk_generator.SLICE_1356/COUT0"
+            "log_name":"clk_generator/counter_119_add_4_5/CO0",
+            "phy_name":"clk_generator.SLICE_1332/COUT0"
         },
         "arrive":10.083,
         "delay":0.277
@@ -2897,8 +2904,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n47446",
-            "phy_name":"clk_generator.n47446"
+            "log_name":"clk_generator/n47598",
+            "phy_name":"clk_generator.n47598"
         },
         "arrive":10.744,
         "delay":0.661
@@ -2907,13 +2914,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/D1",
-            "phy_name":"clk_generator.SLICE_1356/D1"
+            "log_name":"clk_generator/counter_119_add_4_5/D1",
+            "phy_name":"clk_generator.SLICE_1332/D1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/S1",
-            "phy_name":"clk_generator.SLICE_1356/F1"
+            "log_name":"clk_generator/counter_119_add_4_5/S1",
+            "phy_name":"clk_generator.SLICE_1332/F1"
         },
         "arrive":11.220,
         "delay":0.476
@@ -2949,25 +2956,25 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
-                                          SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
-clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
-                                          SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
-clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
-                                          SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6902                                          NET DELAY               0.000                  9.806  2       
-clk_generator/counter_97_add_4_5/CI0->clk_generator/counter_97_add_4_5/CO0
-                                          SLICE_R11C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-clk_generator/n47446                                         NET DELAY               0.661                 10.744  2       
-clk_generator/counter_97_add_4_5/D1->clk_generator/counter_97_add_4_5/S1
-                                          SLICE_R11C31C      D1_TO_F1_DELAY          0.476                 11.220  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/CO1
+                                          SLICE_R10C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+clk_generator/n7193                                          NET DELAY               0.000                  9.252  2       
+clk_generator/counter_119_add_4_3/CI0->clk_generator/counter_119_add_4_3/CO0
+                                          SLICE_R10C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+clk_generator/n47595                                         NET DELAY               0.000                  9.529  2       
+clk_generator/counter_119_add_4_3/CI1->clk_generator/counter_119_add_4_3/CO1
+                                          SLICE_R10C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+clk_generator/n7195                                          NET DELAY               0.000                  9.806  2       
+clk_generator/counter_119_add_4_5/CI0->clk_generator/counter_119_add_4_5/CO0
+                                          SLICE_R10C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+clk_generator/n47598                                         NET DELAY               0.661                 10.744  2       
+clk_generator/counter_119_add_4_5/D1->clk_generator/counter_119_add_4_5/S1
+                                          SLICE_R10C31C      D1_TO_F1_DELAY          0.476                 11.220  1       
 clk_generator/n29[4]                                         NET DELAY               0.000                 11.220  1       
-clk_generator/counter_97__i4/D                               ENDPOINT                0.000                 11.220  1       
+clk_generator/counter_119__i4/D                              ENDPOINT                0.000                 11.220  1       
 
 
 Destination Clock Path
@@ -2983,8 +2990,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/CK",
-        "phy_name":"clk_generator.SLICE_1356/CLK"
+        "log_name":"clk_generator/counter_119__i3/CK",
+        "phy_name":"clk_generator.SLICE_1332/CLK"
     },
     "path_sections":[
     {
@@ -3036,7 +3043,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                 26.332  8       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN               0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -3051,8 +3058,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i3/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i3/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 5
@@ -3075,8 +3082,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/CK",
-        "phy_name":"clk_generator.SLICE_1358/CLK"
+        "log_name":"clk_generator/counter_119__i0/CK",
+        "phy_name":"clk_generator.SLICE_1334/CLK"
     },
     "path_sections":[
     {
@@ -3112,7 +3119,7 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                  5.499  8       
-clk_generator/counter_97__i0/CK                              CLOCK PIN               0.000                  5.499  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
@@ -3122,27 +3129,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/Q",
-        "phy_name":"clk_generator.SLICE_1358/Q1"
+        "log_name":"clk_generator/counter_119__i0/Q",
+        "phy_name":"clk_generator.SLICE_1334/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/D",
-        "phy_name":"clk_generator.SLICE_1356/DI0"
+        "log_name":"clk_generator/counter_119__i3/D",
+        "phy_name":"clk_generator.SLICE_1332/DI0"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i0/CK",
-            "phy_name":"clk_generator.SLICE_1358/CLK"
+            "log_name":"clk_generator/counter_119__i0/CK",
+            "phy_name":"clk_generator.SLICE_1334/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i0/Q",
-            "phy_name":"clk_generator.SLICE_1358/Q1"
+            "log_name":"clk_generator/counter_119__i0/Q",
+            "phy_name":"clk_generator.SLICE_1334/Q1"
         },
         "arrive":6.887,
         "delay":1.388
@@ -3161,13 +3168,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/C1",
-            "phy_name":"clk_generator.SLICE_1358/C1"
+            "log_name":"clk_generator/counter_119_add_4_1/C1",
+            "phy_name":"clk_generator.SLICE_1334/C1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/CO1",
-            "phy_name":"clk_generator.SLICE_1358/COUT1"
+            "log_name":"clk_generator/counter_119_add_4_1/CO1",
+            "phy_name":"clk_generator.SLICE_1334/COUT1"
         },
         "arrive":9.252,
         "delay":0.343
@@ -3176,8 +3183,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n6900",
-            "phy_name":"clk_generator.n6900"
+            "log_name":"clk_generator/n7193",
+            "phy_name":"clk_generator.n7193"
         },
         "arrive":9.252,
         "delay":0.000
@@ -3186,13 +3193,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CI0",
-            "phy_name":"clk_generator.SLICE_1357/CIN0"
+            "log_name":"clk_generator/counter_119_add_4_3/CI0",
+            "phy_name":"clk_generator.SLICE_1333/CIN0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CO0",
-            "phy_name":"clk_generator.SLICE_1357/COUT0"
+            "log_name":"clk_generator/counter_119_add_4_3/CO0",
+            "phy_name":"clk_generator.SLICE_1333/COUT0"
         },
         "arrive":9.529,
         "delay":0.277
@@ -3201,8 +3208,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n47443",
-            "phy_name":"clk_generator.n47443"
+            "log_name":"clk_generator/n47595",
+            "phy_name":"clk_generator.n47595"
         },
         "arrive":9.529,
         "delay":0.000
@@ -3211,13 +3218,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CI1",
-            "phy_name":"clk_generator.SLICE_1357/CIN1"
+            "log_name":"clk_generator/counter_119_add_4_3/CI1",
+            "phy_name":"clk_generator.SLICE_1333/CIN1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/CO1",
-            "phy_name":"clk_generator.SLICE_1357/COUT1"
+            "log_name":"clk_generator/counter_119_add_4_3/CO1",
+            "phy_name":"clk_generator.SLICE_1333/COUT1"
         },
         "arrive":9.806,
         "delay":0.277
@@ -3226,8 +3233,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n6902",
-            "phy_name":"clk_generator.n6902"
+            "log_name":"clk_generator/n7195",
+            "phy_name":"clk_generator.n7195"
         },
         "arrive":10.467,
         "delay":0.661
@@ -3236,13 +3243,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/D0",
-            "phy_name":"clk_generator.SLICE_1356/D0"
+            "log_name":"clk_generator/counter_119_add_4_5/D0",
+            "phy_name":"clk_generator.SLICE_1332/D0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/S0",
-            "phy_name":"clk_generator.SLICE_1356/F0"
+            "log_name":"clk_generator/counter_119_add_4_5/S0",
+            "phy_name":"clk_generator.SLICE_1332/F0"
         },
         "arrive":10.943,
         "delay":0.476
@@ -3278,22 +3285,22 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY         1.388                  6.887  2       
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
-                                          SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
-clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
-                                          SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
-clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
-                                          SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6902                                          NET DELAY               0.661                 10.467  2       
-clk_generator/counter_97_add_4_5/D0->clk_generator/counter_97_add_4_5/S0
-                                          SLICE_R11C31C      D0_TO_F0_DELAY          0.476                 10.943  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/CO1
+                                          SLICE_R10C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+clk_generator/n7193                                          NET DELAY               0.000                  9.252  2       
+clk_generator/counter_119_add_4_3/CI0->clk_generator/counter_119_add_4_3/CO0
+                                          SLICE_R10C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+clk_generator/n47595                                         NET DELAY               0.000                  9.529  2       
+clk_generator/counter_119_add_4_3/CI1->clk_generator/counter_119_add_4_3/CO1
+                                          SLICE_R10C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+clk_generator/n7195                                          NET DELAY               0.661                 10.467  2       
+clk_generator/counter_119_add_4_5/D0->clk_generator/counter_119_add_4_5/S0
+                                          SLICE_R10C31C      D0_TO_F0_DELAY          0.476                 10.943  1       
 clk_generator/n29[3]                                         NET DELAY               0.000                 10.943  1       
-clk_generator/counter_97__i3/D                               ENDPOINT                0.000                 10.943  1       
+clk_generator/counter_119__i3/D                              ENDPOINT                0.000                 10.943  1       
 
 
 Destination Clock Path
@@ -3309,8 +3316,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/CK",
-        "phy_name":"clk_generator.SLICE_1356/CLK"
+        "log_name":"clk_generator/counter_119__i3/CK",
+        "phy_name":"clk_generator.SLICE_1332/CLK"
     },
     "path_sections":[
     {
@@ -3362,7 +3369,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  8       
 clk_generator/clk_48mhz                                      NET DELAY               5.499                 26.332  8       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN               0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -3391,13 +3398,13 @@ Path Slack  (Passed)                                                            
 clk_generator/cycle_counter__i1/D        |    1.743 ns 
 clk_generator/cycle_counter__i0/D        |    1.743 ns 
 clk_generator/clk_out/D                  |    1.913 ns 
-clk_generator/counter_97__i0/D           |    1.913 ns 
-clk_generator/counter_97__i1/D           |    1.913 ns 
-clk_generator/counter_97__i2/D           |    1.913 ns 
-clk_generator/counter_97__i3/D           |    1.913 ns 
-clk_generator/counter_97__i4/D           |    1.913 ns 
-clk_generator/counter_97__i5/D           |    1.913 ns 
-clk_generator/cycle_counter__i1/SP       |    3.351 ns 
+clk_generator/counter_119__i0/D          |    1.913 ns 
+clk_generator/counter_119__i1/D          |    1.913 ns 
+clk_generator/counter_119__i2/D          |    1.913 ns 
+clk_generator/counter_119__i3/D          |    1.913 ns 
+clk_generator/counter_119__i4/D          |    1.913 ns 
+clk_generator/counter_119__i5/D          |    1.913 ns 
+clk_generator/cycle_counter__i1/SP       |    3.714 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -3419,8 +3426,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : clk_generator/cycle_counter__i1/Q  (SLICE_R10C31C)
-Path End         : clk_generator/cycle_counter__i1/D  (SLICE_R10C31C)
+Path Begin       : clk_generator/cycle_counter__i1/Q  (SLICE_R8C31D)
+Path End         : clk_generator/cycle_counter__i1/D  (SLICE_R8C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -3444,7 +3451,7 @@ Source Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/CK",
-        "phy_name":"clk_generator.SLICE_3057/CLK"
+        "phy_name":"clk_generator.SLICE_2836/CLK"
     },
     "path_sections":[
     {
@@ -3491,13 +3498,13 @@ Data Path
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/Q",
-        "phy_name":"clk_generator.SLICE_3057/Q1"
+        "phy_name":"clk_generator.SLICE_2836/Q0"
     },
     "path_end":
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/D",
-        "phy_name":"clk_generator.SLICE_3057/DI1"
+        "phy_name":"clk_generator.SLICE_2836/DI0"
     },
     "path_sections":[
     {
@@ -3505,12 +3512,12 @@ Data Path
         "pin0":
         {
             "log_name":"clk_generator/cycle_counter__i1/CK",
-            "phy_name":"clk_generator.SLICE_3057/CLK"
+            "phy_name":"clk_generator.SLICE_2836/CLK"
         },
         "pin1":
         {
             "log_name":"clk_generator/cycle_counter__i1/Q",
-            "phy_name":"clk_generator.SLICE_3057/Q1"
+            "phy_name":"clk_generator.SLICE_2836/Q0"
         },
         "arrive":3.863,
         "delay":0.779
@@ -3529,13 +3536,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i201_2_lut/A",
-            "phy_name":"clk_generator.SLICE_3057/D1"
+            "log_name":"clk_generator/i228_2_lut/A",
+            "phy_name":"clk_generator.SLICE_2836/D0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i201_2_lut/Z",
-            "phy_name":"clk_generator.SLICE_3057/F1"
+            "log_name":"clk_generator/i228_2_lut/Z",
+            "phy_name":"clk_generator.SLICE_2836/F0"
         },
         "arrive":4.827,
         "delay":0.252
@@ -3544,8 +3551,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/divisor_1__N_73[1]",
-            "phy_name":"clk_generator.divisor_1__N_73[1]"
+            "log_name":"clk_generator/divisor_1__N_67[1]",
+            "phy_name":"clk_generator.divisor_1__N_67[1]"
         },
         "arrive":4.827,
         "delay":0.000
@@ -3572,11 +3579,11 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/cycle_counter__i1/CK->clk_generator/cycle_counter__i1/Q
-                                          SLICE_R10C31C      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+                                          SLICE_R8C31D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/cycle_counter[1]                               NET DELAY        0.712                  4.575  2       
-clk_generator/i201_2_lut/A->clk_generator/i201_2_lut/Z
-                                          SLICE_R10C31C      D1_TO_F1_DELAY   0.252                  4.827  1       
-clk_generator/divisor_1__N_73[1]                             NET DELAY        0.000                  4.827  1       
+clk_generator/i228_2_lut/A->clk_generator/i228_2_lut/Z
+                                          SLICE_R8C31D       D0_TO_F0_DELAY   0.252                  4.827  1       
+clk_generator/divisor_1__N_67[1]                             NET DELAY        0.000                  4.827  1       
 clk_generator/cycle_counter__i1/D                            ENDPOINT         0.000                  4.827  1       
 
 
@@ -3594,7 +3601,7 @@ Destination Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/CK",
-        "phy_name":"clk_generator.SLICE_3057/CLK"
+        "phy_name":"clk_generator.SLICE_2836/CLK"
     },
     "path_sections":[
     {
@@ -3660,8 +3667,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31C)
-Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C31D)
+Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31D)
+Path End         : clk_generator/cycle_counter__i0/D  (SLICE_R8C30A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -3685,7 +3692,7 @@ Source Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/CK",
-        "phy_name":"clk_generator.SLICE_3053/CLK"
+        "phy_name":"clk_generator.SLICE_3034/CLK"
     },
     "path_sections":[
     {
@@ -3732,13 +3739,13 @@ Data Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/Q",
-        "phy_name":"clk_generator.SLICE_3053/Q1"
+        "phy_name":"clk_generator.SLICE_3034/Q1"
     },
     "path_end":
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i0/D",
-        "phy_name":"clk_generator.SLICE_2866/DI0"
+        "phy_name":"clk_generator.SLICE_2834/DI0"
     },
     "path_sections":[
     {
@@ -3746,12 +3753,12 @@ Data Path
         "pin0":
         {
             "log_name":"clk_generator/clk_out/CK",
-            "phy_name":"clk_generator.SLICE_3053/CLK"
+            "phy_name":"clk_generator.SLICE_3034/CLK"
         },
         "pin1":
         {
             "log_name":"clk_generator/clk_out/Q",
-            "phy_name":"clk_generator.SLICE_3053/Q1"
+            "phy_name":"clk_generator.SLICE_3034/Q1"
         },
         "arrive":3.863,
         "delay":0.779
@@ -3770,13 +3777,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i572_2_lut_3_lut/A",
-            "phy_name":"clk_generator.SLICE_2866/D0"
+            "log_name":"clk_generator/i665_2_lut_3_lut/A",
+            "phy_name":"clk_generator.SLICE_2834/D0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i572_2_lut_3_lut/Z",
-            "phy_name":"clk_generator.SLICE_2866/F0"
+            "log_name":"clk_generator/i665_2_lut_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_2834/F0"
         },
         "arrive":4.827,
         "delay":0.252
@@ -3785,8 +3792,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n9_2[0]",
-            "phy_name":"clk_generator.n9_2[0]"
+            "log_name":"clk_generator/n9[0]",
+            "phy_name":"clk_generator.n9[0]"
         },
         "arrive":4.827,
         "delay":0.000
@@ -3813,11 +3820,11 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/clk_out/CK->clk_generator/clk_out/Q
-                                          SLICE_R9C31C       CLK_TO_Q1_DELAY  0.779                  3.863  1243    
-cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1243    
-clk_generator/i572_2_lut_3_lut/A->clk_generator/i572_2_lut_3_lut/Z
-                                          SLICE_R8C31D       D0_TO_F0_DELAY   0.252                  4.827  1       
-clk_generator/n9_2[0]                                        NET DELAY        0.000                  4.827  1       
+                                          SLICE_R9C31D       CLK_TO_Q1_DELAY  0.779                  3.863  1201    
+cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1201    
+clk_generator/i665_2_lut_3_lut/A->clk_generator/i665_2_lut_3_lut/Z
+                                          SLICE_R8C30A       D0_TO_F0_DELAY   0.252                  4.827  1       
+clk_generator/n9[0]                                          NET DELAY        0.000                  4.827  1       
 clk_generator/cycle_counter__i0/D                            ENDPOINT         0.000                  4.827  1       
 
 
@@ -3835,7 +3842,7 @@ Destination Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i0/CK",
-        "phy_name":"clk_generator.SLICE_2866/CLK"
+        "phy_name":"clk_generator.SLICE_2834/CLK"
     },
     "path_sections":[
     {
@@ -3901,8 +3908,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31C)
-Path End         : clk_generator/clk_out/D  (SLICE_R9C31C)
+Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31D)
+Path End         : clk_generator/clk_out/D  (SLICE_R9C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -3926,7 +3933,7 @@ Source Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/CK",
-        "phy_name":"clk_generator.SLICE_3053/CLK"
+        "phy_name":"clk_generator.SLICE_3034/CLK"
     },
     "path_sections":[
     {
@@ -3973,13 +3980,13 @@ Data Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/Q",
-        "phy_name":"clk_generator.SLICE_3053/Q1"
+        "phy_name":"clk_generator.SLICE_3034/Q1"
     },
     "path_end":
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/D",
-        "phy_name":"clk_generator.SLICE_3053/DI1"
+        "phy_name":"clk_generator.SLICE_3034/DI1"
     },
     "path_sections":[
     {
@@ -3987,12 +3994,12 @@ Data Path
         "pin0":
         {
             "log_name":"clk_generator/clk_out/CK",
-            "phy_name":"clk_generator.SLICE_3053/CLK"
+            "phy_name":"clk_generator.SLICE_3034/CLK"
         },
         "pin1":
         {
             "log_name":"clk_generator/clk_out/Q",
-            "phy_name":"clk_generator.SLICE_3053/Q1"
+            "phy_name":"clk_generator.SLICE_3034/Q1"
         },
         "arrive":3.863,
         "delay":0.779
@@ -4012,12 +4019,12 @@ Data Path
         "pin0":
         {
             "log_name":"clk_generator/i1_2_lut/A",
-            "phy_name":"clk_generator.SLICE_3053/C1"
+            "phy_name":"clk_generator.SLICE_3034/C1"
         },
         "pin1":
         {
             "log_name":"clk_generator/i1_2_lut/Z",
-            "phy_name":"clk_generator.SLICE_3053/F1"
+            "phy_name":"clk_generator.SLICE_3034/F1"
         },
         "arrive":4.997,
         "delay":0.252
@@ -4026,8 +4033,8 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4437",
-            "phy_name":"clk_generator.n4437"
+            "log_name":"clk_generator/n4642",
+            "phy_name":"clk_generator.n4642"
         },
         "arrive":4.997,
         "delay":0.000
@@ -4054,11 +4061,11 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/clk_out/CK->clk_generator/clk_out/Q
-                                          SLICE_R9C31C       CLK_TO_Q1_DELAY  0.779                  3.863  1243    
-cic_decimator/clk_c                                          NET DELAY        0.882                  4.745  1243    
+                                          SLICE_R9C31D       CLK_TO_Q1_DELAY  0.779                  3.863  1201    
+cic_decimator/clk_c                                          NET DELAY        0.882                  4.745  1201    
 clk_generator/i1_2_lut/A->clk_generator/i1_2_lut/Z
-                                          SLICE_R9C31C       C1_TO_F1_DELAY   0.252                  4.997  1       
-clk_generator/n4437                                          NET DELAY        0.000                  4.997  1       
+                                          SLICE_R9C31D       C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/n4642                                          NET DELAY        0.000                  4.997  1       
 clk_generator/clk_out/D                                      ENDPOINT         0.000                  4.997  1       
 
 
@@ -4076,7 +4083,7 @@ Destination Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/CK",
-        "phy_name":"clk_generator.SLICE_3053/CLK"
+        "phy_name":"clk_generator.SLICE_3034/CLK"
     },
     "path_sections":[
     {
@@ -4142,8 +4149,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i0/Q  (SLICE_R11C31A)
-Path End         : clk_generator/counter_97__i0/D  (SLICE_R11C31A)
+Path Begin       : clk_generator/counter_119__i0/Q  (SLICE_R10C31A)
+Path End         : clk_generator/counter_119__i0/D  (SLICE_R10C31A)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -4166,8 +4173,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/CK",
-        "phy_name":"clk_generator.SLICE_1358/CLK"
+        "log_name":"clk_generator/counter_119__i0/CK",
+        "phy_name":"clk_generator.SLICE_1334/CLK"
     },
     "path_sections":[
     {
@@ -4203,7 +4210,7 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i0/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
@@ -4213,27 +4220,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/Q",
-        "phy_name":"clk_generator.SLICE_1358/Q1"
+        "log_name":"clk_generator/counter_119__i0/Q",
+        "phy_name":"clk_generator.SLICE_1334/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/D",
-        "phy_name":"clk_generator.SLICE_1358/DI1"
+        "log_name":"clk_generator/counter_119__i0/D",
+        "phy_name":"clk_generator.SLICE_1334/DI1"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i0/CK",
-            "phy_name":"clk_generator.SLICE_1358/CLK"
+            "log_name":"clk_generator/counter_119__i0/CK",
+            "phy_name":"clk_generator.SLICE_1334/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i0/Q",
-            "phy_name":"clk_generator.SLICE_1358/Q1"
+            "log_name":"clk_generator/counter_119__i0/Q",
+            "phy_name":"clk_generator.SLICE_1334/Q1"
         },
         "arrive":3.863,
         "delay":0.779
@@ -4252,13 +4259,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/C1",
-            "phy_name":"clk_generator.SLICE_1358/C1"
+            "log_name":"clk_generator/counter_119_add_4_1/C1",
+            "phy_name":"clk_generator.SLICE_1334/C1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_1/S1",
-            "phy_name":"clk_generator.SLICE_1358/F1"
+            "log_name":"clk_generator/counter_119_add_4_1/S1",
+            "phy_name":"clk_generator.SLICE_1334/F1"
         },
         "arrive":4.997,
         "delay":0.252
@@ -4294,13 +4301,13 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
-                                          SLICE_R11C31A      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i0/CK->clk_generator/counter_119__i0/Q
+                                          SLICE_R10C31A      CLK_TO_Q1_DELAY  0.779                  3.863  2       
 clk_generator/counter[0]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/S1
-                                          SLICE_R11C31A      C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_1/C1->clk_generator/counter_119_add_4_1/S1
+                                          SLICE_R10C31A      C1_TO_F1_DELAY   0.252                  4.997  1       
 clk_generator/n29[0]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i0/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i0/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -4316,8 +4323,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i0/CK",
-        "phy_name":"clk_generator.SLICE_1358/CLK"
+        "log_name":"clk_generator/counter_119__i0/CK",
+        "phy_name":"clk_generator.SLICE_1334/CLK"
     },
     "path_sections":[
     {
@@ -4369,7 +4376,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i0/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i0/CK                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -4383,8 +4390,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i1/Q  (SLICE_R11C31B)
-Path End         : clk_generator/counter_97__i1/D  (SLICE_R11C31B)
+Path Begin       : clk_generator/counter_119__i1/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i1/D  (SLICE_R10C31B)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -4407,8 +4414,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i1/CK",
-        "phy_name":"clk_generator.SLICE_1357/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -4444,7 +4451,7 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
@@ -4455,27 +4462,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i1/Q",
-        "phy_name":"clk_generator.SLICE_1357/Q0"
+        "log_name":"clk_generator/counter_119__i1/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q0"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i1/D",
-        "phy_name":"clk_generator.SLICE_1357/DI0"
+        "log_name":"clk_generator/counter_119__i1/D",
+        "phy_name":"clk_generator.SLICE_1333/DI0"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i1/CK",
-            "phy_name":"clk_generator.SLICE_1357/CLK"
+            "log_name":"clk_generator/counter_119__i1/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i1/Q",
-            "phy_name":"clk_generator.SLICE_1357/Q0"
+            "log_name":"clk_generator/counter_119__i1/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q0"
         },
         "arrive":3.863,
         "delay":0.779
@@ -4494,13 +4501,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/C0",
-            "phy_name":"clk_generator.SLICE_1357/C0"
+            "log_name":"clk_generator/counter_119_add_4_3/C0",
+            "phy_name":"clk_generator.SLICE_1333/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/S0",
-            "phy_name":"clk_generator.SLICE_1357/F0"
+            "log_name":"clk_generator/counter_119_add_4_3/S0",
+            "phy_name":"clk_generator.SLICE_1333/F0"
         },
         "arrive":4.997,
         "delay":0.252
@@ -4536,13 +4543,13 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i1/CK->clk_generator/counter_97__i1/Q
-                                          SLICE_R11C31B      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i1/CK->clk_generator/counter_119__i1/Q
+                                          SLICE_R10C31B      CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/counter[1]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_3/C0->clk_generator/counter_97_add_4_3/S0
-                                          SLICE_R11C31B      C0_TO_F0_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_3/C0->clk_generator/counter_119_add_4_3/S0
+                                          SLICE_R10C31B      C0_TO_F0_DELAY   0.252                  4.997  1       
 clk_generator/n29[1]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i1/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i1/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -4558,8 +4565,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i1/CK",
-        "phy_name":"clk_generator.SLICE_1357/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -4611,7 +4618,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -4626,8 +4633,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i2/Q  (SLICE_R11C31B)
-Path End         : clk_generator/counter_97__i2/D  (SLICE_R11C31B)
+Path Begin       : clk_generator/counter_119__i2/Q  (SLICE_R10C31B)
+Path End         : clk_generator/counter_119__i2/D  (SLICE_R10C31B)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -4650,8 +4657,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i1/CK",
-        "phy_name":"clk_generator.SLICE_1357/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -4687,7 +4694,7 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
@@ -4698,27 +4705,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i2/Q",
-        "phy_name":"clk_generator.SLICE_1357/Q1"
+        "log_name":"clk_generator/counter_119__i2/Q",
+        "phy_name":"clk_generator.SLICE_1333/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i2/D",
-        "phy_name":"clk_generator.SLICE_1357/DI1"
+        "log_name":"clk_generator/counter_119__i2/D",
+        "phy_name":"clk_generator.SLICE_1333/DI1"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i2/CK",
-            "phy_name":"clk_generator.SLICE_1357/CLK"
+            "log_name":"clk_generator/counter_119__i2/CK",
+            "phy_name":"clk_generator.SLICE_1333/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i2/Q",
-            "phy_name":"clk_generator.SLICE_1357/Q1"
+            "log_name":"clk_generator/counter_119__i2/Q",
+            "phy_name":"clk_generator.SLICE_1333/Q1"
         },
         "arrive":3.863,
         "delay":0.779
@@ -4737,13 +4744,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/C1",
-            "phy_name":"clk_generator.SLICE_1357/C1"
+            "log_name":"clk_generator/counter_119_add_4_3/C1",
+            "phy_name":"clk_generator.SLICE_1333/C1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_3/S1",
-            "phy_name":"clk_generator.SLICE_1357/F1"
+            "log_name":"clk_generator/counter_119_add_4_3/S1",
+            "phy_name":"clk_generator.SLICE_1333/F1"
         },
         "arrive":4.997,
         "delay":0.252
@@ -4779,13 +4786,13 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i2/CK->clk_generator/counter_97__i2/Q
-                                          SLICE_R11C31B      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i2/CK->clk_generator/counter_119__i2/Q
+                                          SLICE_R10C31B      CLK_TO_Q1_DELAY  0.779                  3.863  2       
 clk_generator/counter[2]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_3/C1->clk_generator/counter_97_add_4_3/S1
-                                          SLICE_R11C31B      C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_3/C1->clk_generator/counter_119_add_4_3/S1
+                                          SLICE_R10C31B      C1_TO_F1_DELAY   0.252                  4.997  1       
 clk_generator/n29[2]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i2/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i2/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -4801,8 +4808,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i1/CK",
-        "phy_name":"clk_generator.SLICE_1357/CLK"
+        "log_name":"clk_generator/counter_119__i1/CK",
+        "phy_name":"clk_generator.SLICE_1333/CLK"
     },
     "path_sections":[
     {
@@ -4854,7 +4861,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i1/CK   clk_generator/counter_97__i2/CK}
+{clk_generator/counter_119__i1/CK   clk_generator/counter_119__i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -4869,8 +4876,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i3/Q  (SLICE_R11C31C)
-Path End         : clk_generator/counter_97__i3/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i3/Q  (SLICE_R10C31C)
+Path End         : clk_generator/counter_119__i3/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -4893,8 +4900,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/CK",
-        "phy_name":"clk_generator.SLICE_1356/CLK"
+        "log_name":"clk_generator/counter_119__i3/CK",
+        "phy_name":"clk_generator.SLICE_1332/CLK"
     },
     "path_sections":[
     {
@@ -4930,7 +4937,7 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
@@ -4941,27 +4948,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/Q",
-        "phy_name":"clk_generator.SLICE_1356/Q0"
+        "log_name":"clk_generator/counter_119__i3/Q",
+        "phy_name":"clk_generator.SLICE_1332/Q0"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/D",
-        "phy_name":"clk_generator.SLICE_1356/DI0"
+        "log_name":"clk_generator/counter_119__i3/D",
+        "phy_name":"clk_generator.SLICE_1332/DI0"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i3/CK",
-            "phy_name":"clk_generator.SLICE_1356/CLK"
+            "log_name":"clk_generator/counter_119__i3/CK",
+            "phy_name":"clk_generator.SLICE_1332/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i3/Q",
-            "phy_name":"clk_generator.SLICE_1356/Q0"
+            "log_name":"clk_generator/counter_119__i3/Q",
+            "phy_name":"clk_generator.SLICE_1332/Q0"
         },
         "arrive":3.863,
         "delay":0.779
@@ -4980,13 +4987,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/C0",
-            "phy_name":"clk_generator.SLICE_1356/C0"
+            "log_name":"clk_generator/counter_119_add_4_5/C0",
+            "phy_name":"clk_generator.SLICE_1332/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/S0",
-            "phy_name":"clk_generator.SLICE_1356/F0"
+            "log_name":"clk_generator/counter_119_add_4_5/S0",
+            "phy_name":"clk_generator.SLICE_1332/F0"
         },
         "arrive":4.997,
         "delay":0.252
@@ -5022,13 +5029,13 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i3/CK->clk_generator/counter_97__i3/Q
-                                          SLICE_R11C31C      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i3/CK->clk_generator/counter_119__i3/Q
+                                          SLICE_R10C31C      CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/counter[3]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_5/C0->clk_generator/counter_97_add_4_5/S0
-                                          SLICE_R11C31C      C0_TO_F0_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_5/C0->clk_generator/counter_119_add_4_5/S0
+                                          SLICE_R10C31C      C0_TO_F0_DELAY   0.252                  4.997  1       
 clk_generator/n29[3]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i3/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i3/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -5044,8 +5051,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/CK",
-        "phy_name":"clk_generator.SLICE_1356/CLK"
+        "log_name":"clk_generator/counter_119__i3/CK",
+        "phy_name":"clk_generator.SLICE_1332/CLK"
     },
     "path_sections":[
     {
@@ -5097,7 +5104,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -5112,8 +5119,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i4/Q  (SLICE_R11C31C)
-Path End         : clk_generator/counter_97__i4/D  (SLICE_R11C31C)
+Path Begin       : clk_generator/counter_119__i4/Q  (SLICE_R10C31C)
+Path End         : clk_generator/counter_119__i4/D  (SLICE_R10C31C)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -5136,8 +5143,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/CK",
-        "phy_name":"clk_generator.SLICE_1356/CLK"
+        "log_name":"clk_generator/counter_119__i3/CK",
+        "phy_name":"clk_generator.SLICE_1332/CLK"
     },
     "path_sections":[
     {
@@ -5173,7 +5180,7 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
@@ -5184,27 +5191,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i4/Q",
-        "phy_name":"clk_generator.SLICE_1356/Q1"
+        "log_name":"clk_generator/counter_119__i4/Q",
+        "phy_name":"clk_generator.SLICE_1332/Q1"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i4/D",
-        "phy_name":"clk_generator.SLICE_1356/DI1"
+        "log_name":"clk_generator/counter_119__i4/D",
+        "phy_name":"clk_generator.SLICE_1332/DI1"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i4/CK",
-            "phy_name":"clk_generator.SLICE_1356/CLK"
+            "log_name":"clk_generator/counter_119__i4/CK",
+            "phy_name":"clk_generator.SLICE_1332/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i4/Q",
-            "phy_name":"clk_generator.SLICE_1356/Q1"
+            "log_name":"clk_generator/counter_119__i4/Q",
+            "phy_name":"clk_generator.SLICE_1332/Q1"
         },
         "arrive":3.863,
         "delay":0.779
@@ -5223,13 +5230,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/C1",
-            "phy_name":"clk_generator.SLICE_1356/C1"
+            "log_name":"clk_generator/counter_119_add_4_5/C1",
+            "phy_name":"clk_generator.SLICE_1332/C1"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_5/S1",
-            "phy_name":"clk_generator.SLICE_1356/F1"
+            "log_name":"clk_generator/counter_119_add_4_5/S1",
+            "phy_name":"clk_generator.SLICE_1332/F1"
         },
         "arrive":4.997,
         "delay":0.252
@@ -5265,13 +5272,13 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i4/CK->clk_generator/counter_97__i4/Q
-                                          SLICE_R11C31C      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i4/CK->clk_generator/counter_119__i4/Q
+                                          SLICE_R10C31C      CLK_TO_Q1_DELAY  0.779                  3.863  2       
 clk_generator/counter[4]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_5/C1->clk_generator/counter_97_add_4_5/S1
-                                          SLICE_R11C31C      C1_TO_F1_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_5/C1->clk_generator/counter_119_add_4_5/S1
+                                          SLICE_R10C31C      C1_TO_F1_DELAY   0.252                  4.997  1       
 clk_generator/n29[4]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i4/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i4/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -5287,8 +5294,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i3/CK",
-        "phy_name":"clk_generator.SLICE_1356/CLK"
+        "log_name":"clk_generator/counter_119__i3/CK",
+        "phy_name":"clk_generator.SLICE_1332/CLK"
     },
     "path_sections":[
     {
@@ -5340,7 +5347,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-{clk_generator/counter_97__i3/CK   clk_generator/counter_97__i4/CK}
+{clk_generator/counter_119__i3/CK   clk_generator/counter_119__i4/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -5355,8 +5362,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/counter_97__i5/Q  (SLICE_R11C31D)
-Path End         : clk_generator/counter_97__i5/D  (SLICE_R11C31D)
+Path Begin       : clk_generator/counter_119__i5/Q  (SLICE_R10C31D)
+Path End         : clk_generator/counter_119__i5/D  (SLICE_R10C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
@@ -5379,8 +5386,8 @@ Source Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/CK",
-        "phy_name":"clk_generator.SLICE_1355/CLK"
+        "log_name":"clk_generator/counter_119__i5/CK",
+        "phy_name":"clk_generator.SLICE_1331/CLK"
     },
     "path_sections":[
     {
@@ -5416,7 +5423,7 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i5/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
@@ -5426,27 +5433,27 @@ Data Path
     "path_begin":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/Q",
-        "phy_name":"clk_generator.SLICE_1355/Q0"
+        "log_name":"clk_generator/counter_119__i5/Q",
+        "phy_name":"clk_generator.SLICE_1331/Q0"
     },
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/D",
-        "phy_name":"clk_generator.SLICE_1355/DI0"
+        "log_name":"clk_generator/counter_119__i5/D",
+        "phy_name":"clk_generator.SLICE_1331/DI0"
     },
     "path_sections":[
     {
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97__i5/CK",
-            "phy_name":"clk_generator.SLICE_1355/CLK"
+            "log_name":"clk_generator/counter_119__i5/CK",
+            "phy_name":"clk_generator.SLICE_1331/CLK"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97__i5/Q",
-            "phy_name":"clk_generator.SLICE_1355/Q0"
+            "log_name":"clk_generator/counter_119__i5/Q",
+            "phy_name":"clk_generator.SLICE_1331/Q0"
         },
         "arrive":3.863,
         "delay":0.779
@@ -5465,13 +5472,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/counter_97_add_4_7/C0",
-            "phy_name":"clk_generator.SLICE_1355/C0"
+            "log_name":"clk_generator/counter_119_add_4_7/C0",
+            "phy_name":"clk_generator.SLICE_1331/C0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/counter_97_add_4_7/S0",
-            "phy_name":"clk_generator.SLICE_1355/F0"
+            "log_name":"clk_generator/counter_119_add_4_7/S0",
+            "phy_name":"clk_generator.SLICE_1331/F0"
         },
         "arrive":4.997,
         "delay":0.252
@@ -5507,13 +5514,13 @@ Data Path
 </tapath>
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_generator/counter_97__i5/CK->clk_generator/counter_97__i5/Q
-                                          SLICE_R11C31D      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+clk_generator/counter_119__i5/CK->clk_generator/counter_119__i5/Q
+                                          SLICE_R10C31D      CLK_TO_Q0_DELAY  0.779                  3.863  2       
 clk_generator/counter[5]                                     NET DELAY        0.882                  4.745  2       
-clk_generator/counter_97_add_4_7/C0->clk_generator/counter_97_add_4_7/S0
-                                          SLICE_R11C31D      C0_TO_F0_DELAY   0.252                  4.997  1       
+clk_generator/counter_119_add_4_7/C0->clk_generator/counter_119_add_4_7/S0
+                                          SLICE_R10C31D      C0_TO_F0_DELAY   0.252                  4.997  1       
 clk_generator/n29[5]                                         NET DELAY        0.000                  4.997  1       
-clk_generator/counter_97__i5/D                               ENDPOINT         0.000                  4.997  1       
+clk_generator/counter_119__i5/D                              ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -5529,8 +5536,8 @@ Destination Clock Path
     "path_end":
     {
         "type":"pin",
-        "log_name":"clk_generator/counter_97__i5/CK",
-        "phy_name":"clk_generator.SLICE_1355/CLK"
+        "log_name":"clk_generator/counter_119__i5/CK",
+        "phy_name":"clk_generator.SLICE_1331/CLK"
     },
     "path_sections":[
     {
@@ -5582,7 +5589,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 clk_generator.hf_osc.osc_inst/CLKHF       HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  9       
 clk_generator/clk_48mhz                                      NET DELAY        3.084                  3.084  9       
-clk_generator/counter_97__i5/CK                              CLOCK PIN        0.000                  3.084  1       
+clk_generator/counter_119__i5/CK                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -5596,15 +5603,15 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31C)
-Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R10C31C)
+Path Begin       : clk_generator/clk_out/Q  (SLICE_R9C31D)
+Path End         : clk_generator/cycle_counter__i1/SP  (SLICE_R8C31D)
 Source Clock     : clk_generator/clk_48mhz (R)
 Destination Clock: clk_generator/clk_48mhz (R)
 Logic Level      : 2
-Delay Ratio      : 68.8% (route), 31.2% (logic)
+Delay Ratio      : 71.9% (route), 28.1% (logic)
 Clock Skew       : 0.000 ns 
 Hold Constraint  : 0.000 ns 
-Path Slack       : 3.351 ns  (Passed)
+Path Slack       : 3.714 ns  (Passed)
 
 
 Source Clock Path
@@ -5621,7 +5628,7 @@ Source Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/CK",
-        "phy_name":"clk_generator.SLICE_3053/CLK"
+        "phy_name":"clk_generator.SLICE_3034/CLK"
     },
     "path_sections":[
     {
@@ -5668,13 +5675,13 @@ Data Path
     {
         "type":"pin",
         "log_name":"clk_generator/clk_out/Q",
-        "phy_name":"clk_generator.SLICE_3053/Q1"
+        "phy_name":"clk_generator.SLICE_3034/Q1"
     },
     "path_end":
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/SP",
-        "phy_name":"clk_generator.SLICE_3057/CE"
+        "phy_name":"clk_generator.SLICE_2836/CE"
     },
     "path_sections":[
     {
@@ -5682,12 +5689,12 @@ Data Path
         "pin0":
         {
             "log_name":"clk_generator/clk_out/CK",
-            "phy_name":"clk_generator.SLICE_3053/CLK"
+            "phy_name":"clk_generator.SLICE_3034/CLK"
         },
         "pin1":
         {
             "log_name":"clk_generator/clk_out/Q",
-            "phy_name":"clk_generator.SLICE_3053/Q1"
+            "phy_name":"clk_generator.SLICE_3034/Q1"
         },
         "arrive":3.863,
         "delay":0.779
@@ -5706,13 +5713,13 @@ Data Path
         "type":"site_delay",
         "pin0":
         {
-            "log_name":"clk_generator/i650_2_lut_3_lut_3_lut/A",
-            "phy_name":"clk_generator.SLICE_3053/D0"
+            "log_name":"clk_generator/i843_2_lut_3_lut_3_lut/A",
+            "phy_name":"clk_generator.SLICE_3034/D0"
         },
         "pin1":
         {
-            "log_name":"clk_generator/i650_2_lut_3_lut_3_lut/Z",
-            "phy_name":"clk_generator.SLICE_3053/F0"
+            "log_name":"clk_generator/i843_2_lut_3_lut_3_lut/Z",
+            "phy_name":"clk_generator.SLICE_3034/F0"
         },
         "arrive":4.841,
         "delay":0.266
@@ -5721,11 +5728,11 @@ Data Path
         "type":"net_delay",
         "net":
         {
-            "log_name":"clk_generator/n4508",
-            "phy_name":"clk_generator.n4508"
+            "log_name":"clk_generator/n4804",
+            "phy_name":"clk_generator.n4804"
         },
-        "arrive":6.435,
-        "delay":1.594
+        "arrive":6.798,
+        "delay":1.957
     },
     {
         "type":"site_delay",
@@ -5739,7 +5746,7 @@ Data Path
             "log_name":"",
             "phy_name":""
         },
-        "arrive":6.435,
+        "arrive":6.798,
         "delay":0.000
     }
     ]
@@ -5749,12 +5756,12 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 clk_generator/clk_out/CK->clk_generator/clk_out/Q
-                                          SLICE_R9C31C       CLK_TO_Q1_DELAY  0.779                  3.863  1243    
-cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1243    
-clk_generator/i650_2_lut_3_lut_3_lut/A->clk_generator/i650_2_lut_3_lut_3_lut/Z
-                                          SLICE_R9C31C       D0_TO_F0_DELAY   0.266                  4.841  1       
-clk_generator/n4508                                          NET DELAY        1.594                  6.435  1       
-clk_generator/cycle_counter__i1/SP                           ENDPOINT         0.000                  6.435  1       
+                                          SLICE_R9C31D       CLK_TO_Q1_DELAY  0.779                  3.863  1201    
+cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1201    
+clk_generator/i843_2_lut_3_lut_3_lut/A->clk_generator/i843_2_lut_3_lut_3_lut/Z
+                                          SLICE_R9C31D       D0_TO_F0_DELAY   0.266                  4.841  1       
+clk_generator/n4804                                          NET DELAY        1.957                  6.798  1       
+clk_generator/cycle_counter__i1/SP                           ENDPOINT         0.000                  6.798  1       
 
 
 Destination Clock Path
@@ -5771,7 +5778,7 @@ Destination Clock Path
     {
         "type":"pin",
         "log_name":"clk_generator/cycle_counter__i1/CK",
-        "phy_name":"clk_generator.SLICE_3057/CLK"
+        "phy_name":"clk_generator.SLICE_2836/CLK"
     },
     "path_sections":[
     {
@@ -5828,9 +5835,9 @@ clk_generator/cycle_counter__i1/CK                           CLOCK PIN        0.
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 Required Time                                                                                       -3.084  
-Arrival Time                                                                                         6.435  
+Arrival Time                                                                                         6.798  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 3.351  
+Path Slack  (Passed)                                                                                 3.714  
 
 
 

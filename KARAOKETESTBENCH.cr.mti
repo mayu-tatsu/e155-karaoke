@@ -47,6 +47,13 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	hb_tb
 
+} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/top_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/top_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module karaoke_top_tb
+
+Top level modules:
+	karaoke_top_tb
+
 } {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module cic
@@ -61,7 +68,7 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	spi_tb
 
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv {1 {vlog -work work -vopt -sv -stats=none {C:\Users\mtatsumi\my_designs\e155-karaoke\fir.sv}
+} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module fir
 
