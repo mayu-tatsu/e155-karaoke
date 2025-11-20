@@ -103,29 +103,101 @@ module fir (
             valid_pipeline[0] <= valid_reg[31];  // Start pipeline when delay line full
         end
     end
-    
+
+    logic [32:0] p1_shiftadd, p2_shiftadd, p3_shiftadd, p4_shiftadd, p5_shiftadd, 
+                 p6_shiftadd, p7_shiftadd, p8_shiftadd, p9_shiftadd, p10_shiftadd, p11_shiftadd,
+                 p12_shiftadd, p13_shiftadd, p14_shiftadd, p15_shiftadd;
+    assign p1_shiftadd = - ((sym_pairs[1] <<< 1)    // 2x
+                         +   sym_pairs[1]);         // 1x = -3x
+    assign p2_shiftadd =   ((sym_pairs[2] <<< 3)    // 8x
+                         +  (sym_pairs[2] <<< 1)    // 2x
+                         +   sym_pairs[2]);         // 1x = 11x
+    assign p3_shiftadd = - ((sym_pairs[3] <<< 4)    // 16x
+                         +  (sym_pairs[3] <<< 3)    // 8x
+                         +  (sym_pairs[3] <<< 1)    // 2x
+                         +   sym_pairs[3]);         // 1x = -27x
+    assign p4_shiftadd =   ((sym_pairs[4] <<< 5)    // 32x
+                         +  (sym_pairs[4] <<< 2)    // 4x
+                         +  (sym_pairs[4] <<< 1)    // 2x
+                         +   sym_pairs[4]);         // 1x = 39x 
+    assign p5_shiftadd = - ((sym_pairs[5] <<< 3)    // 8x
+                         +  (sym_pairs[5] <<< 1)    // 2x
+                         +   sym_pairs[5]);         // 1x = -11x
+    assign p6_shiftadd = - ((sym_pairs[6] <<< 6)    // 64x
+                         +  (sym_pairs[6] <<< 5)    // 32x
+                         +   sym_pairs[6] <<< 1);   // 2x = -98x
+    assign p7_shiftadd =   ((sym_pairs[7] <<< 8)    // 256x
+                         +  (sym_pairs[7] <<< 4)    // 16x
+                         +  (sym_pairs[7] <<< 2)    // 4x
+                         +   sym_pairs[7]);         // 1x = 277x
+    assign p8_shiftadd = - ((sym_pairs[8] <<< 8)    // 256x
+                         +  (sym_pairs[8] <<< 7)    // 128x
+                         +  (sym_pairs[8] <<< 3));  // 8x = -392x
+    assign p9_shiftadd =   ((sym_pairs[9] <<< 7)    // 128x
+                         +  (sym_pairs[9] <<< 6)    // 64x
+                         +  (sym_pairs[9] <<< 3)    // 8x
+                         +  (sym_pairs[9] <<< 1)    // 2x
+                         +   sym_pairs[9]);         // 1x = 203x
+
+    assign p10_shiftadd =   ((sym_pairs[10] <<< 8)      // 256x
+                          +  (sym_pairs[10] <<< 7)      // 128x
+                          +  (sym_pairs[10] <<< 6)      // 64x
+                          +  (sym_pairs[10] <<< 4)      // 16x
+                          +  (sym_pairs[10] <<< 2)      // 4x
+                          +  (sym_pairs[10] <<< 1)      // 2x
+                          +  (sym_pairs[10]));          // 1x = 471x
+    assign p11_shiftadd = - ((sym_pairs[11] <<< 10)     // 2048x
+                          +  (sym_pairs[11] <<< 8)      // 256x
+                          +  (sym_pairs[11] <<< 7)      // 128x
+                          +  (sym_pairs[11] <<< 6)      // 64x
+                          +  (sym_pairs[11] <<< 1)      // 2x
+                          +  (sym_pairs[10]));          // 1x = -1475x
+    assign p12_shiftadd =   ((sym_pairs[12] <<< 11)     // 2048x
+                          +  (sym_pairs[12] <<< 6)      // 64x
+                          +  (sym_pairs[12] <<< 4)      // 16x
+                          +  (sym_pairs[12] <<< 3)      // 8x
+                          +  (sym_pairs[12]));          // 1x = 2137x
+    assign p13_shiftadd = - ((sym_pairs[13] <<< 10)     // 1024x
+                          +  (sym_pairs[13] <<< 8)      // 256x
+                          +  (sym_pairs[13] <<< 5)      // 32x
+                          +  (sym_pairs[13] <<< 4));    // 16x = -1328x
+    assign p14_shiftadd = - ((sym_pairs[14] <<< 11)     // 2048x
+                          +  (sym_pairs[14] <<< 9)      // 512x
+                          +  (sym_pairs[14] <<< 6)      // 128x
+                          +  (sym_pairs[14] <<< 3)      // 64x 
+                          +  (sym_pairs[14] <<< 2)      // 4x
+                          +  (sym_pairs[14] <<< 1));    // 2x = -2638x
+    assign p15_shiftadd =   ((sym_pairs[15] <<< 14)     // 16384x
+                          +  (sym_pairs[15] <<< 11)     // 2048x
+                          +  (sym_pairs[15] <<< 9)      // 512x
+                          +  (sym_pairs[15] <<< 8)      // 256x
+                          +  (sym_pairs[15] <<< 4)      // 16x
+                          +  (sym_pairs[15] <<< 1));    // 2x = 19218x
+
+
     // 3. mult by coefficients
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
             products <= '{default: 33'sd0};
             valid_pipeline[1] <= 1'b0;
         end else begin
-			products[0] <= $signed(sym_pairs[0]) * $signed(coeff[0]);
-			products[1] <= $signed(sym_pairs[1]) * $signed(coeff[1]);
-			products[2] <= $signed(sym_pairs[2]) * $signed(coeff[2]);
-			products[3] <= $signed(sym_pairs[3]) * $signed(coeff[3]);
-			products[4] <= $signed(sym_pairs[4]) * $signed(coeff[4]);
-			products[5] <= $signed(sym_pairs[5]) * $signed(coeff[5]);
-			products[6] <= $signed(sym_pairs[6]) * $signed(coeff[6]);
-			products[7] <= $signed(sym_pairs[7]) * $signed(coeff[7]);
-			products[8] <= $signed(sym_pairs[8]) * $signed(coeff[8]);
-			products[9] <= $signed(sym_pairs[9]) * $signed(coeff[9]);
-			products[10] <= $signed(sym_pairs[10]) * $signed(coeff[10]);
-			products[11] <= $signed(sym_pairs[11]) * $signed(coeff[11]);
-			products[12] <= $signed(sym_pairs[12]) * $signed(coeff[12]);
-			products[13] <= $signed(sym_pairs[13]) * $signed(coeff[13]);
-			products[14] <= $signed(sym_pairs[14]) * $signed(coeff[14]);
-			products[15] <= $signed(sym_pairs[15]) * $signed(coeff[15]);
+			products[0] <= 0;
+			products[1] <= p1_shiftadd;
+			products[2] <= p2_shiftadd;
+			products[3] <= p3_shiftadd;
+			products[4] <= p4_shiftadd;
+			products[5] <= p5_shiftadd;
+			products[6] <= p6_shiftadd;
+			products[7] <= p7_shiftadd;
+			products[8] <= p8_shiftadd;
+			products[9] <= p9_shiftadd;
+			products[10] <= p10_shiftadd;
+			products[11] <= p11_shiftadd;
+			products[12] <= p12_shiftadd;
+			products[13] <= p13_shiftadd;
+			products[14] <= p14_shiftadd;
+			products[15] <= p15_shiftadd;
+            
             valid_pipeline[1] <= valid_pipeline[0];
         end
     end

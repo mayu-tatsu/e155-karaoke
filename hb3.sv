@@ -106,31 +106,31 @@ module hb3(
 	
     logic signed [33:0] t0_shiftadd, t1_shiftadd, t2_shiftadd, t3_shiftadd, t4_shiftadd;
     logic signed [33:0] t5_shiftadd, t6_shiftadd, center_shiftadd;
-    assign t0_shiftadd =    (sym_pairs[0] <<< 1)    // 2x
-                          +  sym_pairs[0];          // 1x = 3x
+    assign t0_shiftadd =   ((sym_pairs[0] <<< 1)    // 2x
+                          +  sym_pairs[0]);         // 1x = 3x
     assign t1_shiftadd = - ((sym_pairs[1] <<< 4)    // 16x
                          +  (sym_pairs[1] <<< 3)    // 8x
                          +   sym_pairs[1]);         // 1x = -25x
-    assign t2_shiftadd =    (sym_pairs[2] <<< 6)    // 64x
+    assign t2_shiftadd =   ((sym_pairs[2] <<< 6)    // 64x
                          +  (sym_pairs[2] <<< 5)    // 32x
                          +  (sym_pairs[2] <<< 4)    // 16x
                          +  (sym_pairs[2] <<< 2)    // 4x
-                         +   sym_pairs[2];          // 1x = 117x
+                         +   sym_pairs[2]);         // 1x = 117x
     assign t3_shiftadd = - ((sym_pairs[3] <<< 8)    // 512x
                          +  (sym_pairs[3] <<< 7)    // 128x
                          +  (sym_pairs[3] <<< 3)    // 16x
                          +  (sym_pairs[3] <<< 1));  // 4x = -394x
-    assign t4_shiftadd =    (sym_pairs[4] <<< 10)   // 1024x
+    assign t4_shiftadd =   ((sym_pairs[4] <<< 10)   // 1024x
                          +  (sym_pairs[4] <<< 5)    // 32x
                          +  (sym_pairs[4] <<< 4)    // 16x
                          +  (sym_pairs[4] <<< 2)    // 4x
-                         +  (sym_pairs[4] <<< 1);   // 2x = 1078x
+                         +  (sym_pairs[4] <<< 1));  // 2x = 1078x
     assign t5_shiftadd = - ((sym_pairs[5] <<< 11)   // 2048x
                          +  (sym_pairs[5] <<< 9)    // 512x
                          +  (sym_pairs[5] <<< 7)    // 128x
                          +  (sym_pairs[5] <<< 6)    // 64x 
                          +   sym_pairs[5]);         // 1x = -2753x
-    assign t6_shiftadd =    (sym_pairs[6] <<< 13)   // 8192x
+    assign t6_shiftadd =   ((sym_pairs[6] <<< 13)   // 8192x
                          +  (sym_pairs[6] <<< 10)   // 1024x
                          +  (sym_pairs[6] <<< 9)    // 512x
                          +  (sym_pairs[6] <<< 8)    // 256x
@@ -138,7 +138,7 @@ module hb3(
                          +  (sym_pairs[6] <<< 5)    // 32x
                          +  (sym_pairs[6] <<< 4)    // 16x
                          +  (sym_pairs[6] <<< 2)    // 4x
-                         +   sym_pairs[6]           // 1x = 10165x
+                         +   sym_pairs[6]);         // 1x = 10165x
     assign center_shiftadd = (center_tap <<< 14);   // 16384x
 
 	always_ff @(posedge clk or negedge reset_n) begin
