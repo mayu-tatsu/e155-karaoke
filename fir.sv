@@ -256,8 +256,8 @@ module fir (
                 y_out <= result_q15[15:0];
             end   
 
-            y_out_valid <= valid_pipeline[2];
-            valid_pipeline[3] <= valid_pipeline[2];
+            y_out_valid <= valid_pipeline[2] & ~valid_pipeline[3];  // pulse only on rising edge
+            valid_pipeline[3] <= valid_pipeline[2];                  // store previous state
         end
     end
 endmodule
