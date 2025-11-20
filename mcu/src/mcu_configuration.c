@@ -20,10 +20,6 @@ void mcu_configuration(void)
   // enables all GPIO ports
   RCC->AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN | RCC_AHB2ENR_GPIOCEN);
 
-  // configures the SPI peripheral
-  // most notably, sets the clock phase to one and the clock polarity to zero
-  initSPI(1, 0, 0);
-
   // assigns two GPIO pins to act as the Load and Done signals
   pinMode(LOAD, GPIO_OUTPUT);
   pinMode(DONE, GPIO_INPUT);
@@ -47,6 +43,10 @@ void mcu_configuration(void)
   
   // configures the DMA peripheral as desired
   dma_configuration();
+
+  // configures the SPI peripheral
+  // most notably, sets the clock phase to one and the clock polarity to zero
+  initSPI(1, 0, 0);
 
 }
 

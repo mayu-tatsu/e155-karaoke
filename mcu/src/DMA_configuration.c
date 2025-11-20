@@ -24,6 +24,8 @@ void dma_configuration(void)
   DMA1_Channel2 -> CCR &= ~(0xFFFFFFFF);
   DMA1_Channel2 -> CCR |= (_VAL2FLD(DMA_CCR_PL, 0b10) | _VAL2FLD(DMA_CCR_MINC, 0b1) | _VAL2FLD(DMA_CCR_CIRC, 0b1) | _VAL2FLD(DMA_CCR_DIR, 0b1));
 
+  // TODO: consider streams?
+
   // sets the DMA source address (which, in this case, should be the SPI data register)
   DMA1_Channel2 -> CMAR = _VAL2FLD(DMA_CMAR_MA, (uint32_t)&(SPI1 -> DR));
 

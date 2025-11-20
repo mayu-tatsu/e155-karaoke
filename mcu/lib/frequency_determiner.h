@@ -15,6 +15,7 @@ Purpose: To allow the frequency determining function to actually be used.
 #include <stdint.h>
 #include <stm32l432xx.h>
 
+#define CIC_GAIN      33176
 #define FFT_LENGTH    256
 #define SAMPLING_RATE 16000
 

@@ -52,8 +52,8 @@ int main(void)
     
     // TODO: DELETE
     // DEBUGGING CODE
-    //printf("%f", note_frequency\n);
-    //printf(note\n);
+    printf("%f\n", note_frequency);
+    printf(note); printf("\n");
     
     // TODO: DELETE
     // MIDPOINT CHECKOFF DEMO CODE
