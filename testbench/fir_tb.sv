@@ -14,8 +14,8 @@ module fir_tb();
     logic               y_out_valid;
     
     // clk generation (16 kHz sample rate = 62.5 us period)
-    localparam CLK_PERIOD = 10;  // 100 MHz for simulation speed
-    localparam SAMPLE_PERIOD = 6250;  // 62.5 us = 16 kHz sample rate
+    localparam CLK_PERIOD = 10;         // 100 MHz for simulation speed
+    localparam SAMPLE_PERIOD = 6250;    // 62.5 us = 16 kHz sample rate
     always #(CLK_PERIOD/2) clk = ~clk;
     
     fir dut (
@@ -42,7 +42,6 @@ module fir_tb();
         return $rtoi(clamped * 32768.0);
     endfunction
     
-    // Task: Send one sample to FIR
     task send_sample(input logic signed [15:0] sample);
         @(posedge clk);
         x_in <= sample;

@@ -28,6 +28,7 @@ module fir (
         16'sd39,    -16'sd11,   -16'sd98,   16'sd277,
         -16'sd392,  16'sd203,   16'sd471,   -16'sd1475,
         16'sd2137,  -16'sd1328, -16'sd2638, 16'sd19218,
+
         16'sd19218, -16'sd2638, -16'sd1328, 16'sd2137,
         -16'sd1475, 16'sd471,   16'sd203,   -16'sd392,
         16'sd277,   -16'sd98,   -16'sd11,   16'sd39,
@@ -143,7 +144,7 @@ module fir (
         end
     end
     
-    // 5. Scale (Q30 -> Q15) and output
+    // 5. scale (Q30 -> Q15) and output
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
             y_out <= 16'sd0;
@@ -154,32 +155,22 @@ module fir (
 			y_out <= $signed(accumulator) >>> 15;
 
 			// note: we may need to clamp in case values go outside of 16 bit range
+            // convert Q30 -> Q15
+            // only need 15-BIT shift on full signed accumulator 
+            // logic signed [22:0] result_q15;
+            // result_q15 = $signed(accumulator) >>> 15;
+
+            // limiting max/min since we're limiting to 16-bit
+            // if (result_q15 > 23'sd16383) begin
+            //     y_out <= 16'sd32767;
+            // end else if (result_q15 < -23'sd16384) begin
+            //     y_out <= -16'sd32768;
+            // end else begin
+            //     y_out <= result_q15[15:0];
+            // end   
+
             y_out_valid <= valid_pipeline[2];
             valid_pipeline[3] <= valid_pipeline[2];
         end
     end
 endmodule
-
-
-//  end else begin
-        // accumulator is in Q30 (approximately).  Shift right by 15 once to go Q30 -> Q15.
-        // Use arithmetic shift on the full accumulator then take the lower 16 bits (with sign).
-        // Doing a single >>> 15 is the correct normalization.
-        //logic signed [37:0] acc_signed;
-        //acc_signed = accumulator;
-        // result_q15 is 23 bits (38-15). Now clamp or take top bits into 16-bit output.
-        //logic signed [22:0] result_q15;
-        //result_q15 = acc_signed >>> 15;    // single shift only
-
-        // Assign into 16-bit output, with simple saturation/clamping to avoid overflow
-        //if (result_q15 >  23'sd16383)        // +0.99997 in Q15 (approx)
-        //    y_out <= 16'sd32767;
-       // else if (result_q15 < -23'sd16384)   // -1.0 in Q15 (approx)
-        //    y_out <= -16'sd32768;
-        //else
-        //    y_out <= result_q15[15:0];       // take lower 16 bits (sign preserved)
-
-        // advance pipeline valid bit and expose output valid from the final stage
-        //valid_pipeline[3] <= valid_pipeline[2];
-        //y_out_valid <= valid_pipeline[3];
- //   end

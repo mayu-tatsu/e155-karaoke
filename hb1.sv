@@ -32,10 +32,7 @@ module hb1(
     };
     const logic signed [15:0] w13 = 16'sd16384; // h[13] = 0.5 * 32768; center tap
     
-	
-	logic signed [37:0] sum;
-    logic signed [33:0] p[0:6];         // products used later, 7 non-zero unique coefficients
-	
+
     logic signed [16:0] sym_pairs [0:6];    // symmetric sums (17-bit to handle overflow)
     logic signed [15:0] center_tap;         // center tap value
     logic               stage1_valid;
@@ -50,33 +47,33 @@ module hb1(
 	
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
-                taps[0] <= 16'sd0;
-				taps[1] <= 16'sd0;
-				taps[2] <= 16'sd0;
-				taps[3] <= 16'sd0;
-				taps[4] <= 16'sd0;
-				taps[5] <= 16'sd0;
-				taps[6] <= 16'sd0;
-				taps[7] <= 16'sd0;
-				taps[8] <= 16'sd0;
-				taps[9] <= 16'sd0;
-				taps[10] <= 16'sd0;
-				taps[11] <= 16'sd0;
-				taps[12] <= 16'sd0;
-				taps[13] <= 16'sd0;
-				taps[14] <= 16'sd0;
-				taps[15] <= 16'sd0;
-				taps[16] <= 16'sd0;
-				taps[17] <= 16'sd0;
-				taps[18] <= 16'sd0;
-				taps[19] <= 16'sd0;
-				taps[20] <= 16'sd0;
-				taps[21] <= 16'sd0;
-				taps[22] <= 16'sd0;
-				taps[23] <= 16'sd0;
-				taps[24] <= 16'sd0;
-				taps[25] <= 16'sd0;
-				taps[26] <= 16'sd0;				
+            taps[0] <= 16'sd0;
+            taps[1] <= 16'sd0;
+            taps[2] <= 16'sd0;
+            taps[3] <= 16'sd0;
+            taps[4] <= 16'sd0;
+            taps[5] <= 16'sd0;
+            taps[6] <= 16'sd0;
+            taps[7] <= 16'sd0;
+            taps[8] <= 16'sd0;
+            taps[9] <= 16'sd0;
+            taps[10] <= 16'sd0;
+            taps[11] <= 16'sd0;
+            taps[12] <= 16'sd0;
+            taps[13] <= 16'sd0;
+            taps[14] <= 16'sd0;
+            taps[15] <= 16'sd0;
+            taps[16] <= 16'sd0;
+            taps[17] <= 16'sd0;
+            taps[18] <= 16'sd0;
+            taps[19] <= 16'sd0;
+            taps[20] <= 16'sd0;
+            taps[21] <= 16'sd0;
+            taps[22] <= 16'sd0;
+            taps[23] <= 16'sd0;
+            taps[24] <= 16'sd0;
+            taps[25] <= 16'sd0;
+            taps[26] <= 16'sd0;				
             valid_reg <= '0;
             sample_counter <= 1'b0;
         end else if (x_in_valid) begin
@@ -108,7 +105,7 @@ module hb1(
         end
     end
 	
-	 always_ff @(posedge clk or negedge reset_n) begin
+	always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
             products <= '{default: 34'sd0};
             center_product <= 32'sd0;
@@ -150,7 +147,7 @@ module hb1(
         end else if (stage3_valid) begin
             y_out <= accumulator >>> 15;  // multiplying two Q15 numbers results in Q30, shift back to Q15
             y_out_valid <= 1'b1;
-        end else begin
+        end else beginc
             y_out_valid <= 1'b0;
         end
     end
