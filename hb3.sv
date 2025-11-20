@@ -104,21 +104,58 @@ module hb3(
         end
     end
 	
+    logic signed [33:0] t0_shiftadd, t1_shiftadd, t2_shiftadd, t3_shiftadd, t4_shiftadd;
+    logic signed [33:0] t5_shiftadd, t6_shiftadd, center_shiftadd;
+    assign t0_shiftadd =    (sym_pairs[0] <<< 1)    // 2x
+                          +  sym_pairs[0];          // 1x = 3x
+    assign t1_shiftadd = - ((sym_pairs[1] <<< 4)    // 16x
+                         +  (sym_pairs[1] <<< 3)    // 8x
+                         +   sym_pairs[1]);         // 1x = -25x
+    assign t2_shiftadd =    (sym_pairs[2] <<< 6)    // 64x
+                         +  (sym_pairs[2] <<< 5)    // 32x
+                         +  (sym_pairs[2] <<< 4)    // 16x
+                         +  (sym_pairs[2] <<< 2)    // 4x
+                         +   sym_pairs[2];          // 1x = 117x
+    assign t3_shiftadd = - ((sym_pairs[3] <<< 8)    // 512x
+                         +  (sym_pairs[3] <<< 7)    // 128x
+                         +  (sym_pairs[3] <<< 3)    // 16x
+                         +  (sym_pairs[3] <<< 1));  // 4x = -394x
+    assign t4_shiftadd =    (sym_pairs[4] <<< 10)   // 1024x
+                         +  (sym_pairs[4] <<< 5)    // 32x
+                         +  (sym_pairs[4] <<< 4)    // 16x
+                         +  (sym_pairs[4] <<< 2)    // 4x
+                         +  (sym_pairs[4] <<< 1);   // 2x = 1078x
+    assign t5_shiftadd = - ((sym_pairs[5] <<< 11)   // 2048x
+                         +  (sym_pairs[5] <<< 9)    // 512x
+                         +  (sym_pairs[5] <<< 7)    // 128x
+                         +  (sym_pairs[5] <<< 6)    // 64x 
+                         +   sym_pairs[5]);         // 1x = -2753x
+    assign t6_shiftadd =    (sym_pairs[6] <<< 13)   // 8192x
+                         +  (sym_pairs[6] <<< 10)   // 1024x
+                         +  (sym_pairs[6] <<< 9)    // 512x
+                         +  (sym_pairs[6] <<< 8)    // 256x
+                         +  (sym_pairs[6] <<< 7)    // 128x
+                         +  (sym_pairs[6] <<< 5)    // 32x
+                         +  (sym_pairs[6] <<< 4)    // 16x
+                         +  (sym_pairs[6] <<< 2)    // 4x
+                         +   sym_pairs[6]           // 1x = 10165x
+    assign center_shiftadd = (center_tap <<< 14);   // 16384x
+
 	always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
             products <= '{default: 34'sd0};
             center_product <= 32'sd0;
             stage2_valid <= 1'b0;
         end else begin
-            // mult each pair by its coefficient
-			products[0] <= $signed(sym_pairs[0]) * $signed(w[0]);
-			products[1] <= $signed(sym_pairs[1]) * $signed(w[1]);
-			products[2] <= $signed(sym_pairs[2]) * $signed(w[2]);
-			products[3] <= $signed(sym_pairs[3]) * $signed(w[3]);
-			products[4] <= $signed(sym_pairs[4]) * $signed(w[4]);
-			products[5] <= $signed(sym_pairs[5]) * $signed(w[5]);
-			products[6] <= $signed(sym_pairs[6]) * $signed(w[6]);
-            center_product <= $signed(center_tap) * $signed(w13);
+            // instead of multing, implement shift-adding
+			products[0] <= t0_shiftadd
+			products[1] <= t1_shiftadd;
+			products[2] <= t2_shiftadd;
+			products[3] <= t3_shiftadd;
+			products[4] <= t4_shiftadd;
+			products[5] <= t5_shiftadd;
+			products[6] <= t6_shiftadd;
+            center_product <= center_shiftadd;
             
             stage2_valid <= stage1_valid;
         end

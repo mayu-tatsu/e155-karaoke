@@ -147,7 +147,7 @@ module hb1(
         end else if (stage3_valid) begin
             y_out <= accumulator >>> 15;  // multiplying two Q15 numbers results in Q30, shift back to Q15
             y_out_valid <= 1'b1;
-        end else beginc
+        end else begin
             y_out_valid <= 1'b0;
         end
     end
