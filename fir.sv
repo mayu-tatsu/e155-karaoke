@@ -124,7 +124,7 @@ module fir (
 			products[12] <= $signed(sym_pairs[12]) * $signed(coeff[12]);
 			products[13] <= $signed(sym_pairs[13]) * $signed(coeff[13]);
 			products[14] <= $signed(sym_pairs[14]) * $signed(coeff[14]);
-			products[15] <= $signed(sym_pairs[15]) * $signed(coeff[]);
+			products[15] <= $signed(sym_pairs[15]) * $signed(coeff[15]);
             valid_pipeline[1] <= valid_pipeline[0];
         end
     end
