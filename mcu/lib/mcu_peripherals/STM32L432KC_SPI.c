@@ -13,47 +13,66 @@
  *          1: data changed on leading edge of clk and captured on next edge)
  * Refer to the datasheet for more low-level details. */ 
 void initSPI(int br, int cpol, int cpha) {
-    // Turn on GPIOA and GPIOB clock domains (GPIOAEN and GPIOBEN bits in AHB1ENR)
-    RCC->AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN);
-    
-    RCC->APB2ENR |= RCC_APB2ENR_SPI1EN; // Turn on SPI1 clock domain (SPI1EN bit in APB2ENR)
 
-    // Initially assigning SPI pins
-    pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK
-    pinMode(SPI_MISO, GPIO_ALT); // SPI1_MISO
-    pinMode(SPI_MOSI, GPIO_ALT); // SPI1_MOSI
-    pinMode(SPI_CE, GPIO_OUTPUT); //  Manual CS
+  // enables the SPI1 peripheral
+  RCC -> APB2ENR |= RCC_APB2ENR_SPI1EN;
 
-    // Set output speed type to high for SCK
-    GPIOB->OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
+  // enables alternate functions for the desired GPIO pins 
+  GPIOB -> AFR[0] &= ~((0xF << 12) | (0xF << 16) | (0xF << 20));  // clears the register
+  GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 0b0101);          // sets the necessary bits accordingly
+  GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 0b0101);          // sets the necessary bits accordingly
+  GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 0b0101);          // sets the necessary bits accordingly
 
-    // Set to AF05 for SPI alternate functions
-    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 5);
-    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 5);
-    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 5);
-    
-    SPI1->CR1 |= _VAL2FLD(SPI_CR1_BR, br); // Set baud rate divider
+  // sets the baud rate to a value of the user's choosing
+  SPI1 -> CR1 |= (br << 3);
 
-    SPI1->CR1 |= (SPI_CR1_MSTR);
-    SPI1->CR1 &= ~(SPI_CR1_CPOL | SPI_CR1_CPHA | SPI_CR1_LSBFIRST | SPI_CR1_SSM);
-    SPI1->CR1 |= _VAL2FLD(SPI_CR1_CPHA, cpha);
-    SPI1->CR1 |= _VAL2FLD(SPI_CR1_CPOL, cpol);
-    SPI1->CR2 |= _VAL2FLD(SPI_CR2_DS, 0b0111);
-    SPI1->CR2 |= (SPI_CR2_FRXTH | SPI_CR2_SSOE);
+  // sets the clock polarity and clock phase to values of the user's choosing
+  SPI1 -> CR1 &= ~((1 << 1) | (1 << 0));          // clears the register
+  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_CPOL, cpol);    // sets the necessary bits accordingly
+  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_CPHA, cpha);    // sets the necessary bits accordingly
+  
+  // selects a data frame format
+  SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_DS, 0b1111);
 
-    // enables the generation of DMA requests whenever the RXNE flag is set
-    SPI1 -> CR2 |= SPI_CR2_RXDMAEN;
+  // generates RXNE events for 16-bit data
+  SPI1 -> CR2 &= ~SPI_CR2_FRXTH;
 
-    SPI1->CR1 |= (SPI_CR1_SPE); // Enable SPI
+  // sends the MSB first
+  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_LSBFIRST, 0);
+
+  // configures pin as a manually toggle-able CE signal
+  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSM, 1); SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSI, 1); SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_NSSP, 0);
+
+  // initially assigns SPI pins
+  pinMode(SPI_SCK, GPIO_INPUT); // SPI1_SCK
+  //pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK
+  //GPIOB -> OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
+  pinMode(SPI_MISO, GPIO_ALT);  // SPI1_MISO
+  pinMode(SPI_MOSI, GPIO_ALT);  // SPI1_MOSI
+  pinMode(SPI_CE, GPIO_OUTPUT); //  Manual CS
+
+  // asserts the MCU as the peripheral
+  SPI1 -> CR1 &= ~SPI_CR1_MSTR; SPI1 -> CR1 |= SPI_CR1_RXONLY;
+  //SPI1 -> CR1 |= SPI_CR1_MSTR;
+
+  // allows SPI to work in multi-master environments
+  SPI1 -> CR2 &= ~SPI_CR2_SSOE;
+
+  // enables the generation of DMA requests whenever the RXNE flag is set
+  SPI1 -> CR2 |= SPI_CR2_RXDMAEN;
+
+  // enables SPI
+  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SPE, 1);
+
 }
 
 /* Transmits a character (1 byte) over SPI and returns the received character.
  *    -- send: the character to send over SPI
  *    -- return: the character received over SPI */
-char spiSendReceive(char send) {
-    while(!(SPI1->SR & SPI_SR_TXE)); // Wait until the transmit buffer is empty
-    *(volatile char *) (&SPI1->DR) = send; // Transmit the character over SPI
+uint16_t spiSendReceive(uint16_t send) {
+    //while(!(SPI1->SR & SPI_SR_TXE)); // Wait until the transmit buffer is empty
+    //*(volatile uint16_t *) (&SPI1->DR) = send; // Transmit the character over SPI
     while(!(SPI1->SR & SPI_SR_RXNE)); // Wait until data has been received
-    char rec = (volatile char) SPI1->DR;
+    uint16_t rec = (volatile uint16_t) SPI1->DR;
     return rec; // Return received character
 }

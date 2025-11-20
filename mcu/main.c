@@ -36,6 +36,15 @@ int main(void)
   // runs continuously
   while (1)
   {
+    // 
+    for (int i = 0; i < FFT_LENGTH; i++)
+    {
+      if (i == 0) {printf("start:");}
+      digitalWrite(CS, 1); input_signal[i] = spiSendReceive(0x0000); digitalWrite(CS, 0);
+      printf("%x", input_signal[i]);
+      //printf("%d\n", i);
+    }
+
     // checks to see whether or not FFT calculations have already occurred
     // if not, then proceeds to do so
     if (fft_calculations_complete != 1)
@@ -49,18 +58,16 @@ int main(void)
 
     // determines what the actual note is
     const char* note = note_determiner(note_frequency);
-    
+
     // TODO: DELETE
     // DEBUGGING CODE
-    printf("%f\n", note_frequency);
+    //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);
+    //printf("%d, %d, %d, %d", dma_test_receive[4], dma_test_receive[5], dma_test_receive[6], dma_test_receive[7]);
+    //printf("%d, %d, %d, %d", dma_test_receive[8], dma_test_receive[9], dma_test_receive[10], dma_test_receive[11]);
+    //printf("%d, %d, %d, %d\n", dma_test_receive[12], dma_test_receive[13], dma_test_receive[14], dma_test_receive[15]);
+    //printf("SPI DR: %x\n", SPI1->DR);
+    printf("Note frequency: %f\n", note_frequency);
     printf(note); printf("\n");
-    
-    // TODO: DELETE
-    // MIDPOINT CHECKOFF DEMO CODE
-    pinMode(PA9, GPIO_OUTPUT); pinMode(PA10, GPIO_OUTPUT);
-    if      (strcmp(note, "A4") == 0) {digitalWrite(PA9,  1); digitalWrite(PA10, 0);}
-    else if (strcmp(note, "F5") == 0) {digitalWrite(PA10, 1); digitalWrite(PA9,  0);}
-    else                              {digitalWrite(PA9,  0); digitalWrite(PA10, 0);}
   }
   
 }

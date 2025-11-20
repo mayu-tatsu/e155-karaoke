@@ -13,42 +13,62 @@ volatile uint32_t fft_calculations_complete;
 float32_t next_input_signal[FFT_LENGTH];
 float32_t input_signal[FFT_LENGTH];
 
+
+volatile uint32_t dma_transfer_complete = 0;
+uint32_t dma_test_send[16] = {0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003, 0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003, 0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003, 0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003};
+uint32_t dma_test_receive[16];
+
 // enables the DMA peripheral to work with SPI, specifically
 void dma_configuration(void)
 {
 
-  // enables DMA1
+  // enables clock for DMA1
   RCC -> AHB1ENR |= RCC_AHB1ENR_DMA1EN;
+
+  // disables DMA1, Channel 2, in order to make changes
+  DMA1_Channel2 -> CCR &= ~DMA_CCR_EN;
+
+  // clears all DMA1 flags
+  DMA1 -> IFCR = DMA_IFCR_CGIF2;
 
   // resets DMA1, Channel 2
   DMA1_Channel2 -> CCR &= ~(0xFFFFFFFF);
-  DMA1_Channel2 -> CCR |= (_VAL2FLD(DMA_CCR_PL, 0b10) | _VAL2FLD(DMA_CCR_MINC, 0b1) | _VAL2FLD(DMA_CCR_CIRC, 0b1) | _VAL2FLD(DMA_CCR_DIR, 0b1));
 
-  // TODO: consider streams?
+  // reconfigures Channel 2 as desired
+  DMA1_Channel2 -> CCR |= (_VAL2FLD(DMA_CCR_MEM2MEM, 0b1)  | _VAL2FLD(DMA_CCR_MSIZE, 0b01) | _VAL2FLD(DMA_CCR_PSIZE, 0b01) | _VAL2FLD(DMA_CCR_PINC, 0b1));
+  DMA1_Channel2 -> CCR |= (_VAL2FLD(DMA_CCR_PL,      0b10) | _VAL2FLD(DMA_CCR_MINC,  0b1)  | _VAL2FLD(DMA_CCR_CIRC,  0b1)  | _VAL2FLD(DMA_CCR_DIR,  0b0));
 
-  // sets the DMA source address (which, in this case, should be the SPI data register)
-  DMA1_Channel2 -> CMAR = _VAL2FLD(DMA_CMAR_MA, (uint32_t)&(SPI1 -> DR));
+  // TODO: DELETE
+  // DMA TEST CODE
+  //DMA1_Channel2 -> CMAR = _VAL2FLD(DMA_CMAR_MA, (uint32_t)&dma_test_receive);
+  //DMA1_Channel2 -> CPAR = _VAL2FLD(DMA_CPAR_PA, (uint32_t)&dma_test_send);
+  //DMA1_Channel2 -> CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, 16);
 
   // sets the DMA destination address (which, in this case, should be a global array)
-  // TODO: double-check
-  DMA1_Channel2 -> CPAR = _VAL2FLD(DMA_CPAR_PA, (uint32_t)&next_input_signal);
+  DMA1_Channel2 -> CMAR = _VAL2FLD(DMA_CMAR_MA, (uint32_t)&next_input_signal);
+
+  // sets the DMA source address (which, in this case, should be the SPI data register)
+  DMA1_Channel2 -> CPAR = _VAL2FLD(DMA_CPAR_PA, (uint32_t)&(SPI1 -> DR));
 
   // determines the DMA data transfer length (i.e. the number of samples present)
   // TODO: double-check
   DMA1_Channel2 -> CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, FFT_LENGTH);
   
   // selects Channel 2
-  DMA1_CSELR -> CSELR |= _VAL2FLD(DMA_CSELR_C2S, 4);
+  DMA1_CSELR -> CSELR |= _VAL2FLD(DMA_CSELR_C2S, 0b0001); // _VAL2FLD(DMA_CSELR_C2S, 4);
 
   // enables the full-transfer interrupt flag
   DMA1_Channel2 -> CCR |= DMA_CCR_TCIE;
 
-  // fully enables DMA1, Channel 2
-  DMA1_Channel2 -> CCR |= DMA_CCR_EN;
+  // 
+  dma_transfer_complete = 0;
 
   // enables the DMA1, Channel 2 interrupt and sets it to be top priority
   NVIC_EnableIRQ(DMA1_Channel2_IRQn);
-  NVIC_SetPriority(DMA1_Channel2_IRQn, 0);
+  NVIC_SetPriority(DMA1_Channel2_IRQn, 1);
+
+  // fully enables DMA1, Channel 2
+  DMA1_Channel2 -> CCR |= DMA_CCR_EN;
 
 }
 
