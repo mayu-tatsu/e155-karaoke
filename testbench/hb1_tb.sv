@@ -1,10 +1,10 @@
-// hb1_tb.v
+// hb_tb.v
 // Inline testbench for hb1 halfband decimation filter
 // Decimation by 2: 128 kHz -> 64 kHz
 
 `timescale 1ns / 1ps
 
-module hb1_tb();
+module hb_tb();
 
     // Clock and reset
     logic clk;
@@ -35,7 +35,7 @@ module hb1_tb();
     real actual_ratio;
 
     // DUT instance
-    hb1 dut (
+    hb dut (
         .clk(clk),
         .reset_n(reset_n),
         .x_in(x_in),

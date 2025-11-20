@@ -181,7 +181,7 @@ module fir_tb();
         
         if (freq < 4000) begin
             if (gain_db > -1.0 && gain_db < 1.0) begin
-                $display("PASS: Passband gain within Â±1 dB");
+                $display("PASS: Passband gain within +/-1 dB");
             end else begin
                 $display("FAIL: Passband gain out of spec");
             end

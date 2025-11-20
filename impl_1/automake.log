@@ -1,116 +1,34 @@
 
-pnmainc -log pnmain "e155_karaoke_impl_1_map.tcl"
-map:  version Radiant Software (64-bit) 2024.2.0.3.0
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-
-Command line:   map -i e155_karaoke_impl_1_syn.udb -o e155_karaoke_impl_1_map.udb -mp e155_karaoke_impl_1.mrp -hierrpt -gui -msgset C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml 
-
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m   -pwrprd -html -rpt "e155_karaoke_impl_1.twr" "e155_karaoke_impl_1.udb" 
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt e155_karaoke_impl_1.twr e155_karaoke_impl_1.udb -gui -msgset C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml
+Starting design reading...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2024.2/ispfpga.
 Package Status:                     Preliminary    Version 1.5.
-
-
-
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Loading udb::Database ...
 Design:  karaoke_top
 Family:  iCE40UP
 Device:  iCE40UP5K
 Package: SG48
-Performance Grade:  High-Performance_1.2V
-
-Running general design DRC...
-
-WARNING <71003020> - Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - Top module port 'sdone' does not connect to anything.
+Performance Grade:   High-Performance_1.2V
 
 
 
-Design Summary:
-   Number of slice registers: 3060 out of  5280 (58%)
-   Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           9102 out of  5280 (172%)
-      Number of logic LUT4s:             860
-      Number of inserted feedthru LUT4s: 2375
-      Number of replicated LUT4s:          3
-      Number of ripple logic:            2932 (5864 LUT4s)
-   Number of IO sites used:   22 out of 39 (56%)
-      Number of IO sites used for general PIO: 22
-      Number of IO sites used for I3C: 0 out of 2 (0%)
-      (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 22 out of 36 (61%)
-      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
-      (note: If RGB LED drivers are not used, sites can be used as OD outputs,
-       see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 22 out of 39 (56%)
-   Number of DSPs:             8 out of 8 (100%)
-   Number of I2Cs:             0 out of 2 (0%)
-   Number of High Speed OSCs:  1 out of 1 (100%)
-   Number of Low Speed OSCs:   0 out of 1 (0%)
-   Number of RGB PWM:          0 out of 1 (0%)
-   Number of RGB Drivers:      0 out of 1 (0%)
-   Number of SCL FILTERs:      0 out of 2 (0%)
-   Number of SRAMs:            0 out of 4 (0%)
-   Number of WARMBOOTs:        0 out of 1 (0%)
-   Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             0 out of 30 (0%)
-   Number of PLLs:             0 out of 1 (0%)
-   Number of Clocks:  3
-      Net clk_c: 2715 loads, 2715 rising, 0 falling (Driver: Pin clk_generator.clk_out/Q)
-      Net sck_c: 26 loads, 25 rising, 1 falling (Driver: Port sck)
-      Net clk_generator.clk_48mhz: 7 loads, 7 rising, 0 falling (Driver: Pin clk_generator.hf_osc.osc_inst/CLKHF)
-   Number of Clock Enables:  14
-      Net VCC_net: 1 loads, 0 SLICEs
-      Net halfband3.hb3_out_valid_N_13752: 8 loads, 8 SLICEs
-      Net hb3_out_valid: 527 loads, 527 SLICEs
-      Net hb2_out_valid: 458 loads, 458 SLICEs
-      Net cic_decimator.combs_output_vld: 16 loads, 16 SLICEs
-      Net cic_decimator.new_decim_valid_N_13755: 17 loads, 17 SLICEs
-      Net cic_decimator.new_decim_valid: 26 loads, 26 SLICEs
-      Net cic_out_valid: 458 loads, 458 SLICEs
-      Net audio_valid_c: 16 loads, 16 SLICEs
-      Net spi_interface.n22363: 19 loads, 19 SLICEs
-      Net halfband2.hb2_out_valid_N_13750: 9 loads, 9 SLICEs
-      Net hb1_out_valid: 458 loads, 458 SLICEs
-      Net halfband1.stage3_valid: 16 loads, 16 SLICEs
-      Net clk_generator.n22434: 1 loads, 1 SLICEs
-   Number of LSRs:  5
-      Net maxfan_replicated_net_1999: 942 loads, 942 SLICEs
-      Net maxfan_replicated_net_999: 780 loads, 780 SLICEs
-      Net maxfan_replicated_net_2053: 54 loads, 54 SLICEs
-      Net sync_stage1_N_13773: 968 loads, 968 SLICEs
-      Net clk_generator.n270: 4 loads, 4 SLICEs
-   Top 10 highest fanout non-clock nets:
-      Net sync_stage1_N_13773: 968 loads
-      Net maxfan_replicated_net_1999: 942 loads
-      Net maxfan_replicated_net_999: 780 loads
-      Net hb3_out_valid: 528 loads
-      Net hb1_out_valid: 462 loads
-      Net hb2_out_valid: 462 loads
-      Net cic_out_valid: 461 loads
-      Net n5480: 236 loads
-      Net VCC_net: 128 loads
-      Net cic_decimator.new_decim_valid: 78 loads
-ERROR <51001122> - Design doesn't fit into device specified, refer to the design summary section for more details.
-Running physical design DRC...
+Successfully loading udb, 0.14 seconds
 
-WARNING <71003020> - Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - Top module port 'sdone' does not connect to anything.
- 
+Initializing timer
+Starting design annotation....
+High-Performance_1.2V
 
+Starting full timing analysis...
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Connections ignored  1278  counted  16878  covered  48
+Changing speed to m;   changing temperature to -40
 
-   Number of warnings:  4
-   Number of criticals: 0
-   Number of errors:    1
+STA Runtime and Peak Memory Usage :
+Total CPU Time: 6 secs 
+Total REAL Time: 6 secs 
+Peak Memory Usage: 180 MB
 
+ 6.317103s wall, 6.078125s user + 0.171875s system = 6.250000s CPU (98.9%)
 
-
-Total CPU Time: 1 secs  
-Total REAL Time: 2 secs  
-Peak Memory Usage: 184 MB
-
-Error: the command map_run failed.
-
-Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /2 secs 

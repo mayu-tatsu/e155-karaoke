@@ -23,9 +23,6 @@ if {[file exists {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/e155_karaoke_
   file copy -force -- {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/e155_karaoke_impl_1_syn.udb} {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/incr/postsyn.udb}
   file copy -force -- {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/e155_karaoke_impl_1_map.udb} {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/incr/postmap.udb}
   file copy -force -- {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/e155_karaoke_impl_1.udb} {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/incr/postpar.udb}
-  if [file exists {C:/Users/mtatsumi/my_designs/e155-karaoke/pinouts.pdc}] {
-    file copy -force -- {C:/Users/mtatsumi/my_designs/e155-karaoke/pinouts.pdc} {C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/incr/lastrun.pdc}
-  }
 }
 
 } out]} {

@@ -148,7 +148,7 @@ module hb3(
             stage2_valid <= 1'b0;
         end else begin
             // instead of multing, implement shift-adding
-			products[0] <= t0_shiftadd
+			products[0] <= t0_shiftadd;
 			products[1] <= t1_shiftadd;
 			products[2] <= t2_shiftadd;
 			products[3] <= t3_shiftadd;

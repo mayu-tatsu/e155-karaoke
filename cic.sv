@@ -18,23 +18,23 @@
 // Based on this Scala (SpinalHDL) reference: https://github.dev/tomverbeure/pdm/tree/master/modeling/pdm2pcm
 
 module cic #(
-    parameter int R           = 12,      // decimation factor, default 12
-    parameter int N           = 4,       // # stages, default 4
+    parameter int R           = 24,      // decimation factor, default 24
+    parameter int N           = 4,       // # stages, default 6
     parameter int M           = 1,       // differential delay (comb), default 1
     parameter int OUT_WIDTH   = 16,      // desired output width
     parameter bit NORMALIZE   = 0        // enable normalization to compensate CIC gain, default off
 ) (
     input  logic                        clk,        // pdm clock
-    input  logic                        rst_n,      // active-low reset
+    input  logic                        reset_n,    // active-low reset
     input  logic                        pdm_in,     // 1-bit PDM data at clk
     output logic signed [OUT_WIDTH-1:0] dout,       // decimated (and optionally normalized) output
     output logic                        dout_valid  // pulses high for one clk when dout is valid
 );
 
     // required # of bits (accumulated) = input (1bit) + roundUp(nrStages * log2(decimation))
-    // nrBits = 1 + (4 * log2Up(12)) = 1 + roundUp(4 * 3.58) = 1 + 16 = 17
-    localparam ACC_WIDTH = 17;
-    localparam GAIN_INT  = 20736; // (R*M)^N = (12*1)^4 = 20736
+    // nrBits = 1 + (4 * log2Up(24)) = 1 + roundUp(4 * 5) = 1 + 20 = 21
+    localparam ACC_WIDTH = 21;
+    localparam GAIN_INT  = 331776; // (R*M)^N = (24*1)^4 = 331776
 
 
     // mapping PDM (1-bit alternating input): 0 -> -1, 1 -> +1 (SIGNED REPRESENTATION)
@@ -48,8 +48,8 @@ module cic #(
     logic signed [ACC_WIDTH-1:0] integrator [0:N-1];    // 4 integrator registers of 17 bits each
 
     int i;
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
             for (i = 0; i < N; i = i + 1) integrator[i] <= '0;
         end else begin
             // first [0] integrator adds pdm sample (sign-extended)
@@ -63,13 +63,13 @@ module cic #(
 
 
     // decimator counter
-    // picks one sample out of every R=12 clks
+    // picks one sample out of every R=24 clks
     logic [$clog2(R)-1:0] decim_cnt;
-    logic signed [ACC_WIDTH-1:0] decim_sample;  // sample from integrator every R=12 clk
+    logic signed [ACC_WIDTH-1:0] decim_sample;  // sample from integrator every R=24 clk
     logic new_decim_valid;                      // pulse for new decimated sample available
 
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
             decim_cnt <= '0;
             decim_sample <= '0;
             new_decim_valid <= 1'b0;
@@ -101,8 +101,8 @@ module cic #(
 
     // sequential comb filter runs if new_decim_valid is asserted
     int si, dj;
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
             
             // clearing delay lines and comb registers
             for (si = 0; si < N; si = si + 1) begin
@@ -146,10 +146,10 @@ module cic #(
 
     // OUTPUT ASSIGNMENTS & optional normalization (assign as param)
     localparam int SCALE_FRAC = 24;     // fractional bits used in reciprocal multiplier, u can choose but 24 is good balance
-    localparam int RECIPROCAL = 809;    // reciprocal = round(2^SCALE_FRAC / GAIN_INT) = round(2^24 / 20736) = 809
+    localparam int RECIPROCAL = 51;    // reciprocal = round(2^SCALE_FRAC / GAIN_INT) = round(2^24 / 331776) = 51
 
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
             dout <= '0;
             dout_valid <= 1'b0;
         end else if (combs_output_vld) begin

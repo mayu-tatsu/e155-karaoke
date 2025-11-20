@@ -9,12 +9,12 @@
 
 module cic_tb();
 
-    localparam PDM_CLK_PERIOD = 434;                        // 2.304 MHz PDM clock (1/2.304MHz = 434ns)
-    localparam DECIMATION = 12;
+    localparam PDM_CLK_PERIOD = 651;                        // 1.536 MHz PDM clock (1/1.536 MHz = 651 ns)
+    localparam DECIMATION = 24;
     localparam OUTPUT_PERIOD = PDM_CLK_PERIOD * DECIMATION; // decimated output rate
     
     logic pdm_clk = 1'b0;
-    logic rst_n = 1'b0;
+    logic reset_n = 1'b0;
     logic pdm_in = 1'b0;            // pdm signal generation
     logic signed [15:0] dout;
     logic dout_valid;
@@ -22,7 +22,7 @@ module cic_tb();
     real phase = 0.0;
     real phase_increment;
     real test_freq = 1000.0;              // 1 kHz test tone
-    real pdm_sample_rate = 2.304e6;       // 2.304 MHz
+    real pdm_sample_rate = 1.536e6;       // 2.304 MHz
     real signal_amplitude = 0.8;          // 80% of full scale
     real sigma_delta_integrator = 0.0;
     real audio_sample;
@@ -31,14 +31,14 @@ module cic_tb();
     integer total_cycles = 0;
     
     cic #(
-        .R(12),
+        .R(24),
         .N(4),
         .M(1),
         .OUT_WIDTH(16),
         .NORMALIZE(0)                      // no normalization
     ) dut (
         .clk(pdm_clk),
-        .rst_n(rst_n),
+        .reset_n(reset_n),
         .pdm_in(pdm_in),
         .dout(dout),
         .dout_valid(dout_valid)
@@ -50,7 +50,7 @@ module cic_tb();
 
     // pdm signal generation, uses sigma-delta modulation
     always @(posedge pdm_clk) begin
-        if (!rst_n) begin
+        if (~reset_n) begin
             phase <= 0.0;
             sigma_delta_integrator <= 0.0;
             pdm_in <= 1'b0;
@@ -98,11 +98,11 @@ module cic_tb();
         $display("Test Signal: %.1f Hz sine wave", test_freq);
         
         // reset test
-        rst_n = 1'b0; #(PDM_CLK_PERIOD * 10); rst_n = 1'b1;
+        reset_n = 1'b0; #(PDM_CLK_PERIOD * 10); reset_n = 1'b1;
         $display("\nTime=%0t ns: Reset released\n", $time);
         
         // run for like 50 cycles to get several valid outputs
-        #(PDM_CLK_PERIOD * DECIMATION * 50);
+        #(PDM_CLK_PERIOD * DECIMATION * 5000);
         
         // summary + stats
         $display("\nTest Complete");

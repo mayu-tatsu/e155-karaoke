@@ -1,11 +1,11 @@
-// hb1.sv
+// hb.sv
 // Mayu Tatsumi; mtatsumi@g.hmc.edu
 // Quinn Miyamoto; qmiyamoto@g.hmc.edu
 // 2025-11-16
 
 // Halfband decimation filter
 
-module hb1(
+module hb(
     input  logic clk,
     input  logic reset_n,
     input  logic signed [15:0] x_in,

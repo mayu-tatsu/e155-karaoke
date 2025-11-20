@@ -24,15 +24,15 @@ module fir (
     
     // Q15 coefficients - ALL 32 of them (not using symmetry optimization)
     const logic signed [15:0] coeff[0:31] = '{
-        16'sd0,     -16'sd3,    16'sd11,    -16'sd27,
-        16'sd39,    -16'sd11,   -16'sd98,   16'sd277,
-        -16'sd392,  16'sd203,   16'sd471,   -16'sd1475,
-        16'sd2137,  -16'sd1328, -16'sd2638, 16'sd19218,
+        16'sd1,     16'sd24,    16'sd75,    16'sd91,
+        -16'sd28,   -16'sd249,  -16'sd300,  16'sd91,
+        16'sd700,   16'sd732,   -16'sd361,  -16'sd1817,
+        -16'sd1666, 16'sd1525,  16'sd6769,  16'sd10843,
 
-        16'sd19218, -16'sd2638, -16'sd1328, 16'sd2137,
-        -16'sd1475, 16'sd471,   16'sd203,   -16'sd392,
-        16'sd277,   -16'sd98,   -16'sd11,   16'sd39,
-        -16'sd27,   16'sd11,    -16'sd3,    16'sd0
+        16'sd10843, 16'sd6769,  16'sd1525,  -16'sd1666,
+        -16'sd1817, -16'sd361,  16'sd732,   16'sd700,
+        16'sd91,    -16'sd300,  -16'sd249,  -16'sd28,
+        16'sd91,    16'sd75,    16'sd24,    16'sd1
     };
     
     // 1. Shift register
@@ -107,72 +107,87 @@ module fir (
     logic [32:0] p1_shiftadd, p2_shiftadd, p3_shiftadd, p4_shiftadd, p5_shiftadd, 
                  p6_shiftadd, p7_shiftadd, p8_shiftadd, p9_shiftadd, p10_shiftadd, p11_shiftadd,
                  p12_shiftadd, p13_shiftadd, p14_shiftadd, p15_shiftadd;
-    assign p1_shiftadd = - ((sym_pairs[1] <<< 1)    // 2x
-                         +   sym_pairs[1]);         // 1x = -3x
-    assign p2_shiftadd =   ((sym_pairs[2] <<< 3)    // 8x
+    assign p0_shiftadd =    (sym_pairs[0]);			// 1x
+	assign p1_shiftadd =   ((sym_pairs[1] <<< 4)	// 16x
+                         +  (sym_pairs[1] <<< 3));	// 8x = 24x
+    assign p2_shiftadd =   ((sym_pairs[2] <<< 6)	// 64x
+						 +  (sym_pairs[2] <<< 3)    // 8x
                          +  (sym_pairs[2] <<< 1)    // 2x
-                         +   sym_pairs[2]);         // 1x = 11x
-    assign p3_shiftadd = - ((sym_pairs[3] <<< 4)    // 16x
+                         +   sym_pairs[2]);         // 1x = 75x
+    assign p3_shiftadd =   ((sym_pairs[3] <<< 6)	// 64x
+						 +  (sym_pairs[3] <<< 4)    // 16x
                          +  (sym_pairs[3] <<< 3)    // 8x
                          +  (sym_pairs[3] <<< 1)    // 2x
-                         +   sym_pairs[3]);         // 1x = -27x
-    assign p4_shiftadd =   ((sym_pairs[4] <<< 5)    // 32x
-                         +  (sym_pairs[4] <<< 2)    // 4x
-                         +  (sym_pairs[4] <<< 1)    // 2x
-                         +   sym_pairs[4]);         // 1x = 39x 
-    assign p5_shiftadd = - ((sym_pairs[5] <<< 3)    // 8x
-                         +  (sym_pairs[5] <<< 1)    // 2x
-                         +   sym_pairs[5]);         // 1x = -11x
-    assign p6_shiftadd = - ((sym_pairs[6] <<< 6)    // 64x
+                         +   sym_pairs[3]);         // 1x = 91x
+    assign p4_shiftadd =   ((sym_pairs[4] <<< 4)    // 16x
+                         +  (sym_pairs[4] <<< 3)    // 8x
+                         +  (sym_pairs[4] <<< 2));  // 4x = -28x 
+    assign p5_shiftadd = - ((sym_pairs[5] <<< 7)    // 128x
+						 +  (sym_pairs[5] <<< 6)    // 64x
+						 +  (sym_pairs[5] <<< 5)    // 32x
+						 +  (sym_pairs[5] <<< 4)    // 16x
+						 +  (sym_pairs[5] <<< 3)    // 8x
+                         +   sym_pairs[5]);         // 1x = -249x
+    assign p6_shiftadd = - ((sym_pairs[6] <<< 8)    // 256x
                          +  (sym_pairs[6] <<< 5)    // 32x
-                         +   sym_pairs[6] <<< 1);   // 2x = -98x
-    assign p7_shiftadd =   ((sym_pairs[7] <<< 8)    // 256x
-                         +  (sym_pairs[7] <<< 4)    // 16x
-                         +  (sym_pairs[7] <<< 2)    // 4x
-                         +   sym_pairs[7]);         // 1x = 277x
-    assign p8_shiftadd = - ((sym_pairs[8] <<< 8)    // 256x
+						 +  (sym_pairs[6] <<< 3)    // 8x
+                         +   sym_pairs[6] <<< 2);   // 4x = -300x
+    assign p7_shiftadd =   ((sym_pairs[7] <<< 6)	// 64x
+						 +  (sym_pairs[7] <<< 4)    // 16x
+                         +  (sym_pairs[7] <<< 3)    // 8x
+                         +  (sym_pairs[7] <<< 1)    // 2x
+                         +   sym_pairs[7]);         // 1x = 91x
+    assign p8_shiftadd =   ((sym_pairs[8] <<< 9)    // 512x
                          +  (sym_pairs[8] <<< 7)    // 128x
-                         +  (sym_pairs[8] <<< 3));  // 8x = -392x
-    assign p9_shiftadd =   ((sym_pairs[9] <<< 7)    // 128x
-                         +  (sym_pairs[9] <<< 6)    // 64x
-                         +  (sym_pairs[9] <<< 3)    // 8x
-                         +  (sym_pairs[9] <<< 1)    // 2x
-                         +   sym_pairs[9]);         // 1x = 203x
+						 +  (sym_pairs[8] <<< 5)    // 32x
+						 +  (sym_pairs[8] <<< 4)    // 16x
+						 +  (sym_pairs[8] <<< 3)    // 8x
+                         +  (sym_pairs[8] <<< 2));  // 4x = 700x
+    assign p9_shiftadd =   ((sym_pairs[9] <<< 9)    // 512x
+                         +  (sym_pairs[9] <<< 7)    // 128x
+						 +  (sym_pairs[9] <<< 6)    // 64x
+						 +  (sym_pairs[9] <<< 4)    // 16x
+						 +  (sym_pairs[9] <<< 3)    // 8x
+                         +  (sym_pairs[9] <<< 2));  // 4x = 732x
 
-    assign p10_shiftadd =   ((sym_pairs[10] <<< 8)      // 256x
-                          +  (sym_pairs[10] <<< 7)      // 128x
+    assign p10_shiftadd = - ((sym_pairs[10] <<< 8)      // 256x
                           +  (sym_pairs[10] <<< 6)      // 64x
-                          +  (sym_pairs[10] <<< 4)      // 16x
-                          +  (sym_pairs[10] <<< 2)      // 4x
-                          +  (sym_pairs[10] <<< 1)      // 2x
-                          +  (sym_pairs[10]));          // 1x = 471x
-    assign p11_shiftadd = - ((sym_pairs[11] <<< 10)     // 2048x
+                          +  (sym_pairs[10] <<< 5)      // 32x
+                          +  (sym_pairs[10] <<< 3)      // 8x
+                          +  (sym_pairs[10]));          // 1x = -361x
+    assign p11_shiftadd = - ((sym_pairs[11] <<< 10)     // 1024x
+                          +  (sym_pairs[11] <<< 9)      // 512x
                           +  (sym_pairs[11] <<< 8)      // 256x
-                          +  (sym_pairs[11] <<< 7)      // 128x
-                          +  (sym_pairs[11] <<< 6)      // 64x
-                          +  (sym_pairs[11] <<< 1)      // 2x
-                          +  (sym_pairs[10]));          // 1x = -1475x
-    assign p12_shiftadd =   ((sym_pairs[12] <<< 11)     // 2048x
-                          +  (sym_pairs[12] <<< 6)      // 64x
-                          +  (sym_pairs[12] <<< 4)      // 16x
-                          +  (sym_pairs[12] <<< 3)      // 8x
-                          +  (sym_pairs[12]));          // 1x = 2137x
-    assign p13_shiftadd = - ((sym_pairs[13] <<< 10)     // 1024x
+                          +  (sym_pairs[11] <<< 4)      // 16x
+                          +  (sym_pairs[11] <<< 3)      // 8x
+                          +  (sym_pairs[11]));          // 1x = -1817x
+    assign p12_shiftadd = - ((sym_pairs[12] <<< 10)     // 1024x
+                          +  (sym_pairs[12] <<< 9)      // 512x
+                          +  (sym_pairs[12] <<< 7)      // 128x
+                          +  (sym_pairs[12] <<< 1));    // 2x = -1666x
+    assign p13_shiftadd =   ((sym_pairs[13] <<< 10)     // 1024x
                           +  (sym_pairs[13] <<< 8)      // 256x
+						  +  (sym_pairs[13] <<< 7)      // 128x
+						  +  (sym_pairs[13] <<< 6)      // 64x
                           +  (sym_pairs[13] <<< 5)      // 32x
-                          +  (sym_pairs[13] <<< 4));    // 16x = -1328x
-    assign p14_shiftadd = - ((sym_pairs[14] <<< 11)     // 2048x
+                          +  (sym_pairs[13] <<< 4)    	// 16x
+						  +  (sym_pairs[13] <<< 2)      // 4x
+						  +  (sym_pairs[13]));	      	// 1x = 1525x
+    assign p14_shiftadd =   ((sym_pairs[14] <<< 12)     // 4096x
+						  +  (sym_pairs[14] <<< 11)     // 2048x
                           +  (sym_pairs[14] <<< 9)      // 512x
-                          +  (sym_pairs[14] <<< 6)      // 128x
-                          +  (sym_pairs[14] <<< 3)      // 64x 
-                          +  (sym_pairs[14] <<< 2)      // 4x
-                          +  (sym_pairs[14] <<< 1));    // 2x = -2638x
-    assign p15_shiftadd =   ((sym_pairs[15] <<< 14)     // 16384x
+                          +  (sym_pairs[14] <<< 6)      // 64x
+                          +  (sym_pairs[14] <<< 5)      // 32x 
+                          +  (sym_pairs[14] <<< 4)      // 16x
+                          +  (sym_pairs[14]));    		// 1x = 6769x
+    assign p15_shiftadd =   ((sym_pairs[15] <<< 13)     // 8192x
                           +  (sym_pairs[15] <<< 11)     // 2048x
                           +  (sym_pairs[15] <<< 9)      // 512x
-                          +  (sym_pairs[15] <<< 8)      // 256x
+                          +  (sym_pairs[15] <<< 6)      // 64x
                           +  (sym_pairs[15] <<< 4)      // 16x
-                          +  (sym_pairs[15] <<< 1));    // 2x = 19218x
+						  +  (sym_pairs[15] <<< 3)      // 8x
+                          +  (sym_pairs[15] <<< 1)      // 2x
+						  +  (sym_pairs[15]));			// 1x = 10843x
 
 
     // 3. mult by coefficients
@@ -224,22 +239,22 @@ module fir (
             valid_pipeline[3] <= 1'b0;
         end else begin
             // right shift by 15: Q30 -> Q15
-			y_out <= $signed(accumulator) >>> 15;
+			// y_out <= $signed(accumulator) >>> 15;
 
 			// note: we may need to clamp in case values go outside of 16 bit range
             // convert Q30 -> Q15
             // only need 15-BIT shift on full signed accumulator 
-            // logic signed [22:0] result_q15;
-            // result_q15 = $signed(accumulator) >>> 15;
+            logic signed [22:0] result_q15;
+            result_q15 = $signed(accumulator) >>> 15;
 
             // limiting max/min since we're limiting to 16-bit
-            // if (result_q15 > 23'sd16383) begin
-            //     y_out <= 16'sd32767;
-            // end else if (result_q15 < -23'sd16384) begin
-            //     y_out <= -16'sd32768;
-            // end else begin
-            //     y_out <= result_q15[15:0];
-            // end   
+            if (result_q15 > 23'sd16383) begin
+                y_out <= 16'sd32767;
+            end else if (result_q15 < -23'sd16384) begin
+                y_out <= -16'sd32768;
+            end else begin
+                y_out <= result_q15[15:0];
+            end   
 
             y_out_valid <= valid_pipeline[2];
             valid_pipeline[3] <= valid_pipeline[2];
