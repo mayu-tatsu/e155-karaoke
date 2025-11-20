@@ -13,13 +13,11 @@ module fir_tb();
     logic signed [15:0] y_out;
     logic               y_out_valid;
     
-    // Clock generation (16 kHz sample rate = 62.5 µs period)
+    // clk generation (16 kHz sample rate = 62.5 us period)
     localparam CLK_PERIOD = 10;  // 100 MHz for simulation speed
-    localparam SAMPLE_PERIOD = 6250;  // 62.5 µs = 16 kHz sample rate
-    
+    localparam SAMPLE_PERIOD = 6250;  // 62.5 us = 16 kHz sample rate
     always #(CLK_PERIOD/2) clk = ~clk;
     
-    // Instantiate DUT
     fir dut (
         .clk(clk),
         .reset_n(reset_n),
@@ -29,19 +27,15 @@ module fir_tb();
         .y_out_valid(y_out_valid)
     );
     
-    // File handles for logging
-    integer impulse_file, sine_file, output_file;
-    
-    // Test parameters
     localparam real SAMPLE_RATE = 16000.0;
     localparam int NUM_SAMPLES = 1024;
     
-    // Helper function: Convert Q15 to real
+    // helper function: Convert Q15 to real
     function real q15_to_real(logic signed [15:0] val);
         return $itor(val) / 32768.0;
     endfunction
     
-    // Helper function: Convert real to Q15
+    // helper function: Convert real to Q15
     function logic signed [15:0] real_to_q15(real val);
         real clamped;
         clamped = (val > 0.9999) ? 0.9999 : (val < -1.0) ? -1.0 : val;
@@ -74,11 +68,6 @@ module fir_tb();
         x_in = 0;
         x_in_valid = 0;
         
-        // Open log files
-        // impulse_file = $fopen("impulse_response.txt", "w");
-        // sine_file = $fopen("sine_response.txt", "w");
-        // output_file = $fopen("fir_output.txt", "w");
-        
         // Reset
         #(CLK_PERIOD*10);
         reset_n = 1;
@@ -104,11 +93,6 @@ module fir_tb();
         // Test 6: Mixed frequency signal
         test_mixed_signal();
         
-        // Close files
-        $fclose(impulse_file);
-        $fclose(sine_file);
-        $fclose(output_file);
-        
         $display("All tests completed!");
         $finish;
     end
@@ -126,11 +110,8 @@ module fir_tb();
         // Send zeros
         for (i = 0; i < 100; i++) begin
             send_sample(16'sd0);
-            if (y_out_valid) begin
-                $fwrite(impulse_file, "%d %f\n", i, q15_to_real(y_out));
-                if (i < 40) begin
+            if (y_out_valid && i < 40) begin
                     $display("  h[%2d] = %f", i, q15_to_real(y_out));
-                end
             end
         end
     endtask
@@ -191,8 +172,6 @@ module fir_tb();
                 output_val = q15_to_real(y_out);
                 input_power += input_val * input_val;
                 output_power += output_val * output_val;
-                
-                $fwrite(sine_file, "%f %f %f\n", t, input_val, output_val);
             end
         end
         
@@ -203,7 +182,7 @@ module fir_tb();
         
         if (freq < 4000) begin
             if (gain_db > -1.0 && gain_db < 1.0) begin
-                $display("PASS: Passband gain within ±1 dB");
+                $display("PASS: Passband gain within Â±1 dB");
             end else begin
                 $display("FAIL: Passband gain out of spec");
             end
@@ -234,28 +213,25 @@ module fir_tb();
             input_sample = real_to_q15(input_val);
             
             send_sample(input_sample);
-            
-            if (y_out_valid) begin
-                $fwrite(output_file, "%f %f %f\n", 
-                        t, input_val, q15_to_real(y_out));
-            end
         end
-        
-        $display("  Mixed signal response saved to fir_output.txt");
         $display("  Expected: 500 Hz and 2 kHz pass, 7 kHz attenuated");
     endtask
     
     // Watchdog timer
     initial begin
-        #(CLK_PERIOD * 1000000);  // 10 ms timeout
+        #(CLK_PERIOD * 10000000);  // 100 ms timeout
         $display("ERROR: Simulation timeout!");
         $finish;
     end
     
     // Monitor outputs
+    int output_count = 0;
     always @(posedge clk) begin
         if (y_out_valid) begin
-            $display("y_out = %d (%.4f)", y_out, q15_to_real(y_out));
+            if (output_count < 10) begin
+                $display("  y_out[%0d] = %d (%.4f)", output_count, y_out, q15_to_real(y_out));
+            end
+            output_count++;
         end
     end
 

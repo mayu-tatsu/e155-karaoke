@@ -68,11 +68,11 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	cic
 
-} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fir.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fir.sv
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/hb1.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/hb1.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module fir
+-- Compiling module hb1
 
 Top level modules:
-	fir
+	hb1
 
 } {} {}}
