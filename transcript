@@ -13,17 +13,13 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# ** Error: License checkout has been disallowed because
-# only one session is allowed to run on an uncounted nodelocked
-## ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.cic_tb(fast)
+# Loading project KARAOKETESTBENCH
 vsim -gui work.cic_tb -voptargs=+acc
-# End time: 20:02:18 on Nov 16,2025, Elapsed time: 0:00:26
-# Errors: 0, Warnings: 1
 # vsim -gui work.cic_tb -voptargs="+acc" 
-# Start time: 20:02:18 on Nov 16,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 22:01:38 on Nov 18,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.cic_tb(fast)
 # Loading work.cic(fast)
@@ -45,7 +41,12 @@ sim:/cic_tb/sigma_delta_integrator \
 sim:/cic_tb/audio_sample \
 sim:/cic_tb/valid_count \
 sim:/cic_tb/total_cycles
-run 100000000
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mayut  Hostname: MAYUS-DESKTOP  ProcessID: 31904
+#           Attempting to use alternate WLF file "./wlftrme7fs".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrme7fs
+run 100000000000
 # 
 # CIC Decimator Testbench
 # PDM Clock Period: 434 ns (2.304 MHz)
@@ -73,7 +74,6 @@ run 100000000
 # Time=88753000 ns: dout_valid asserted, dout=3528 (0x0dc8)
 # Time=93961000 ns: dout_valid asserted, dout=3894 (0x0f36)
 # Time=99169000 ns: dout_valid asserted, dout=4048 (0x0fd0)
-run 1000000000
 # Time=104377000 ns: dout_valid asserted, dout=4305 (0x10d1)
 # Time=109585000 ns: dout_valid asserted, dout=4595 (0x11f3)
 # Time=114793000 ns: dout_valid asserted, dout=4715 (0x126b)
@@ -116,3 +116,4 @@ run 1000000000
 #    Time: 264740 ns  Iteration: 0  Instance: /cic_tb
 # 1
 # Break in Module cic_tb at C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv line 118
+# Causality operation skipped due to absence of debug database file

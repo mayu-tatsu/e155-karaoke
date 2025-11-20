@@ -1,8 +1,10 @@
 m255
 K4
 z2
-!s12c _opt1
+!s12c _opt2
 Z0 !s99 nomlopt
+!s12c _opt1
+R0
 !s12c _opt
 R0
 !s11f vlog 2024.2 2024.05, May 20 2024
@@ -23,10 +25,10 @@ Z3 !s12f OEM25U2
 Z4 !s12b OEM100
 Z5 !s124 OEM100
 Z6 !s135 nogc
-o-quiet -auto_acc_if_foreign -work work +acc
-Z7 tCvgOpt 0
+Z7 o-quiet -auto_acc_if_foreign -work work +acc
+Z8 tCvgOpt 0
 n@_opt
-Z8 OL;O;2024.2;79
+Z9 OL;O;2024.2;79
 R1
 T_opt1
 !s110 1763352113
@@ -39,25 +41,40 @@ R4
 R5
 R6
 o-quiet -auto_acc_if_foreign -work work
-R7
-n@_opt1
 R8
+n@_opt1
+R9
+R1
+T_opt2
+!s110 1763532100
+Vgl:Fd>e`@_RTlm`nOSbc:2
+R2
+=1-b42e99ac0812-691d5d43-193-65b0
+R0
+R3
+R4
+R5
+R6
+R7
+R8
+n@_opt2
+R9
 vcic
 2C:/Users/mayut/source/e155/e155-karaoke/cic.sv
-Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z10 !s110 1763351977
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z11 !s110 1763351977
 !i10b 1
 !s100 75j>1C?k=G:UdLa:[HlKk2
 IR<`9?hL23OzYHe=19kC[`1
 S1
 R1
-Z11 w1763351096
+Z12 w1763351096
 8C:/Users/mayut/source/e155/e155-karaoke/cic.sv
 FC:/Users/mayut/source/e155/e155-karaoke/cic.sv
 !i122 0
 L0 20 148
-Z12 VDg1SIo80bB@j0V0VzS_@n1
-Z13 OL;L;2024.2;79
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2024.2;79
 r1
 !s85 0
 31
@@ -65,24 +82,24 @@ r1
 !s107 C:/Users/mayut/source/e155/e155-karaoke/cic.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/cic.sv|
 !i113 0
-Z14 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R7
+Z15 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
 vcic_tb
 2C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv
-R9
 R10
+R11
 !i10b 1
 !s100 z_48>geXO_53NcU70LH?i2
 IS3okBdVOBO591IiBGbR3c3
 S1
 R1
-R11
+R12
 8C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv
 FC:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv
 !i122 1
 L0 10 112
-R12
 R13
+R14
 r1
 !s85 0
 31
@@ -90,5 +107,5 @@ r1
 !s107 C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv|
 !i113 0
-R14
-R7
+R15
+R8

@@ -1,0 +1,11 @@
+#Start recording tcl command: 11/16/2025 19:46:10
+#Project Location: C:/Users/mayut/source/e155/e155-karaoke; Project name: e155_karaoke
+prj_open "C:/Users/mayut/source/e155/e155-karaoke/e155_karaoke.rdf"
+prj_add_source "C:/Users/mayut/source/e155/e155-karaoke/karaoke_top.sv" "C:/Users/mayut/source/e155/e155-karaoke/cic.sv"
+prj_add_source "C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv"
+prj_disable_source "C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_save 
+prj_close
+#Stop recording: 11/17/2025 16:50:05

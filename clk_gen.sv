@@ -8,7 +8,7 @@
 // frequency and outputs the new clk from the port CLKHF.
 
 module clk_gen(
-	input  logic reset,
+	input  logic reset_n,
 	output logic clk_out
 );
 
@@ -33,8 +33,8 @@ module clk_gen(
             divisor = 6'd31;
     end
 
-    always_ff @(posedge clk_48mhz or posedge reset) begin
-        if (reset) begin
+    always_ff @(posedge clk_48mhz or posedge reset_n) begin
+        if (~reset_n) begin
             counter <= '0;
             cycle_counter <= '0;
             clk_out <= 1'b0;
