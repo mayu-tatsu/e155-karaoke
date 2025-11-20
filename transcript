@@ -14,106 +14,365 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # Loading project KARAOKETESTBENCH
-vsim -gui work.cic_tb -voptargs=+acc
-# vsim -gui work.cic_tb -voptargs="+acc" 
-# Start time: 22:01:38 on Nov 18,2025
+# Compile of cic.sv was successful.
+# Compile of cic_tb.sv was successful.
+# Compile of clk_gen.sv was successful.
+# Compile of fir.sv was successful.
+# Compile of hb1.sv was successful.
+# Compile of hb2.sv was successful.
+# Compile of hb3.sv was successful.
+# Compile of karaoke_top.sv was successful.
+# Compile of spi.sv was successful.
+# Compile of synchronizer.sv was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of cic.sv was successful.
+# Compile of cic_tb.sv was successful.
+# Compile of clk_gen.sv was successful.
+# Compile of fir.sv was successful.
+# Compile of hb1.sv was successful.
+# Compile of hb2.sv was successful.
+# Compile of hb3.sv was successful.
+# Compile of karaoke_top.sv was successful.
+# Compile of spi.sv was successful.
+# Compile of synchronizer.sv was successful.
+# Compile of fir_tb.sv was successful.
+# Compile of hb1_tb.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.hb1_tb -voptargs=+acc
+# vsim -gui work.hb1_tb -voptargs="+acc" 
+# Start time: 19:59:26 on Nov 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(94): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(54).
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(94): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(54).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=1.
+# Error loading design
+# End time: 19:59:28 on Nov 19,2025, Elapsed time: 0:00:02
+# Errors: 3, Warnings: 6
+# Compile of cic.sv was successful.
+# Compile of cic_tb.sv was successful.
+# Compile of clk_gen.sv was successful.
+# Compile of fir.sv was successful.
+# Compile of hb1.sv was successful.
+# Compile of hb2.sv was successful.
+# Compile of hb3.sv was successful.
+# Compile of karaoke_top.sv was successful.
+# Compile of spi.sv was successful.
+# Compile of synchronizer.sv was successful.
+# Compile of fir_tb.sv was successful.
+# Compile of hb1_tb.sv failed with 19 errors.
+# 12 compiles, 1 failed with 19 errors.
+# Compile of cic.sv was successful.
+# Compile of cic_tb.sv was successful.
+# Compile of clk_gen.sv was successful.
+# Compile of fir.sv was successful.
+# Compile of hb1.sv was successful.
+# Compile of hb2.sv was successful.
+# Compile of hb3.sv was successful.
+# Compile of karaoke_top.sv was successful.
+# Compile of spi.sv was successful.
+# Compile of synchronizer.sv was successful.
+# Compile of fir_tb.sv was successful.
+# Compile of hb1_tb.sv failed with 20 errors.
+# 12 compiles, 1 failed with 20 errors.
+# Compile of cic.sv was successful.
+# Compile of cic_tb.sv was successful.
+# Compile of clk_gen.sv was successful.
+# Compile of fir.sv was successful.
+# Compile of hb1.sv was successful.
+# Compile of hb2.sv was successful.
+# Compile of hb3.sv was successful.
+# Compile of karaoke_top.sv was successful.
+# Compile of spi.sv was successful.
+# Compile of synchronizer.sv was successful.
+# Compile of fir_tb.sv was successful.
+# Compile of hb1_tb.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.hb1_tb
+# vsim -gui -voptargs="+acc" work.hb1_tb 
+# Start time: 20:07:32 on Nov 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(94): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(54).
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(94): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(54).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=1.
+# Error loading design
+# End time: 20:07:33 on Nov 19,2025, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 5
+vsim -gui -voptargs=+acc work.hb1_tb
+# vsim -gui -voptargs="+acc" work.hb1_tb 
+# Start time: 20:09:13 on Nov 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(94): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(54).
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(94): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/hb1.sv(54).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=1.
+# Error loading design
+# End time: 20:09:14 on Nov 19,2025, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 2
+# Compile of cic.sv was successful.
+# Compile of cic_tb.sv was successful.
+# Compile of clk_gen.sv was successful.
+# Compile of fir.sv was successful.
+# Compile of hb1.sv was successful.
+# Compile of hb2.sv was successful.
+# Compile of hb3.sv was successful.
+# Compile of karaoke_top.sv was successful.
+# Compile of spi.sv was successful.
+# Compile of synchronizer.sv was successful.
+# Compile of fir_tb.sv was successful.
+# Compile of hb1_tb.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.hb1_tb
+# vsim -gui -voptargs="+acc" work.hb1_tb 
+# Start time: 20:18:21 on Nov 19,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
-# Loading work.cic_tb(fast)
-# Loading work.cic(fast)
+# Loading work.hb1_tb(fast)
+# Loading work.hb1(fast)
 add wave  \
-sim:/cic_tb/PDM_CLK_PERIOD \
-sim:/cic_tb/DECIMATION \
-sim:/cic_tb/OUTPUT_PERIOD \
-sim:/cic_tb/pdm_clk \
-sim:/cic_tb/rst_n \
-sim:/cic_tb/pdm_in \
-sim:/cic_tb/dout \
-sim:/cic_tb/dout_valid \
-sim:/cic_tb/phase \
-sim:/cic_tb/phase_increment \
-sim:/cic_tb/test_freq \
-sim:/cic_tb/pdm_sample_rate \
-sim:/cic_tb/signal_amplitude \
-sim:/cic_tb/sigma_delta_integrator \
-sim:/cic_tb/audio_sample \
-sim:/cic_tb/valid_count \
-sim:/cic_tb/total_cycles
+sim:/hb1_tb/CLK_PERIOD \
+sim:/hb1_tb/INPUT_PERIOD_CLKS \
+sim:/hb1_tb/clk \
+sim:/hb1_tb/reset_n \
+sim:/hb1_tb/x_in \
+sim:/hb1_tb/x_in_valid \
+sim:/hb1_tb/y_out \
+sim:/hb1_tb/y_out_valid \
+sim:/hb1_tb/sample_count \
+sim:/hb1_tb/output_count \
+sim:/hb1_tb/j \
+sim:/hb1_tb/k \
+sim:/hb1_tb/l \
+sim:/hb1_tb/m \
+sim:/hb1_tb/n \
+sim:/hb1_tb/start_in_count \
+sim:/hb1_tb/start_out_count \
+sim:/hb1_tb/end_in_count \
+sim:/hb1_tb/end_out_count \
+sim:/hb1_tb/time_val \
+sim:/hb1_tb/phase \
+sim:/hb1_tb/sample_real \
+sim:/hb1_tb/sample \
+sim:/hb1_tb/actual_ratio
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mayut  Hostname: MAYUS-DESKTOP  ProcessID: 31904
-#           Attempting to use alternate WLF file "./wlftrme7fs".
+#           Attempting to use alternate WLF file "./wlftk8vra1".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftrme7fs
-run 100000000000
+#           Using alternate file: ./wlftk8vra1
+run 100000000000000
+# Halfband Filter (hb1) Inline Testbench
+# Clock freq: 1.536 MHz (1/128kHz input period ~12 cycles)
+# Reset released
 # 
-# CIC Decimator Testbench
-# PDM Clock Period: 434 ns (2.304 MHz)
-# Decimation Factor: 12
-# Output Sample Rate: 0.192 kHz
-# Test Signal: 1000.0 Hz sine wave
+# Test 1: DC Input (value = 1000)
+# Time=223632000 ns: Output[0] = 999 (0x03e7)
+# Time=239257000 ns: Output[1] = 999 (0x03e7)
+# Time=254882000 ns: Output[2] = 999 (0x03e7)
+# Time=270507000 ns: Output[3] = 999 (0x03e7)
+# Time=286132000 ns: Output[4] = 999 (0x03e7)
+# Time=301757000 ns: Output[5] = 999 (0x03e7)
+# Time=317382000 ns: Output[6] = 999 (0x03e7)
+# Time=333007000 ns: Output[7] = 999 (0x03e7)
+# Time=348632000 ns: Output[8] = 999 (0x03e7)
+# Time=364257000 ns: Output[9] = 999 (0x03e7)
+# Time=379882000 ns: Output[10] = 999 (0x03e7)
+# Time=395507000 ns: Output[11] = 999 (0x03e7)
 # 
-# Time=4340000 ns: Reset released
+# Test 2: 1 kHz Sine Wave
+# Time=411132000 ns: Output[12] = 999 (0x03e7)
+# Time=426757000 ns: Output[13] = 1000 (0x03e8)
+# Time=442382000 ns: Output[14] = 998 (0x03e6)
+# Time=458007000 ns: Output[15] = 1007 (0x03ef)
+# Time=473632000 ns: Output[16] = 976 (0x03d0)
+# Time=489257000 ns: Output[17] = 1065 (0x0429)
+# Time=504882000 ns: Output[18] = 729 (0x02d9)
+# Time=520506000 ns: Output[19] = 166 (0x00a6)
+# Time=536131000 ns: Output[20] = 761 (0x02f9)
+# Time=551756000 ns: Output[21] = 1204 (0x04b4)
+# Time=567381000 ns: Output[22] = 1686 (0x0696)
+# Time=583006000 ns: Output[23] = 2136 (0x0858)
+# Time=598631000 ns: Output[24] = 2569 (0x0a09)
+# Time=614256000 ns: Output[25] = 2977 (0x0ba1)
+# Time=629881000 ns: Output[26] = 3356 (0x0d1c)
+# Time=645506000 ns: Output[27] = 3704 (0x0e78)
+# Time=661131000 ns: Output[28] = 4015 (0x0faf)
+# Time=676756000 ns: Output[29] = 4287 (0x10bf)
+# Time=692381000 ns: Output[30] = 4518 (0x11a6)
+# Time=708006000 ns: Output[31] = 4706 (0x1262)
+# Time=723631000 ns: Output[32] = 4849 (0x12f1)
+# Time=739256000 ns: Output[33] = 4944 (0x1350)
+# Time=754881000 ns: Output[34] = 4993 (0x1381)
+# Time=770506000 ns: Output[35] = 4993 (0x1381)
+# Time=786131000 ns: Output[36] = 4944 (0x1350)
 # 
-# Time=10633000 ns: dout_valid asserted, dout=-35 (0xffdd)
-# Time=15841000 ns: dout_valid asserted, dout=-273 (0xfeef)
-# Time=21049000 ns: dout_valid asserted, dout=-124 (0xff84)
-# Time=26257000 ns: dout_valid asserted, dout=202 (0x00ca)
-# Time=31465000 ns: dout_valid asserted, dout=730 (0x02da)
-# Time=36673000 ns: dout_valid asserted, dout=991 (0x03df)
-# Time=41881000 ns: dout_valid asserted, dout=1224 (0x04c8)
-# Time=47089000 ns: dout_valid asserted, dout=1604 (0x0644)
-# Time=52297000 ns: dout_valid asserted, dout=1837 (0x072d)
-# Time=57505000 ns: dout_valid asserted, dout=2052 (0x0804)
-# Time=62713000 ns: dout_valid asserted, dout=2220 (0x08ac)
-# Time=67921000 ns: dout_valid asserted, dout=2652 (0x0a5c)
-# Time=73129000 ns: dout_valid asserted, dout=2825 (0x0b09)
-# Time=78337000 ns: dout_valid asserted, dout=3012 (0x0bc4)
-# Time=83545000 ns: dout_valid asserted, dout=3402 (0x0d4a)
-# Time=88753000 ns: dout_valid asserted, dout=3528 (0x0dc8)
-# Time=93961000 ns: dout_valid asserted, dout=3894 (0x0f36)
-# Time=99169000 ns: dout_valid asserted, dout=4048 (0x0fd0)
-# Time=104377000 ns: dout_valid asserted, dout=4305 (0x10d1)
-# Time=109585000 ns: dout_valid asserted, dout=4595 (0x11f3)
-# Time=114793000 ns: dout_valid asserted, dout=4715 (0x126b)
-# Time=120001000 ns: dout_valid asserted, dout=4891 (0x131b)
-# Time=125209000 ns: dout_valid asserted, dout=5221 (0x1465)
-# Time=130417000 ns: dout_valid asserted, dout=5486 (0x156e)
-# Time=135625000 ns: dout_valid asserted, dout=5520 (0x1590)
-# Time=140833000 ns: dout_valid asserted, dout=5842 (0x16d2)
-# Time=146041000 ns: dout_valid asserted, dout=5957 (0x1745)
-# Time=151249000 ns: dout_valid asserted, dout=6169 (0x1819)
-# Time=156457000 ns: dout_valid asserted, dout=6399 (0x18ff)
-# Time=161665000 ns: dout_valid asserted, dout=6588 (0x19bc)
-# Time=166873000 ns: dout_valid asserted, dout=6679 (0x1a17)
-# Time=172081000 ns: dout_valid asserted, dout=6883 (0x1ae3)
-# Time=177289000 ns: dout_valid asserted, dout=6922 (0x1b0a)
-# Time=182497000 ns: dout_valid asserted, dout=7124 (0x1bd4)
-# Time=187705000 ns: dout_valid asserted, dout=7266 (0x1c62)
-# Time=192913000 ns: dout_valid asserted, dout=7380 (0x1cd4)
-# Time=198121000 ns: dout_valid asserted, dout=7546 (0x1d7a)
-# Time=203329000 ns: dout_valid asserted, dout=7559 (0x1d87)
-# Time=208537000 ns: dout_valid asserted, dout=7755 (0x1e4b)
-# Time=213745000 ns: dout_valid asserted, dout=7791 (0x1e6f)
-# Time=218953000 ns: dout_valid asserted, dout=7951 (0x1f0f)
-# Time=224161000 ns: dout_valid asserted, dout=8071 (0x1f87)
-# Time=229369000 ns: dout_valid asserted, dout=8057 (0x1f79)
-# Time=234577000 ns: dout_valid asserted, dout=8063 (0x1f7f)
-# Time=239785000 ns: dout_valid asserted, dout=8128 (0x1fc0)
-# Time=244993000 ns: dout_valid asserted, dout=8271 (0x204f)
-# Time=250201000 ns: dout_valid asserted, dout=8187 (0x1ffb)
-# Time=255409000 ns: dout_valid asserted, dout=8229 (0x2025)
-# Time=260617000 ns: dout_valid asserted, dout=8296 (0x2068)
+# Test 3: 8 kHz Sine Wave
+# Time=801756000 ns: Output[37] = 4849 (0x12f1)
+# Time=817381000 ns: Output[38] = 4707 (0x1263)
+# Time=833006000 ns: Output[39] = 4512 (0x11a0)
+# Time=848631000 ns: Output[40] = 4315 (0x10db)
+# Time=864256000 ns: Output[41] = 3927 (0x0f57)
+# Time=879881000 ns: Output[42] = 3955 (0x0f73)
+# Time=895506000 ns: Output[43] = 2377 (0x0949)
+# Time=911130000 ns: Output[44] = 1543 (0x0607)
+# Time=926755000 ns: Output[45] = 4752 (0x1290)
+# Time=942380000 ns: Output[46] = 4575 (0x11df)
+# Time=958005000 ns: Output[47] = 1924 (0x0784)
+# Time=973630000 ns: Output[48] = -1915 (0xf885)
+# Time=989255000 ns: Output[49] = -4620 (0xedf4)
+# Time=1004880000 ns: Output[50] = -4620 (0xedf4)
+# Time=1020505000 ns: Output[51] = -1914 (0xf886)
+# Time=1036130000 ns: Output[52] = 1913 (0x0779)
+# Time=1051755000 ns: Output[53] = 4619 (0x120b)
+# Time=1067380000 ns: Output[54] = 4619 (0x120b)
+# Time=1083005000 ns: Output[55] = 1913 (0x0779)
+# Time=1098630000 ns: Output[56] = -1914 (0xf886)
+# Time=1114255000 ns: Output[57] = -4620 (0xedf4)
+# Time=1129880000 ns: Output[58] = -4620 (0xedf4)
+# Time=1145505000 ns: Output[59] = -1914 (0xf886)
+# Time=1161130000 ns: Output[60] = 1913 (0x0779)
+# Time=1176755000 ns: Output[61] = 4619 (0x120b)
 # 
-# Test Complete
-# Total clock cycles: 610
-# Valid outputs received: 49
-# Expected outputs: ~50
+# Test 4: Step Response
+# Time=1192380000 ns: Output[62] = 4619 (0x120b)
+# Time=1208005000 ns: Output[63] = 1913 (0x0779)
+# Time=1223630000 ns: Output[64] = -1919 (0xf881)
+# Time=1239255000 ns: Output[65] = -4599 (0xee09)
+# Time=1254880000 ns: Output[66] = -4681 (0xedb7)
+# Time=1270505000 ns: Output[67] = -1744 (0xf930)
+# Time=1286130000 ns: Output[68] = 1126 (0x0466)
+# Time=1301754000 ns: Output[69] = -62 (0xffc2)
+# Time=1317379000 ns: Output[70] = 20 (0x0014)
+# Time=1333004000 ns: Output[71] = -6 (0xfffa)
+# Time=1348629000 ns: Output[72] = 0 (0x0000)
+# Time=1364254000 ns: Output[73] = -1 (0xffff)
+# Time=1379879000 ns: Output[74] = 0 (0x0000)
+# Time=1395504000 ns: Output[75] = 0 (0x0000)
+# Time=1411129000 ns: Output[76] = -3 (0xfffd)
+# Time=1426754000 ns: Output[77] = 13 (0x000d)
+# Time=1442379000 ns: Output[78] = -54 (0xffca)
+# Time=1458004000 ns: Output[79] = 165 (0x00a5)
+# Time=1473629000 ns: Output[80] = -464 (0xfe30)
+# Time=1489254000 ns: Output[81] = 5999 (0x176f)
+# Time=1504879000 ns: Output[82] = 8463 (0x210f)
+# Time=1520504000 ns: Output[83] = 7834 (0x1e9a)
+# Time=1536129000 ns: Output[84] = 8053 (0x1f75)
+# Time=1551754000 ns: Output[85] = 7986 (0x1f32)
+# Time=1567379000 ns: Output[86] = 8001 (0x1f41)
 # 
-# *** TEST PASSED: Received expected number of outputs ***
-# ** Note: $finish    : C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv(118)
-#    Time: 264740 ns  Iteration: 0  Instance: /cic_tb
+# Test 5: Impulse Response
+# Time=1583004000 ns: Output[87] = 7999 (0x1f3f)
+# Time=1598629000 ns: Output[88] = 7998 (0x1f3e)
+# Time=1614254000 ns: Output[89] = 8005 (0x1f45)
+# Time=1629879000 ns: Output[90] = 7969 (0x1f21)
+# Time=1645504000 ns: Output[91] = 8107 (0x1fab)
+# Time=1661129000 ns: Output[92] = 7676 (0x1dfc)
+# Time=1676754000 ns: Output[93] = 9079 (0x2377)
+# Time=1692378000 ns: Output[94] = 2615 (0x0a37)
+# Time=1708003000 ns: Output[95] = -622 (0xfd92)
+# Time=1723628000 ns: Output[96] = 220 (0x00dc)
+# Time=1739253000 ns: Output[97] = -71 (0xffb9)
+# Time=1754878000 ns: Output[98] = 17 (0x0011)
+# Time=1770503000 ns: Output[99] = -3 (0xfffd)
+# Time=1786128000 ns: Output[100] = 0 (0x0000)
+# Time=1801753000 ns: Output[101] = 0 (0x0000)
+# Time=1817378000 ns: Output[102] = 0 (0x0000)
+# Time=1833003000 ns: Output[103] = 0 (0x0000)
+# Time=1848628000 ns: Output[104] = 0 (0x0000)
+# Time=1864253000 ns: Output[105] = 0 (0x0000)
+# Time=1879878000 ns: Output[106] = 0 (0x0000)
+# Time=1895503000 ns: Output[107] = 0 (0x0000)
+# Time=1911128000 ns: Output[108] = 0 (0x0000)
+# Time=1926753000 ns: Output[109] = 0 (0x0000)
+# Time=1942378000 ns: Output[110] = 0 (0x0000)
+# Time=1958003000 ns: Output[111] = 0 (0x0000)
+# 
+# Test 6: Decimation Ratio Verification
+# Time=1973628000 ns: Output[112] = 0 (0x0000)
+# Time=1989253000 ns: Output[113] = -1 (0xffff)
+# Time=2004878000 ns: Output[114] = 1 (0x0001)
+# Time=2020503000 ns: Output[115] = -7 (0xfff9)
+# Time=2036128000 ns: Output[116] = 20 (0x0014)
+# Time=2051753000 ns: Output[117] = -58 (0xffc6)
+# Time=2067378000 ns: Output[118] = 249 (0x00f9)
+# Time=2083002000 ns: Output[119] = 1057 (0x0421)
+# Time=2098627000 ns: Output[120] = 979 (0x03d3)
+# Time=2114252000 ns: Output[121] = 1006 (0x03ee)
+# Time=2129877000 ns: Output[122] = 998 (0x03e6)
+# Time=2145502000 ns: Output[123] = 1000 (0x03e8)
+# Time=2161127000 ns: Output[124] = 999 (0x03e7)
+# Time=2176752000 ns: Output[125] = 999 (0x03e7)
+# Time=2192377000 ns: Output[126] = 999 (0x03e7)
+# Time=2208002000 ns: Output[127] = 999 (0x03e7)
+# Time=2223627000 ns: Output[128] = 999 (0x03e7)
+# Time=2239252000 ns: Output[129] = 999 (0x03e7)
+# Time=2254877000 ns: Output[130] = 999 (0x03e7)
+# Time=2270502000 ns: Output[131] = 999 (0x03e7)
+# Time=2286127000 ns: Output[132] = 999 (0x03e7)
+# Time=2301752000 ns: Output[133] = 999 (0x03e7)
+# Time=2317377000 ns: Output[134] = 999 (0x03e7)
+# Time=2333002000 ns: Output[135] = 999 (0x03e7)
+# Time=2348627000 ns: Output[136] = 999 (0x03e7)
+# Time=2364252000 ns: Output[137] = 999 (0x03e7)
+# Time=2379877000 ns: Output[138] = 999 (0x03e7)
+# Time=2395502000 ns: Output[139] = 999 (0x03e7)
+# Time=2411127000 ns: Output[140] = 999 (0x03e7)
+# Time=2426752000 ns: Output[141] = 999 (0x03e7)
+# Time=2442377000 ns: Output[142] = 999 (0x03e7)
+# Time=2458002000 ns: Output[143] = 999 (0x03e7)
+# Time=2473626000 ns: Output[144] = 999 (0x03e7)
+# Time=2489251000 ns: Output[145] = 999 (0x03e7)
+# Time=2504876000 ns: Output[146] = 999 (0x03e7)
+# Time=2520501000 ns: Output[147] = 999 (0x03e7)
+# Time=2536126000 ns: Output[148] = 999 (0x03e7)
+# Time=2551751000 ns: Output[149] = 999 (0x03e7)
+# Time=2567376000 ns: Output[150] = 999 (0x03e7)
+# Time=2583001000 ns: Output[151] = 999 (0x03e7)
+# Time=2598626000 ns: Output[152] = 999 (0x03e7)
+# Time=2614251000 ns: Output[153] = 999 (0x03e7)
+# Time=2629876000 ns: Output[154] = 999 (0x03e7)
+# Time=2645501000 ns: Output[155] = 999 (0x03e7)
+# Time=2661126000 ns: Output[156] = 999 (0x03e7)
+# Time=2676751000 ns: Output[157] = 999 (0x03e7)
+# Time=2692376000 ns: Output[158] = 999 (0x03e7)
+# Time=2708001000 ns: Output[159] = 999 (0x03e7)
+# Time=2723626000 ns: Output[160] = 999 (0x03e7)
+# Time=2739251000 ns: Output[161] = 999 (0x03e7)
+# Input samples:  100
+# Output samples: 50
+# Actual ratio:   2.00
+# PASS: Decimation ratio is approximately 2:1
+# 
+# All tests completed
+# Total input samples:  350
+# Total output samples: 162
+# Decimation ratio:     2.16
+# ** Note: $finish    : C:/Users/mayut/source/e155/e155-karaoke/testbench/hb1_tb.sv(206)
+#    Time: 2841789600 ps  Iteration: 0  Instance: /hb1_tb
 # 1
-# Break in Module cic_tb at C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv line 118
-# Causality operation skipped due to absence of debug database file
+# Break in Module hb1_tb at C:/Users/mayut/source/e155/e155-karaoke/testbench/hb1_tb.sv line 206
+vsim -gui -voptargs=+acc work.fir_tb
+# End time: 20:20:52 on Nov 19,2025, Elapsed time: 0:02:31
+# Errors: 0, Warnings: 5
+# vsim -gui -voptargs="+acc" work.fir_tb 
+# Start time: 20:20:52 on Nov 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/fir.sv(58): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/fir.sv(45).
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/fir.sv(58): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/fir.sv(45).
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/fir.sv(71): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/fir.sv(45).
+# ** Error (suppressible): C:/Users/mayut/source/e155/e155-karaoke/fir.sv(71): (vopt-7061) Variable 'i' driven in an always_ff block, may not be driven by any other process. See C:/Users/mayut/source/e155/e155-karaoke/fir.sv(45).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=5, Warnings=1.
+# Error loading design
+# End time: 20:20:53 on Nov 19,2025, Elapsed time: 0:00:01
+# Errors: 5, Warnings: 2

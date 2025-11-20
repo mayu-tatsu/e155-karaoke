@@ -1,12 +1,22 @@
 m255
 K4
 z2
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s12c _opt2
-Z0 !s99 nomlopt
-!s12c _opt1
+R1
 R0
+R1
 !s12c _opt
-R0
+R1
 !s11f vlog 2024.2 2024.05, May 20 2024
 13
 !s112 1.1
@@ -14,98 +24,334 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dC:/Users/mayut/source/e155/e155-karaoke
+Z2 dC:/Users/mayut/source/e155/e155-karaoke
 T_opt
 !s110 1763352014
 V5h_l06W@GZR7MliA4cf911
-Z2 04 6 4 work cic_tb fast 0
+Z3 04 6 4 work cic_tb fast 0
 =1-b42e99ac0812-691a9dce-c3-6044
-R0
-Z3 !s12f OEM25U2 
-Z4 !s12b OEM100
-Z5 !s124 OEM100
-Z6 !s135 nogc
-Z7 o-quiet -auto_acc_if_foreign -work work +acc
-Z8 tCvgOpt 0
+R1
+Z4 !s12f OEM25U2 
+Z5 !s12b OEM100
+Z6 !s124 OEM100
+Z7 !s135 nogc
+Z8 o-quiet -auto_acc_if_foreign -work work +acc
+Z9 tCvgOpt 0
 n@_opt
-Z9 OL;O;2024.2;79
-R1
-T_opt1
-!s110 1763352113
-VaeOVLe=FMO9I_Nm3[mMNM1
+Z10 OL;O;2024.2;79
 R2
-=1-b42e99ac0812-691a9e31-a5-b910
-R0
-R3
-R4
-R5
-R6
-o-quiet -auto_acc_if_foreign -work work
-R8
-n@_opt1
-R9
-R1
 T_opt2
 !s110 1763532100
 Vgl:Fd>e`@_RTlm`nOSbc:2
-R2
-=1-b42e99ac0812-691d5d43-193-65b0
-R0
 R3
+=1-b42e99ac0812-691d5d43-193-65b0
+R1
 R4
 R5
 R6
 R7
 R8
-n@_opt2
 R9
+n@_opt2
+R10
+R2
 vcic
 2C:/Users/mayut/source/e155/e155-karaoke/cic.sv
-Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z11 !s110 1763351977
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 !s110 1763612289
 !i10b 1
 !s100 75j>1C?k=G:UdLa:[HlKk2
 IR<`9?hL23OzYHe=19kC[`1
 S1
-R1
-Z12 w1763351096
+R2
+Z13 w1763351096
 8C:/Users/mayut/source/e155/e155-karaoke/cic.sv
 FC:/Users/mayut/source/e155/e155-karaoke/cic.sv
-!i122 0
+!i122 58
 L0 20 148
-Z13 VDg1SIo80bB@j0V0VzS_@n1
-Z14 OL;L;2024.2;79
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+Z15 OL;L;2024.2;79
 r1
 !s85 0
 31
-!s108 1763351976.000000
+!s108 1763612288.000000
 !s107 C:/Users/mayut/source/e155/e155-karaoke/cic.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/cic.sv|
 !i113 0
-Z15 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R8
+Z16 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
 vcic_tb
 2C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv
-R10
 R11
+R12
 !i10b 1
 !s100 z_48>geXO_53NcU70LH?i2
 IS3okBdVOBO591IiBGbR3c3
 S1
-R1
-R12
+R2
+R13
 8C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv
 FC:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv
-!i122 1
+!i122 59
 L0 10 112
-R13
 R14
+R15
 r1
 !s85 0
 31
-!s108 1763351977.000000
+Z17 !s108 1763612289.000000
 !s107 C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/testbench/cic_tb.sv|
 !i113 0
+R16
+R9
+vclk_gen
+2C:/Users/mayut/source/e155/e155-karaoke/clk_gen.sv
+R11
+R12
+!i10b 1
+!s100 M=PUfYnYMn]^]NT`AVF5D0
+IQ5GQ?^]1EBgJnU<;<]OMg3
+S1
+R2
+w1763608230
+8C:/Users/mayut/source/e155/e155-karaoke/clk_gen.sv
+FC:/Users/mayut/source/e155/e155-karaoke/clk_gen.sv
+!i122 60
+L0 10 46
+R14
 R15
-R8
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/clk_gen.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/clk_gen.sv|
+!i113 0
+R16
+R9
+vfir
+2C:/Users/mayut/source/e155/e155-karaoke/fir.sv
+R11
+R12
+!i10b 1
+!s100 MFK02EZ[6WCKo7aEVEZ9M1
+IHa`N0Ol:JUIAHbZQ^=JPN3
+S1
+R2
+Z18 w1763606765
+8C:/Users/mayut/source/e155/e155-karaoke/fir.sv
+FC:/Users/mayut/source/e155/e155-karaoke/fir.sv
+!i122 61
+L0 8 98
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/fir.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/fir.sv|
+!i113 0
+R16
+R9
+vfir_tb
+2C:/Users/mayut/source/e155/e155-karaoke/testbench/fir_tb.sv
+R11
+R12
+!i10b 1
+!s100 D2@I9f`JmNWNB2YSJ7ANN1
+I>RN16<iaHH`?Am@VB<=cP3
+S1
+R2
+R18
+8C:/Users/mayut/source/e155/e155-karaoke/testbench/fir_tb.sv
+FC:/Users/mayut/source/e155/e155-karaoke/testbench/fir_tb.sv
+!i122 68
+L0 7 256
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/testbench/fir_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/testbench/fir_tb.sv|
+!i113 0
+R16
+R9
+vhb1
+2C:/Users/mayut/source/e155/e155-karaoke/hb1.sv
+R11
+R12
+!i10b 1
+!s100 i1nnd]LL7:]0;74]cRNAb3
+IfXoI7NG<Qm>0>`Y[9L1n@3
+S1
+R2
+w1763612284
+8C:/Users/mayut/source/e155/e155-karaoke/hb1.sv
+FC:/Users/mayut/source/e155/e155-karaoke/hb1.sv
+!i122 62
+L0 8 151
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/hb1.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/hb1.sv|
+!i113 0
+R16
+R9
+vhb1_tb
+2C:/Users/mayut/source/e155/e155-karaoke/testbench/hb1_tb.sv
+R11
+R12
+!i10b 1
+!s100 5oThz=ggFJe[M>7YzT7:o0
+IJef3HL8CDBofIA:nA3`I?1
+S1
+R2
+w1763611636
+8C:/Users/mayut/source/e155/e155-karaoke/testbench/hb1_tb.sv
+FC:/Users/mayut/source/e155/e155-karaoke/testbench/hb1_tb.sv
+!i122 69
+L0 7 210
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/testbench/hb1_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/testbench/hb1_tb.sv|
+!i113 0
+R16
+R9
+vhb2
+2C:/Users/mayut/source/e155/e155-karaoke/hb2.sv
+R11
+R12
+!i10b 1
+!s100 WzzZQ];F015W>ki6PN:La0
+IXX33^BGUEV3B4mEmo1UI72
+S1
+R2
+R18
+8C:/Users/mayut/source/e155/e155-karaoke/hb2.sv
+FC:/Users/mayut/source/e155/e155-karaoke/hb2.sv
+!i122 63
+Z19 L0 8 77
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/hb2.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/hb2.sv|
+!i113 0
+R16
+R9
+vhb3
+2C:/Users/mayut/source/e155/e155-karaoke/hb3.sv
+R11
+R12
+!i10b 1
+!s100 j2UEiN1@E>W=I3JTYHCfG0
+I;Z=O3NlXK02_]4@<YecF93
+S1
+R2
+R18
+8C:/Users/mayut/source/e155/e155-karaoke/hb3.sv
+FC:/Users/mayut/source/e155/e155-karaoke/hb3.sv
+!i122 64
+R19
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/hb3.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/hb3.sv|
+!i113 0
+R16
+R9
+vkaraoke_top
+2C:/Users/mayut/source/e155/e155-karaoke/karaoke_top.sv
+R11
+R12
+!i10b 1
+!s100 BU>8]>zfVbZeB>l3<`0U10
+I@jW7OP3EfS[REdReS<Z<W3
+S1
+R2
+w1763608379
+8C:/Users/mayut/source/e155/e155-karaoke/karaoke_top.sv
+FC:/Users/mayut/source/e155/e155-karaoke/karaoke_top.sv
+!i122 65
+L0 8 90
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/karaoke_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/karaoke_top.sv|
+!i113 0
+R16
+R9
+vspi
+2C:/Users/mayut/source/e155/e155-karaoke/spi.sv
+R11
+R12
+!i10b 1
+!s100 E><:P3EhXTCMiQ;zY>N2P0
+I2VBhl]YdS=^^PHzGYF98L1
+S1
+R2
+w1763610934
+8C:/Users/mayut/source/e155/e155-karaoke/spi.sv
+FC:/Users/mayut/source/e155/e155-karaoke/spi.sv
+!i122 66
+L0 8 97
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/spi.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/spi.sv|
+!i113 0
+R16
+R9
+vsynchronizer
+2C:/Users/mayut/source/e155/e155-karaoke/synchronizer.sv
+R11
+R12
+!i10b 1
+!s100 SG@:g?GW=l4iNNmXfABBP2
+I_?J>K[DDLibTLABSbz9iZ3
+S1
+R2
+R18
+8C:/Users/mayut/source/e155/e155-karaoke/synchronizer.sv
+FC:/Users/mayut/source/e155/e155-karaoke/synchronizer.sv
+!i122 67
+L0 7 18
+R14
+R15
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/mayut/source/e155/e155-karaoke/synchronizer.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mayut/source/e155/e155-karaoke/synchronizer.sv|
+!i113 0
+R16
+R9

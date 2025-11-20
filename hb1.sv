@@ -48,11 +48,35 @@ module hb1(
     logic signed [37:0] accumulator;        // sum of all products (38-bit for safety)
     logic               stage3_valid;
 	
-	int i;
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
-            for (i = 0; i < 27; i = i + 1)
-                taps[i] <= 16'sd0;
+                taps[0] <= 16'sd0;
+				taps[1] <= 16'sd0;
+				taps[2] <= 16'sd0;
+				taps[3] <= 16'sd0;
+				taps[4] <= 16'sd0;
+				taps[5] <= 16'sd0;
+				taps[6] <= 16'sd0;
+				taps[7] <= 16'sd0;
+				taps[8] <= 16'sd0;
+				taps[9] <= 16'sd0;
+				taps[10] <= 16'sd0;
+				taps[11] <= 16'sd0;
+				taps[12] <= 16'sd0;
+				taps[13] <= 16'sd0;
+				taps[14] <= 16'sd0;
+				taps[15] <= 16'sd0;
+				taps[16] <= 16'sd0;
+				taps[17] <= 16'sd0;
+				taps[18] <= 16'sd0;
+				taps[19] <= 16'sd0;
+				taps[20] <= 16'sd0;
+				taps[21] <= 16'sd0;
+				taps[22] <= 16'sd0;
+				taps[23] <= 16'sd0;
+				taps[24] <= 16'sd0;
+				taps[25] <= 16'sd0;
+				taps[26] <= 16'sd0;				
             valid_reg <= '0;
             sample_counter <= 1'b0;
         end else if (x_in_valid) begin
@@ -91,9 +115,13 @@ module hb1(
             stage2_valid <= 1'b0;
         end else begin
             // mult each pair by its coefficient
-            for (i = 0; i < 7; i = i + 1) begin
-                products[i] <= $signed(sym_pairs[i]) * $signed(w[i]);
-            end
+			products[0] <= $signed(sym_pairs[0]) * $signed(w[0]);
+			products[1] <= $signed(sym_pairs[1]) * $signed(w[1]);
+			products[2] <= $signed(sym_pairs[2]) * $signed(w[2]);
+			products[3] <= $signed(sym_pairs[3]) * $signed(w[3]);
+			products[4] <= $signed(sym_pairs[4]) * $signed(w[4]);
+			products[5] <= $signed(sym_pairs[5]) * $signed(w[5]);
+			products[6] <= $signed(sym_pairs[6]) * $signed(w[6]);
             center_product <= $signed(center_tap) * $signed(w13);
             
             stage2_valid <= stage1_valid;
