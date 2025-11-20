@@ -1,128 +1,105 @@
 // fir.sv
 /// Mayu Tatsumi; mtatsumi@g.hmc.edu
 // Quinn Miyamoto; qmiyamoto@g.hmc.edu
-// 2025-11-16
+// 2025-11-19
 
 // 32-tap FIR compensation filter
 // symmetry: 32 taps = 16 unique coefficients
-
 module fir (
     input  logic               clk,
     input  logic               reset_n,
-    input  logic signed [15:0] noisy_signal,
-    output logic signed [15:0] filtered_signal
+    input  logic signed [15:0] x_in,
+    input  logic               x_in_valid,
+    output logic signed [15:0] y_out,
+    output logic               y_out_valid
 );
 
-    logic signed [15:0] taps      [31:0];       // 32 tap delay line
-    logic signed [16:0] sym_pairs [0:15];       // symmetric sums (needs +1 bit for addition)
-    logic signed [32:0] products  [0:15];       // products (16-bit Ã— 17-bit = 33-bit)
-    logic signed [36:0] accumulator;            // final sum
+    logic signed [15:0] taps[0:31];             // 32 tap delay line
+    logic signed [16:0] sym_pairs[0:15];        // symmetric sums (17-bit)
+    logic signed [32:0] products[0:15];         // products (33-bit)
+    logic signed [37:0] accumulator;            // sum of 16 products (38-bit to be safe)
+
+    logic [31:0] valid_reg;                     // track when delay line is full
+    logic [3:0]  valid_pipeline;                // 4-stage pipeline: pair->mult->accum->output
     
-    // Q15 fixed-point coefficients, but might be worth looking into Q31 (if resources are available)
-    // only 16 unique coefficients (h[0] to h[15]), symmetry: h[i] = h[31-i]
-    localparam int SCALE_FACTOR = 32768;
-	const logic signed [15:0] coeff[0:15] = '{
-        16'sd1,         // h[0]  = +0.00001081 * 32768 = 1
-        -16'sd3,        // h[1]  = -0.00008800 * 32768 = -3
-        16'sd12,        // h[2]  = +0.00035052 * 32768 = 12 (11.48, need to round)
-        -16'sd28,       // h[3]  = -0.00085326 * 32768 = -28
-        16'sd40,        // h[4]  = +0.00122816 * 32768 = 40
-        -16'sd13,       // h[5]  = -0.00038430 * 32768 = -13
-        -16'sd98,       // h[6]  = -0.00297503 * 32768 = -98 (-97.54, need to round)
-        16'sd279,       // h[7]  = +0.00852009 * 32768 = 279
-        -16'sd399,      // h[8]  = -0.01217676 * 32768 = -399
-        16'sd213,       // h[9]  = +0.00650601 * 32768 = 213
-        16'sd462,       // h[10] = +0.01410197 * 32768 = 462
-        -16'sd1474,     // h[11] = -0.04498777 * 32768 = -1474
-        16'sd2148,      // h[12] = +0.06555845 * 32768 = 2148
-        -16'sd1348,     // h[13] = -0.04114019 * 32768 = -1348
-        -16'sd2619,     // h[14] = -0.07992416 * 32768 = -2619
-        16'sd19210     // h[15] = +0.58625349 * 32768 = 19210
+    // Q15 coefficients - ALL 32 of them (not using symmetry optimization)
+    const logic signed [15:0] coeff[0:31] = '{
+        16'sd0,     -16'sd3,    16'sd11,    -16'sd27,
+        16'sd39,    -16'sd11,   -16'sd98,   16'sd277,
+        -16'sd392,  16'sd203,   16'sd471,   -16'sd1475,
+        16'sd2137,  -16'sd1328, -16'sd2638, 16'sd19218,
+        16'sd19218, -16'sd2638, -16'sd1328, 16'sd2137,
+        -16'sd1475, 16'sd471,   16'sd203,   -16'sd392,
+        16'sd277,   -16'sd98,   -16'sd11,   16'sd39,
+        -16'sd27,   16'sd11,    -16'sd3,    16'sd0
     };
     
-    integer i;
-    
-    // shift register for tap delay line
+    // 1. Shift register
+    int i;
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
             taps <= '{default: 16'sd0};
-        end else begin
-            taps[0] <= noisy_signal;
+            valid_reg <= 32'b0;
+        end else if (x_in_valid) begin
+            taps[0] <= x_in;
             for (i = 1; i < 32; i = i + 1) begin
                 taps[i] <= taps[i-1];
             end
+            valid_reg <= {valid_reg[30:0], 1'b1};
         end
     end
     
-    // Compute symmetric pairs, products, and accumulate
+    // 2. compute symmetric pairs (exploiting symmetry to save multipliers)
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
             sym_pairs <= '{default: 17'sd0};
-            products <= '{default: 33'sd0};
-            accumulator <= 37'sd0;
+            valid_pipeline[0] <= 1'b0;
         end else begin
-            // 1. add symmetric pairs
-            // h[i] = h[31-i], so add taps[i] + taps[31-i]
             for (i = 0; i < 16; i = i + 1) begin
-                sym_pairs[i] <= taps[i] + taps[31-i];
+                sym_pairs[i] <= $signed(taps[i]) + $signed(taps[31-i]);
             end
-            
-            // 2. mult coefficients
-            for (i = 0; i < 16; i = i + 1) begin
-                products[i] <= sym_pairs[i] * coeff[i];
-            end
-            
-            // 3. sum all products
-            accumulator <= products[0]  + products[1]  + products[2]  + products[3]  +
-                          products[4]  + products[5]  + products[6]  + products[7]  +
-                          products[8]  + products[9]  + products[10] + products[11] +
-                          products[12] + products[13] + products[14] + products[15];
+            valid_pipeline[0] <= valid_reg[31];  // Start pipeline when delay line full
         end
     end
     
-    // output stage: scale from Q15Ã—Q15=Q30 back to Q15
+    // 3. mult by coefficients
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
-            filtered_signal <= 16'sd0;
+            products <= '{default: 33'sd0};
+            valid_pipeline[1] <= 1'b0;
         end else begin
-            // arithmetic right shift by 15 to convert Q30 â†’ Q15
-            filtered_signal <= accumulator >>> 15;
+            for (i = 0; i < 16; i = i + 1) begin
+                products[i] <= $signed(sym_pairs[i]) * $signed(coeff[i]);
+            end
+            valid_pipeline[1] <= valid_pipeline[0];
+        end
+    end
+
+    // 4. accumulate all products
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
+            accumulator <= 38'sd0;
+            valid_pipeline[2] <= 1'b0;
+        end else begin
+            accumulator <= $signed(products[0])  + $signed(products[1])  + $signed(products[2])  + $signed(products[3])
+                         + $signed(products[4])  + $signed(products[5])  + $signed(products[6])  + $signed(products[7])
+                         + $signed(products[8])  + $signed(products[9])  + $signed(products[10]) + $signed(products[11])
+                         + $signed(products[12]) + $signed(products[13]) + $signed(products[14]) + $signed(products[15]);
+            valid_pipeline[2] <= valid_pipeline[1];
+        end
+    end
+    
+    // 5. Scale (Q30 -> Q15) and output
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
+            y_out <= 16'sd0;
+            y_out_valid <= 1'b0;
+            valid_pipeline[3] <= 1'b0;
+        end else begin
+            // right shift by 15: Q30 -> Q15
+            y_out <= accumulator[37:15] >>> 15;  // just take upper bits and shift
+            y_out_valid <= valid_pipeline[2];
+            valid_pipeline[3] <= valid_pipeline[2];
         end
     end
 endmodule
-
-    // 32-tap coefficients for my FIR filter
-    /*const logic signed [31:0] w[0:31] = {
-        16'sd1,         // h[0]  = +0.00001081 * 32768 â‰ˆ 1
-        16'sd-3,        // h[1]  = -0.00008800 * 32768 â‰ˆ -3
-        16'sd12,        // h[2]  = +0.00035052 * 32768 â‰ˆ 12 (11.48, need to round)
-        16'sd-28,       // h[3]  = -0.00085326 * 32768 â‰ˆ -28
-        16'sd40,        // h[4]  = +0.00122816 * 32768 â‰ˆ 40
-        16'sd-13,       // h[5]  = -0.00038430 * 32768 â‰ˆ -13
-        16'sd-98,       // h[6]  = -0.00297503 * 32768 â‰ˆ -98 (-97.54, need to round)
-        16'sd279,       // h[7]  = +0.00852009 * 32768 â‰ˆ 279
-        16'sd-399,      // h[8]  = -0.01217676 * 32768 â‰ˆ -399
-        16'sd213,       // h[9]  = +0.00650601 * 32768 â‰ˆ 213
-        16'sd462,       // h[10] = +0.01410197 * 32768 â‰ˆ 462
-        16'sd-1474,     // h[11] = -0.04498777 * 32768 â‰ˆ -1474
-        16'sd2148,      // h[12] = +0.06555845 * 32768 â‰ˆ 2148
-        16'sd-1348,     // h[13] = -0.04114019 * 32768 â‰ˆ -1348
-        16'sd-2619,     // h[14] = -0.07992416 * 32768 â‰ˆ -2619
-        16'sd19210,     // h[15] = +0.58625349 * 32768 â‰ˆ 19210
-        16'sd19210,     // h[16] = +0.58625349 * 32768 â‰ˆ 19210
-        16'sd-2619,     // h[17] = -0.07992416 * 32768 â‰ˆ -2619
-        16'sd-1348,     // h[18] = -0.04114019 * 32768 â‰ˆ -1348
-        16'sd2148,      // h[19] = +0.06555845 * 32768 â‰ˆ 2148
-        16'sd-1474,     // h[20] = -0.04498777 * 32768 â‰ˆ -1474
-        16'sd462,       // h[21] = +0.01410197 * 32768 â‰ˆ 462
-        16'sd213,       // h[22] = +0.00650601 * 32768 â‰ˆ 213
-        16'sd-399,      // h[23] = -0.01217676 * 32768 â‰ˆ -399
-        16'sd279,       // h[24] = +0.00852009 * 32768 â‰ˆ 279
-        16'sd-98,       // h[25] = -0.00297503 * 32768 â‰ˆ -98
-        16'sd-13,       // h[26] = -0.00038430 * 32768 â‰ˆ -13
-        16'sd40,        // h[27] = +0.00122816 * 32768 â‰ˆ 40
-        16'sd-28,       // h[28] = -0.00085326 * 32768 â‰ˆ -28
-        16'sd12,        // h[29] = +0.00035052 * 32768 â‰ˆ 12
-        16'sd-3,        // h[30] = -0.00008800 * 32768 â‰ˆ -3
-        16'sd1,         // h[31] = +0.00001081 * 32768 â‰ˆ 1
-    };*/

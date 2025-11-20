@@ -1,11 +1,11 @@
-// hb1.sv
+// hb3.sv
 // Mayu Tatsumi; mtatsumi@g.hmc.edu
 // Quinn Miyamoto; qmiyamoto@g.hmc.edu
 // 2025-11-16
 
 // Halfband decimation filter
 
-module hb1(
+module hb3(
     input  logic clk,
     input  logic reset_n,
     input  logic signed [15:0] x_in,
@@ -24,13 +24,13 @@ module hb1(
     // Q15 fixed-point coefficients (multiply by 32768 and round)
     // nonzero coefficients, symmetric
     const logic signed [15:0] w[0:6] = {
-        16'sd1,       // h[0]  = +0.0000884039 * 32768 = 3
-        -16'sd10,     // h[2]  = -0.0007748772 * 32768 = -25
-        16'sd64,      // h[4]  = +0.0036406781 * 32768 = 119
-        -16'sd275,    // h[6]  = -0.0121667917 * 32768 = -399
-        16'sd897,     // h[8]  = +0.0331033525 * 32768 = 1085
-        -16'sd2577,   // h[10] = -0.0841888367 * 32768 = -2759
-        16'sd10091    // h[12] = +0.3102982766 * 32768 = 10168
+        16'sd3,    // h[0]  = +0.0000842821 * 32768 = 3
+        -16'sd1047,   // h[2]  = -0.0007501700 * 32768 = -25
+        16'sd1228,    // h[4]  = +0.0035653953 * 32768 = 117
+        -16'sd1542,   // h[6]  = -0.0120179608 * 32768 = -394
+        16'sd2122,    // h[8]  = +0.0328998968 * 32768 = 1078
+        -16'sd3498,   // h[10] = -0.0840043501 * 32768 = -2753
+        16'sd10437    // h[12] = +0.3102230762 * 32768 = 10165
     };
 
     // Center tap
