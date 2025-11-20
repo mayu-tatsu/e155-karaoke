@@ -24,7 +24,8 @@ module clk_gen(
     logic [5:0] counter;			// 6 bits to count to 32
     logic [1:0] cycle_counter; 		// track cycle out of 4
     logic [5:0] divisor;			// current divisor, depends on cycle
-
+	logic [5:0] divisor_min_one;
+	assign divisor_min_one = divisor - 1;
     // Determine divisor based on cycle: 31, 31, 31, 32
     always_comb begin
         if (cycle_counter == 2'b11)
@@ -33,14 +34,14 @@ module clk_gen(
             divisor = 6'd31;
     end
 
-    always_ff @(posedge clk_48mhz or posedge reset_n) begin
+    always_ff @(posedge clk_48mhz) begin
         if (~reset_n) begin
-            counter <= '0;
-            cycle_counter <= '0;
+            counter <= 0;
+            cycle_counter <= 0;
             clk_out <= 1'b0;
         end else begin
-            if (counter == divisor - 1) begin
-                counter <= '0;
+            if (counter == divisor_min_one) begin
+                counter <= 0;
                 clk_out <= ~clk_out;
                 
                 // Move to next cycle when we toggle clk_out to 0

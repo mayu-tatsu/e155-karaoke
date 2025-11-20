@@ -1,69 +1,109 @@
 ----------------------------------------------------------------------
 Report for cell karaoke_top.TECH
-Register bits:  386 of 5280 (7.311%)
-I/O cells:      20
+Register bits:  3060 of 5280 (57.955%)
+I/O cells:      22
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               CCU2       489          100.0
-                            FD1P3XZ       386          100.0
+                               CCU2      2932          100.0
+                            FD1P3XZ      3060          100.0
                               HSOSC         1          100.0
-                                 IB         2          100.0
-                               LUT4       175          100.0
+                                 IB         3          100.0
+                                INV         1          100.0
+                               LUT4       858          100.0
                               MAC16         8          100.0
-                                 OB        18          100.0
+                                 OB        19          100.0
 SUB MODULES
                                 cic         1
                             clk_gen         1
                                 fir         1
                                 hb1         1
                                 hb2         1
-                              TOTAL      1084
+                                hb3         1
+                                spi         1
+                       synchronizer         1
+                    synchronizer_U0         1
+                              TOTAL      6891
+----------------------------------------------------------------------
+Report for cell hb3.v1
+Instance Path : halfband3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2       738           25.2
+                            FD1P3XZ       477           15.6
+                               LUT4        28            3.3
+                              MAC16         2           25.0
+                              TOTAL      1245
+----------------------------------------------------------------------
+Report for cell synchronizer_U0.v1
+Instance Path : pdm_synchronizer
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ         2            0.1
+                              TOTAL         2
 ----------------------------------------------------------------------
 Report for cell cic.v1
 Instance Path : cic_decimator
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2         8            1.6
-                            FD1P3XZ        30            7.8
-                               LUT4        20           11.4
-                              TOTAL        58
+                                FA2        72            2.5
+                            FD1P3XZ       192            6.3
+                               LUT4       126           14.7
+                              TOTAL       390
 ----------------------------------------------------------------------
-Report for cell hb1.v1
-Instance Path : halfbandx4
+Report for cell spi.v1
+Instance Path : spi_interface
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        81           16.6
-                            FD1P3XZ        28            7.3
-                               LUT4        23           13.1
-                              MAC16         2           25.0
-                              TOTAL       134
+                            FD1P3XZ        43            1.4
+                                INV         1          100.0
+                               LUT4        30            3.5
+SUB MODULES
+                       synchronizer         1
+                              TOTAL        75
 ----------------------------------------------------------------------
-Report for cell clk_gen.v1
-Instance Path : clk_generation
+Report for cell synchronizer.v1
+Instance Path : spi_interface.toggle_sync
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        17            3.5
-                            FD1P3XZ        33            8.5
-                              HSOSC         1          100.0
-                               LUT4        44           25.1
-                              TOTAL        95
+                            FD1P3XZ         2            0.1
+                               LUT4         4            0.5
+                              TOTAL         6
 ----------------------------------------------------------------------
 Report for cell fir.v1
 Instance Path : generic_fir
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2       233           47.6
-                            FD1P3XZ       259           67.1
-                               LUT4        47           26.9
+                                FA2      1079           36.8
+                            FD1P3XZ      1058           34.6
+                               LUT4       440           51.3
                               MAC16         3           37.5
-                              TOTAL       542
+                              TOTAL      2580
 ----------------------------------------------------------------------
 Report for cell hb2.v1
-Instance Path : halfbandx3
+Instance Path : halfband2
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2       145           29.7
-                            FD1P3XZ        36            9.3
-                               LUT4        30           17.1
+                                FA2       660           22.5
+                            FD1P3XZ       477           15.6
+                               LUT4        69            8.0
+                              TOTAL      1206
+----------------------------------------------------------------------
+Report for cell hb1.v1
+Instance Path : halfband1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2       299           10.2
+                            FD1P3XZ       802           26.2
+                               LUT4        69            8.0
                               MAC16         3           37.5
-                              TOTAL       214
+                              TOTAL      1173
+----------------------------------------------------------------------
+Report for cell clk_gen.v1
+Instance Path : clk_generator
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         4            0.1
+                            FD1P3XZ         9            0.3
+                              HSOSC         1          100.0
+                               LUT4         8            0.9
+                              TOTAL        22

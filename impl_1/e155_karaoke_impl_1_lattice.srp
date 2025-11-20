@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Nov 17 01:45:24 2025
+Wed Nov 19 22:35:01 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/e155_karaoke_impl_1_lattice.synproj -logfile e155_karaoke_impl_1_lattice.srp -gui -msgset C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml 
@@ -115,10 +115,13 @@ Mixed language design
 Verilog design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv
-Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
-Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv
-Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv
+Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv
+Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv
+Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
+Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv
+Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv
+Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv
 VHDL library: pmi
 VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
@@ -171,10 +174,13 @@ INFO <35901328> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq_be.v(45): 
 INFO <35901328> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_dsp.v. VERI-1328
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv. VERI-1482
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/cic.sv. VERI-1482
-Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv. VERI-1482
-Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv. VERI-1482
-Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv. VERI-1482
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/hb2.sv. VERI-1482
+Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv. VERI-1482
+Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv. VERI-1482
+Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv. VERI-1482
+Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv. VERI-1482
+Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/spi.sv. VERI-1482
+Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/hb3.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
@@ -182,21 +188,24 @@ INFO <35921014> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): a
 INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1". VHDL-1504
 Top module language type = Verilog.
 Top module name (Verilog, mixed language): karaoke_top
-INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(6): compiling module karaoke_top. VERI-1018
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(8): compiling module karaoke_top. VERI-1018
 INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv(10): compiling module clk_gen. VERI-1018
 INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC. VERI-1018
+WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv(28): expression size 32 truncated to fit in target size 6. VERI-1209
+WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv(49): expression size 32 truncated to fit in target size 2. VERI-1209
+WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv(52): expression size 32 truncated to fit in target size 6. VERI-1209
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv(7): compiling module synchronizer. VERI-1018
 INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/cic.sv(20): compiling module cic. VERI-1018
 WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/cic.sv(82): expression size 32 truncated to fit in target size 4. VERI-1209
-WARNING <35901330> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(20): actual bit length 1 differs from formal bit length 16 for port dout. VERI-1330
-INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv(6): compiling module hb1. VERI-1018
-WARNING <35901330> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(28): actual bit length 1 differs from formal bit length 16 for port x_in. VERI-1330
-WARNING <35901330> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(29): actual bit length 1 differs from formal bit length 16 for port y_out. VERI-1330
-INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb2.sv(6): compiling module hb2. VERI-1018
-WARNING <35901330> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(36): actual bit length 1 differs from formal bit length 16 for port x_in. VERI-1330
-WARNING <35901330> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(37): actual bit length 1 differs from formal bit length 16 for port y_out. VERI-1330
-INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(9): compiling module fir. VERI-1018
-WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(89): expression size 22 truncated to fit in target size 16. VERI-1209
-WARNING <35901330> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(44): actual bit length 1 differs from formal bit length 16 for port noisy_signal. VERI-1330
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv(8): compiling module hb1. VERI-1018
+WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv(151): expression size 23 truncated to fit in target size 16. VERI-1209
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb2.sv(8): compiling module hb2. VERI-1018
+WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb2.sv(77): expression size 23 truncated to fit in target size 16. VERI-1209
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb3.sv(8): compiling module hb3. VERI-1018
+WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb3.sv(77): expression size 23 truncated to fit in target size 16. VERI-1209
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(8): compiling module fir. VERI-1018
+WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(154): expression size 23 truncated to fit in target size 16. VERI-1209
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/spi.sv(8): compiling module spi. VERI-1018
 [Parameter Setting Section Start]
 
 	[Parameter Settings for Instance(s): cic_decimator]
@@ -272,256 +281,141 @@ WARNING <35001771> - synthesis: Initial value found on net gnd will be ignored d
 WARNING <35001771> - synthesis: Initial value found on net pwr will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net gnd will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net pwr will be ignored due to unrecognized driver type
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: audio_valid
-######## Missing driver on net audio_valid. Patching with GND.
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[0][15:0] stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[0][15:0] stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[0][15:0] stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[1][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[1][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[1][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[2][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[2][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[2][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[3][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[3][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[3][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[4][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[4][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[4][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[5][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[5][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[5][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[6][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[6][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[6][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[7][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[7][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[7][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[8][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[8][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[8][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[9][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[9][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[9][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[10][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[10][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[10][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[11][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[11][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[11][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[12][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[12][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[12][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[13][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[13][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[13][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[14][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[14][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[14][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[15][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[15][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[15][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[16][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[16][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[16][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[17][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[17][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[17][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[18][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[18][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[18][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[19][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[19][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[19][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[20][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[20][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[20][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[21][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[21][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[21][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[22][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[22][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[22][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[23][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[23][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[23][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[24][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[24][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[24][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[25][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[25][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[25][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx4/taps[26][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[26][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[26][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[27][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[27][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[28][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[28][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[29][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[29][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[30][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[30][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/taps[31][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[31][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[32][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[33][15:0] stuck at '0': 15
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \halfbandx3/taps[34][15:0] stuck at '0': 15
+WARNING <35001771> - synthesis: Initial value found on net gnd will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net pwr will be ignored due to unrecognized driver type
+CRITICAL <35001747> - synthesis: Bit(s) of register driving hb1/products[2][33:0] stuck at '0': 5, 4, 3, 2, 1, 0
+CRITICAL <35001747> - synthesis: Bit(s) of register driving hb1/center_product[31:0] stuck at '0': 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
+CRITICAL <35001747> - synthesis: Bit(s) of register driving fir/products[0][32:0] stuck at '0': 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
+CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdi
+CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdone
 
 
 
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[0][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[1][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[2][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[3][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[4][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[5][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[6][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[7][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[8][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[9][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[10][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[11][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[12][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[13][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[14][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/sym_pairs[15][16:0] stuck at '0': 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[0][32:0] stuck at '0': 32, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res28 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res27 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res26 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res25 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res24 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband1/sym_pairs[6]_res25 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband1/products[6]_res68 stuck at '0': 0
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res45 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res43 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res41 stuck at '0': 1
 CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res23 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res22 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res39 stuck at '0': 1
 CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res21 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res20 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res19 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res18 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res17 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res16 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res15 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res14 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res13 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res12 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res11 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res10 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res9 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res8 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res7 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res6 stuck at '0': 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res5 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[2][32:0] stuck at '0': 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[3][32:0] stuck at '0': 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[4][32:0] stuck at '0': 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[6][32:0] stuck at '0': 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[10][32:0] stuck at '0': 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[11][32:0] stuck at '0': 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[12][32:0] stuck at '0': 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[13][32:0] stuck at '0': 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[15][32:0] stuck at '0': 0
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res2 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res4 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res3 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res30 stuck at '0': 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband1/sym_pairs[6]_res19 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res12 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res37 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res35 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res33 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res31 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res62 stuck at '0': 0
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res61 stuck at '0': 3, 2, 1, 0
 CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res29 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res31 stuck at '0': 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i24 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i25 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i26 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i27 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i28 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i29 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_i30 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i24 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i25 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i26 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i27 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i28 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res40__i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i24 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i25 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res39__i26 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res38__i3 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res38__i4 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res37__i3 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res36__i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \generic_fir/products[15]_res42__i3 clock is stuck at Zero. VDB-5040
-Optimized async. reset : \cic_decimator/combs_output_vld_N_5389 on data cone feeding flop : 
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res27 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res10 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res58 stuck at '0': 0
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband1/sym_pairs[6]_res17 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband1/sym_pairs[6]_res15 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/sym_pairs[15]_res13 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res55 stuck at '0': 2, 1, 0
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband1/sym_pairs[6]_res9 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res53 stuck at '0': 0
+CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdi
+CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdone
+Optimized async. reset : \spi_interface/toggle_sync/sync_stage1_N_13773 on data cone feeding flop : 
+
+
+ \cic_decimator/\i909/comb_delay_3_0_16
+
+
+ \cic_decimator/\i909/comb_delay_3_0_15
+
+
+ \cic_decimator/\i909/comb_delay_3_0_14
+
+
+ \cic_decimator/\i909/comb_delay_3_0_13
+
+
+ \cic_decimator/\i909/comb_delay_3_0_12
+
+
+ \cic_decimator/\i909/comb_delay_3_0_11
+
+
+ \cic_decimator/\i909/comb_delay_3_0_10
+
+
+ \cic_decimator/\i909/comb_delay_3_0_9
+
+
+ \cic_decimator/\i909/comb_delay_3_0_8
+
+
+ \cic_decimator/\i909/comb_delay_3_0_7
+
+
+ \cic_decimator/\i909/comb_delay_3_0_6
+
+
+ \cic_decimator/\i909/comb_delay_3_0_5
+
+
+ \cic_decimator/\i909/comb_delay_3_0_4
+
+
+ \cic_decimator/\i909/comb_delay_3_0_3
+
+
+ \cic_decimator/\i909/comb_delay_3_0_2
 
 
  \cic_decimator/\i909/comb_delay_3_0_1
 
 
  \cic_decimator/\i909/comb_delay_3_0_0
+
+
+ \cic_decimator/\i908/comb_delay_2_0_16
+
+
+ \cic_decimator/\i908/comb_delay_2_0_15
+
+
+ \cic_decimator/\i908/comb_delay_2_0_14
+
+
+ \cic_decimator/\i908/comb_delay_2_0_13
+
+
+ \cic_decimator/\i908/comb_delay_2_0_12
+
+
+ \cic_decimator/\i908/comb_delay_2_0_11
+
+
+ \cic_decimator/\i908/comb_delay_2_0_10
+
+
+ \cic_decimator/\i908/comb_delay_2_0_9
+
+
+ \cic_decimator/\i908/comb_delay_2_0_8
+
+
+ \cic_decimator/\i908/comb_delay_2_0_7
+
+
+ \cic_decimator/\i908/comb_delay_2_0_6
+
+
+ \cic_decimator/\i908/comb_delay_2_0_5
+
+
+ \cic_decimator/\i908/comb_delay_2_0_4
+
+
+ \cic_decimator/\i908/comb_delay_2_0_3
+
+
+ \cic_decimator/\i908/comb_delay_2_0_2
 
 
  \cic_decimator/\i908/comb_delay_2_0_1
@@ -581,172 +475,91 @@ Optimized async. reset : \cic_decimator/combs_output_vld_N_5389 on data cone fee
  \cic_decimator/\i907/comb_delay_0_0_0
 
 
+ \cic_decimator/\i906/comb_delay_1_0_16
+
+
+ \cic_decimator/\i906/comb_delay_1_0_15
+
+
+ \cic_decimator/\i906/comb_delay_1_0_14
+
+
+ \cic_decimator/\i906/comb_delay_1_0_13
+
+
+ \cic_decimator/\i906/comb_delay_1_0_12
+
+
+ \cic_decimator/\i906/comb_delay_1_0_11
+
+
+ \cic_decimator/\i906/comb_delay_1_0_10
+
+
+ \cic_decimator/\i906/comb_delay_1_0_9
+
+
+ \cic_decimator/\i906/comb_delay_1_0_8
+
+
+ \cic_decimator/\i906/comb_delay_1_0_7
+
+
+ \cic_decimator/\i906/comb_delay_1_0_6
+
+
+ \cic_decimator/\i906/comb_delay_1_0_5
+
+
+ \cic_decimator/\i906/comb_delay_1_0_4
+
+
+ \cic_decimator/\i906/comb_delay_1_0_3
+
+
+ \cic_decimator/\i906/comb_delay_1_0_2
+
+
  \cic_decimator/\i906/comb_delay_1_0_1
 
 
  \cic_decimator/\i906/comb_delay_1_0_0
 
 
-Duplicate register/latch removal. \generic_fir/products[15]_res42__i4 is a one-to-one match with \generic_fir/products[15]_res42__i10.
-Duplicate register/latch removal. \generic_fir/products[15]_res42__i2 is a one-to-one match with \generic_fir/products[15]_res42__i11.
-Duplicate register/latch removal. \generic_fir/products[15]_i1 is a one-to-one match with \generic_fir/products[15]_i3.
-Duplicate register/latch removal. \generic_fir/products[15]_res42__i1 is a one-to-one match with \generic_fir/products[15]_res42__i4.
-Duplicate register/latch removal. \generic_fir/products[15]_res40__i1 is a one-to-one match with \generic_fir/products[15]_res40__i3.
-Duplicate register/latch removal. \generic_fir/products[15]_res39__i1 is a one-to-one match with \generic_fir/products[15]_res39__i7.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i1 is a one-to-one match with \generic_fir/products[15]_res38__i10.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i1 is a one-to-one match with \generic_fir/products[15]_res37__i4.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i1 is a one-to-one match with \generic_fir/products[15]_res32__i3.
-Duplicate register/latch removal. \generic_fir/products[15]_i33 is a one-to-one match with \generic_fir/products[15]_res41__i2.
-Duplicate register/latch removal. \generic_fir/products[15]_i15 is a one-to-one match with \generic_fir/products[15]_i2.
-Duplicate register/latch removal. \generic_fir/products[15]_i14 is a one-to-one match with \generic_fir/products[15]_i8.
-Duplicate register/latch removal. \generic_fir/products[15]_i4 is a one-to-one match with \generic_fir/products[15]_i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i24 is a one-to-one match with \generic_fir/products[15]_res44__i10.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i23 is a one-to-one match with \generic_fir/products[15]_res44__i11.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i22 is a one-to-one match with \generic_fir/products[15]_res44__i12.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i21 is a one-to-one match with \generic_fir/products[15]_res44__i13.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i20 is a one-to-one match with \generic_fir/products[15]_res44__i14.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i19 is a one-to-one match with \generic_fir/products[15]_res44__i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i18 is a one-to-one match with \generic_fir/products[15]_res44__i16.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i17 is a one-to-one match with \generic_fir/products[15]_res44__i18.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i26 is a one-to-one match with \generic_fir/products[15]_res45__i12.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i25 is a one-to-one match with \generic_fir/products[15]_res45__i13.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i24 is a one-to-one match with \generic_fir/products[15]_res45__i14.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i23 is a one-to-one match with \generic_fir/products[15]_res45__i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i22 is a one-to-one match with \generic_fir/products[15]_res45__i16.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i21 is a one-to-one match with \generic_fir/products[15]_res45__i17.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i20 is a one-to-one match with \generic_fir/products[15]_res45__i18.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i19 is a one-to-one match with \generic_fir/products[15]_res45__i20.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i4 is a one-to-one match with \generic_fir/products[15]_res41__i19.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i5 is a one-to-one match with \generic_fir/products[15]_res41__i18.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i6 is a one-to-one match with \generic_fir/products[15]_res41__i17.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i7 is a one-to-one match with \generic_fir/products[15]_res41__i16.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i8 is a one-to-one match with \generic_fir/products[15]_res41__i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i9 is a one-to-one match with \generic_fir/products[15]_res41__i14.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i10 is a one-to-one match with \generic_fir/products[15]_res41__i13.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i11 is a one-to-one match with \generic_fir/products[15]_res41__i12.
-Duplicate register/latch removal. \generic_fir/products[15]_res40__i2 is a one-to-one match with \generic_fir/products[15]_res40__i4.
-Duplicate register/latch removal. \generic_fir/products[15]_res39__i2 is a one-to-one match with \generic_fir/products[15]_res39__i6.
-Duplicate register/latch removal. \generic_fir/products[15]_res39__i3 is a one-to-one match with \generic_fir/products[15]_res39__i5.
-Duplicate register/latch removal. \generic_fir/products[15]_res39__i4 is a one-to-one match with \generic_fir/products[15]_res39__i2.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i5 is a one-to-one match with \generic_fir/products[15]_res38__i1.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i12 is a one-to-one match with \generic_fir/products[15]_res38__i27.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i13 is a one-to-one match with \generic_fir/products[15]_res38__i26.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i14 is a one-to-one match with \generic_fir/products[15]_res38__i25.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i15 is a one-to-one match with \generic_fir/products[15]_res38__i24.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i16 is a one-to-one match with \generic_fir/products[15]_res38__i23.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i17 is a one-to-one match with \generic_fir/products[15]_res38__i22.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i18 is a one-to-one match with \generic_fir/products[15]_res38__i21.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i19 is a one-to-one match with \generic_fir/products[15]_res38__i20.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i6 is a one-to-one match with \generic_fir/products[15]_res37__i21.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i7 is a one-to-one match with \generic_fir/products[15]_res37__i20.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i8 is a one-to-one match with \generic_fir/products[15]_res37__i19.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i9 is a one-to-one match with \generic_fir/products[15]_res37__i18.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i10 is a one-to-one match with \generic_fir/products[15]_res37__i17.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i11 is a one-to-one match with \generic_fir/products[15]_res37__i16.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i12 is a one-to-one match with \generic_fir/products[15]_res37__i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i13 is a one-to-one match with \generic_fir/products[15]_res37__i14.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i13 is a one-to-one match with \generic_fir/products[15]_res33__i26.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i14 is a one-to-one match with \generic_fir/products[15]_res33__i25.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i15 is a one-to-one match with \generic_fir/products[15]_res33__i24.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i16 is a one-to-one match with \generic_fir/products[15]_res33__i23.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i17 is a one-to-one match with \generic_fir/products[15]_res33__i22.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i18 is a one-to-one match with \generic_fir/products[15]_res33__i21.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i19 is a one-to-one match with \generic_fir/products[15]_res33__i20.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i5 is a one-to-one match with \generic_fir/products[15]_res32__i20.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i6 is a one-to-one match with \generic_fir/products[15]_res32__i19.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i7 is a one-to-one match with \generic_fir/products[15]_res32__i18.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i8 is a one-to-one match with \generic_fir/products[15]_res32__i17.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i9 is a one-to-one match with \generic_fir/products[15]_res32__i16.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i10 is a one-to-one match with \generic_fir/products[15]_res32__i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i11 is a one-to-one match with \generic_fir/products[15]_res32__i14.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i12 is a one-to-one match with \generic_fir/products[15]_res32__i13.
-Duplicate register/latch removal. \generic_fir/products[15]_i1 is a one-to-one match with \generic_fir/products[15]_i14.
-Duplicate register/latch removal. \generic_fir/products[15]_res39__i1 is a one-to-one match with \generic_fir/products[15]_res39__i3.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i24 is a one-to-one match with \generic_fir/products[15]_res44__i17.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i23 is a one-to-one match with \generic_fir/products[15]_res44__i19.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i22 is a one-to-one match with \generic_fir/products[15]_res44__i20.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i21 is a one-to-one match with \generic_fir/products[15]_res44__i22.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i26 is a one-to-one match with \generic_fir/products[15]_res45__i19.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i25 is a one-to-one match with \generic_fir/products[15]_res45__i21.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i24 is a one-to-one match with \generic_fir/products[15]_res45__i22.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i23 is a one-to-one match with \generic_fir/products[15]_res45__i24.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i4 is a one-to-one match with \generic_fir/products[15]_res41__i11.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i5 is a one-to-one match with \generic_fir/products[15]_res41__i10.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i6 is a one-to-one match with \generic_fir/products[15]_res41__i9.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i7 is a one-to-one match with \generic_fir/products[15]_res41__i8.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i12 is a one-to-one match with \generic_fir/products[15]_res38__i19.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i13 is a one-to-one match with \generic_fir/products[15]_res38__i18.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i14 is a one-to-one match with \generic_fir/products[15]_res38__i17.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i15 is a one-to-one match with \generic_fir/products[15]_res38__i16.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i6 is a one-to-one match with \generic_fir/products[15]_res37__i13.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i7 is a one-to-one match with \generic_fir/products[15]_res37__i12.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i8 is a one-to-one match with \generic_fir/products[15]_res37__i11.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i9 is a one-to-one match with \generic_fir/products[15]_res37__i10.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i13 is a one-to-one match with \generic_fir/products[15]_res33__i19.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i14 is a one-to-one match with \generic_fir/products[15]_res33__i18.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i15 is a one-to-one match with \generic_fir/products[15]_res33__i17.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i16 is a one-to-one match with \generic_fir/products[15]_res33__i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i5 is a one-to-one match with \generic_fir/products[15]_res32__i12.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i6 is a one-to-one match with \generic_fir/products[15]_res32__i11.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i7 is a one-to-one match with \generic_fir/products[15]_res32__i10.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i8 is a one-to-one match with \generic_fir/products[15]_res32__i9.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i24 is a one-to-one match with \generic_fir/products[15]_res44__i21.
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i23 is a one-to-one match with \generic_fir/products[15]_res44__i24.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i26 is a one-to-one match with \generic_fir/products[15]_res45__i23.
-Duplicate register/latch removal. \generic_fir/products[15]_res45__i25 is a one-to-one match with \generic_fir/products[15]_res45__i26.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i4 is a one-to-one match with \generic_fir/products[15]_res41__i7.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i5 is a one-to-one match with \generic_fir/products[15]_res41__i6.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i12 is a one-to-one match with \generic_fir/products[15]_res38__i15.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i13 is a one-to-one match with \generic_fir/products[15]_res38__i14.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i6 is a one-to-one match with \generic_fir/products[15]_res37__i9.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i7 is a one-to-one match with \generic_fir/products[15]_res37__i8.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i13 is a one-to-one match with \generic_fir/products[15]_res33__i16.
-Duplicate register/latch removal. \generic_fir/products[15]_res33__i14 is a one-to-one match with \generic_fir/products[15]_res33__i13.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i5 is a one-to-one match with \generic_fir/products[15]_res32__i8.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i6 is a one-to-one match with \generic_fir/products[15]_res32__i7.
-Duplicate register/latch removal. \generic_fir/products[15]_res41__i4 is a one-to-one match with \generic_fir/products[15]_res41__i5.
-Duplicate register/latch removal. \generic_fir/products[15]_res38__i12 is a one-to-one match with \generic_fir/products[15]_res38__i13.
-Duplicate register/latch removal. \generic_fir/products[15]_res37__i6 is a one-to-one match with \generic_fir/products[15]_res37__i7.
-Duplicate register/latch removal. \generic_fir/products[15]_res32__i5 is a one-to-one match with \generic_fir/products[15]_res32__i6.
-CRITICAL <35001752> - synthesis: mRegister \generic_fir/products[15]_res45__i25 is stuck at Zero
-CRITICAL <35001752> - synthesis: mRegister \generic_fir/products[15]_res45__i11 is stuck at Zero
-CRITICAL <35001752> - synthesis: mRegister \generic_fir/products[15]_res42__i12 is stuck at Zero
-CRITICAL <35001752> - synthesis: mRegister \generic_fir/products[15]_res33__i11 is stuck at Zero
-CRITICAL <35001752> - synthesis: mRegister \generic_fir/products[15]_res33__i12 is stuck at Zero
-CRITICAL <35001752> - synthesis: mRegister \generic_fir/products[15]_res33__i14 is stuck at Zero
-Duplicate register/latch removal. \generic_fir/products[15]_res44__i1 is a one-to-one match with \generic_fir/products[15]_res44__i7.
 
 ################### Begin Area Report (karaoke_top)######################
-Number of register bits => 386 of 5280 (7 % )
-CCU2 => 489
-FD1P3XZ => 386
+Number of register bits => 3060 of 5280 (57 % )
+CCU2 => 2932
+FD1P3XZ => 3060
 HSOSC => 1
-IB => 2
-LUT4 => 175
+IB => 3
+INV => 1
+LUT4 => 858
 MAC16 => 8
-OB => 18
+OB => 19
 ################### End Area Report ##################
-Number of odd-length carry chains : 29
-Number of even-length carry chains : 33
+Number of odd-length carry chains : 223
+Number of even-length carry chains : 149
 
 ################### Begin Clock Report ######################
 Clock Nets
-Number of Clocks: 1
-  Net : clk_generation/clk_c, loads : 2
+Number of Clocks: 2
+  Net : clk_generator/clk_c, loads : 4
+  Net : sck_c, loads : 1
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : generic_fir/combs_output_vld_N_5389, loads : 385
-  Net : clk_generation/n17860, loads : 39
-  Net : clk_generation/clk_48mhz, loads : 33
-  Net : generic_fir/n157[15], loads : 27
-  Net : generic_fir/n1534[27], loads : 26
-  Net : generic_fir/n2652[14], loads : 24
-  Net : generic_fir/n2095[12], loads : 24
-  Net : generic_fir/n2010[11], loads : 23
-  Net : generic_fir/n12851[29], loads : 21
-  Net : generic_fir/n12851[30], loads : 21
+  Net : spi_interface/toggle_sync/maxfan_replicated_net_999, loads : 998
+  Net : spi_interface/toggle_sync/sync_stage1_N_13773, loads : 998
+  Net : spi_interface/toggle_sync/maxfan_replicated_net_1999, loads : 998
+  Net : halfband3/hb3_out_valid, loads : 527
+  Net : cic_decimator/cic_out_valid, loads : 460
+  Net : halfband1/hb1_out_valid, loads : 460
+  Net : halfband2/hb2_out_valid, loads : 460
+  Net : generic_fir/n5480, loads : 235
+  Net : cic_decimator/new_decim_valid, loads : 85
+  Net : spi_interface/toggle_sync/maxfan_replicated_net_2053, loads : 52
 ################### End Clock Report ##################
 
 ################### Begin Constraint Report ######################
@@ -755,10 +568,10 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 199 MB
+Peak Memory Usage: 189 MB
 
 --------------------------------------------------------------
-Total CPU Time: 6 secs 
-Total REAL Time: 13 secs 
+Total CPU Time: 9 secs 
+Total REAL Time: 16 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: 4f683736ea999bc254e358d1621794dccbd76582
+Checksum -- synthesis -- netlist: 7dfdf8d9afba637eb518942fe50aab16238cf7e7

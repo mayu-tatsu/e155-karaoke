@@ -1,0 +1,1 @@
+C:/lscc/radiant/2024.2/questasim/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 393216 work.fir_tb(fast) -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt3 -id 10-00be43eaec33-691eb371-1d2-20c +__design_bin_path+C:/Users/mtatsumi/my_designs/e155-karaoke +__betafsm

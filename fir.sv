@@ -151,7 +151,9 @@ module fir (
             valid_pipeline[3] <= 1'b0;
         end else begin
             // right shift by 15: Q30 -> Q15
-            y_out <= accumulator[37:15] >>> 15;  // just take upper bits and shift
+			y_out <= $signed(accumulator) >>> 15;
+
+			// note: we may need to clamp in case values go outside of 16 bit range
             y_out_valid <= valid_pipeline[2];
             valid_pipeline[3] <= valid_pipeline[2];
         end
