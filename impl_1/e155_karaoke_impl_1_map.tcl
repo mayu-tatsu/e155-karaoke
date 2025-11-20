@@ -13,6 +13,7 @@ sys_set_attribute -gui on -msg {C:/Users/mtatsumi/my_designs/e155-karaoke/promot
 msg_load {C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml}
 des_set_project_udb -in {e155_karaoke_impl_1_syn.udb} -out {e155_karaoke_impl_1_map.udb} -milestone map -pm ice40tp
 des_set_reference_udb -clean
+map_set_option {pdc_file "C:/Users/mtatsumi/my_designs/e155-karaoke/pinouts.pdc"}
 # map option
 map_set_option { report_symbol_cross_reference false report_signal_cross_reference false   ignore_constraint_errors false}
 map_run

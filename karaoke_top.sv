@@ -6,6 +6,7 @@
 // Takes in a PDM from a digital microphone and decimates it from
 // 1.536 MHz down to a 16 kHz PCM. Outputs a 16-bit audio sample
 // which is indicated by audio_valid through SPI to the MCU.
+
 module karaoke_top (
     input  logic        pdm_data,       // from the microphone
     input  logic        reset_n,
@@ -14,7 +15,7 @@ module karaoke_top (
     output logic        audio_valid,
     input  logic        sck,            // clk input from MCU
     input  logic        sdi,            // unused (for future expansion)
-    input  logic        sdone,          // unused (for future expansion)
+    output logic        done,          // unused (for future expansion)
     output logic        sdo
 );
     
@@ -66,7 +67,7 @@ module karaoke_top (
         .y_out(audio_sample),
         .y_out_valid(audio_valid)
     );
-    
+	
     // SPI interface to MCU
     spi spi_interface (
         .clk(clk), 

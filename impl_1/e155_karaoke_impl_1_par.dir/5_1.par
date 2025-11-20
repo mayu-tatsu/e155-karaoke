@@ -1,6 +1,6 @@
 
 PAR: Place And Route Radiant Software (64-bit) 2024.2.0.3.0.
-PARed on: Thu Nov 20 03:57:12 2025
+PARed on: Thu Nov 20 05:29:52 2025
 
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
 	e155_karaoke_impl_1_map.udb e155_karaoke_impl_1_par.dir/5_1.udb 
@@ -19,26 +19,22 @@ Package: SG48
 Performance Grade:   High-Performance_1.2V
 
 Constraint Summary
-   Total number of constraints: 1
+   Total number of constraints: 7
    Total number of constraints dropped: 0
 
 WARNING <71003020> - par: Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - par: Top module port 'sdone' does not connect to anything.
 WARNING <71003020> - par: Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - par: Top module port 'sdone' does not connect to anything.
 WARNING <71003020> - par: Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - par: Top module port 'sdone' does not connect to anything.
 WARNING <71003020> - par: Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - par: Top module port 'sdone' does not connect to anything.
-Number of Signals: 9863
-Number of Connections: 20586
+Number of Signals: 9796
+Number of Connections: 20376
 Device utilization summary:
 
-   SLICE (est.)    2391/2640         91% used
-     LUT           4781/5280         91% used
-     REG           2342/5280         44% used
-   PIO               22/56           39% used
-                     22/36           61% bonded
+   SLICE (est.)    2371/2640         90% used
+     LUT           4740/5280         90% used
+     REG           2316/5280         44% used
+   PIO               23/56           41% used
+                     23/36           63% bonded
    IOLOGIC            0/56            0% used
    DSP                8/8           100% used
    I2C                0/2             0% used
@@ -57,44 +53,44 @@ Device utilization summary:
    OPENDRAIN          0/3             0% used
 
 Pin Constraint Summary:
-   0 out of 22 pins locked (0% locked).
+   6 out of 23 pins locked (26% locked).
 .
 ..............
 Finished Placer Phase 0 (HIER). CPU time: 1 secs , REAL time: 2 secs 
 
 
-...................
-Finished Placer Phase 0 (AP).  CPU time: 6 secs , REAL time: 7 secs 
+...........................
+Finished Placer Phase 0 (AP).  CPU time: 8 secs , REAL time: 9 secs 
 
-Starting Placer Phase 1. CPU time: 6 secs , REAL time: 7 secs 
+Starting Placer Phase 1. CPU time: 8 secs , REAL time: 9 secs 
 ..  ..
 ....................
 
-Placer score = 2102036.
+Placer score = 2296342.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE           2465/2640         93% used
+   SLICE           2437/2640         92% used
 
-Finished Placer Phase 1. CPU time: 30 secs , REAL time: 31 secs 
+Finished Placer Phase 1. CPU time: 31 secs , REAL time: 32 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  1529250
+Placer score =  1602818
 Finished Placer Phase 2.  CPU time: 31 secs , REAL time: 32 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "clk_generator.clk_48mhz" from comp "clk_generator.hf_osc.osc_inst" on site "HFOSC_R1C32", clk load = 6, ce load = 0, sr load = 0
-  PRIMARY "clk_c" from Q0 on comp "clk_generator.SLICE_2087" on site "R21C2D", clk load = 1257, ce load = 0, sr load = 0
-  PRIMARY "sync_stage1_N_15420" from F0 on comp "spi_interface.toggle_sync.SLICE_3095" on site "R14C6A", clk load = 0, ce load = 0, sr load = 548
-  PRIMARY "maxfan_replicated_net_999" from F0 on comp "spi_interface.toggle_sync.SLICE_3094" on site "R8C2B", clk load = 0, ce load = 0, sr load = 542
-  PRIMARY "hb_out_valid" from Q1 on comp "halfband.SLICE_1478" on site "R16C6C", clk load = 0, ce load = 264, sr load = 0
-  PRIMARY "cic_out_valid" from Q1 on comp "cic_decimator.SLICE_2900" on site "R16C21D", clk load = 0, ce load = 248, sr load = 0
-  PRIMARY "maxfan_replicated_net_1335" from F1 on comp "spi_interface.toggle_sync.SLICE_3095" on site "R14C6A", clk load = 0, ce load = 0, sr load = 185
-  PRIMARY "sck_c" from comp "sck" on PIO site "42 (PR9A)", clk load = 16, ce load = 0, sr load = 0
+  PRIMARY "clk_generator.clk_48mhz" from comp "clk_generator.hf_osc.osc_inst" on site "HFOSC_R1C32", clk load = 7, ce load = 0, sr load = 0
+  PRIMARY "clk_c" from Q1 on comp "clk_generator.SLICE_3053" on site "R9C31C", clk load = 1239, ce load = 0, sr load = 0
+  PRIMARY "p0_shiftadd_N_15352" from F0 on comp "generic_fir.SLICE_3052" on site "R14C2D", clk load = 0, ce load = 0, sr load = 535
+  PRIMARY "maxfan_replicated_net_999" from F1 on comp "generic_fir.SLICE_3054" on site "R15C30C", clk load = 0, ce load = 0, sr load = 544
+  PRIMARY "hb_out_valid" from Q1 on comp "halfband.SLICE_1485" on site "R14C12C", clk load = 0, ce load = 265, sr load = 0
+  PRIMARY "cic_out_valid" from Q1 on comp "cic_decimator.SLICE_2871" on site "R15C19D", clk load = 0, ce load = 241, sr load = 0
+  PRIMARY "maxfan_replicated_net_1292" from F0 on comp "generic_fir.SLICE_3054" on site "R15C30C", clk load = 0, ce load = 0, sr load = 163
+  PRIMARY "sck_c" from comp "sck" on PIO site "21 (PL19B)", clk load = 10, ce load = 0, sr load = 0
 
   PRIMARY  : 8 out of 8 (100%)
 
@@ -102,28 +98,28 @@ Global Clocks :
 
 
 I/O Usage Summary (final):
-   22 out of 56 (39.3%) I/O sites used.
-   22 out of 36 (61.1%) bonded I/O sites used.
-   Number of I/O components: 22; differential: 0
+   23 out of 56 (41.1%) I/O sites used.
+   23 out of 36 (63.9%) bonded I/O sites used.
+   Number of I/O components: 23; differential: 0
    Number of Vref pins used: 0
 
 I/O Bank Usage Summary:
-+----------+---------------+------------+------------+------------+
-| I/O Bank | Usage         | Bank Vccio | Bank Vref1 | Bank Vref2 |
-+----------+---------------+------------+------------+------------+
-| 0        | 6 / 14 ( 42%) | 3.3V       |            |            |
-| 1        | 8 / 14 ( 57%) | 3.3V       |            |            |
-| 2        | 8 / 8 (100%)  | 3.3V       |            |            |
-+----------+---------------+------------+------------+------------+
++----------+----------------+------------+------------+------------+
+| I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+----------------+------------+------------+------------+
+| 0        | 4 / 14 ( 28%)  | 3.3V       |            |            |
+| 1        | 11 / 14 ( 78%) | 3.3V       |            |            |
+| 2        | 8 / 8 (100%)   | 3.3V       |            |            |
++----------+----------------+------------+------------+------------+
 
 Total Placer CPU time: 31 secs , REAL time: 32 secs 
 
 
-Checksum -- place: fc2a1d565b12d9ffe2c0b98b486fb91b2d49bc43
+Checksum -- place: e02b7fcc3df8f5c70b0c12d3ffff25bccd73f89
 Writing design to file e155_karaoke_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 03:57:44 11/20/25
+Start NBR router at 05:30:25 11/20/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -142,29 +138,29 @@ Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
 5 global clock signals routed
-6411 connections routed (of 18591 total) (34.48%)
+6347 connections routed (of 18431 total) (34.44%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (8 used out of 8 available):
-#0  Signal "sync_stage1_N_15420"
-       Control loads: 548   out of   548 routed (100.00%)
+#0  Signal "p0_shiftadd_N_15352"
+       Control loads: 535   out of   535 routed (100.00%)
 #1  Signal "cic_out_valid"
-       Control loads: 0     out of   248 routed (  0.00%)
+       Control loads: 0     out of   241 routed (  0.00%)
        Data    loads: 0     out of     3 routed (  0.00%)
-#2  Signal "maxfan_replicated_net_1335"
-       Control loads: 185   out of   185 routed (100.00%)
-#3  Signal "sck_c"
-       Clock   loads: 16    out of    16 routed (100.00%)
-#4  Signal "clk_generator.clk_48mhz"
-       Clock   loads: 6     out of     6 routed (100.00%)
-#5  Signal "hb_out_valid"
-       Control loads: 0     out of   264 routed (  0.00%)
-       Data    loads: 0     out of     2 routed (  0.00%)
-#6  Signal "maxfan_replicated_net_999"
-       Control loads: 542   out of   542 routed (100.00%)
-#7  Signal "clk_c"
-       Clock   loads: 0     out of  1257 routed (  0.00%)
+#2  Signal "maxfan_replicated_net_999"
+       Control loads: 544   out of   544 routed (100.00%)
+#3  Signal "clk_c"
+       Clock   loads: 0     out of  1239 routed (  0.00%)
        Data    loads: 0     out of     4 routed (  0.00%)
+#4  Signal "clk_generator.clk_48mhz"
+       Clock   loads: 7     out of     7 routed (100.00%)
+#5  Signal "hb_out_valid"
+       Control loads: 0     out of   265 routed (  0.00%)
+       Data    loads: 0     out of     2 routed (  0.00%)
+#6  Signal "maxfan_replicated_net_1292"
+       Control loads: 163   out of   163 routed (100.00%)
+#7  Signal "sck_c"
+       Clock   loads: 10    out of    10 routed (100.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
@@ -172,37 +168,49 @@ Completed routing resource preassignment
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Start NBR section for initial routing at 03:57:47 11/20/25
+Start NBR section for initial routing at 05:30:27 11/20/25
 Level 4, iteration 1
-79(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 6.637ns/0.000ns; real time: 12 secs 
+107(0.04%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 12 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 03:57:56 11/20/25
+Start NBR section for normal routing at 05:30:37 11/20/25
 Level 4, iteration 1
-17(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 6.637ns/0.000ns; real time: 13 secs 
+32(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 12 secs 
 Level 4, iteration 2
-6(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 6.637ns/0.000ns; real time: 13 secs 
+9(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 12 secs 
 Level 4, iteration 3
+3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 12 secs 
+Level 4, iteration 4
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 13 secs 
+Level 4, iteration 5
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 13 secs 
+Level 4, iteration 6
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 13 secs 
+Level 4, iteration 7
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 6.637ns/0.000ns; real time: 13 secs 
+Estimated worst slack/total negative slack<setup>: 7.629ns/0.000ns; real time: 13 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 03:57:57 11/20/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 05:30:38 11/20/25
 
-Start NBR section for post-routing at 03:57:58 11/20/25
+Start NBR section for post-routing at 05:30:39 11/20/25
 
 End NBR router with 0 unrouted connection(s)
 
-Checksum -- route: 1f496bc7c8db7b07ebc17fc736cdb8f48020a5e
+Checksum -- route: 61087b8a25e849905a515f8e8bdb539dcedee4f4
 
 Total CPU time 16 secs 
 Total REAL time: 17 secs 
 Completely routed.
-End of route.  18591 routed (100.00%); 0 unrouted.
+End of route.  18431 routed (100.00%); 0 unrouted.
 
 Writing design to file e155_karaoke_impl_1_par.dir/5_1.udb ...
 
@@ -212,17 +220,17 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 8.476
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 7.860
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
-PAR_SUMMARY::Estimated worst slack<hold/<ns>> = 1.913
+PAR_SUMMARY::Estimated worst slack<hold/<ns>> = 1.743
 PAR_SUMMARY::Timing score<hold/<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
 Note: user must run 'timing' for timing closure signoff.
 
-Total CPU  Time: 48 secs 
-Total REAL Time: 49 secs 
-Peak Memory Usage: 236.28 MB
+Total CPU  Time: 49 secs 
+Total REAL Time: 50 secs 
+Peak Memory Usage: 235.64 MB
 
 
 par done!

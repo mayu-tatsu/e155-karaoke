@@ -8,34 +8,35 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Thu Nov 20 03:57:02 2025
+Mapped on: Thu Nov 20 05:29:42 2025
 
 Design Information
 ------------------
 
-Command line:   map -i e155_karaoke_impl_1_syn.udb -o
-     e155_karaoke_impl_1_map.udb -mp e155_karaoke_impl_1.mrp -hierrpt -gui
-     -msgset C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml
+Command line:   map -pdc C:/Users/mtatsumi/my_designs/e155-karaoke/pinouts.pdc
+     -i e155_karaoke_impl_1_syn.udb -o e155_karaoke_impl_1_map.udb -mp
+     e155_karaoke_impl_1.mrp -hierrpt -gui -msgset
+     C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml
 
 Design Summary
 --------------
 
-   Number of slice registers: 2342 out of  5280 (44%)
+   Number of slice registers: 2316 out of  5280 (44%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           4781 out of  5280 (91%)
-      Number of logic LUT4s:             346
-      Number of inserted feedthru LUT4s: 1540
+   Number of LUT4s:           4740 out of  5280 (90%)
+      Number of logic LUT4s:             336
+      Number of inserted feedthru LUT4s: 1509
       Number of replicated LUT4s:          1
       Number of ripple logic:            1447 (2894 LUT4s)
-   Number of IO sites used:   22 out of 39 (56%)
-      Number of IO sites used for general PIO: 22
+   Number of IO sites used:   23 out of 39 (59%)
+      Number of IO sites used for general PIO: 23
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 22 out of 36 (61%)
+      Number of IO sites used for PIO+I3C: 23 out of 36 (64%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 22 out of 39 (56%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 23 out of 39 (59%)
    Number of DSPs:             8 out of 8 (100%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
@@ -49,17 +50,16 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  3
-      Net clk_c: 1983 loads, 1983 rising, 0 falling (Driver: Pin
+      Net clk_c: 1956 loads, 1956 rising, 0 falling (Driver: Pin
      clk_generator.clk_out/Q)
+      Net sck_c: 17 loads, 15 rising, 2 falling (Driver: Port sck)
       Net clk_generator.clk_48mhz: 7 loads, 7 rising, 0 falling (Driver: Pin
      clk_generator.hf_osc.osc_inst/CLKHF)
-      Net sck_c: 26 loads, 25 rising, 1 falling (Driver: Port sck)
-   Number of Clock Enables:  10
+   Number of Clock Enables:  8
       Net cic_out_valid: 458 loads, 458 SLICEs
       Net halfband.stage3_valid: 16 loads, 16 SLICEs
       Net hb_out_valid: 527 loads, 527 SLICEs
       Net audio_sample_pad[14].vcc: 1 loads, 0 SLICEs
-      Net clk_generator.n4680: 1 loads, 1 SLICEs
 
                                     Page 1
 
@@ -69,24 +69,24 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net audio_valid_c: 16 loads, 16 SLICEs
-      Net spi_interface.n4607: 19 loads, 19 SLICEs
-      Net cic_decimator.new_decim_valid_N_15404: 21 loads, 21 SLICEs
-      Net cic_decimator.new_decim_valid: 35 loads, 35 SLICEs
+      Net clk_generator.n4524: 1 loads, 1 SLICEs
+      Net cic_decimator.new_decim_valid_N_15343: 21 loads, 21 SLICEs
+      Net cic_decimator.new_decim_valid: 33 loads, 33 SLICEs
       Net cic_decimator.combs_output_vld: 16 loads, 16 SLICEs
-   Number of LSRs:  4
-      Net sync_stage1_N_15420: 893 loads, 893 SLICEs
-      Net maxfan_replicated_net_999: 835 loads, 835 SLICEs
-      Net maxfan_replicated_net_1335: 284 loads, 284 SLICEs
-      Net clk_generator.n264: 4 loads, 4 SLICEs
+   Number of LSRs:  5
+      Net maxfan_replicated_net_999: 841 loads, 841 SLICEs
+      Net p0_shiftadd_N_15352: 874 loads, 874 SLICEs
+      Net maxfan_replicated_net_1292: 244 loads, 244 SLICEs
+      Net spi_interface.wasdone: 1 loads, 1 SLICEs
+      Net clk_generator.n277: 4 loads, 4 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net sync_stage1_N_15420: 893 loads
-      Net maxfan_replicated_net_999: 835 loads
+      Net p0_shiftadd_N_15352: 874 loads
+      Net maxfan_replicated_net_999: 841 loads
       Net hb_out_valid: 529 loads
       Net cic_out_valid: 461 loads
-      Net maxfan_replicated_net_1335: 284 loads
+      Net maxfan_replicated_net_1292: 244 loads
       Net audio_sample_pad[14].vcc: 101 loads
-      Net cic_decimator.new_decim_valid: 99 loads
+      Net cic_decimator.new_decim_valid: 97 loads
       Net generic_fir.sym_pairs[11][16]: 47 loads
       Net generic_fir.sym_pairs[8][16]: 46 loads
       Net generic_fir.sym_pairs[9][16]: 45 loads
@@ -95,7 +95,7 @@ Design Summary (cont)
 
 
 
-   Number of warnings:  4
+   Number of warnings:  2
    Number of criticals: 0
    Number of errors:    0
 
@@ -103,9 +103,7 @@ Design Errors/Criticals/Warnings
 --------------------------------
 
 WARNING <71003020> - map: Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - map: Top module port 'sdone' does not connect to anything.
 WARNING <71003020> - map: Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - map: Top module port 'sdone' does not connect to anything.
 
 IO (PIO) Attributes
 -------------------
@@ -120,13 +118,15 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[13]    | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[5]     | OUTPUT    |           |       |       |           |
+| clk                 | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | sck                 | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| reset_n             | INPUT     |           |       |       |           |
+| audio_sample[0]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| pdm_data            | INPUT     |           |       |       |           |
+| audio_valid         | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| done                | OUTPUT    |           |       |       |           |
 
                                     Page 2
 
@@ -137,42 +137,41 @@ IO (PIO) Attributes
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+-------+-------+-----------+
+| reset_n             | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| pdm_data            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | sdo                 | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[6]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[5]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[4]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[3]     | OUTPUT    |           |       |       |           |
+| audio_sample[1]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[2]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_valid         | OUTPUT    |           |       |       |           |
+| audio_sample[3]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[0]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[1]     | OUTPUT    |           |       |       |           |
+| audio_sample[12]    | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[11]    | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[10]    | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[9]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[6]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[7]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[8]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[12]    | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| clk                 | OUTPUT    |           |       |       |           |
+| audio_sample[9]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
 -------------
 
-Block spi_interface/i29_1_lut was optimized away.
-Block sck_pad.vlo_inst was optimized away.
+Block spi_interface/i8_1_lut was optimized away.
 
 OSC Summary
 -----------
@@ -187,12 +186,13 @@ OSC 1:                                 Pin/Node Value
 ASIC Components
 ---------------
 
-Instance Name: halfband/mult_414
+Instance Name: halfband/mult_355
          Type: DSP
-Instance Name: halfband/mult_423
+Instance Name: halfband/mult_364
          Type: DSP
-Instance Name: halfband/mult_420
+Instance Name: halfband/mult_361
          Type: DSP
+Instance Name: halfband/mult_366
 
                                     Page 3
 
@@ -202,15 +202,14 @@ Instance Name: halfband/mult_420
 
 ASIC Components (cont)
 ----------------------
-Instance Name: halfband/mult_425
          Type: DSP
-Instance Name: halfband/mult_416
+Instance Name: halfband/mult_357
          Type: DSP
-Instance Name: halfband/mult_413
+Instance Name: halfband/mult_354
          Type: DSP
-Instance Name: halfband/mult_422
+Instance Name: halfband/mult_363
          Type: DSP
-Instance Name: halfband/mult_419
+Instance Name: halfband/mult_360
          Type: DSP
 Instance Name: clk_generator/hf_osc.osc_inst
          Type: HFOSC
@@ -218,7 +217,7 @@ Instance Name: clk_generator/hf_osc.osc_inst
 Constraint Summary
 ------------------
 
-   Total number of constraints: 1
+   Total number of constraints: 7
    Total number of constraints dropped: 0
 
 Run Time and Memory Usage
@@ -226,8 +225,9 @@ Run Time and Memory Usage
 
    Total CPU Time: 1 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 133 MB
-Checksum -- map: 1679af36ea5b0e173ae2e9c77fd8211a31650cb1
+   Peak Memory Usage: 134 MB
+Checksum -- map: c2bb8f73528c75fdd8fe74f06b3bfd1dce604c43
+
 
 
 

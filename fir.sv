@@ -3,8 +3,8 @@
 // Quinn Miyamoto; qmiyamoto@g.hmc.edu
 // 2025-11-19
 
-// 32-tap FIR compensation filter
-// symmetry: 32 taps = 16 unique coefficients
+// 32-tap FIR compensation filter, decimates by 2 and
+
 module fir (
     input  logic               clk,
     input  logic               reset_n,

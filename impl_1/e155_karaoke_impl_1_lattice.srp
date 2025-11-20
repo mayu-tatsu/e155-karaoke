@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Nov 20 03:56:37 2025
+Thu Nov 20 05:29:18 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1/e155_karaoke_impl_1_lattice.synproj -logfile e155_karaoke_impl_1_lattice.srp -gui -msgset C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml 
@@ -120,6 +120,7 @@ Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv
 Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv
+Verilog design file: C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv
 VHDL library: pmi
 VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
@@ -177,6 +178,7 @@ Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv. VER
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv. VERI-1482
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/spi.sv. VERI-1482
 Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/hb.sv. VERI-1482
+Analyzing Verilog file c:/users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
@@ -184,7 +186,8 @@ INFO <35921014> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): a
 INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1". VHDL-1504
 Top module language type = Verilog.
 Top module name (Verilog, mixed language): karaoke_top
-INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(9): compiling module karaoke_top. VERI-1018
+WARNING <35901318> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(75): variable audio_sample might have multiple concurrent drivers. VERI-1318
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(10): compiling module karaoke_top. VERI-1018
 INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv(10): compiling module clk_gen. VERI-1018
 INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC. VERI-1018
 WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv(28): expression size 32 truncated to fit in target size 6. VERI-1209
@@ -198,7 +201,7 @@ WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/hb.sv(
 INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(8): compiling module fir. VERI-1018
 WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(110): expression size 17 truncated to fit in target size 1. VERI-1209
 WARNING <35901209> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(242): expression size 23 truncated to fit in target size 16. VERI-1209
-INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/spi.sv(8): compiling module spi. VERI-1018
+INFO <35901018> - synthesis: c:/users/mtatsumi/my_designs/e155-karaoke/spi.sv(13): compiling module spi. VERI-1018
 [Parameter Setting Section Start]
 
 	[Parameter Settings for Instance(s): cic_decimator]
@@ -274,7 +277,8 @@ CRITICAL <35001747> - synthesis: Bit(s) of register driving hb/products[2][33:0]
 CRITICAL <35001747> - synthesis: Bit(s) of register driving hb/center_product[31:0] stuck at '0': 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
 CRITICAL <35001747> - synthesis: Bit(s) of register driving fir/products[0][32:0] stuck at '0': 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
 CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdi
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdone
+CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: done
+######## Missing driver on net done. Patching with GND.
 
 
 
@@ -284,20 +288,19 @@ CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/product
 CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[8][32:0] stuck at '0': 1, 0
 CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[9][32:0] stuck at '0': 1, 0
 CRITICAL <35001747> - synthesis: Bit(s) of register driving \generic_fir/products[12][32:0] stuck at '0': 0
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/products[6]_res18 stuck at '0': 0
 CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res14 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/products[6]_res20 stuck at '0': 0
 CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res10 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res11 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res8 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res5 stuck at '0': 1
-CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res30 stuck at '0': 2, 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res9 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res7 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \halfband/sym_pairs[6]_res12 stuck at '0': 1
+CRITICAL <35001747> - synthesis: Bit(s) of register \generic_fir/products[15]_res32 stuck at '0': 2, 1
 
 The number of registers created due to operator pipelining is 5.
 
 CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdi
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: sdone
-WARNING <35935040> - synthesis: Register \halfband/sym_pairs[6]_res5_ret0_i0_i2 clock is stuck at Zero. VDB-5040
-Optimized async. reset : \spi_interface/toggle_sync/sync_stage1_N_15420 on data cone feeding flop : 
+WARNING <35935040> - synthesis: Register \halfband/sym_pairs[6]_res9_ret0_i0_i2 clock is stuck at Zero. VDB-5040
+Optimized async. reset : \generic_fir/p0_shiftadd_N_15352 on data cone feeding flop : 
 
 
  \cic_decimator/\i1037/comb_delay_3_0_20
@@ -552,37 +555,37 @@ Optimized async. reset : \spi_interface/toggle_sync/sync_stage1_N_15420 on data 
  \cic_decimator/\i1034/comb_delay_1_0_0
 
 
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_res32__i1 is a one-to-one match with \generic_fir/sym_pairs[15]_i240.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i5.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i241 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i2.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i242 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i3.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i243 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i4.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i244 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i5.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i245 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i6.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i246 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i7.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i247 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i8.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i248 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i9.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i249 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i10.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i250 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i11.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i251 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i12.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i252 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i13.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i253 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i14.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i254 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i15.
-Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i255 is a one-to-one match with \generic_fir/sym_pairs[15]_res32__i16.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i1 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i4.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i3 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i1.
-Duplicate register/latch removal. \halfband/sym_pairs[6]_res5_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res5_ret0_i0_i3.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_res31__i1 is a one-to-one match with \generic_fir/sym_pairs[15]_i240.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i5.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i241 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i2.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i242 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i3.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i243 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i4.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i244 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i5.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i245 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i6.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i246 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i7.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i247 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i8.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i248 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i9.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i249 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i10.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i250 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i11.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i251 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i12.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i252 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i13.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i253 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i14.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i254 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i15.
+Duplicate register/latch removal. \generic_fir/sym_pairs[15]_i255 is a one-to-one match with \generic_fir/sym_pairs[15]_res31__i16.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i1 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i4.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i3 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i1.
+Duplicate register/latch removal. \halfband/sym_pairs[6]_res9_ret0_i0_i0 is a one-to-one match with \halfband/sym_pairs[6]_res9_ret0_i0_i3.
 
 ################### Begin Area Report (karaoke_top)######################
-Number of register bits => 2342 of 5280 (44 % )
+Number of register bits => 2316 of 5280 (43 % )
 CCU2 => 1447
-FD1P3XZ => 2342
+FD1P3XZ => 2316
 HSOSC => 1
 IB => 3
 INV => 1
-LUT4 => 345
+LUT4 => 334
 MAC16 => 8
-OB => 19
+OB => 20
 ################### End Area Report ##################
 Number of odd-length carry chains : 67
 Number of even-length carry chains : 55
@@ -596,11 +599,11 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : spi_interface/toggle_sync/sync_stage1_N_15420, loads : 998
-  Net : spi_interface/toggle_sync/maxfan_replicated_net_999, loads : 998
+  Net : generic_fir/p0_shiftadd_N_15352, loads : 999
+  Net : generic_fir/maxfan_replicated_net_999, loads : 999
   Net : halfband/hb_out_valid, loads : 528
   Net : cic_decimator/cic_out_valid, loads : 460
-  Net : spi_interface/toggle_sync/maxfan_replicated_net_1335, loads : 334
+  Net : generic_fir/maxfan_replicated_net_1292, loads : 292
   Net : cic_decimator/new_decim_valid, loads : 101
   Net : generic_fir/sym_pairs[11][16], loads : 47
   Net : generic_fir/sym_pairs[8][16], loads : 46
@@ -614,10 +617,10 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 165 MB
+Peak Memory Usage: 164 MB
 
 --------------------------------------------------------------
 Total CPU Time: 7 secs 
-Total REAL Time: 15 secs 
+Total REAL Time: 14 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: df9f82561d3f74eaba1f5795cc7124251e2be40c
+Checksum -- synthesis -- netlist: 8d2599afffa00ac6cf12f87bbca7ce302a2bd2b8

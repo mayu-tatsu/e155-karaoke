@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml" version="Diamond (64-bit) 2024.2.0.3.0" date="Thu Nov 20 03:58:23 2025" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="C:/Users/mtatsumi/my_designs/e155-karaoke/promote.xml" version="Diamond (64-bit) 2024.2.0.3.0" date="Thu Nov 20 05:31:04 2025" vendor="Lattice Semiconductor Corporation" >
+  <msg mid="2043318" type="Warning" internal="true" />
   <msg mid="35901328" type="Info" internal="true" />
   <msg mid="2043310" type="Info" internal="true" />
   <msg mid="2043063" type="Warning" internal="true" />
@@ -15,9 +16,12 @@
   <msg mid="2043128" type="Error" internal="true" />
   <msg mid="2043010" type="Error" internal="true" />
   <msg mid="35901010" type="Error" internal="true" />
+  <msg mid="35901318" type="Warning" internal="true" />
   <msg mid="2043328" type="Info" internal="true" />
   <msg mid="2044320" type="Info" internal="true" />
   <msg mid="2044344" type="Error" internal="true" />
   <msg mid="35931002" type="Warning" internal="true" />
   <msg mid="2043189" type="Error" internal="true" />
+  <msg mid="2043972" type="Info" internal="true" />
+  <msg mid="2043413" type="Error" internal="true" />
 </userSetting>
