@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
-        </Message>
-    </Task>
     <Task name="PAR">
         <Message>
             <ID>71003020</ID>
@@ -362,14 +355,6 @@
             <Severity>1</Severity>
             <Dynamic></Dynamic>
             <Dynamic>C:/Users/mtatsumi/my_designs/e155-karaoke/impl_1</Dynamic>
-        </Message>
-        <Message>
-            <ID>35901318</ID>
-            <Severity>32</Severity>
-            <Dynamic>c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv(75): </Dynamic>
-            <Dynamic>audio_sample</Dynamic>
-            <Navigation>c:/users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv</Navigation>
-            <Navigation>75</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>

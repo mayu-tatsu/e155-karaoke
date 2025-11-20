@@ -15,7 +15,7 @@ module spi(input logic clk,
 		   input  logic sck, 
            output logic sdo,
            input  logic audio_valid,	// done!!!
-           output logic [15:0] pcm_out
+           input  logic [15:0] pcm_out
 );
 
     logic        sdodelayed, wasdone;

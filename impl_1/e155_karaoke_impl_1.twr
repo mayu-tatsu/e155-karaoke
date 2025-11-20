@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Thu Nov 20 05:30:48 2025
+Thu Nov 20 06:07:05 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -228,10 +228,10 @@ clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
 clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
 clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
                                           SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4450                                          NET DELAY           2.432                 14.738  4       
+clk_generator/n4434                                          NET DELAY           2.432                 14.738  4       
 clk_generator/i650_2_lut_3_lut_3_lut/B->clk_generator/i650_2_lut_3_lut_3_lut/Z
                                           SLICE_R9C31C       C0_TO_F0_DELAY      0.449                 15.187  1       
-clk_generator/n4524                                          NET DELAY           3.318                 18.505  1       
+clk_generator/n4508                                          NET DELAY           3.318                 18.505  1       
 clk_generator/cycle_counter__i1/SP                           ENDPOINT            0.000                 18.505  1       
 
 
@@ -285,10 +285,10 @@ clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
 clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
 clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
                                           SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4450                                          NET DELAY           0.304                 12.637  4       
+clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
 clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
                                           SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n277                                           NET DELAY           2.736                 15.822  4       
+clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
 clk_generator/counter_97__i0/SR                              ENDPOINT            0.000                 15.822  1       
 
 
@@ -342,10 +342,10 @@ clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
 clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
 clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
                                           SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4450                                          NET DELAY           0.304                 12.637  4       
+clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
 clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
                                           SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n277                                           NET DELAY           2.736                 15.822  4       
+clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
 {clk_generator/counter_97__i1/SR   clk_generator/counter_97__i2/SR}
                                                              ENDPOINT            0.000                 15.822  1       
 
@@ -401,10 +401,10 @@ clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
 clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
 clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
                                           SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4450                                          NET DELAY           0.304                 12.637  4       
+clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
 clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
                                           SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n277                                           NET DELAY           2.736                 15.822  4       
+clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
 {clk_generator/counter_97__i3/SR   clk_generator/counter_97__i4/SR}
                                                              ENDPOINT            0.000                 15.822  1       
 
@@ -460,10 +460,10 @@ clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
 clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
 clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
                                           SLICE_R10C31A      D1_TO_F1_DELAY      0.476                 12.333  4       
-clk_generator/n4450                                          NET DELAY           0.304                 12.637  4       
+clk_generator/n4434                                          NET DELAY           0.304                 12.637  4       
 clk_generator/i15367_2_lut/A->clk_generator/i15367_2_lut/Z
                                           SLICE_R10C31B      C0_TO_F0_DELAY      0.449                 13.086  4       
-clk_generator/n277                                           NET DELAY           2.736                 15.822  4       
+clk_generator/n261                                           NET DELAY           2.736                 15.822  4       
 clk_generator/counter_97__i5/SR                              ENDPOINT            0.000                 15.822  1       
 
 
@@ -517,7 +517,7 @@ clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
 clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
 clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
                                           SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4450                                          NET DELAY           3.080                 15.386  4       
+clk_generator/n4434                                          NET DELAY           3.080                 15.386  4       
 clk_generator/i572_2_lut_3_lut/B->clk_generator/i572_2_lut_3_lut/Z
                                           SLICE_R8C31D       B0_TO_F0_DELAY      0.476                 15.862  1       
 clk_generator/n9_2[0]                                        NET DELAY           0.000                 15.862  1       
@@ -574,10 +574,10 @@ clk_generator/i3_4_lut/C->clk_generator/i3_4_lut/Z
 clk_generator/n9                                             NET DELAY           2.168                 11.857  1       
 clk_generator/i5_4_lut/A->clk_generator/i5_4_lut/Z
                                           SLICE_R10C31A      D1_TO_F1_DELAY      0.449                 12.306  4       
-clk_generator/n4450                                          NET DELAY           2.168                 14.474  4       
+clk_generator/n4434                                          NET DELAY           2.168                 14.474  4       
 clk_generator/i1_2_lut/B->clk_generator/i1_2_lut/Z
                                           SLICE_R9C31C       D1_TO_F1_DELAY      0.476                 14.950  1       
-clk_generator/n4453                                          NET DELAY           0.000                 14.950  1       
+clk_generator/n4437                                          NET DELAY           0.000                 14.950  1       
 clk_generator/clk_out/D                                      ENDPOINT            0.000                 14.950  1       
 
 
@@ -628,19 +628,19 @@ clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
 clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
                                           SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6916                                          NET DELAY               0.000                  9.252  2       
+clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
 clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
                                           SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47459                                         NET DELAY               0.000                  9.529  2       
+clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
 clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
                                           SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6918                                          NET DELAY               0.000                  9.806  2       
+clk_generator/n6902                                          NET DELAY               0.000                  9.806  2       
 clk_generator/counter_97_add_4_5/CI0->clk_generator/counter_97_add_4_5/CO0
                                           SLICE_R11C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-clk_generator/n47462                                         NET DELAY               0.000                 10.083  2       
+clk_generator/n47446                                         NET DELAY               0.000                 10.083  2       
 clk_generator/counter_97_add_4_5/CI1->clk_generator/counter_97_add_4_5/CO1
                                           SLICE_R11C31C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-clk_generator/n6920                                          NET DELAY               0.661                 11.021  2       
+clk_generator/n6904                                          NET DELAY               0.661                 11.021  2       
 clk_generator/counter_97_add_4_7/D0->clk_generator/counter_97_add_4_7/S0
                                           SLICE_R11C31D      D0_TO_F0_DELAY          0.476                 11.497  1       
 clk_generator/n29[5]                                         NET DELAY               0.000                 11.497  1       
@@ -694,16 +694,16 @@ clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
 clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
                                           SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6916                                          NET DELAY               0.000                  9.252  2       
+clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
 clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
                                           SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47459                                         NET DELAY               0.000                  9.529  2       
+clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
 clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
                                           SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6918                                          NET DELAY               0.000                  9.806  2       
+clk_generator/n6902                                          NET DELAY               0.000                  9.806  2       
 clk_generator/counter_97_add_4_5/CI0->clk_generator/counter_97_add_4_5/CO0
                                           SLICE_R11C31C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-clk_generator/n47462                                         NET DELAY               0.661                 10.744  2       
+clk_generator/n47446                                         NET DELAY               0.661                 10.744  2       
 clk_generator/counter_97_add_4_5/D1->clk_generator/counter_97_add_4_5/S1
                                           SLICE_R11C31C      D1_TO_F1_DELAY          0.476                 11.220  1       
 clk_generator/n29[4]                                         NET DELAY               0.000                 11.220  1       
@@ -758,13 +758,13 @@ clk_generator/counter_97__i0/CK->clk_generator/counter_97__i0/Q
 clk_generator/counter[0]                                     NET DELAY               2.022                  8.909  2       
 clk_generator/counter_97_add_4_1/C1->clk_generator/counter_97_add_4_1/CO1
                                           SLICE_R11C31A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
-clk_generator/n6916                                          NET DELAY               0.000                  9.252  2       
+clk_generator/n6900                                          NET DELAY               0.000                  9.252  2       
 clk_generator/counter_97_add_4_3/CI0->clk_generator/counter_97_add_4_3/CO0
                                           SLICE_R11C31B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-clk_generator/n47459                                         NET DELAY               0.000                  9.529  2       
+clk_generator/n47443                                         NET DELAY               0.000                  9.529  2       
 clk_generator/counter_97_add_4_3/CI1->clk_generator/counter_97_add_4_3/CO1
                                           SLICE_R11C31B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-clk_generator/n6918                                          NET DELAY               0.661                 10.467  2       
+clk_generator/n6902                                          NET DELAY               0.661                 10.467  2       
 clk_generator/counter_97_add_4_5/D0->clk_generator/counter_97_add_4_5/S0
                                           SLICE_R11C31C      D0_TO_F0_DELAY          0.476                 10.943  1       
 clk_generator/n29[3]                                         NET DELAY               0.000                 10.943  1       
@@ -968,7 +968,7 @@ clk_generator/clk_out/CK->clk_generator/clk_out/Q
 cic_decimator/clk_c                                          NET DELAY        0.882                  4.745  1243    
 clk_generator/i1_2_lut/A->clk_generator/i1_2_lut/Z
                                           SLICE_R9C31C       C1_TO_F1_DELAY   0.252                  4.997  1       
-clk_generator/n4453                                          NET DELAY        0.000                  4.997  1       
+clk_generator/n4437                                          NET DELAY        0.000                  4.997  1       
 clk_generator/clk_out/D                                      ENDPOINT         0.000                  4.997  1       
 
 
@@ -1333,7 +1333,7 @@ clk_generator/clk_out/CK->clk_generator/clk_out/Q
 cic_decimator/clk_c                                          NET DELAY        0.712                  4.575  1243    
 clk_generator/i650_2_lut_3_lut_3_lut/A->clk_generator/i650_2_lut_3_lut_3_lut/Z
                                           SLICE_R9C31C       D0_TO_F0_DELAY   0.266                  4.841  1       
-clk_generator/n4524                                          NET DELAY        1.594                  6.435  1       
+clk_generator/n4508                                          NET DELAY        1.594                  6.435  1       
 clk_generator/cycle_counter__i1/SP                           ENDPOINT         0.000                  6.435  1       
 
 

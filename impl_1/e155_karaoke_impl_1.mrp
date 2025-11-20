@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Thu Nov 20 05:29:42 2025
+Mapped on: Thu Nov 20 06:05:59 2025
 
 Design Information
 ------------------
@@ -69,7 +69,7 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net clk_generator.n4524: 1 loads, 1 SLICEs
+      Net clk_generator.n4508: 1 loads, 1 SLICEs
       Net cic_decimator.new_decim_valid_N_15343: 21 loads, 21 SLICEs
       Net cic_decimator.new_decim_valid: 33 loads, 33 SLICEs
       Net cic_decimator.combs_output_vld: 16 loads, 16 SLICEs
@@ -78,7 +78,7 @@ Design Summary (cont)
       Net p0_shiftadd_N_15352: 874 loads, 874 SLICEs
       Net maxfan_replicated_net_1292: 244 loads, 244 SLICEs
       Net spi_interface.wasdone: 1 loads, 1 SLICEs
-      Net clk_generator.n277: 4 loads, 4 SLICEs
+      Net clk_generator.n261: 4 loads, 4 SLICEs
    Top 10 highest fanout non-clock nets:
       Net p0_shiftadd_N_15352: 874 loads
       Net maxfan_replicated_net_999: 841 loads
@@ -225,8 +225,8 @@ Run Time and Memory Usage
 
    Total CPU Time: 1 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 134 MB
-Checksum -- map: c2bb8f73528c75fdd8fe74f06b3bfd1dce604c43
+   Peak Memory Usage: 133 MB
+Checksum -- map: 8a8745b2144d4c3737ce9f0fb77077c71158a0f
 
 
 

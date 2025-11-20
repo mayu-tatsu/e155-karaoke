@@ -1,1 +1,1 @@
-C:/lscc/radiant/2024.2/questasim/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 393216 work.fir_tb -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt3 -id 1-00be43eaec33-691f0162-27e-4374 +__design_bin_path+C:/Users/mtatsumi/my_designs/e155-karaoke +__betafsm
+C:/lscc/radiant/2024.2/questasim/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 393216 work.spi_tb -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt3 -id 1-00be43eaec33-691f1f1a-25e-17d8 +__design_bin_path+C:/Users/mtatsumi/my_designs/e155-karaoke +__betafsm

@@ -26,9 +26,9 @@ Connections ignored  1260  counted  16581  covered  48
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
-Total CPU Time: 5 secs 
+Total CPU Time: 6 secs 
 Total REAL Time: 6 secs 
 Peak Memory Usage: 179 MB
 
- 6.089374s wall, 5.859375s user + 0.125000s system = 5.984375s CPU (98.3%)
+ 6.399207s wall, 6.187500s user + 0.125000s system = 6.312500s CPU (98.6%)
 

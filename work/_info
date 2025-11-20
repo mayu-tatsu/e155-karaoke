@@ -35,6 +35,10 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
 Z2 !s12c _opt1
 R1
 R2
@@ -81,7 +85,7 @@ R3
 T_opt1
 !s110 1763615426
 VR03obifJGRKfVieD2l]7m2
-Z12 04 6 4 work fir_tb fast 0
+04 6 4 work fir_tb fast 0
 =1-b42e99ac0812-691ea2c2-19d-2a14
 R1
 R5
@@ -109,10 +113,10 @@ n@_opt2
 R11
 R3
 T_opt3
-!s110 1763639650
-V1fVgCDlJS^I[bOYl>Vn7:1
-R12
-=1-00be43eaec33-691f0162-27e-4374
+!s110 1763647258
+VYl<[b8_VlLh2hBG6k41aT0
+04 6 4 work spi_tb fast 0
+=1-00be43eaec33-691f1f1a-25e-17d8
 R1
 R5
 R6
@@ -124,170 +128,170 @@ n@_opt3
 R11
 vcic
 2C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv
-Z13 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z14 !s110 1763639637
+Z12 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z13 !s110 1763647248
 !i10b 1
 !s100 W1mREj01n_igJ7DDh`2<d1
 IM=Agg@<cP:ge1O;EDW?i00
 S1
-Z15 dC:/Users/mtatsumi/my_designs/e155-karaoke
+Z14 dC:/Users/mtatsumi/my_designs/e155-karaoke
 w1763631176
 8C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv
-!i122 330
+!i122 404
 L0 20 148
-Z16 VDg1SIo80bB@j0V0VzS_@n1
-Z17 OL;L;2024.2;79
+Z15 VDg1SIo80bB@j0V0VzS_@n1
+Z16 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z18 !s108 1763639637.000000
+Z17 !s108 1763647248.000000
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv|
 !i113 0
-Z19 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z18 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R10
 vcic_tb
 2C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv
+R12
 R13
-R14
 !i10b 1
 !s100 N0cof^N4Sf6Nc5PlRFZA?1
 IfHHOB29IFZ@>Z1N?^Zif`0
 S1
-R15
+R14
 w1763631303
 8C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv
-!i122 338
+!i122 412
 L0 10 112
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv|
 !i113 0
-R19
+R18
 R10
 vclk_gen
 2C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
+R12
 R13
-R14
 !i10b 1
 !s100 nDPfgnWmLZ7>EZYMB5aDd3
 I@G>cUfI[9N8cVhVYnfi3n3
 S1
-R15
+R14
 w1763620498
 8C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
-!i122 331
+!i122 405
 L0 10 47
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv|
 !i113 0
-R19
+R18
 R10
 vfir
 2C:\Users\mtatsumi\my_designs\e155-karaoke\fir.sv
+R12
 R13
-R14
 !i10b 1
 !s100 [RAnlN5@TEFE2S?ANBQVZ2
 Ic0<R9jKX]liPoA19DD>7J2
 S1
-R15
-w1763638679
+R14
+w1763642209
 8C:\Users\mtatsumi\my_designs\e155-karaoke\fir.sv
 FC:\Users\mtatsumi\my_designs\e155-karaoke\fir.sv
-!i122 332
+!i122 406
 L0 8 257
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:\\Users\\mtatsumi\\my_designs\\e155-karaoke\\fir.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:\Users\mtatsumi\my_designs\e155-karaoke\fir.sv|
 !i113 0
-R19
+R18
 R10
 vfir_tb
 2C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv
+R12
 R13
-R14
 !i10b 1
 !s100 HWnde1;]XXKe>7dJ_d@9h1
 I:HRnkS7b04B_XV@f;n=hB1
 S1
-R15
+R14
 w1763639634
 8C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv
-!i122 339
+!i122 413
 L0 7 286
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv|
 !i113 0
-R19
+R18
 R10
 vhb
 2C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv
+R12
 R13
-Z20 !s110 1763639638
 !i10b 1
 !s100 zL8Dz6kN>eafWX]YZbZLd3
 Iz98j0]Q^jQB`mi7C<I_j62
 S1
-R15
-Z21 w1763637533
+R14
+Z19 w1763637533
 8C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv
-!i122 340
-Z22 L0 8 148
+!i122 414
+Z20 L0 8 148
+R15
 R16
-R17
 r1
 !s85 0
 31
-Z23 !s108 1763639638.000000
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv|
 !i113 0
-R19
+R18
 R10
 vhb1
 2C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv
-R13
+R12
 !s110 1763635335
 !i10b 1
 !s100 YhDOF2>g`M[nATHNcj65B3
 IeWmR^LZA9Qo8GP@42Znif1
 S1
-R15
+R14
 w1763624579
 8C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv
 !i122 157
-R22
+R20
+R15
 R16
-R17
 r1
 !s85 0
 31
@@ -295,24 +299,24 @@ r1
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv|
 !i113 0
-R19
+R18
 R10
 vhb1_tb
 2C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb1_tb.sv
-R13
+R12
 !s110 1763635336
 !i10b 1
 !s100 5oThz=ggFJe[M>7YzT7:o0
 IRjSW;6MUI8T23Oc8[dMMa2
 S1
-R15
-Z24 w1763616182
+R14
+Z21 w1763616182
 8C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb1_tb.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb1_tb.sv
 !i122 165
-Z25 L0 7 210
+Z22 L0 7 210
+R15
 R16
-R17
 r1
 !s85 0
 31
@@ -320,155 +324,180 @@ r1
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb1_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb1_tb.sv|
 !i113 0
-R19
+R18
 R10
 vhb2
 2C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv
+R12
 R13
-R14
 !i10b 1
 !s100 ?aj^gW<;F@IKke2gkgNzB3
 I6nndkOeg5?9>Del@@_nM:3
 S1
-R15
+R14
 w1763621926
 8C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv
-!i122 333
+!i122 407
 L0 8 150
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv|
 !i113 0
-R19
+R18
 R10
 vhb3
 2C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv
+R12
 R13
-R14
 !i10b 1
 !s100 82zR`IH@A3LeBdAAM@2zf2
 II4b=2=H01;N8BLX^T?79m3
 S1
-R15
+R14
 w1763627341
 8C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv
-!i122 334
+!i122 408
 L0 8 184
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv|
 !i113 0
-R19
+R18
 R10
 vhb_tb
 2C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv
-R13
-R20
+R12
+Z23 !s110 1763647249
 !i10b 1
 !s100 Y?cfdoFZcLDfVnS1UbhbN2
 Imnb38AGa^l<nB^ofWoDAL3
 S1
-R15
-R21
+R14
+R19
 8C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv
-!i122 341
-R25
+!i122 415
+R22
+R15
 R16
-R17
 r1
 !s85 0
 31
-R23
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv|
 !i113 0
-R19
+R18
 R10
 vkaraoke_top
 2C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv
+R12
 R13
-R14
 !i10b 1
-!s100 SN]P?X?K>D>2GVE:Gal8J3
-If88XA03F2b3R`PghN;4j^1
+!s100 Lm9NU8faSBIJ6U``jG4=_1
+I>BB`Nb=7<gV:nT=GL]:JK3
 S1
-R15
-w1763636094
+R14
+w1763644960
 8C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv
-!i122 335
-L0 9 72
+!i122 409
+L0 10 72
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv|
 !i113 0
-R19
+R18
 R10
 vspi
 2C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv
+R12
 R13
-R14
 !i10b 1
-!s100 E><:P3EhXTCMiQ;zY>N2P0
-I3f7L_QiaJFRgdG2bDNbNF1
+!s100 ]fF^P2kk7nNb3zG]5@1@[0
+I`Z`Z9lBHAkHDcjNe>KRfd0
 S1
-R15
-R24
+R14
+w1763645357
 8C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv
-!i122 336
-L0 8 97
+!i122 410
+L0 13 30
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv|
 !i113 0
-R19
+R18
+R10
+vspi_tb
+2C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv
+R12
+R23
+!i10b 1
+!s100 bQ0UXj^ko0AEFKT9PgZ>e0
+I?XlQEUfPhl?N6A7KBc_gJ1
+S1
+R14
+w1763647244
+8C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv
+FC:/Users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv
+!i122 416
+L0 7 263
+R15
+R16
+r1
+!s85 0
+31
+!s108 1763647249.000000
+!s107 C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/spi_tb.sv|
+!i113 0
+R18
 R10
 vsynchronizer
 2C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv
+R12
 R13
-R14
 !i10b 1
 !s100 SG@:g?GW=l4iNNmXfABBP2
 I]^:C_:SX[7BQ_GV`oN2iT1
 S1
-R15
-R24
+R14
+R21
 8C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv
 FC:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv
-!i122 337
+!i122 411
 L0 7 18
+R15
 R16
-R17
 r1
 !s85 0
 31
-R18
+R17
 !s107 C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv|
 !i113 0
-R19
+R18
 R10
