@@ -9,7 +9,8 @@
 
 module clk_gen(
 	input  logic reset_n,
-	output logic clk_out
+	output logic clk_out, 
+	output logic clk_6mhz
 );
 
     logic clk_48mhz;
@@ -53,4 +54,25 @@ module clk_gen(
             end
         end
     end
+	
+	// 6 MHz clock divider
+	// 48,000,000 / 6,000,000 = 8
+	
+	logic [3:0] counter_6mhz;
+	logic       clk_divided_6mhz;
+
+	always_ff @(posedge clk_48mhz) begin
+		if (~reset_n) begin
+			counter_6mhz <= 32'b0;
+			clk_divided_6mhz <= 1'b0;
+		end
+		else if (counter_6mhz < 4'd8) counter_6mhz <= counter_6mhz + 1;
+		else begin
+			counter_6mhz     <= 32'b0;
+			clk_divided_6mhz <= ~clk_divided_6mhz;
+		end
+	end
+	
+	assign clk_6mhz = clk_divided_6mhz;
+	
 endmodule

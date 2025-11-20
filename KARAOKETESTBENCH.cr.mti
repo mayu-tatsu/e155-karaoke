@@ -5,26 +5,12 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	synchronizer
 
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module karaoke_top
-
-Top level modules:
-	karaoke_top
-
 } {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module cic_tb
 
 Top level modules:
 	cic_tb
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module clk_gen
-
-Top level modules:
-	clk_gen
 
 } {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024

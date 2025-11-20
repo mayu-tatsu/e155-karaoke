@@ -1,8 +1,8 @@
 <top name = "karaoke_top"  library = "work"  arch = ""  entry = "Verilog">
 
 <clocks>
-    <clockitem name = "clk"  type = "net" />
     <clockitem name = "sck"  type = "port" />
+    <clockitem name = "clk"  type = "net" />
     <clockitem name = "clk_generator/clk_48mhz"  type = "net" />
 </clocks>
 

@@ -1,27 +1,19 @@
-// spi.sv
-// Mayu Tatsumi; mtatsumi@g.hmc.edu
-// Quinn Miyamoto; qmiyamoto@g.hmc.edu
-// 2025-11-20
-
-/////////////////////////////////////////////
-// aes_spi
-//   SPI interface.  Shifts in key and plaintext
-//   Captures ciphertext when done, then shifts it out
-//   Tricky cases to properly change sdo on negedge clk
-/////////////////////////////////////////////
-
 module spi(
     input  logic        clk,          // 1.536 MHz FPGA clock
+    input  logic		clk_6mhz,
     input  logic        reset_n,
-    input  logic        sck,          // SPI clock from MCU
+    input  logic        sck,          // SPI clock to MCU
     output logic        sdo,
-    input  logic        audio_valid,  // In clk domain
-    input  logic [15:0] pcm_out,      // In clk domain
+    input  logic        audio_valid,
+    input  logic [15:0] pcm_out,
     output logic        led
 );
 
+	logic [15:0] hardcoded_data;
+	assign hardcoded_data = 16'h1010;
+
     // ========================================
-    // Clock Domain Crossing: clk â†’ sck
+    // Clock Domain Crossing: clk, sck
     // ========================================
     
     // Capture audio data in clk domain
@@ -33,14 +25,17 @@ module spi(
             pcm_captured <= 16'b0;
             data_ready   <= 1'b0;
         end else if (audio_valid) begin
-            pcm_captured <= pcm_out;
+            pcm_captured <= hardcoded_data;
             data_ready   <= 1'b1;  // Will stay high until sck domain clears it
+		end else if (!sck) begin
+			data_ready <= 1'b0;
         end
     end
     
     // Synchronize data_ready to sck domain (2-FF synchronizer)
-    logic data_ready_sync1, data_ready_sync2, data_ready_prev;
+    // logic data_ready_sync1, data_ready_sync2, data_ready_prev;
     
+	/*	// was introducing almost a 3 cycle delay
     always_ff @(posedge sck or negedge reset_n) begin
         if (~reset_n) begin
             data_ready_sync1 <= 1'b0;
@@ -56,6 +51,9 @@ module spi(
     // Detect rising edge of data_ready in sck domain
     logic new_data;
     assign new_data = data_ready_sync2 & ~data_ready_prev;
+	*/
+	logic new_data;
+	assign new_data = data_ready;
     
     // ========================================
     // SPI Shift Register (in sck domain)
@@ -107,7 +105,7 @@ module spi(
     // LED Indicator
     // ========================================
     
-    assign led = (pcm_out == 16'hFF);
+    assign led = audio_valid;
     
 endmodule
 
@@ -149,3 +147,5 @@ module spi(input logic clk,
     assign sdo = (audio_valid & !wasdone) ? pcm_out[15] : sdodelayed;
 	// assign sdo = 0;
 endmodule*/
+
+ 

@@ -11,17 +11,18 @@ module karaoke_top (
     input  logic        pdm_data,       // from the microphone
     input  logic        reset_n,
     output logic        clk,            // goes to the microphone
-    output logic [15:0] audio_sample,
-    output logic        audio_valid,
+    output logic [15:0] audio_sample,	// debug
+    output logic        audio_valid,	// debug
     input  logic        sck,            // clk input from MCU
     input  logic        sdi,            // unused (for future expansion)
-    output logic        done,          // unused (for future expansion)
+    output logic        done,          	// unused (for future expansion)
     output logic        sdo,
 	output logic        led
 );
 
     
-    logic               pdm_data_sync;
+    logic pdm_data_sync;
+	logic clk_6mhz;
 	
 	logic signed [15:0] cic_out, hb_out;
     logic               cic_out_valid, hb_out_valid;
@@ -30,7 +31,8 @@ module karaoke_top (
     // Generate 1.536 MHz clock
     clk_gen clk_generator (
         .reset_n(reset_n),
-        .clk_out(clk)
+        .clk_out(clk),
+		.clk_6mhz(clk_6mhz)
     );
     
     // Synchronize PDM data
@@ -73,6 +75,7 @@ module karaoke_top (
     // SPI interface to MCU
     spi spi_interface (
         .clk(clk), 
+		.clk_6mhz(clk_6mhz),
         .reset_n(reset_n),
         .pcm_out(audio_sample),
         .audio_valid(audio_valid),
