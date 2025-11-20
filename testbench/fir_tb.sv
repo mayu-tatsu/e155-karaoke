@@ -117,14 +117,35 @@ module fir_tb();
     
     // Test 2: DC Input
     task test_dc_input();
-        logic signed [15:0] output_sample;
+        // logic signed [15:0] output_sample;
         real sum, avg;
-        int i, count;
+        int i, count, samples_sent;
         
         $display("\nTest 2: DC Input (Unity Gain Test)");
         
         sum = 0;
         count = 0;
+		samples_sent = 0;
+		
+		fork
+			begin
+				for (i = 0; i < 100; i++) begin
+					send_sample(16'sd16384);
+					samples_sent++;
+				end
+			end
+			
+			begin
+				while (samples_sent < 100 || count < 67) begin
+					@(posedge clk);
+					if (y_out_valid && samples_sent > 32) begin
+						sum += q15_to_real(y_out);
+						count++;
+					end
+				end
+			end
+		join
+		/*
         
         // Send DC value (0.5)
         for (i = 0; i < 100; i++) begin
@@ -134,7 +155,8 @@ module fir_tb();
                 count++;
             end
         end
-        
+        */
+		
         avg = sum / count;
         $display("  Input: 0.5");
         $display("  Average Output: %f", avg);
@@ -149,16 +171,48 @@ module fir_tb();
     
     // Test 3: Sine Wave Response
     task test_sine_wave(input real freq);
-        logic signed [15:0] input_sample, output_sample;
+        logic signed [15:0] input_sample;	// , output_sample;
         real t, input_val, output_val;
         real input_power, output_power, gain_db;
-        int i;
-        
+        int i, samples_sent, outputs_received;
+        real input_values[$];
+		
         $display("\nTest 3: Sine Wave at %0.0f Hz", freq);
         
         input_power = 0;
         output_power = 0;
-        
+		samples_sent = 0;
+		outputs_received = 0;
+		
+		fork
+			begin
+				for (i = 0; i < 200; i++) begin
+					t = $itor(i) / SAMPLE_RATE;
+					input_val = 0.5 * $sin(2.0 * 3.14159265359 * freq * t);
+					input_sample = real_to_q15(input_val);
+					input_values.push_back(input_val);
+					send_sample(input_sample);
+					samples_sent++;
+				end
+			end
+			
+			begin
+				while (samples_sent < 200 || outputs_received < 167) begin
+					@(posedge clk);
+					if (y_out_valid) begin
+						if (samples_sent > 50) begin
+							output_val = q15_to_real(y_out);
+							input_val = input_values[outputs_received];
+							input_power += input_val * input_val;
+							output_power += output_val * output_val;
+						end
+						outputs_received++;
+					end
+				end
+			end
+		join
+		
+        /*
         // Generate and send sine wave
         for (i = 0; i < 200; i++) begin
             t = $itor(i) / SAMPLE_RATE;
@@ -172,11 +226,12 @@ module fir_tb();
                 input_power += input_val * input_val;
                 output_power += output_val * output_val;
             end
-        end
+        end*/
         
         // Calculate gain
         gain_db = 10.0 * $log10(output_power / input_power);
         $display("  Frequency: %0.0f Hz", freq);
+		$display("	Collected %0d output samples", outputs_received);
         $display("  Gain: %f dB", gain_db);
         
         if (freq < 4000) begin

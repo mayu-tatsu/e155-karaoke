@@ -44,13 +44,11 @@
 -lib pmi -vhd "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd"
 -sver "C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv"
 "C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv"
-"C:/Users/mtatsumi/my_designs/e155-karaoke/hb2.sv"
-"C:/Users/mtatsumi/my_designs/e155-karaoke/hb1.sv"
 "C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv"
 "C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv"
 "C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv"
 "C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv"
-"C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv"
+"C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv"
 
 
 -path "C:/Users/mtatsumi/my_designs/e155-karaoke"

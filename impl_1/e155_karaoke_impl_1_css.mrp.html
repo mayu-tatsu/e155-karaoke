@@ -49,7 +49,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Thu Nov 20 02:57:33 2025
+Mapped on: Thu Nov 20 03:57:02 2025
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
@@ -59,13 +59,13 @@ Command line:   map -i e155_karaoke_impl_1_syn.udb -o
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
 
-   Number of slice registers: 2351 out of  5280 (45%)
+   Number of slice registers: 2342 out of  5280 (44%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           4800 out of  5280 (91%)
-      Number of logic LUT4s:             367
-      Number of inserted feedthru LUT4s: 1500
+   Number of LUT4s:           4781 out of  5280 (91%)
+      Number of logic LUT4s:             346
+      Number of inserted feedthru LUT4s: 1540
       Number of replicated LUT4s:          1
-      Number of ripple logic:            1466 (2932 LUT4s)
+      Number of ripple logic:            1447 (2894 LUT4s)
    Number of IO sites used:   22 out of 39 (56%)
       Number of IO sites used for general PIO: 22
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -88,7 +88,7 @@ Command line:   map -i e155_karaoke_impl_1_syn.udb -o
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  3
-      Net clk_c: 1974 loads, 1974 rising, 0 falling (Driver: Pin
+      Net clk_c: 1983 loads, 1983 rising, 0 falling (Driver: Pin
      clk_generator.clk_out/Q)
       Net clk_generator.clk_48mhz: 7 loads, 7 rising, 0 falling (Driver: Pin
      clk_generator.hf_osc.osc_inst/CLKHF)
@@ -98,26 +98,26 @@ Command line:   map -i e155_karaoke_impl_1_syn.udb -o
       Net halfband.stage3_valid: 16 loads, 16 SLICEs
       Net hb_out_valid: 527 loads, 527 SLICEs
       Net audio_sample_pad[14].vcc: 1 loads, 0 SLICEs
+      Net clk_generator.n4680: 1 loads, 1 SLICEs
       Net audio_valid_c: 16 loads, 16 SLICEs
-      Net clk_generator.n3399: 1 loads, 1 SLICEs
-      Net spi_interface.n3314: 19 loads, 19 SLICEs
+      Net spi_interface.n4607: 19 loads, 19 SLICEs
+      Net cic_decimator.new_decim_valid_N_15404: 21 loads, 21 SLICEs
+      Net cic_decimator.new_decim_valid: 35 loads, 35 SLICEs
       Net cic_decimator.combs_output_vld: 16 loads, 16 SLICEs
-      Net cic_decimator.new_decim_valid_N_15869: 21 loads, 21 SLICEs
-      Net cic_decimator.new_decim_valid: 33 loads, 33 SLICEs
    Number of LSRs:  4
-      Net maxfan_replicated_net_999: 830 loads, 830 SLICEs
-      Net maxfan_replicated_net_1344: 293 loads, 293 SLICEs
-      Net sync_stage1_N_15883: 880 loads, 880 SLICEs
-      Net clk_generator.n280: 4 loads, 4 SLICEs
+      Net sync_stage1_N_15420: 893 loads, 893 SLICEs
+      Net maxfan_replicated_net_999: 835 loads, 835 SLICEs
+      Net maxfan_replicated_net_1335: 284 loads, 284 SLICEs
+      Net clk_generator.n264: 4 loads, 4 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net sync_stage1_N_15883: 880 loads
-      Net maxfan_replicated_net_999: 830 loads
-      Net hb_out_valid: 528 loads
+      Net sync_stage1_N_15420: 893 loads
+      Net maxfan_replicated_net_999: 835 loads
+      Net hb_out_valid: 529 loads
       Net cic_out_valid: 461 loads
-      Net maxfan_replicated_net_1344: 293 loads
+      Net maxfan_replicated_net_1335: 284 loads
       Net audio_sample_pad[14].vcc: 101 loads
-      Net cic_decimator.new_decim_valid: 97 loads
-      Net generic_fir.sym_pairs[11][16]: 48 loads
+      Net cic_decimator.new_decim_valid: 99 loads
+      Net generic_fir.sym_pairs[11][16]: 47 loads
       Net generic_fir.sym_pairs[8][16]: 46 loads
       Net generic_fir.sym_pairs[9][16]: 45 loads
 
@@ -142,6 +142,10 @@ WARNING &lt;71003020&gt; - map: Top module port &apos;sdone&apos; does not conne
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[15]    | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[13]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[5]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | sck                 | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | reset_n             | INPUT     |           |       |       |           |
@@ -152,35 +156,31 @@ WARNING &lt;71003020&gt; - map: Top module port &apos;sdone&apos; does not conne
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[4]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_valid         | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[7]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[13]    | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| clk                 | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[1]     | OUTPUT    |           |       |       |           |
+| audio_sample[3]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[2]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| audio_valid         | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[0]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[6]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[8]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[5]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[3]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[9]     | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| audio_sample[10]    | OUTPUT    |           |       |       |           |
+| audio_sample[1]     | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[11]    | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[10]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[9]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[6]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[7]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| audio_sample[8]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | audio_sample[12]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
@@ -199,21 +199,21 @@ OSC 1:                                 Pin/Node Value
 
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 
-Instance Name: halfband/mult_478
+Instance Name: halfband/mult_414
          Type: DSP
-Instance Name: halfband/mult_487
+Instance Name: halfband/mult_423
          Type: DSP
-Instance Name: halfband/mult_484
+Instance Name: halfband/mult_420
          Type: DSP
-Instance Name: halfband/mult_489
+Instance Name: halfband/mult_425
          Type: DSP
-Instance Name: halfband/mult_480
+Instance Name: halfband/mult_416
          Type: DSP
-Instance Name: halfband/mult_477
+Instance Name: halfband/mult_413
          Type: DSP
-Instance Name: halfband/mult_486
+Instance Name: halfband/mult_422
          Type: DSP
-Instance Name: halfband/mult_483
+Instance Name: halfband/mult_419
          Type: DSP
 Instance Name: clk_generator/hf_osc.osc_inst
          Type: HFOSC
@@ -227,8 +227,8 @@ Instance Name: clk_generator/hf_osc.osc_inst
 
    Total CPU Time: 1 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 134 MB
-Checksum -- map: d9ea77244c0efe51cd17568d905737c36bc24ca6
+   Peak Memory Usage: 133 MB
+Checksum -- map: 1679af36ea5b0e173ae2e9c77fd8211a31650cb1
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995
      AT&amp;T Corp.   All rights reserved.

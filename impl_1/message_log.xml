@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
-        </Message>
-    </Task>
     <Task name="PAR">
         <Message>
             <ID>71003020</ID>
@@ -462,18 +455,18 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv(8): </Dynamic>
+            <Dynamic>c:/users/mtatsumi/my_designs/e155-karaoke/hb.sv(8): </Dynamic>
             <Dynamic>hb</Dynamic>
-            <Navigation>c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv</Navigation>
+            <Navigation>c:/users/mtatsumi/my_designs/e155-karaoke/hb.sv</Navigation>
             <Navigation>8</Navigation>
         </Message>
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv(148): </Dynamic>
+            <Dynamic>c:/users/mtatsumi/my_designs/e155-karaoke/hb.sv(148): </Dynamic>
             <Dynamic>23</Dynamic>
             <Dynamic>16</Dynamic>
-            <Navigation>c:/users/mtatsumi/my_designs/e155-karaoke/hb1.sv</Navigation>
+            <Navigation>c:/users/mtatsumi/my_designs/e155-karaoke/hb.sv</Navigation>
             <Navigation>148</Navigation>
         </Message>
         <Message>
@@ -492,6 +485,15 @@
             <Dynamic>1</Dynamic>
             <Navigation>c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv</Navigation>
             <Navigation>110</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv(242): </Dynamic>
+            <Dynamic>23</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Navigation>c:/users/mtatsumi/my_designs/e155-karaoke/fir.sv</Navigation>
+            <Navigation>242</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -527,7 +529,7 @@
             <ID>35001747</ID>
             <Severity>256</Severity>
             <Dynamic>driving fir/products[0][32:0]</Dynamic>
-            <Dynamic>32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0</Dynamic>
+            <Dynamic>32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1</Dynamic>
         </Message>
         <Message>
             <ID>35002028</ID>
@@ -578,19 +580,31 @@
         <Message>
             <ID>35001747</ID>
             <Severity>256</Severity>
-            <Dynamic>\halfband/products[6]_res16</Dynamic>
-            <Dynamic>0</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res8</Dynamic>
+            <Dynamic>\halfband/sym_pairs[6]_res14</Dynamic>
             <Dynamic>1</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res7</Dynamic>
+            <Dynamic>\halfband/products[6]_res20</Dynamic>
+            <Dynamic>0</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>\halfband/sym_pairs[6]_res10</Dynamic>
+            <Dynamic>1</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>\halfband/sym_pairs[6]_res11</Dynamic>
+            <Dynamic>1</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>\halfband/sym_pairs[6]_res8</Dynamic>
             <Dynamic>1</Dynamic>
         </Message>
         <Message>
@@ -602,14 +616,8 @@
         <Message>
             <ID>35001747</ID>
             <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res12</Dynamic>
-            <Dynamic>1</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res10</Dynamic>
-            <Dynamic>1</Dynamic>
+            <Dynamic>\generic_fir/products[15]_res30</Dynamic>
+            <Dynamic>2, 1</Dynamic>
         </Message>
         <Message>
             <ID>35002028</ID>
@@ -624,7 +632,7 @@
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\halfband/sym_pairs[6]_res8_ret0_i0_i2</Dynamic>
+            <Dynamic>\halfband/sym_pairs[6]_res5_ret0_i0_i2</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
     </Task>

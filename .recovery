@@ -2,7 +2,7 @@
 <RadiantProject version="4.2" radiant="2024.2.0.3.0" title="e155_karaoke" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" family_int="ice40tp" device_int="itpa08" package_int="SG48" operation_int="IND" speed_int="6" default_implementation="impl_1">
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="hb3" top="karaoke_top"/>
+        <Options def_top="karaoke_top" top="karaoke_top"/>
         <Source name="karaoke_top.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog" top_module="karaoke_top"/>
         </Source>
@@ -10,12 +10,6 @@
             <Options VerilogStandard="System Verilog"/>
         </Source>
         <Source name="testbench/cic_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
-            <Options VerilogStandard="System Verilog"/>
-        </Source>
-        <Source name="hb2.sv" type="Verilog" type_short="Verilog">
-            <Options VerilogStandard="System Verilog"/>
-        </Source>
-        <Source name="hb1.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
         </Source>
         <Source name="fir.sv" type="Verilog" type_short="Verilog">
@@ -30,14 +24,17 @@
         <Source name="spi.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
         </Source>
-        <Source name="hb3.sv" type="Verilog" type_short="Verilog">
-            <Options VerilogStandard="System Verilog"/>
-        </Source>
         <Source name="testbench/fir_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options VerilogStandard="System Verilog"/>
         </Source>
-        <Source name="testbench/hb1_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
+        <Source name="hb.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="testbench/hb_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="source/impl_1_1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
         </Source>
     </Implementation>
     <Strategy name="Strategy1" file="e155_karaoke1.sty"/>

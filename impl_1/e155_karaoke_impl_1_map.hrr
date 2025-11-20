@@ -3,17 +3,17 @@ Report for cell karaoke_top
    Instance path: karaoke_top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	       4800        100.0
-                               LUTGATE	       1868        100.0
-                                LUTCCU	       2932        100.0
+                                  LUT4	       4781        100.0
+                               LUTGATE	       1887        100.0
+                                LUTCCU	       2894        100.0
                                  IOBUF	         22        100.0
-                                PFUREG	       2351        100.0
+                                PFUREG	       2342        100.0
                                    DSP	          8        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
                                    cic	          1         6.9
                                clk_gen	          1         0.3
-                                   fir	          1        51.4
+                                   fir	          1        50.3
                                     hb	          1         9.5
                                    spi	          1         0.6
                        synchronizer_U0	          1         0.0
@@ -24,8 +24,8 @@ Report for cell hb
                                   cell	      count    Res Usage(%)
                                   LUT4	        455         9.5
                                LUTGATE	          3         0.2
-                                LUTCCU	        452        15.4
-                                PFUREG	        818        34.8
+                                LUTCCU	        452        15.6
+                                PFUREG	        818        34.9
                                    DSP	          8        100.0
 ---------------------------------------------------
 Report for cell synchronizer_U0
@@ -33,15 +33,6 @@ Report for cell synchronizer_U0
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                 PFUREG	          2         0.1
----------------------------------------------------
-Report for cell fir
-   Instance path: karaoke_top/generic_fir
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	       2465        51.4
-                               LUTGATE	        169         9.0
-                                LUTCCU	       2296        78.3
-                                PFUREG	       1250        53.2
 ---------------------------------------------------
 Report for cell clk_gen
    Instance path: karaoke_top/clk_generator
@@ -52,12 +43,21 @@ Report for cell clk_gen
                                 LUTCCU	          8         0.3
                                 PFUREG	          9         0.4
 ---------------------------------------------------
+Report for cell fir
+   Instance path: karaoke_top/generic_fir
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	       2407        50.3
+                               LUTGATE	        149         7.9
+                                LUTCCU	       2258        78.0
+                                PFUREG	       1241        53.0
+---------------------------------------------------
 Report for cell spi
    Instance path: karaoke_top/spi_interface
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                   LUT4	         29         0.6
-                               LUTGATE	         29         1.6
+                               LUTGATE	         29         1.5
                                 PFUREG	         43         1.8
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
@@ -76,6 +76,6 @@ Report for cell cic
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                   LUT4	        332         6.9
-                               LUTGATE	        156         8.4
-                                LUTCCU	        176         6.0
-                                PFUREG	        229         9.7
+                               LUTGATE	        156         8.3
+                                LUTCCU	        176         6.1
+                                PFUREG	        229         9.8

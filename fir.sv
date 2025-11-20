@@ -100,7 +100,7 @@ module fir (
 			sym_pairs[13] <= $signed(taps[13]) + $signed(taps[31-13]);
 			sym_pairs[14] <= $signed(taps[14]) + $signed(taps[31-14]);
 			sym_pairs[15] <= $signed(taps[15]) + $signed(taps[31-15]);
-            valid_pipeline[0] <= valid_reg[31];  // Start pipeline when delay line full
+            valid_pipeline[0] <= x_in_valid & valid_reg[30];  // Start pipeline when delay line full
         end
     end
 
@@ -196,7 +196,7 @@ module fir (
             products <= '{default: 33'sd0};
             valid_pipeline[1] <= 1'b0;
         end else begin
-			products[0] <= 0;
+			products[0] <= p0_shiftadd;
 			products[1] <= p1_shiftadd;
 			products[2] <= p2_shiftadd;
 			products[3] <= p3_shiftadd;
@@ -239,11 +239,12 @@ module fir (
             valid_pipeline[3] <= 1'b0;
         end else begin
             // right shift by 15: Q30 -> Q15
-			// y_out <= $signed(accumulator) >>> 15;
+			y_out <= $signed(accumulator) >>> 15;
 
 			// note: we may need to clamp in case values go outside of 16 bit range
             // convert Q30 -> Q15
             // only need 15-BIT shift on full signed accumulator 
+			/*
             logic signed [22:0] result_q15;
             result_q15 = $signed(accumulator) >>> 15;
 
@@ -254,9 +255,9 @@ module fir (
                 y_out <= -16'sd32768;
             end else begin
                 y_out <= result_q15[15:0];
-            end   
-
-            y_out_valid <= valid_pipeline[2] & ~valid_pipeline[3];  // pulse only on rising edge
+            end   */
+			
+            y_out_valid <= valid_pipeline[2];  // pulse only on rising edge
             valid_pipeline[3] <= valid_pipeline[2];                  // store previous state
         end
     end

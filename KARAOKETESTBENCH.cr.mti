@@ -5,6 +5,13 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	synchronizer
 
+} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module karaoke_top
+
+Top level modules:
+	karaoke_top
+
 } {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module cic_tb
@@ -33,12 +40,12 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	spi
 
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv
+} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module fir_tb
+-- Compiling module hb_tb
 
 Top level modules:
-	fir_tb
+	hb_tb
 
 } {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
@@ -46,6 +53,20 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 
 Top level modules:
 	cic
+
+} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/fir.sv {1 {vlog -work work -vopt -sv -stats=none {C:\Users\mtatsumi\my_designs\e155-karaoke\fir.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module fir
+
+Top level modules:
+	fir
+
+} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module hb
+
+Top level modules:
+	hb
 
 } {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/hb3.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
