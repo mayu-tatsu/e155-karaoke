@@ -1,151 +1,161 @@
-module spi(
-    input  logic        clk,          // 1.536 MHz FPGA clock
-    input  logic		clk_6mhz,
+// spi.sv
+// Mayu Tatsumi; mtatsumi@g.hmc.edu
+// Quinn Miyamoto; qmiyamoto@g.hmc.edu
+// 2025-11-30
+
+// Toggle-handshake CDC, 16-bit PCM -> MCU via SPI (no CS, no SDI)
+
+module spi (
+    input  logic        clk,           // 1.536 MHz (audio domain)
+    input  logic        clk_6mhz,      // 6 MHz (SPI clock source)
     input  logic        reset_n,
-    input  logic        sck,          // SPI clock to MCU
-    output logic        sdo,
-    input  logic        audio_valid,
-    input  logic [15:0] pcm_out,
-    output logic        led
+    
+    input  logic        audio_valid,   // clk domain
+    input  logic [15:0] pcm_out,       // clk domain
+
+    output logic        sck,           // to MCU (SPI SCK)
+    output logic        sdo            // to MCU (MOSI)
 );
 
-	logic [15:0] hardcoded_data;
-	assign hardcoded_data = 16'h1010;
+    /*
 
-    // ========================================
-    // Clock Domain Crossing: clk, sck
-    // ========================================
+    1. clk (1.536 MHz) domain
+        * latch pcm_out into local buffer
+        * toggle req_toggle to signal new data ready
+
+    2. cross clock domains (clk -> clk_6mhz)
+        * synchronize req_toggle -> req_sync1
+        * assume pcm_latched is stable when req_toggle crosses (std. handshake scheme)
     
-    // Capture audio data in clk domain
-    logic [15:0] pcm_captured;
-    logic        data_ready;
-    
+    3. clk_6mhz (6 MHz) domain
+        * detect changes in req_sync1 (new request)
+        * SPI transmitter 2-state FSM (based on 'busy' signal)
+            - idle when not busy
+            - on new request: load pcm_latched into shift register & set busy
+            - when busy: shift out 16 bits MSB first on sdo & generate sck (3 MHz)
+
+    */
+
+    // 1. CLK DOMAIN LOGIC
+    // store sample and toggle request
+
+    logic audio_valid_d;            // used for edge detection
+    logic req_toggle;               // toggled when new sample is ready, signals to SPI domain
+    logic [15:0] pcm_latched;       // local buffer
+
+    // detects rising edge (audio_valid=1, audio_valid_d=0) in clk domain
+    // audio_valid_d stores the previous clock value
     always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
-            pcm_captured <= 16'b0;
-            data_ready   <= 1'b0;
-        end else if (audio_valid) begin
-            pcm_captured <= hardcoded_data;
-            data_ready   <= 1'b1;  // Will stay high until sck domain clears it
-		end else if (!sck) begin
-			data_ready <= 1'b0;
+            audio_valid_d <= 1'b0;
+        end else begin
+            audio_valid_d <= audio_valid;
         end
     end
+    // high for only one clk cycle when rising edge AKA new sample is available
+    logic audio_valid_rise = audio_valid & ~audio_valid_d;
+
+
+    // main handshake:
+    // on rising edge of audio_valid:
+    //      store PCM sample in pcm_latched (temporarily!)
+    //      toggle req_toggle to signal to SPI domain that new data is ready
     
-    // Synchronize data_ready to sck domain (2-FF synchronizer)
-    // logic data_ready_sync1, data_ready_sync2, data_ready_prev;
-    
-	/*	// was introducing almost a 3 cycle delay
-    always_ff @(posedge sck or negedge reset_n) begin
+    // later: SPI domain will detect the toggle and transmit the latched data
+    always_ff @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
-            data_ready_sync1 <= 1'b0;
-            data_ready_sync2 <= 1'b0;
-            data_ready_prev  <= 1'b0;
+            req_toggle  <= 1'b0;
+            pcm_latched <= 16'h0000;
         end else begin
-            data_ready_sync1 <= data_ready;
-            data_ready_sync2 <= data_ready_sync1;
-            data_ready_prev  <= data_ready_sync2;
-        end
-    end
-    
-    // Detect rising edge of data_ready in sck domain
-    logic new_data;
-    assign new_data = data_ready_sync2 & ~data_ready_prev;
-	*/
-	logic new_data;
-	assign new_data = data_ready;
-    
-    // ========================================
-    // SPI Shift Register (in sck domain)
-    // ========================================
-    
-    logic [15:0] shift_reg;
-    logic [4:0]  bit_count;  // 0-15 for 16 bits
-    logic        shifting;
-    
-    always_ff @(posedge sck or negedge reset_n) begin
-        if (~reset_n) begin
-            shift_reg <= 16'b0;
-            bit_count <= 5'd0;
-            shifting  <= 1'b0;
-        end else begin
-            if (new_data && !shifting) begin
-                // Load new data (safe because pcm_captured is stable)
-                shift_reg <= pcm_captured;
-                bit_count <= 5'd15;  // Will send bits 15 down to 0
-                shifting  <= 1'b1;
-            end else if (shifting && (bit_count > 0)) begin
-                // Shift left, sending MSB first
-                shift_reg <= {shift_reg[14:0], 1'b0};
-                bit_count <= bit_count - 1'b1;
-            end else if (shifting && (bit_count == 0)) begin
-                // Last bit has been loaded into output register
-                shifting <= 1'b0;
+            if (audio_valid_rise) begin
+                pcm_latched <= pcm_out;
+                req_toggle  <= ~req_toggle;
             end
         end
     end
+
+
+    // 2. CLOCK DOMAIN CROSSING / SYNCHRONIZERS
+    // clk -> clk_6mhz
     
-    // ========================================
-    // Output Register (changes on negedge)
-    // ========================================
-    
-    logic sdo_reg;
-    
-    always_ff @(negedge sck or negedge reset_n) begin
+    // req_toggle -> req_sync1 (std. 2-flop synchronizer)
+    logic req_sync0, req_sync1;
+    always_ff @(posedge clk_6mhz or negedge reset_n) begin
         if (~reset_n) begin
-            sdo_reg <= 1'b0;
+            req_sync0 <= 1'b0;
+            req_sync1 <= 1'b0;
         end else begin
-            sdo_reg <= shift_reg[15];  // Output MSB
+            req_sync0 <= req_toggle;
+            req_sync1 <= req_sync0;
         end
     end
-    
-    assign sdo = sdo_reg;
-    
-    // ========================================
-    // LED Indicator
-    // ========================================
-    
-    assign led = audio_valid;
-    
-endmodule
 
 
-/*
-module spi(input logic clk,
-		   input logic reset_n,
-		   input  logic sck, 
-           output logic sdo,
-           input  logic audio_valid,	// done!!!
-           input  logic [15:0] pcm_out,
-		   
-		   output led
-);
-
-    logic        sdodelayed, wasdone;
-    logic [15:0] pcmStateCaptured;
-               
-    // assert load
-    // apply 256 sclks to shift in key and plaintext, starting with plaintext[127]
-    // then deassert load, wait until done
-    // then apply 128 sclks to shift out cyphertext, starting with cyphertext[127]
-    // SPI mode is equivalent to cpol = 0, cpha = 0 since data is sampled on first edge and the first
-    // edge is a rising edge (clock going from low in the idle state to high).
-    always_ff @(posedge sck)
-        if (!wasdone)  pcmStateCaptured = pcm_out;
-        else          {pcmStateCaptured} = {pcmStateCaptured[14:0], 1'b1}; 
+    // 3. SPI TRANSMITTER LOGIC, ALL 6 MHZ DOMAIN
+    // single-bit fsm (busy or not) to shift out 16 bits (msb first) thru sdo & generate sck
+    // SPI mode 0: cpol=0, cpha=0 AKA idle low, data latched on rising edge of sck
     
-    // sdo should change on the negative edge of sck
-    always_ff @(negedge sck) begin
-        wasdone = audio_valid;
-        sdodelayed = pcmStateCaptured[14];
+    logic req_toggle_local;     // detect changes in req_toggle by storing a local copy
+    logic new_request_6mhz;     // high for one clk_6mhz cycle when new request detected
+
+    always_ff @(posedge clk_6mhz or negedge reset_n) begin
+        if (~reset_n) begin
+            req_toggle_local <= 1'b0;
+        end else begin
+            req_toggle_local <= req_sync1;
+        end
     end
-	
-	assign led = (pcm_out == 'hFF);
+    assign new_request_6mhz = (req_sync1 != req_toggle_local);
 
+
+
+    logic        busy;          // high when transmitting, controls main 2-state FSM & sck generation
+
+    logic [15:0] shift_reg;     // holds data being shifted out
+    logic [4:0]  bit_count;     // # remaining bits, 16 -> 0
+    logic        sck_enable;    // toggles to generate sck edges
     
-    // when done/audio_valid is first asserted, shift out msb before clock edge
-    assign sdo = (audio_valid & !wasdone) ? pcm_out[15] : sdodelayed;
-	// assign sdo = 0;
-endmodule*/
+    // sck generation: toggle when busy (6 MHz / 2 = 3 MHz SCK)
+    always_ff @(posedge clk_6mhz or negedge reset_n) begin
+        if (~reset_n) begin
+            busy <= 1'b0;
 
- 
+            shift_reg <= 16'h0000;
+            bit_count <= 5'd0;
+
+            sck_enable <= 1'b0;
+            sdo <= 1'b0;
+            sck <= 1'b0;
+        end else begin
+            if (~busy) begin
+                // not busy: idle low (mode 0)
+                sck <= 1'b0;                    
+                if (new_request_6mhz) begin
+                    // load new data into shift register & start transmission
+                    shift_reg <= pcm_latched;   // pcm_latched is stable due to handshake
+                    bit_count <= 5'd15;         // 16 bits to send
+                    busy <= 1'b1;               // enter busy state
+                    sck_enable <= 1'b0;         // prep to toggle
+
+                    sdo <= pcm_latched[15];     // output MSB first
+                end
+            end else begin
+                // busy state: transmitting data & toggle sck_enable every cycle
+                sck_enable <= ~sck_enable;          // enable sck toggling
+
+                if (sck_enable == 1'b0) begin       // POSEDGE of SCK: MCU samples here
+                    sck <= 1'b1;
+                end else begin                      // NEGEDGE of SCK: shift data here
+                    if (bit_count == 0) begin
+                        busy <= 1'b0;               // all bits sent, go back to idle
+                        sdo  <= 1'b0;               // default low when idle
+                    end else begin
+                        bit_count <= bit_count - 1'b1;
+                        shift_reg <= {shift_reg[14:0], 1'b0};       // shift left
+                        sdo <= shift_reg[14];                       // next bit to output
+                    end
+                end
+            end
+        end
+    end
+endmodule

@@ -9,31 +9,34 @@
 
 module clk_gen(
 	input  logic reset_n,
-	output logic clk_out, 
-	output logic clk_6mhz
+	output logic clk_out,
+    output logic clk_6mhz
 );
 
     logic clk_48mhz;
     HSOSC #(.CLKHF_DIV("0b00")) hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk_48mhz));
 
 	// 1.536 MHz clock divider
-	// 48,000,000 / 1,536,000 = 48,000 / 1,536 = 31.25
+	// 48,000,000 / 1,536,000 = 48,000 / 1,536 = 31.25 -> div by 2 for toggle -> 15.625
 
-    // fractional divider to get 31.25
-    // (31+31+31+32)/4 = 125/4 = 31.25 avg
+    // fractional divider to get 15.625
+    // (15+16+15+16+15+16+16+16)/8 = 125/8 = 15.625 avg
     
-    logic [5:0] counter;			// 6 bits to count to 32
-    logic [1:0] cycle_counter; 		// track cycle out of 4
-    logic [5:0] divisor;			// current divisor, depends on cycle
-	logic [5:0] divisor_min_one;
-	assign divisor_min_one = divisor - 1;
-    // Determine divisor based on cycle: 31, 31, 31, 32
+    logic [4:0] counter;            // Count up to 16
+    logic [2:0] cycle_counter;      // Track cycle out of 8 (0..7)
+    logic [4:0] divisor;            // Current toggle target
+    
+    // 15, 16, 15, 16, 15, 16, 16, 16
     always_comb begin
-        if (cycle_counter == 2'b11)
-            divisor = 6'd32;
-        else
-            divisor = 6'd31;
+        case (cycle_counter)
+            3'd0, 3'd2, 3'd4: divisor = 5'd15;
+            default:          divisor = 5'd16;
+        endcase
     end
+    
+    // We compare against divisor-1 because counter starts at 0
+    logic [4:0] divisor_min_one;
+    assign divisor_min_one = divisor - 1'b1;
 
     always_ff @(posedge clk_48mhz) begin
         if (~reset_n) begin
@@ -41,38 +44,32 @@ module clk_gen(
             cycle_counter <= 0;
             clk_out <= 1'b0;
         end else begin
-            if (counter == divisor_min_one) begin
+            if (counter >= divisor_min_one) begin
                 counter <= 0;
-                clk_out <= ~clk_out;
-                
-                // Move to next cycle when we toggle clk_out to 0
-                if (clk_out == 1'b1) begin
-                    cycle_counter <= cycle_counter + 1;
-                end
+                clk_out <= ~clk_out; // Toggle clock
+                cycle_counter <= cycle_counter + 1; // Move to next step in pattern
             end else begin
                 counter <= counter + 1;
             end
         end
     end
-	
-	// 6 MHz clock divider
-	// 48,000,000 / 6,000,000 = 8
-	
-	logic [3:0] counter_6mhz;
-	logic       clk_divided_6mhz;
 
-	always_ff @(posedge clk_48mhz) begin
+    // 6 MHz clock divider
+    // 48,000,000 / 6,000,000 = 48 / 6 = 8 (div by 2 for toggle -> 4 = 3'b011)
+    logic [2:0] counter_6mhz;
+    logic       clk_divided_6mhz;
+
+    always_ff @(posedge clk_48mhz) begin
 		if (~reset_n) begin
-			counter_6mhz <= 32'b0;
+			counter_6mhz     <= 3'b0;
 			clk_divided_6mhz <= 1'b0;
 		end
-		else if (counter_6mhz < 4'd8) counter_6mhz <= counter_6mhz + 1;
+		else if (counter_6mhz < 3'd011) counter_6mhz <= counter_6mhz + 1;
 		else begin
-			counter_6mhz     <= 32'b0;
+			counter_6mhz     <= 3'b0;
 			clk_divided_6mhz <= ~clk_divided_6mhz;
 		end
 	end
-	
+
 	assign clk_6mhz = clk_divided_6mhz;
-	
 endmodule
