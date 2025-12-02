@@ -16,3 +16,6 @@
 *.srp
 *.dmp
 ._Real_._Math.vhd
+
+/fft_test/
+/work/
