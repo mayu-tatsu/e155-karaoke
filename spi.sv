@@ -17,8 +17,8 @@ module spi (
     output logic        sdo,            // to MCU (MOSI)
 	
 	
-	output logic sck_enable_out,			// for debugging
-	output logic new_request_6mhz_out
+	output logic debug1,			// for debugging
+	output logic debug2
 );
 
 	// note to self: debugging with busy and sck_enable made the sck/sdo output hella... idk why
@@ -185,7 +185,6 @@ module spi (
         end
     end
 	
-	
-	assign sck_enable_out = sck_enable;
-	assign new_request_6mhz_out = new_request_6mhz;
+	assign debug1 = sck_enable;
+	assign debug2 = busy;
 endmodule

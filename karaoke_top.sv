@@ -83,8 +83,7 @@ module karaoke_top (
         .y_out_valid(audio_valid)
     );
 	
-	logic sck_enable;
-	logic new_request_6mhz;
+	logic bug1, bug2;
 	
     // SPI interface to MCU
     spi spi_interface (
@@ -95,8 +94,8 @@ module karaoke_top (
         .audio_valid(audio_valid),
         .pcm_out(audio_sample),
 		
-		.sck_enable_out(sck_enable),
-		.new_request_6mhz_out(new_request_6mhz),
+		.debug1(bug1),
+		.debug2(bug2),
 
         .sck(sck),
         .sdo(sdo)
@@ -105,8 +104,8 @@ module karaoke_top (
 	
 		
 	assign led = audio_valid;
-	assign led1 = sck_enable;
-	assign led2 = new_request_6mhz;
+	assign led1 = bug1;
+	assign led2 = bug2;
     
     
 endmodule
