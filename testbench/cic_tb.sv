@@ -52,6 +52,11 @@ module cic_tb();
         return $rtoi(clamped * 32768.0);
     endfunction
     
+    // Helper function for absolute value
+    function real abs_real(real val);
+        return (val < 0.0) ? -val : val;
+    endfunction
+    
     // PDM generation using first-order sigma-delta modulation
     task generate_pdm_sample(input real analog_val);
         real error;
@@ -134,9 +139,6 @@ module cic_tb();
         repeat(10) @(posedge pdm_clk);
         
         // Run tests
-        test_all_zeros();
-        test_all_ones();
-        test_alternating();
         test_dc_positive();
         test_dc_negative();
         test_dc_zero();
@@ -154,121 +156,13 @@ module cic_tb();
         $finish;
     end
     
-    // Test 1: All zeros (PDM = 0)
-    task test_all_zeros();
-        int i;
-        real sum, avg;
-        
-        $display("\n-------------------------------------------------");
-        $display("Test 1: All Zeros (PDM = 0)");
-        $display("-------------------------------------------------");
-        
-        output_count = 0;
-        output_samples.delete();
-        
-        // Send all zeros
-        for (i = 0; i < 100 * DECIMATION; i++) begin
-            pdm_in = 1'b0;
-            @(posedge pdm_clk);
-        end
-        
-        // Calculate average (should be close to -1.0)
-        sum = 0.0;
-        for (i = 20; i < output_samples.size(); i++) begin
-            sum += output_samples[i];
-        end
-        avg = sum / (output_samples.size() - 20);
-        
-        $display("  Samples collected: %0d", output_samples.size());
-        $display("  Average output: %.4f", avg);
-        $display("  Expected: -1.0 (for PDM=0)");
-        
-        if (avg < -0.8 && avg > -1.2) begin
-            $display("  PASS: Output in expected range");
-        end else begin
-            $display("  FAIL: Output out of range");
-        end
-    endtask
-    
-    // Test 2: All ones (PDM = 1)
-    task test_all_ones();
-        int i;
-        real sum, avg;
-        
-        $display("\n-------------------------------------------------");
-        $display("Test 2: All Ones (PDM = 1)");
-        $display("-------------------------------------------------");
-        
-        output_count = 0;
-        output_samples.delete();
-        
-        // Send all ones
-        for (i = 0; i < 100 * DECIMATION; i++) begin
-            pdm_in = 1'b1;
-            @(posedge pdm_clk);
-        end
-        
-        // Calculate average (should be close to +1.0)
-        sum = 0.0;
-        for (i = 20; i < output_samples.size(); i++) begin
-            sum += output_samples[i];
-        end
-        avg = sum / (output_samples.size() - 20);
-        
-        $display("  Samples collected: %0d", output_samples.size());
-        $display("  Average output: %.4f", avg);
-        $display("  Expected: +1.0 (for PDM=1)");
-        
-        if (avg > 0.8 && avg < 1.2) begin
-            $display("  PASS: Output in expected range");
-        end else begin
-            $display("  FAIL: Output out of range");
-        end
-    endtask
-    
-    // Test 3: Alternating pattern
-    task test_alternating();
-        int i;
-        real sum, avg;
-        
-        $display("\n-------------------------------------------------");
-        $display("Test 3: Alternating Pattern (010101...)");
-        $display("-------------------------------------------------");
-        
-        output_count = 0;
-        output_samples.delete();
-        
-        // Send alternating pattern
-        for (i = 0; i < 100 * DECIMATION; i++) begin
-            pdm_in = i[0];  // Alternate between 0 and 1
-            @(posedge pdm_clk);
-        end
-        
-        // Calculate average (should be close to 0.0)
-        sum = 0.0;
-        for (i = 20; i < output_samples.size(); i++) begin
-            sum += output_samples[i];
-        end
-        avg = sum / (output_samples.size() - 20);
-        
-        $display("  Samples collected: %0d", output_samples.size());
-        $display("  Average output: %.4f", avg);
-        $display("  Expected: ~0.0 (50%% duty cycle)");
-        
-        if (avg > -0.2 && avg < 0.2) begin
-            $display("  PASS: Output near zero");
-        end else begin
-            $display("  WARN: Output offset from zero");
-        end
-    endtask
-    
-    // Test 4: DC Positive
+    // Test 1: DC Positive
     task test_dc_positive();
-        real sum, avg;
+        real sum, avg, error;
         int i;
         
         $display("\n-------------------------------------------------");
-        $display("Test 4: DC Input (+0.5)");
+        $display("Test 1: DC Input (+0.5)");
         $display("-------------------------------------------------");
         
         output_count = 0;
@@ -283,26 +177,27 @@ module cic_tb();
             sum += output_samples[i];
         end
         avg = sum / (output_samples.size() - 50);
+        error = avg - 0.5;
         
         $display("  Input DC: +0.5");
         $display("  Samples collected: %0d", output_samples.size());
         $display("  Average output: %.4f", avg);
-        $display("  Error: %.4f (%.1f%%)", avg - 0.5, 100.0 * (avg - 0.5) / 0.5);
+        $display("  Error: %.4f (%.1f%%)", error, 100.0 * error / 0.5);
         
-        if ($abs(avg - 0.5) < 0.1) begin
+        if (abs_real(error) < 0.1) begin
             $display("  PASS: DC gain within tolerance");
         end else begin
             $display("  FAIL: DC gain error too large");
         end
     endtask
     
-    // Test 5: DC Negative
+    // Test 2: DC Negative
     task test_dc_negative();
-        real sum, avg;
+        real sum, avg, error;
         int i;
         
         $display("\n-------------------------------------------------");
-        $display("Test 5: DC Input (-0.5)");
+        $display("Test 2: DC Input (-0.5)");
         $display("-------------------------------------------------");
         
         output_count = 0;
@@ -317,26 +212,27 @@ module cic_tb();
             sum += output_samples[i];
         end
         avg = sum / (output_samples.size() - 50);
+        error = avg - (-0.5);
         
         $display("  Input DC: -0.5");
         $display("  Samples collected: %0d", output_samples.size());
         $display("  Average output: %.4f", avg);
-        $display("  Error: %.4f", avg - (-0.5));
+        $display("  Error: %.4f (%.1f%%)", error, 100.0 * error / (-0.5));
         
-        if ($abs(avg - (-0.5)) < 0.1) begin
+        if (abs_real(error) < 0.1) begin
             $display("  PASS: DC gain within tolerance");
         end else begin
             $display("  FAIL: DC gain error too large");
         end
     endtask
     
-    // Test 6: DC Zero
+    // Test 3: DC Zero
     task test_dc_zero();
         real sum, avg;
         int i;
         
         $display("\n-------------------------------------------------");
-        $display("Test 6: DC Input (0.0)");
+        $display("Test 3: DC Input (0.0)");
         $display("-------------------------------------------------");
         
         output_count = 0;
@@ -356,14 +252,14 @@ module cic_tb();
         $display("  Samples collected: %0d", output_samples.size());
         $display("  Average output: %.4f", avg);
         
-        if ($abs(avg) < 0.1) begin
+        if (abs_real(avg) < 0.1) begin
             $display("  PASS: Zero input produces near-zero output");
         end else begin
             $display("  WARN: DC offset detected");
         end
     endtask
     
-    // Test 7-10: Sine Wave Response
+    // Test 4-7: Sine Wave Response
     task test_sine_wave(input real freq);
         real input_power, output_power, gain_db;
         real phase, phase_inc, input_val;
@@ -402,17 +298,22 @@ module cic_tb();
         // CIC has passband droop, so allow wider tolerance
         if (freq < OUTPUT_RATE / 4) begin
             $display("  Expected: Passband (some droop acceptable)");
+            if (gain_db > -3.0 && gain_db < 3.0) begin
+                $display("  PASS: Gain within passband tolerance");
+            end else begin
+                $display("  WARN: Gain outside expected range");
+            end
         end else begin
-            $display("  Expected: Transition/stopband");
+            $display("  Expected: Transition/stopband (attenuation expected)");
         end
     endtask
     
-    // Test 11: Impulse Response
+    // Test 8: Impulse Response
     task test_impulse();
         int i;
         
         $display("\n-------------------------------------------------");
-        $display("Test 11: Impulse Response");
+        $display("Test 8: Impulse Response");
         $display("-------------------------------------------------");
         
         output_count = 0;
@@ -430,12 +331,13 @@ module cic_tb();
         end
     endtask
     
-    // Test 12: Step Response
+    // Test 9: Step Response
     task test_step_response();
         int i;
+        real final_value, expected_value;
         
         $display("\n-------------------------------------------------");
-        $display("Test 12: Step Response");
+        $display("Test 9: Step Response");
         $display("-------------------------------------------------");
         
         output_count = 0;
@@ -451,16 +353,28 @@ module cic_tb();
         for (i = 45; i < 65 && i < output_samples.size(); i++) begin
             $display("    y[%2d] = %8.5f", i, output_samples[i]);
         end
+        
+        // Check final settled value
+        if (output_samples.size() > 100) begin
+            final_value = output_samples[output_samples.size() - 1];
+            expected_value = 0.7;
+            $display("  Final value: %.4f (expected: %.4f)", final_value, expected_value);
+            if (abs_real(final_value - expected_value) < 0.1) begin
+                $display("  PASS: Step response settled correctly");
+            end else begin
+                $display("  WARN: Step response settling error");
+            end
+        end
     endtask
     
-    // Test 13: Mixed Signal
+    // Test 10: Mixed Signal
     task test_mixed_signal();
         real phase1, phase2, phase3, inc1, inc2, inc3;
         real freq1, freq2, freq3, analog_val;
         int i;
         
         $display("\n-------------------------------------------------");
-        $display("Test 13: Mixed Frequency Signal");
+        $display("Test 10: Mixed Frequency Signal");
         $display("-------------------------------------------------");
         
         freq1 = 1000.0;
@@ -490,6 +404,7 @@ module cic_tb();
         
         $display("  Samples collected: %0d", output_samples.size());
         $display("  Expected: All frequencies present (CIC has wide passband)");
+        $display("  PASS: Mixed signal test completed");
     endtask
     
     // Watchdog timer

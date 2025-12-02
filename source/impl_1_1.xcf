@@ -104,6 +104,6 @@
 	<CableOptions>
 		<CableName>USB2</CableName>
 		<PortAdd>FTUSB-0</PortAdd>
-		<USBID>UPduino v3.0 Location 0014 Serial </USBID>
+		<USBID>UPduino v3.0 Location 0011 Serial </USBID>
 	</CableOptions>
 </ispXCF>

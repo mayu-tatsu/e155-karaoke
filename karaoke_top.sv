@@ -16,8 +16,11 @@ module karaoke_top (
     output logic        audio_valid,    // unused (for debugging)
 
     output logic        sck,            // to MCU (SPI SCK)
-    output logic        sdo             // to MCU (MOSI)
+    output logic        sdo,            // to MCU (MOSI)
+	output logic 		 led			 // for debugging
 );
+
+	assign led = audio_valid;
     
     logic pdm_data_sync;
     logic clk_6mhz;       // 6 MHz clock for SPI

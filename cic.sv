@@ -144,24 +144,35 @@ module cic #(
     end
 
 
+	// Add a temporary signal outside the always_ff block
+	logic signed [50-1:0] product_temp;
+
+
     // OUTPUT ASSIGNMENTS & optional normalization (assign as param)
-    localparam int SCALE_FRAC = 19;     // fractional bits used in reciprocal multiplier, u can choose but 24 is good balance
-    localparam int RECIPROCAL = 1583;    // reciprocal = round(2^SCALE_FRAC / GAIN_INT) = round(2^19 / 331776) = 1883
+    localparam int SCALE_FRAC = 29;     		// fractional bits used in reciprocal multiplier, u can choose but 24 is good balance
+    localparam int RECIPROCAL = 53028800;    	// RECIPROCAL = round(2^(29 + 15) / 331776) = round(2^44 / 331776) = 53028800
 
     always_ff @(posedge clk or negedge reset_n) begin
-        if (~reset_n) begin
-            dout <= '0;
-            dout_valid <= 1'b0;
-        end else if (combs_output_vld) begin
-            if (NORMALIZE) begin                    // Multiply by reciprocal and shift
-                dout <= $signed( comb_out * RECIPROCAL >>> SCALE_FRAC );
-            end else begin                          // just truncate or extend to match OUT_WIDTH
-                dout <= comb_out[ACC_WIDTH-1 -: OUT_WIDTH]; // MSBs kept
-            end
-            dout_valid <= 1'b1;
-        end else begin
-            dout_valid <= 1'b0;
-        end
-    end
+		if (~reset_n) begin
+			dout <= '0;
+			dout_valid <= 1'b0;
+		end else if (combs_output_vld) begin
+			if (NORMALIZE) begin
+				// FIX: Use wide 50-bit signed product (ACC_WIDTH + SCALE_FRAC)
+				product_temp = $signed(comb_out) * $signed(RECIPROCAL);
+				
+				// Shift down by SCALE_FRAC and truncate to OUT_WIDTH (16 bits)
+				dout <= $signed( product_temp >>> SCALE_FRAC );
+				
+			end else begin 
+				// Original non-normalized path: just truncate MSBs
+				dout <= comb_out[ACC_WIDTH-1 -: OUT_WIDTH];
+			end
+			dout_valid <= 1'b1; 
+		end else begin
+			// Reset dout_valid when no new sample is ready
+			dout_valid <= 1'b0;
+		end
+	end
 
 endmodule

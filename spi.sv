@@ -42,6 +42,22 @@ module spi (
     logic audio_valid_d;            // used for edge detection
     logic req_toggle;               // toggled when new sample is ready, signals to SPI domain
     logic [15:0] pcm_latched;       // local buffer
+	
+    logic audio_valid_rise;         // REGISTERED edge detection signal
+
+    // Edge detection for audio_valid (REGISTERED VERSION)
+    // This avoids X propagation issues in simulation
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
+            audio_valid_d    <= 1'b0;
+            audio_valid_rise <= 1'b0;
+        end else begin
+            audio_valid_d    <= audio_valid;
+            audio_valid_rise <= audio_valid & ~audio_valid_d;  // Register the edge detect
+        end
+    end
+
+	/*
 
     // detects rising edge (audio_valid=1, audio_valid_d=0) in clk domain
     // audio_valid_d stores the previous clock value
@@ -53,8 +69,11 @@ module spi (
         end
     end
     // high for only one clk cycle when rising edge AKA new sample is available
-    logic audio_valid_rise = audio_valid & ~audio_valid_d;
+    logic audio_valid_rise = audio_valid & ~audio_valid_d; */
 
+
+	logic [15:0] fake_data;
+	assign fake_data = 16'b1100110011001100;
 
     // main handshake:
     // on rising edge of audio_valid:
@@ -68,7 +87,7 @@ module spi (
             pcm_latched <= 16'h0000;
         end else begin
             if (audio_valid_rise) begin
-                pcm_latched <= pcm_out;
+                pcm_latched <= fake_data;
                 req_toggle  <= ~req_toggle;
             end
         end
@@ -108,7 +127,6 @@ module spi (
     assign new_request_6mhz = (req_sync1 != req_toggle_local);
 
 
-
     logic        busy;          // high when transmitting, controls main 2-state FSM & sck generation
 
     logic [15:0] shift_reg;     // holds data being shifted out
@@ -133,7 +151,7 @@ module spi (
                 if (new_request_6mhz) begin
                     // load new data into shift register & start transmission
                     shift_reg <= pcm_latched;   // pcm_latched is stable due to handshake
-                    bit_count <= 5'd15;         // 16 bits to send
+                    bit_count <= 5'd16;         // 16 bits to send
                     busy <= 1'b1;               // enter busy state
                     sck_enable <= 1'b0;         // prep to toggle
 
@@ -143,14 +161,16 @@ module spi (
                 // busy state: transmitting data & toggle sck_enable every cycle
                 sck_enable <= ~sck_enable;          // enable sck toggling
 
-                if (sck_enable == 1'b0) begin       // POSEDGE of SCK: MCU samples here
+                if (~sck_enable) begin       // POSEDGE of SCK: MCU samples here
                     sck <= 1'b1;
                 end else begin                      // NEGEDGE of SCK: shift data here
-                    if (bit_count == 0) begin
-                        busy <= 1'b0;               // all bits sent, go back to idle
-                        sdo  <= 1'b0;               // default low when idle
-                    end else begin
-                        bit_count <= bit_count - 1'b1;
+                   sck <= 1'b0; 
+				   bit_count <= bit_count - 1'b1;
+				   
+				   if (bit_count == 5'd0) begin 	// finished transmitting last bit
+					   busy <= 1'b0;
+					   sdo <= 1'b0;
+					end else begin
                         shift_reg <= {shift_reg[14:0], 1'b0};       // shift left
                         sdo <= shift_reg[14];                       // next bit to output
                     end

@@ -253,14 +253,14 @@ module fir (
             
             result_q15 = $signed(accumulator) >>> 15;
 
-            // limiting max/min since we're limiting to 16-bit
-            if (result_q15 > 23'sd16383) begin
-                y_out <= 16'sd32767;
-            end else if (result_q15 < -23'sd16384) begin
-                y_out <= -16'sd32768;
-            end else begin
-                y_out <= result_q15[15:0];
-            end 
+			// limiting max/min since we're limiting to 16-bit
+			if (result_q15 > 23'sd32767) begin // Max Q15 value
+				y_out <= 16'sd32767;
+			end else if (result_q15 < -23'sd32768) begin // Min Q15 value
+				y_out <= -16'sd32768;
+			end else begin
+				y_out <= result_q15[15:0];
+			end
             
             y_out_valid <= valid_pipeline[2] & ~valid_pipeline[3];  // one-cycle pulse
             valid_pipeline[3] <= valid_pipeline[2];                 // store previous state
