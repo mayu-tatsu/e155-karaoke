@@ -44,16 +44,16 @@ void initSPI(int br, int cpol, int cpha) {
   SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSM, 1); SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSI, 1); SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_NSSP, 0);
 
   // initially assigns SPI pins
-  pinMode(SPI_SCK, GPIO_INPUT); // SPI1_SCK
-  //pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK
-  //GPIOB -> OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
+  //pinMode(SPI_SCK, GPIO_INPUT); // SPI1_SCK
+  pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK
+  GPIOB -> OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
   pinMode(SPI_MISO, GPIO_ALT);  // SPI1_MISO
   pinMode(SPI_MOSI, GPIO_ALT);  // SPI1_MOSI
   pinMode(SPI_CE, GPIO_OUTPUT); //  Manual CS
 
   // asserts the MCU as the peripheral
-  SPI1 -> CR1 &= ~SPI_CR1_MSTR; SPI1 -> CR1 |= SPI_CR1_RXONLY;
-  //SPI1 -> CR1 |= SPI_CR1_MSTR;
+  //SPI1 -> CR1 &= ~SPI_CR1_MSTR; SPI1 -> CR1 |= SPI_CR1_RXONLY;
+  SPI1 -> CR1 |= SPI_CR1_MSTR;
 
   // allows SPI to work in multi-master environments
   SPI1 -> CR2 &= ~SPI_CR2_SSOE;

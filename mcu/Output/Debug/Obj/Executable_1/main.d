@@ -64,4 +64,5 @@ Output/Debug/Obj/Executable_1/main.o: \
  C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/arm_math.h \
  C:\Users\peppe\OneDrive\Desktop\fft_test\lib/frequency_determiner.h \
  C:\Users\peppe\OneDrive\Desktop\fft_test\lib/frequency_determiner.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/note_determiner.h
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/note_determiner.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/lcd_display.h

@@ -12,6 +12,7 @@ Purpose:
 #include "lib/dma_configuration.h"
 #include "lib/frequency_determiner.h"
 #include "lib/note_determiner.h"
+#include "lib/lcd_display.h"
 
 // 
 int main(void)
@@ -33,41 +34,62 @@ int main(void)
   // instantiates a variable to store the dominant frequency of a given audio input
   float32_t note_frequency;
 
+  // 
+  lcd_display_initialization();
+  //lcd_display_write(0);
+  //lcd_test();
+
   // runs continuously
-  while (1)
-  {
-    // 
-    for (int i = 0; i < FFT_LENGTH; i++)
-    {
-      if (i == 0) {printf("start:");}
-      digitalWrite(CS, 1); input_signal[i] = spiSendReceive(0x0000); digitalWrite(CS, 0);
-      printf("%x", input_signal[i]);
-      //printf("%d\n", i);
-    }
+  while(1) {}
 
-    // checks to see whether or not FFT calculations have already occurred
-    // if not, then proceeds to do so
-    if (fft_calculations_complete != 1)
-    {
-      // determines the dominant frequency of the detected audio
-      note_frequency = frequency_determiner(input_signal);
+
+  //while (1)
+  //{
+  //  // 
+  //  //for (int i = 0; i < FFT_LENGTH; i++)
+  //  //{
+  //  //  if (i == 0) {printf("start:");}
+  //  //  digitalWrite(CS, 1); input_signal[i] = spiSendReceive(0x0000); digitalWrite(CS, 0);
+  //  //  printf("%x", input_signal[i]);
+  //  //  //printf("%d\n", i);
+  //  //}
+
+
+
+
+
+  //  // checks to see whether or not FFT calculations have already occurred
+  //  // if not, then proceeds to do so
+  //  if (fft_calculations_complete != 1)
+  //  {
+  //    // determines the dominant frequency of the detected audio
+  //    note_frequency = frequency_determiner(input_signal);
       
-      // raises the FFT-completed flag
-      fft_calculations_complete = 1;
-    }
+  //    // raises the FFT-completed flag
+  //    fft_calculations_complete = 1;
+  //  }
 
-    // determines what the actual note is
-    const char* note = note_determiner(note_frequency);
 
-    // TODO: DELETE
-    // DEBUGGING CODE
-    //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);
-    //printf("%d, %d, %d, %d", dma_test_receive[4], dma_test_receive[5], dma_test_receive[6], dma_test_receive[7]);
-    //printf("%d, %d, %d, %d", dma_test_receive[8], dma_test_receive[9], dma_test_receive[10], dma_test_receive[11]);
-    //printf("%d, %d, %d, %d\n", dma_test_receive[12], dma_test_receive[13], dma_test_receive[14], dma_test_receive[15]);
-    //printf("SPI DR: %x\n", SPI1->DR);
-    printf("Note frequency: %f\n", note_frequency);
-    printf(note); printf("\n");
-  }
+
+
+  //  // 
+    
+    
+
+
+
+  //  // determines what the actual note is
+  //  //const char* note = note_determiner(note_frequency);
+
+  //  // TODO: DELETE
+  //  // DEBUGGING CODE
+  //  //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);
+  //  //printf("%d, %d, %d, %d", dma_test_receive[4], dma_test_receive[5], dma_test_receive[6], dma_test_receive[7]);
+  //  //printf("%d, %d, %d, %d", dma_test_receive[8], dma_test_receive[9], dma_test_receive[10], dma_test_receive[11]);
+  //  //printf("%d, %d, %d, %d\n", dma_test_receive[12], dma_test_receive[13], dma_test_receive[14], dma_test_receive[15]);
+  //  //printf("SPI DR: %x\n", SPI1->DR);
+  //  //printf("Note frequency: %f\n", note_frequency);
+  //  //printf(note); printf("\n");
+  //}
   
 }

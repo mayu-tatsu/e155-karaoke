@@ -20,15 +20,20 @@ void mcu_configuration(void)
   // enables the system configuration controller
   RCC -> APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
-  // initializes Timer 2
-  initTIM(TIM2);
+  // 
+  RCC -> APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+  RCC -> APB2ENR |= RCC_APB2ENR_TIM15EN;
+
+  // initializes a timer for delay
+  initTIM(DELAY_TIM);
 
   // enables all GPIO ports
   RCC -> AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN | RCC_AHB2ENR_GPIOCEN);
 
   // assigns two GPIO pins to act as the Load and Done signals
-  pinMode(LOAD, GPIO_OUTPUT);
-  pinMode(DONE, GPIO_INPUT);
+  // CHANGE THIS PINS LATER
+  //pinMode(LOAD, GPIO_OUTPUT);
+  //pinMode(DONE, GPIO_INPUT);
   
   // TODO: DELETE
   // DEBUGGING CODE
@@ -45,11 +50,11 @@ void mcu_configuration(void)
 
   // configures the SPI peripheral
   // most notably, sets the clock phase to one and the clock polarity to zero
-  initSPI(1, 0, 0);
+  //initSPI(1, 0, 0);
 
   // assigns a GPIO pin to act as the Chip Select signal
   //pinMode(CS, GPIO_OUTPUT);
-  digitalWrite(CS, 1);
+  //digitalWrite(CS, 1);
 
 }
 

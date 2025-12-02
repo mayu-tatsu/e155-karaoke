@@ -19,10 +19,10 @@ Purpose: To allow the DMA configuration function to actually be used.
 extern float32_t next_input_signal[FFT_LENGTH];
 extern float32_t input_signal[FFT_LENGTH];
 
-
+// TODO: DELETE
+// DEBUGGING CODE
 extern uint32_t dma_test_send[16];
 extern uint32_t dma_test_receive[16];
-
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

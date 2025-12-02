@@ -13,7 +13,8 @@ volatile uint32_t fft_calculations_complete;
 float32_t next_input_signal[FFT_LENGTH];
 float32_t input_signal[FFT_LENGTH];
 
-
+// TODO: DELETE
+// DEBUGGING CODE
 volatile uint32_t dma_transfer_complete = 0;
 uint32_t dma_test_send[16] = {0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003, 0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003, 0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003, 0xAAAA0000, 0xAAAA0001, 0xAAAA0002, 0xAAAA0003};
 uint32_t dma_test_receive[16];

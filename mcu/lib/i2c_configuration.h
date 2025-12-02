@@ -1,29 +1,26 @@
 /*
 Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
-Date:     November 16, 2025
+Date:     November 22, 2025
 
-Purpose: To allow the MCU configuration functions to actually be used.
+Purpose: To allow the LCD configuration functions to actually be used.
 */
 
-#ifndef MCU_CONFIGURATION_H
-#define MCU_CONFIGURATION_H
+#ifndef I2C_CONFIGURATION_H
+#define I2C_CONFIGURATION_H
 
 #include "mcu_peripherals/STM32L432KC.h"
+#include "arm_math/arm_math.h"
+#include "frequency_determiner.h"
 #include "stdio.h"
 #include <stdint.h>
 #include <stm32l432xx.h>
-
-#define DELAY_TIM TIM2
-
-#define LOAD PA5
-#define DONE PA6
-#define CS   PA11
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-void mcu_configuration(void);
+void i2c_configuration(void);
+void i2c_write(char address, uint32_t message);
 
 #endif
