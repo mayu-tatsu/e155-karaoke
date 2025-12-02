@@ -33,6 +33,10 @@ Purpose:
 
 void lcd_display_initialization(void);
 void lcd_display_write(uint16_t data);
+void display_message(char* message[]);
+uint16_t character_converter(char* character);
+
+int inString(char request[], char des[]);
 
 void lcd_init(void);
 void lcd_write_bus(uint8_t data);
