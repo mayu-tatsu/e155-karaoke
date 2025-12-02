@@ -87,8 +87,7 @@ module karaoke_top (
         .pcm_out(audio_sample),
 
         .sck(sck),
-        .sdo(sdo),
-		.led(led)
+        .sdo(sdo)
     );
     
 endmodule
