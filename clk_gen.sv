@@ -64,7 +64,7 @@ module clk_gen(
 			counter_6mhz     <= 3'b0;
 			clk_divided_6mhz <= 1'b0;
 		end
-		else if (counter_6mhz < 3'd011) counter_6mhz <= counter_6mhz + 1;
+		else if (counter_6mhz < 3'b011) counter_6mhz <= counter_6mhz + 1;
 		else begin
 			counter_6mhz     <= 3'b0;
 			clk_divided_6mhz <= ~clk_divided_6mhz;

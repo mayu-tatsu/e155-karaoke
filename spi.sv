@@ -14,8 +14,14 @@ module spi (
     input  logic [15:0] pcm_out,       // clk domain
 
     output logic        sck,           // to MCU (SPI SCK)
-    output logic        sdo            // to MCU (MOSI)
+    output logic        sdo,            // to MCU (MOSI)
+	
+	
+	output logic sck_enable_out,			// for debugging
+	output logic new_request_6mhz_out
 );
+
+	// note to self: debugging with busy and sck_enable made the sck/sdo output hella... idk why
 
     /*
 
@@ -167,7 +173,7 @@ module spi (
                    sck <= 1'b0; 
 				   bit_count <= bit_count - 1'b1;
 				   
-				   if (bit_count == 5'd0) begin 	// finished transmitting last bit
+				   if (bit_count == 5'd1) begin 	// finished transmitting last bit
 					   busy <= 1'b0;
 					   sdo <= 1'b0;
 					end else begin
@@ -178,4 +184,8 @@ module spi (
             end
         end
     end
+	
+	
+	assign sck_enable_out = sck_enable;
+	assign new_request_6mhz_out = new_request_6mhz;
 endmodule

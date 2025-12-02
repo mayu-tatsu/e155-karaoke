@@ -17,17 +17,20 @@ module karaoke_top (
 
     output logic        sck,            // to MCU (SPI SCK)
     output logic        sdo,            // to MCU (MOSI)
-	output logic 		 led			 // for debugging
+	
+	
+	output logic 		 led,			 // for debugging
+	output logic		 led1,
+	output logic		 led2
 );
 
-	assign led = audio_valid;
+	
     
     logic pdm_data_sync;
     logic clk_6mhz;       // 6 MHz clock for SPI
 	
 	logic signed [15:0] cic_out, hb_out;
     logic               cic_out_valid, hb_out_valid;
-    
     
     // Generate 1.536 MHz clock
     clk_gen clk_generator (
@@ -80,6 +83,9 @@ module karaoke_top (
         .y_out_valid(audio_valid)
     );
 	
+	logic sck_enable;
+	logic new_request_6mhz;
+	
     // SPI interface to MCU
     spi spi_interface (
         .clk(clk),
@@ -88,9 +94,19 @@ module karaoke_top (
 
         .audio_valid(audio_valid),
         .pcm_out(audio_sample),
+		
+		.sck_enable_out(sck_enable),
+		.new_request_6mhz_out(new_request_6mhz),
 
         .sck(sck),
         .sdo(sdo)
     );
+	
+	
+		
+	assign led = audio_valid;
+	assign led1 = sck_enable;
+	assign led2 = new_request_6mhz;
+    
     
 endmodule

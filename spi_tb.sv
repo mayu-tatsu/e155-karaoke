@@ -154,6 +154,17 @@ module spi_tb;
         // Test 5: Back-to-back samples at realistic 16 kHz rate (stress test)
         $display("\n--- Test 5: Realistic 16 kHz Sample Rate ---");
         $display("Expected: 62.5 us between samples (16 kHz)");
+		
+		
+		begin
+			send_audio_sample(16'h1234);
+			#62500;  // 62.5 us delay (realistic 16 kHz rate)
+			send_audio_sample(16'h5678);
+			#62500;  // Another sample
+			send_audio_sample(16'h9ABC);
+		end
+	
+		/*
         fork
             begin
                 send_audio_sample(16'h1234);
@@ -168,7 +179,7 @@ module spi_tb;
                 monitor_spi_transmission();
             end
         join
-        
+        */
         repeat(100) @(posedge clk_6mhz);
         
         $display("\n========================================");
