@@ -14,8 +14,11 @@ Purpose: To allow the MCU configuration functions to actually be used.
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-#define LOAD PA5
-#define DONE PA6
+#define DELAY_TIM TIM15
+#define PWM_TIM   TIM2
+
+#define LOAD PA0
+#define DONE PA1
 #define CS   PA11
 
 ///////////////////////////////////////////////////////////////////////////////

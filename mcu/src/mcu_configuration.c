@@ -17,14 +17,24 @@ void mcu_configuration(void)
   configureFlash();
   configureClock();
 
-  // enables all GPIO ports
-  RCC->AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN | RCC_AHB2ENR_GPIOCEN);
+  // enables the system configuration controller
+  RCC -> APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
-  // configures the SPI peripheral
-  // most notably, sets the clock phase to one and the clock polarity to zero
-  initSPI(1, 0, 0);
+  // 
+  RCC -> APB2ENR  |= RCC_APB2ENR_TIM15EN;
+  RCC -> APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+
+  // initializes a timer for delay
+  initTIM(DELAY_TIM);
+
+  // initializes a timer for PWM generation
+  //timer_initialization(PWM_TIM);
+
+  // enables all GPIO ports
+  RCC -> AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN | RCC_AHB2ENR_GPIOCEN);
 
   // assigns two GPIO pins to act as the Load and Done signals
+  // CHANGE THIS PINS LATER
   pinMode(LOAD, GPIO_OUTPUT);
   pinMode(DONE, GPIO_INPUT);
   
@@ -33,20 +43,21 @@ void mcu_configuration(void)
   //pinMode(PA9, GPIO_OUTPUT);
   //pinMode(PA10, GPIO_OUTPUT);
   //digitalWrite(PA9, 0);
-  //digitalWrite(PA10, 0);
-
-  // assigns a GPIO pin to act as the Chip Select signal
-  pinMode(CS, GPIO_OUTPUT);
-  digitalWrite(CS, 1);
-
-  // enables the system configuration controller
-  RCC -> APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+  //digitalWrite(PA10, 0); 
 
   // enables global interrupts
   __enable_irq();
   
   // configures the DMA peripheral as desired
   dma_configuration();
+
+  // configures the SPI peripheral
+  // most notably, sets the clock phase to one and the clock polarity to zero
+  initSPI(1, 0, 0);
+
+  // assigns a GPIO pin to act as the Chip Select signal
+  pinMode(CS, GPIO_OUTPUT);
+  digitalWrite(CS, 1);
 
 }
 
