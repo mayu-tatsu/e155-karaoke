@@ -34,41 +34,25 @@ int main(void)
   // instantiates a variable to store the dominant frequency of a given audio input
   float32_t note_frequency;
 
-  // 
-  //while (1) {char* string = "!"; uint16_t number = character_converter(string); printf("%x\n", number); printf("%d\n", inString(string, "!"));}
-  char* message_test = "wtf ahh"; int message_length = strlen(message_test);
-  char* message = "You";
-  //for (int i = 0; i < message_length; i++)
-  //{
-  //  char message_test_i = message_test[i];
-  //  printf("%c\n", message_test[i]);
-  //  printf("%x\n", character_converter(&message_test[i]));
-  //}
-  //while(1);
+  // TODO: DELETE
+  // TEST CODE
+  // EXAMPLE MESSAGE
+  char* message = "fuck uPs :'(";
 
-  //printf("test: %x\n", character_converter(&message_test[2]));
-  //printf("test 2: %d\n", inString(&message_test[2], "9"));
-  //printf("test 3: %d\n", inString(&message_test[2], "^"));
-  //printf("test 4: %d\n", inString(&message_test[2], "%"));
-  //printf("test 5: %d\n", inString(&message_test[2], &message_test[5]));
-  //printf("test 6: %x\n", strchr(&message_test[2], (char)&message_test[5]));
-
-
-
-  // char* character = "^";
-  // printf("%d\n", inString(character, "9"));
-  // printf("%x\n", character_converter(character));
-  //while(1) {}
-
-  // 
+  // initializes the LCD display so that it is ready to use
   lcd_display_initialization();
-  display_message(&message);
-  //lcd_test();
 
-  // runs continuously
+  // TODO: DELETE
+  // TEST CODE
+  // WRITES EXAMPLE MESSAGE
+  display_message(message);
+
+  // TODO: DELETE
+  // TEST CODE
+  // RUNS CONTINUOUSLY
   while (1) {}
 
-
+  //// runs continuously
   //while (1)
   //{
   //  // 
@@ -98,7 +82,7 @@ int main(void)
 
 
 
-  //  // 
+  
     
     
 
