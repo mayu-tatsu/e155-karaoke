@@ -194,6 +194,7 @@
       <file file_name="lib/mcu_configuration.h" />
       <file file_name="lib/mic_audio_receiver.h" />
       <file file_name="lib/note_determiner.h" />
+      <file file_name="lib/songs.h" />
     </folder>
     <folder Name="Script Files">
       <file file_name="STM32L4xx/Scripts/STM32L4xx_Target.js">

@@ -12,10 +12,6 @@ Purpose:
 void music_player(void)
 {
 
-  // configures the system clock
-  configureFlash();
-  configureClock();
-
   // enables GPIO port A
   RCC -> AHB2ENR |= (1 << 0);
 
