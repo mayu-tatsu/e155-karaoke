@@ -101,6 +101,10 @@ void DMA1_Channel2_IRQHandler(void)
     // TODO: double buffering?
 
 
+    // only process data if chip select is active (LOW)
+    //if((GPIOA->IDR & (1 << 11)) == 0) {                   // pin 11 is CS
+    //}
+
     // MAYU:
     //for (int i = 0; i < FFT_LENGTH; i++) {
     //    float_buffer[i] = (float32_t)pcm_dma_buffer[i];
@@ -113,6 +117,7 @@ void DMA1_Channel2_IRQHandler(void)
 
     // resets the FFT-completed flag
     fft_calculations_complete = 0;
+
 
     // re-enables DMA1
     DMA1_Channel2 -> CCR |= DMA_CCR_EN;
