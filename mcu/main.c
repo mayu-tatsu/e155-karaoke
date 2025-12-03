@@ -36,8 +36,8 @@ int main(void)
 
   // 
   //while (1) {char* string = "!"; uint16_t number = character_converter(string); printf("%x\n", number); printf("%d\n", inString(string, "!"));}
-  char* message_test = "wtf ahh"; int message_length = strlen(message_test);
-  char* message = "You";
+  //char* message_test = "wtf ahh"; int message_length = strlen(message_test);
+  //char* message = "You";
   //for (int i = 0; i < message_length; i++)
   //{
   //  char message_test_i = message_test[i];
@@ -61,61 +61,76 @@ int main(void)
   //while(1) {}
 
   // 
-  lcd_display_initialization();
-  display_message(&message);
+  //lcd_display_initialization();
+  //display_message(&message);
   //lcd_test();
 
   // runs continuously
-  while (1) {}
+  // while (1) {}
+
+  
+  // uncomment this later: mayu
+  while (1)
+  {
+
+    printf("%x\n", SPI1->DR);
+     
+    //for (int i = 0; i < FFT_LENGTH; i++)
+    //{
+    //  if (i == 0) {printf("start:");}
+    //  // digitalWrite(CS, 1); input_signal[i] = spiSendReceive(0x0000); digitalWrite(CS, 0);
+    //  printf("%x, ", input_signal[i]);
+    //  if (i == FFT_LENGTH - 1) {printf("\n");}
+    //  // printf("%d\n", i);
+    //}
 
 
-  //while (1)
-  //{
-  //  // 
-  //  //for (int i = 0; i < FFT_LENGTH; i++)
-  //  //{
-  //  //  if (i == 0) {printf("start:");}
-  //  //  digitalWrite(CS, 1); input_signal[i] = spiSendReceive(0x0000); digitalWrite(CS, 0);
-  //  //  printf("%x", input_signal[i]);
-  //  //  //printf("%d\n", i);
-  //  //}
+    // checks to see whether or not FFT calculations have already occurred
+    // if not, then proceeds to do so
+    if (fft_calculations_complete != 1)
+    {
 
+      // MAYU: snippet
+      // frequency_determiner(float_buffer);
 
+      // float32_t float_buffer[FFT_LENGTH];
+      for (int i = 0; i < FFT_LENGTH; i++) {
+        float_buffer[i] = (float32_t)pcm_dma_signal[i];
 
+        if (i == 0) {printf("start: ");}
+        printf("%x, ", float_buffer[i]);
+        if (i == FFT_LENGTH - 1) {printf("\n");}
+      }
 
-
-  //  // checks to see whether or not FFT calculations have already occurred
-  //  // if not, then proceeds to do so
-  //  if (fft_calculations_complete != 1)
-  //  {
-  //    // determines the dominant frequency of the detected audio
-  //    note_frequency = frequency_determiner(input_signal);
+      // determines the dominant frequency of the detected audio
+      note_frequency = frequency_determiner(float_buffer);       // (input_signal);
       
-  //    // raises the FFT-completed flag
-  //    fft_calculations_complete = 1;
-  //  }
+      // raises the FFT-completed flag
+      fft_calculations_complete = 1;
+      printf("finished!");
+    }
 
 
 
 
-  //  // 
+    // 
     
     
 
 
 
-  //  // determines what the actual note is
-  //  //const char* note = note_determiner(note_frequency);
+    // determines what the actual note is
+    const char* note = note_determiner(note_frequency);
 
-  //  // TODO: DELETE
-  //  // DEBUGGING CODE
-  //  //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);
-  //  //printf("%d, %d, %d, %d", dma_test_receive[4], dma_test_receive[5], dma_test_receive[6], dma_test_receive[7]);
-  //  //printf("%d, %d, %d, %d", dma_test_receive[8], dma_test_receive[9], dma_test_receive[10], dma_test_receive[11]);
-  //  //printf("%d, %d, %d, %d\n", dma_test_receive[12], dma_test_receive[13], dma_test_receive[14], dma_test_receive[15]);
-  //  //printf("SPI DR: %x\n", SPI1->DR);
-  //  //printf("Note frequency: %f\n", note_frequency);
-  //  //printf(note); printf("\n");
-  //}
+    // TODO: DELETE
+    // DEBUGGING CODE
+    //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);
+    //printf("%d, %d, %d, %d", dma_test_receive[4], dma_test_receive[5], dma_test_receive[6], dma_test_receive[7]);
+    //printf("%d, %d, %d, %d", dma_test_receive[8], dma_test_receive[9], dma_test_receive[10], dma_test_receive[11]);
+    //printf("%d, %d, %d, %d\n", dma_test_receive[12], dma_test_receive[13], dma_test_receive[14], dma_test_receive[15]);
+    //printf("SPI DR: %x\n", SPI1->DR);
+    //printf("Note frequency: %f\n", note_frequency);
+    //printf(note); printf("\n");
+  }
   
 }

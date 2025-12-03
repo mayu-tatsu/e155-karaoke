@@ -46,15 +46,15 @@ void mcu_configuration(void)
   __enable_irq();
   
   // configures the DMA peripheral as desired
-  //dma_configuration();
+  dma_configuration();
 
   // configures the SPI peripheral
   // most notably, sets the clock phase to one and the clock polarity to zero
-  //initSPI(1, 0, 0);
+  initSPI(1, 0, 0);
 
   // assigns a GPIO pin to act as the Chip Select signal
-  //pinMode(CS, GPIO_OUTPUT);
-  //digitalWrite(CS, 1);
+  pinMode(CS, GPIO_OUTPUT);
+  digitalWrite(CS, 1);
 
 }
 

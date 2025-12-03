@@ -1,18 +1,18 @@
-# 0 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
-# 1 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test//"
+# 0 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
+# 1 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
-# 29 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
-# 1 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h" 1
-# 44 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h"
+# 1 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
+# 29 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
+# 1 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h" 1
+# 44 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h"
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
-# 82 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 1
-# 28 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
+# 82 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 1
+# 28 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/stdint.h" 1 3 4
 # 20 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/stdint.h" 3 4
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/__SEGGER_RTL.h" 1 3 4
@@ -708,15 +708,15 @@ typedef unsigned int uintptr_t;
 
 typedef long long int intmax_t;
 typedef long long unsigned int uintmax_t;
-# 29 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
-# 54 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h" 1
-# 29 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 29 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
+# 54 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h" 1
+# 29 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
-# 71 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 71 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpacked"
 #pragma GCC diagnostic ignored "-Wattributes"
@@ -754,7 +754,7 @@ typedef long long unsigned int uintmax_t;
 #pragma GCC diagnostic ignored "-Wattributes"
   struct __attribute__((packed, aligned(1))) T_UINT32_READ { uint32_t v; };
 #pragma GCC diagnostic pop
-# 131 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 131 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void __cmsis_start(void)
 {
   extern void _start(void) __attribute__((__noreturn__));
@@ -789,7 +789,7 @@ __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void 
 
   _start();
 }
-# 258 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 258 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __ISB(void)
 {
   __asm volatile ("isb 0xF":::"memory");
@@ -816,7 +816,7 @@ __attribute__((always_inline)) static inline void __DMB(void)
 {
   __asm volatile ("dmb 0xF":::"memory");
 }
-# 292 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 292 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 {
 
@@ -828,7 +828,7 @@ __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 
 
 }
-# 311 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 311 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
 {
   uint32_t result;
@@ -836,7 +836,7 @@ __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
   __asm ("rev16 %0, %1" : "=r" (result) : "r" (value) );
   return result;
 }
-# 326 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 326 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 {
 
@@ -848,7 +848,7 @@ __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 
 
 }
-# 346 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 346 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32_t op2)
 {
   op2 %= 32U;
@@ -858,7 +858,7 @@ __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32
   }
   return (op1 >> op2) | (op1 << (32U - op2));
 }
-# 373 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 373 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 {
   uint32_t result;
@@ -867,20 +867,20 @@ __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 
 
    __asm ("rbit %0, %1" : "=r" (result) : "r" (value) );
-# 393 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 393 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   return result;
 }
-# 403 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 403 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __CLZ(uint32_t value)
 {
-# 414 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 414 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   if (value == 0U)
   {
     return 32U;
   }
   return __builtin_clz(value);
 }
-# 432 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 432 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *addr)
 {
     uint32_t result;
@@ -895,7 +895,7 @@ __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *
 
    return ((uint8_t) result);
 }
-# 454 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 454 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t *addr)
 {
     uint32_t result;
@@ -910,7 +910,7 @@ __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t
 
    return ((uint16_t) result);
 }
-# 476 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 476 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t *addr)
 {
     uint32_t result;
@@ -918,7 +918,7 @@ __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t
    __asm volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
    return(result);
 }
-# 493 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 493 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
 {
    uint32_t result;
@@ -926,7 +926,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, vo
    __asm volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 510 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 510 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
 {
    uint32_t result;
@@ -934,7 +934,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, v
    __asm volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 527 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 527 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
 {
    uint32_t result;
@@ -952,7 +952,7 @@ __attribute__((always_inline)) static inline void __CLREX(void)
 {
   __asm volatile ("clrex" ::: "memory");
 }
-# 593 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 593 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
 {
   uint32_t result;
@@ -960,7 +960,7 @@ __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
   __asm volatile ("rrx %0, %1" : "=r" (result) : "r" (value) );
   return(result);
 }
-# 608 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 608 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *ptr)
 {
     uint32_t result;
@@ -975,7 +975,7 @@ __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *p
 
    return ((uint8_t) result);
 }
-# 630 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 630 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t *ptr)
 {
     uint32_t result;
@@ -990,7 +990,7 @@ __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t 
 
    return ((uint16_t) result);
 }
-# 652 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 652 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *ptr)
 {
     uint32_t result;
@@ -998,22 +998,22 @@ __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *
    __asm volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
    return(result);
 }
-# 667 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 667 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRBT(uint8_t value, volatile uint8_t *ptr)
 {
    __asm volatile ("strbt %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 679 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 679 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRHT(uint16_t value, volatile uint16_t *ptr)
 {
    __asm volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 691 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 691 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRT(uint32_t value, volatile uint32_t *ptr)
 {
    __asm volatile ("strt %1, %0" : "=Q" (*ptr) : "r" (value) );
 }
-# 949 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 949 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_irq(void)
 {
   __asm volatile ("cpsie i" : : : "memory");
@@ -1043,13 +1043,13 @@ __attribute__((always_inline)) static inline uint32_t __get_CONTROL(void)
   __asm volatile ("MRS %0, control" : "=r" (result) );
   return(result);
 }
-# 1001 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1001 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_CONTROL(uint32_t control)
 {
   __asm volatile ("MSR control, %0" : : "r" (control) : "memory");
   __ISB();
 }
-# 1027 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1027 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_IPSR(void)
 {
   uint32_t result;
@@ -1099,12 +1099,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PSP(void)
   __asm volatile ("MRS %0, psp" : "=r" (result) );
   return(result);
 }
-# 1099 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1099 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PSP(uint32_t topOfProcStack)
 {
   __asm volatile ("MSR psp, %0" : : "r" (topOfProcStack) : );
 }
-# 1123 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1123 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
 {
   uint32_t result;
@@ -1112,12 +1112,12 @@ __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
   __asm volatile ("MRS %0, msp" : "=r" (result) );
   return(result);
 }
-# 1153 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1153 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_MSP(uint32_t topOfMainStack)
 {
   __asm volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
 }
-# 1204 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1204 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
 {
   uint32_t result;
@@ -1125,12 +1125,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
   __asm volatile ("MRS %0, primask" : "=r" (result) );
   return(result);
 }
-# 1234 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1234 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PRIMASK(uint32_t priMask)
 {
   __asm volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
 }
-# 1261 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1261 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_fault_irq(void)
 {
   __asm volatile ("cpsie f" : : : "memory");
@@ -1160,12 +1160,12 @@ __attribute__((always_inline)) static inline uint32_t __get_BASEPRI(void)
   __asm volatile ("MRS %0, basepri" : "=r" (result) );
   return(result);
 }
-# 1313 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1313 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI(uint32_t basePri)
 {
   __asm volatile ("MSR basepri, %0" : : "r" (basePri) : "memory");
 }
-# 1338 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1338 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI_MAX(uint32_t basePri)
 {
   __asm volatile ("MSR basepri_max, %0" : : "r" (basePri) : "memory");
@@ -1184,15 +1184,15 @@ __attribute__((always_inline)) static inline uint32_t __get_FAULTMASK(void)
   __asm volatile ("MRS %0, faultmask" : "=r" (result) );
   return(result);
 }
-# 1379 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1379 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_FAULTMASK(uint32_t faultMask)
 {
   __asm volatile ("MSR faultmask, %0" : : "r" (faultMask) : "memory");
 }
-# 1588 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1588 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 {
-# 1604 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1604 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   return(0U);
 
 }
@@ -1205,11 +1205,11 @@ __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 
 __attribute__((always_inline)) static inline void __set_FPSCR(uint32_t fpscr)
 {
-# 1627 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1627 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   (void)fpscr;
 
 }
-# 1643 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1643 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __SADD8(uint32_t op1, uint32_t op2)
 {
   uint32_t result;
@@ -1515,7 +1515,7 @@ __attribute__((always_inline)) static inline uint32_t __USADA8(uint32_t op1, uin
   __asm ("usada8 %0, %1, %2, %3" : "=r" (result) : "r" (op1), "r" (op2), "r" (op3) );
   return(result);
 }
-# 1965 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1965 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __UXTB16(uint32_t op1)
 {
   uint32_t result;
@@ -1726,7 +1726,7 @@ __attribute__((always_inline)) static inline int32_t __QSUB( int32_t op1, int32_
   __asm volatile ("qsub %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
   return(result);
 }
-# 2197 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 2197 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
 {
  int32_t result;
@@ -1740,8 +1740,8 @@ __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32
 
 
 #pragma GCC diagnostic pop
-# 55 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
-# 83 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h" 2
+# 55 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
+# 83 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h" 2
 
 
 
@@ -1798,7 +1798,7 @@ char * (strerror) (int __num);
 int (ffs) (int __i);
 int (ffsl) (long __i);
 int (ffsll) (long long __i);
-# 88 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h" 2
+# 88 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h" 2
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/math.h" 1 3 4
 # 20 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/math.h" 3 4
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/__SEGGER_RTL_FP.h" 1 3 4
@@ -2325,14 +2325,14 @@ long double nanl (const char *__tag);
 float fmaf (float __x, float __y, float __z);
 double fma (double __x, double __y, double __z);
 long double fmal (long double __x, long double __y, long double __z);
-# 89 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h" 2
+# 89 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h" 2
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/float.h" 1 3 4
-# 90 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h" 2
+# 90 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h" 2
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/limits.h" 1 3 4
-# 91 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h" 2
-# 250 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h"
+# 91 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h" 2
+# 250 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h"
 #pragma GCC diagnostic pop
-# 282 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h"
+# 282 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h"
   typedef int8_t q7_t;
 
 
@@ -2361,7 +2361,7 @@ long double fmal (long double __x, long double __y, long double __z);
 
 
   typedef double float64_t;
-# 599 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_math_types.h"
+# 599 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_math_types.h"
   typedef enum
   {
     ARM_MATH_SUCCESS = 0,
@@ -2373,9 +2373,9 @@ long double fmal (long double __x, long double __y, long double __z);
     ARM_MATH_TEST_FAILURE = -6,
     ARM_MATH_DECOMPOSITION_FAILURE = -7
   } arm_status;
-# 30 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c" 2
-# 1 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.h" 1
-# 59 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.h"
+# 30 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c" 2
+# 1 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.h" 1
+# 59 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.h"
     extern const uint16_t armBitRevTable[1024];
 
 
@@ -2832,14 +2832,14 @@ long double fmal (long double __x, long double __y, long double __z);
 
 
     extern const q15_t sinTable_q15[512 + 1];
-# 526 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.h"
+# 526 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.h"
        extern const q31_t sqrt_initial_lut_q31[32];
 
 
 
        extern const q15_t sqrt_initial_lut_q15[16];
-# 31 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c" 2
-# 70 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 31 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c" 2
+# 70 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint16_t armBitRevTable[1024] = {
    0x400, 0x200, 0x600, 0x100, 0x500, 0x300, 0x700, 0x080, 0x480, 0x280,
    0x680, 0x180, 0x580, 0x380, 0x780, 0x040, 0x440, 0x240, 0x640, 0x140,
@@ -2945,7 +2945,7 @@ const uint16_t armBitRevTable[1024] = {
    0x67e, 0x17e, 0x57e, 0x37e, 0x77e, 0x0fe, 0x4fe, 0x2fe, 0x6fe, 0x1fe,
    0x5fe, 0x3fe, 0x7fe, 0x001
 };
-# 196 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 196 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_16[32] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3fed906bcf328d46, 0x3fd87de2a6aea963,
@@ -2964,7 +2964,7 @@ const uint64_t twiddleCoefF64_16[32] = {
     0x3fe6a09e667f3bcc, 0xbfe6a09e667f3bcc,
     0x3fed906bcf328d46, 0xbfd87de2a6aea963,
 };
-# 233 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 233 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_32[64] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3fef6297cff75cb0, 0x3fc8f8b83c69a60a,
@@ -2999,7 +2999,7 @@ const uint64_t twiddleCoefF64_32[64] = {
     0x3fed906bcf328d46, 0xbfd87de2a6aea963,
     0x3fef6297cff75cb0, 0xbfc8f8b83c69a60a,
 };
-# 285 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 285 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_64[128] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3fefd88da3d12526, 0x3fb917a6bc29b42c,
@@ -3066,7 +3066,7 @@ const uint64_t twiddleCoefF64_64[128] = {
     0x3fef6297cff75cb0, 0xbfc8f8b83c69a60a,
     0x3fefd88da3d12526, 0xbfb917a6bc29b42c,
     };
-# 369 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 369 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_128[256] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3feff621e3796d7e, 0x3fa91f65f10dd814,
@@ -3197,7 +3197,7 @@ const uint64_t twiddleCoefF64_128[256] = {
     0x3fefd88da3d12526, 0xbfb917a6bc29b42c,
     0x3feff621e3796d7e, 0xbfa91f65f10dd814,
 };
-# 517 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 517 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_256[512] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3feffd886084cd0d, 0x3f992155f7a3667e,
@@ -3456,7 +3456,7 @@ const uint64_t twiddleCoefF64_256[512] = {
     0x3feff621e3796d7e, 0xbfa91f65f10dd814,
     0x3feffd886084cd0d, 0xbf992155f7a3667e,
 };
-# 793 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 793 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_512[1024] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3fefff62169b92db, 0x3f8921d1fcdec784,
@@ -3971,7 +3971,7 @@ const uint64_t twiddleCoefF64_512[1024] = {
     0x3feffd886084cd0d, 0xbf992155f7a3667e,
     0x3fefff62169b92db, 0xbf8921d1fcdec784,
 };
-# 1325 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 1325 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_1024[2048] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3fefffd8858e8a92, 0x3f7921f0fe670071,
@@ -4998,7 +4998,7 @@ const uint64_t twiddleCoefF64_1024[2048] = {
     0x3fefff62169b92db, 0xbf8921d1fcdec784,
     0x3fefffd8858e8a92, 0xbf7921f0fe670071,
 };
-# 2369 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 2369 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_2048[4096] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3feffff621621d02, 0x3f6921f8becca4ba,
@@ -7050,7 +7050,7 @@ const uint64_t twiddleCoefF64_2048[4096] = {
     0x3feffff621621d02, 0xbf6921f8becca4ba,
 
 };
-# 4438 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 4438 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_4096[8192] = {
     0x3ff0000000000000, 0x0000000000000000,
     0x3feffffd88586ee6, 0x3f5921faaee6472d,
@@ -11151,7 +11151,7 @@ const uint64_t twiddleCoefF64_4096[8192] = {
 
 
 };
-# 8556 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 8556 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_16[32] = {
     1.000000000f, 0.000000000f,
     0.923879533f, 0.382683432f,
@@ -11170,7 +11170,7 @@ const float32_t twiddleCoef_16[32] = {
     0.707106781f, -0.707106781f,
     0.923879533f, -0.382683432f
 };
-# 8593 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 8593 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_32[64] = {
     1.000000000f, 0.000000000f,
     0.980785280f, 0.195090322f,
@@ -11205,7 +11205,7 @@ const float32_t twiddleCoef_32[64] = {
     0.923879533f, -0.382683432f,
     0.980785280f, -0.195090322f
 };
-# 8645 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 8645 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_64[128] = {
     1.000000000f, 0.000000000f,
     0.995184727f, 0.098017140f,
@@ -11272,7 +11272,7 @@ const float32_t twiddleCoef_64[128] = {
     0.980785280f, -0.195090322f,
     0.995184727f, -0.098017140f
 };
-# 8729 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 8729 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_128[256] = {
     1.000000000f, 0.000000000f,
     0.998795456f, 0.049067674f,
@@ -11403,7 +11403,7 @@ const float32_t twiddleCoef_128[256] = {
     0.995184727f, -0.098017140f,
     0.998795456f, -0.049067674f
 };
-# 8877 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 8877 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_256[512] = {
     1.000000000f, 0.000000000f,
     0.999698819f, 0.024541229f,
@@ -11662,7 +11662,7 @@ const float32_t twiddleCoef_256[512] = {
     0.998795456f, -0.049067674f,
     0.999698819f, -0.024541229f
 };
-# 9153 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 9153 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_512[1024] = {
     1.000000000f, 0.000000000f,
     0.999924702f, 0.012271538f,
@@ -12177,7 +12177,7 @@ const float32_t twiddleCoef_512[1024] = {
     0.999698819f, -0.024541229f,
     0.999924702f, -0.012271538f
 };
-# 9685 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 9685 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_1024[2048] = {
     1.000000000f, 0.000000000f,
     0.999981175f, 0.006135885f,
@@ -13204,7 +13204,7 @@ const float32_t twiddleCoef_1024[2048] = {
     0.999924702f, -0.012271538f,
     0.999981175f, -0.006135885f
 };
-# 10729 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 10729 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_2048[4096] = {
     1.000000000f, 0.000000000f,
     0.999995294f, 0.003067957f,
@@ -15255,7 +15255,7 @@ const float32_t twiddleCoef_2048[4096] = {
     0.999981175f, -0.006135885f,
     0.999995294f, -0.003067957f
 };
-# 12797 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 12797 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_4096[8192] = {
     1.000000000f, 0.000000000f,
     0.999998823f, 0.001533980f,
@@ -19354,7 +19354,7 @@ const float32_t twiddleCoef_4096[8192] = {
     0.999995294f, -0.003067957f,
     0.999998823f, -0.001533980f
 };
-# 16922 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 16922 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_16_q31[24] = {
     (q31_t)0x7FFFFFFF, (q31_t)0x00000000,
     (q31_t)0x7641AF3C, (q31_t)0x30FBC54D,
@@ -19369,7 +19369,7 @@ const q31_t twiddleCoef_16_q31[24] = {
     (q31_t)0xA57D8666, (q31_t)0xA57D8666,
     (q31_t)0xCF043AB2, (q31_t)0x89BE50C3
 };
-# 16957 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 16957 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_32_q31[48] = {
     (q31_t)0x7FFFFFFF, (q31_t)0x00000000,
     (q31_t)0x7D8A5F3F, (q31_t)0x18F8B83C,
@@ -19396,7 +19396,7 @@ const q31_t twiddleCoef_32_q31[48] = {
     (q31_t)0xCF043AB2, (q31_t)0x89BE50C3,
     (q31_t)0xE70747C3, (q31_t)0x8275A0C0
 };
-# 17004 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 17004 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_64_q31[96] = {
  (q31_t)0x7FFFFFFF, (q31_t)0x00000000, (q31_t)0x7F62368F,
  (q31_t)0x0C8BD35E, (q31_t)0x7D8A5F3F, (q31_t)0x18F8B83C,
@@ -19431,7 +19431,7 @@ const q31_t twiddleCoef_64_q31[96] = {
  (q31_t)0xDAD7F3A2, (q31_t)0x8582FAA4, (q31_t)0xE70747C3,
  (q31_t)0x8275A0C0, (q31_t)0xF3742CA1, (q31_t)0x809DC970
 };
-# 17059 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 17059 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_128_q31[192] = {
  (q31_t)0x7FFFFFFF, (q31_t)0x00000000, (q31_t)0x7FD8878D,
  (q31_t)0x0647D97C, (q31_t)0x7F62368F, (q31_t)0x0C8BD35E,
@@ -19498,7 +19498,7 @@ const q31_t twiddleCoef_128_q31[192] = {
  (q31_t)0xED37EF91, (q31_t)0x8162AA03, (q31_t)0xF3742CA1,
  (q31_t)0x809DC970, (q31_t)0xF9B82683, (q31_t)0x80277872
 };
-# 17147 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 17147 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_256_q31[384] = {
  (q31_t)0x7FFFFFFF, (q31_t)0x00000000, (q31_t)0x7FF62182,
  (q31_t)0x03242ABF, (q31_t)0x7FD8878D, (q31_t)0x0647D97C,
@@ -19629,7 +19629,7 @@ const q31_t twiddleCoef_256_q31[384] = {
  (q31_t)0xF6956FB6, (q31_t)0x8058C94C, (q31_t)0xF9B82683,
  (q31_t)0x80277872, (q31_t)0xFCDBD541, (q31_t)0x8009DE7D
 };
-# 17299 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 17299 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_512_q31[768] = {
     (q31_t)0x7FFFFFFF, (q31_t)0x00000000, (q31_t)0x7FFD885A,
  (q31_t)0x01921D1F, (q31_t)0x7FF62182, (q31_t)0x03242ABF,
@@ -19888,7 +19888,7 @@ const q31_t twiddleCoef_512_q31[768] = {
  (q31_t)0xFB49E6A2, (q31_t)0x80163440, (q31_t)0xFCDBD541,
  (q31_t)0x8009DE7D, (q31_t)0xFE6DE2E0, (q31_t)0x800277A5
 };
-# 17579 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 17579 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_1024_q31[1536] = {
  (q31_t)0x7FFFFFFF, (q31_t)0x00000000, (q31_t)0x7FFF6216,
  (q31_t)0x00C90F88, (q31_t)0x7FFD885A, (q31_t)0x01921D1F,
@@ -20403,7 +20403,7 @@ const q31_t twiddleCoef_1024_q31[1536] = {
  (q31_t)0xFDA4D928, (q31_t)0x80058D2E, (q31_t)0xFE6DE2E0,
  (q31_t)0x800277A5, (q31_t)0xFF36F078, (q31_t)0x80009DE9
 };
-# 18114 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 18114 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_2048_q31[3072] = {
  (q31_t)0x7FFFFFFF, (q31_t)0x00000000, (q31_t)0x7FFFD885,
  (q31_t)0x006487E3, (q31_t)0x7FFF6216, (q31_t)0x00C90F88,
@@ -21430,7 +21430,7 @@ const q31_t twiddleCoef_2048_q31[3072] = {
  (q31_t)0xFED2694F, (q31_t)0x8001634D, (q31_t)0xFF36F078,
  (q31_t)0x80009DE9, (q31_t)0xFF9B781D, (q31_t)0x8000277A
 };
-# 19160 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 19160 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t twiddleCoef_4096_q31[6144] =
 {
  (q31_t)0x7FFFFFFF, (q31_t)0x00000000, (q31_t)0x7FFFF621,
@@ -23482,7 +23482,7 @@ const q31_t twiddleCoef_4096_q31[6144] =
  (q31_t)0xFF69343E, (q31_t)0x800058D3, (q31_t)0xFF9B781D,
  (q31_t)0x8000277A, (q31_t)0xFFCDBC0A, (q31_t)0x800009DE
 };
-# 21237 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 21237 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_16_q15[24] = {
     (q15_t)0x7FFF, (q15_t)0x0000,
     (q15_t)0x7641, (q15_t)0x30FB,
@@ -23497,7 +23497,7 @@ const q15_t twiddleCoef_16_q15[24] = {
     (q15_t)0xA57D, (q15_t)0xA57D,
     (q15_t)0xCF04, (q15_t)0x89BE
 };
-# 21271 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 21271 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_32_q15[48] = {
     (q15_t)0x7FFF, (q15_t)0x0000,
     (q15_t)0x7D8A, (q15_t)0x18F8,
@@ -23524,7 +23524,7 @@ const q15_t twiddleCoef_32_q15[48] = {
     (q15_t)0xCF04, (q15_t)0x89BE,
     (q15_t)0xE707, (q15_t)0x8275
 };
-# 21317 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 21317 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_64_q15[96] = {
  (q15_t)0x7FFF, (q15_t)0x0000, (q15_t)0x7F62, (q15_t)0x0C8B,
  (q15_t)0x7D8A, (q15_t)0x18F8, (q15_t)0x7A7D, (q15_t)0x2528,
@@ -23551,7 +23551,7 @@ const q15_t twiddleCoef_64_q15[96] = {
  (q15_t)0xCF04, (q15_t)0x89BE, (q15_t)0xDAD7, (q15_t)0x8582,
  (q15_t)0xE707, (q15_t)0x8275, (q15_t)0xF374, (q15_t)0x809D
 };
-# 21363 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 21363 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_128_q15[192] = {
  (q15_t)0x7FFF, (q15_t)0x0000, (q15_t)0x7FD8, (q15_t)0x0647,
  (q15_t)0x7F62, (q15_t)0x0C8B, (q15_t)0x7E9D, (q15_t)0x12C8,
@@ -23602,7 +23602,7 @@ const q15_t twiddleCoef_128_q15[192] = {
  (q15_t)0xE707, (q15_t)0x8275, (q15_t)0xED37, (q15_t)0x8162,
  (q15_t)0xF374, (q15_t)0x809D, (q15_t)0xF9B8, (q15_t)0x8027
 };
-# 21433 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 21433 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_256_q15[384] = {
  (q15_t)0x7FFF, (q15_t)0x0000, (q15_t)0x7FF6, (q15_t)0x0324,
  (q15_t)0x7FD8, (q15_t)0x0647, (q15_t)0x7FA7, (q15_t)0x096A,
@@ -23701,7 +23701,7 @@ const q15_t twiddleCoef_256_q15[384] = {
  (q15_t)0xF374, (q15_t)0x809D, (q15_t)0xF695, (q15_t)0x8058,
  (q15_t)0xF9B8, (q15_t)0x8027, (q15_t)0xFCDB, (q15_t)0x8009
 };
-# 21551 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 21551 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_512_q15[768] = {
  (q15_t)0x7FFF, (q15_t)0x0000, (q15_t)0x7FFD, (q15_t)0x0192,
  (q15_t)0x7FF6, (q15_t)0x0324, (q15_t)0x7FE9, (q15_t)0x04B6,
@@ -23896,7 +23896,7 @@ const q15_t twiddleCoef_512_q15[768] = {
  (q15_t)0xF9B8, (q15_t)0x8027, (q15_t)0xFB49, (q15_t)0x8016,
  (q15_t)0xFCDB, (q15_t)0x8009, (q15_t)0xFE6D, (q15_t)0x8002
 };
-# 21766 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 21766 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_1024_q15[1536] = {
  (q15_t)0x7FFF, (q15_t)0x0000, (q15_t)0x7FFF, (q15_t)0x00C9,
  (q15_t)0x7FFD, (q15_t)0x0192, (q15_t)0x7FFA, (q15_t)0x025B,
@@ -24283,7 +24283,7 @@ const q15_t twiddleCoef_1024_q15[1536] = {
  (q15_t)0xFCDB, (q15_t)0x8009, (q15_t)0xFDA4, (q15_t)0x8005,
  (q15_t)0xFE6D, (q15_t)0x8002, (q15_t)0xFF36, (q15_t)0x8000
 };
-# 22172 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 22172 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_2048_q15[3072] = {
  (q15_t)0x7FFF, (q15_t)0x0000, (q15_t)0x7FFF, (q15_t)0x0064,
  (q15_t)0x7FFF, (q15_t)0x00C9, (q15_t)0x7FFE, (q15_t)0x012D,
@@ -25054,7 +25054,7 @@ const q15_t twiddleCoef_2048_q15[3072] = {
  (q15_t)0xFE6D, (q15_t)0x8002, (q15_t)0xFED2, (q15_t)0x8001,
  (q15_t)0xFF36, (q15_t)0x8000, (q15_t)0xFF9B, (q15_t)0x8000
 };
-# 22962 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 22962 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t twiddleCoef_4096_q15[6144] =
 {
  (q15_t)0x7FFF, (q15_t)0x0000, (q15_t)0x7FFF, (q15_t)0x0032,
@@ -26594,7 +26594,7 @@ const q15_t twiddleCoef_4096_q15[6144] =
  (q15_t)0xFF36, (q15_t)0x8000, (q15_t)0xFF69, (q15_t)0x8000,
  (q15_t)0xFF9B, (q15_t)0x8000, (q15_t)0xFFCD, (q15_t)0x8000
 };
-# 24510 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 24510 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint16_t armBitRevIndexTableF64_16[((uint16_t)12)] =
 {
 
@@ -28954,7 +28954,7 @@ const uint16_t armBitRevIndexTable_fixed_4096[((uint16_t)4032)] =
     30456,32184, 30584,31672, 30712,32696, 30968,31864, 31096,31352, 31224,32376,
     31480,32120, 31736,32632, 32248,32504
 };
-# 26880 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 26880 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const uint64_t twiddleCoefF64_rfft_32[32] = {
     0x0000000000000000, 0x3ff0000000000000,
     0x3fc8f8b83c69a60a, 0x3fef6297cff75cb0,
@@ -33077,7 +33077,7 @@ const uint64_t twiddleCoefF64_rfft_4096[4096] = {
     0x3f6921f8becca4ba, 0xbfeffff621621d02,
     0x3f5921faaee6472d, 0xbfeffffd88586ee6,
 };
-# 31015 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 31015 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t twiddleCoef_rfft_32[32] = {
     0.000000000f, 1.000000000f,
     0.195090322f, 0.980785280f,
@@ -37195,7 +37195,7 @@ const float32_t twiddleCoef_rfft_4096[4096] = {
     0.003067957f, -0.999995294f,
     0.001533980f, -0.999998823f
 };
-# 35157 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 35157 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t realCoefA[8192] = {
   0.500000000000000f, -0.500000000000000f, 0.499616503715515f, -0.499999850988388f,
   0.499233007431030f, -0.499999403953552f, 0.498849511146545f, -0.499998688697815f,
@@ -39246,7 +39246,7 @@ const float32_t realCoefA[8192] = {
   0.498466014862061f, 0.499997645616531f, 0.498849511146545f, 0.499998688697815f,
   0.499233007431030f, 0.499999403953552f, 0.499616503715515f, 0.499999850988388f,
 };
-# 37221 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 37221 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t realCoefB[8192] = {
   0.500000000000000f, 0.500000000000000f, 0.500383496284485f, 0.499999850988388f,
   0.500766992568970f, 0.499999403953552f, 0.501150488853455f, 0.499998688697815f,
@@ -41297,7 +41297,7 @@ const float32_t realCoefB[8192] = {
   0.501533985137939f, -0.499997645616531f, 0.501150488853455f, -0.499998688697815f,
   0.500766992568970f, -0.499999403953552f, 0.500383496284485f, -0.499999850988388f,
 };
-# 39288 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 39288 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t realCoefAQ31[8192] = {
     (q31_t)0x40000000, (q31_t)0xc0000000, (q31_t)0x3ff36f02, (q31_t)0xc000013c,
     (q31_t)0x3fe6de05, (q31_t)0xc00004ef, (q31_t)0x3fda4d09, (q31_t)0xc0000b1a,
@@ -43348,7 +43348,7 @@ const q31_t realCoefAQ31[8192] = {
     (q31_t)0x3fcdbc0f, (q31_t)0x3fffec43, (q31_t)0x3fda4d09, (q31_t)0x3ffff4e6,
     (q31_t)0x3fe6de05, (q31_t)0x3ffffb11, (q31_t)0x3ff36f02, (q31_t)0x3ffffec4,
 };
-# 41355 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 41355 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t realCoefBQ31[8192] = {
     (q31_t)0x40000000, (q31_t)0x40000000, (q31_t)0x400c90fe, (q31_t)0x3ffffec4,
     (q31_t)0x401921fb, (q31_t)0x3ffffb11, (q31_t)0x4025b2f7, (q31_t)0x3ffff4e6,
@@ -45399,7 +45399,7 @@ const q31_t realCoefBQ31[8192] = {
     (q31_t)0x403243f1, (q31_t)0xc00013bd, (q31_t)0x4025b2f7, (q31_t)0xc0000b1a,
     (q31_t)0x401921fb, (q31_t)0xc00004ef, (q31_t)0x400c90fe, (q31_t)0xc000013c,
 };
-# 43422 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 43422 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t __attribute__((aligned(4))) realCoefAQ15[8192] = {
     (q15_t)0x4000, (q15_t)0xc000, (q15_t)0x3ff3, (q15_t)0xc000, (q15_t)0x3fe7, (q15_t)0xc000, (q15_t)0x3fda, (q15_t)0xc000,
     (q15_t)0x3fce, (q15_t)0xc000, (q15_t)0x3fc1, (q15_t)0xc000, (q15_t)0x3fb5, (q15_t)0xc000, (q15_t)0x3fa8, (q15_t)0xc000,
@@ -46426,7 +46426,7 @@ const q15_t __attribute__((aligned(4))) realCoefAQ15[8192] = {
     (q15_t)0x3f9b, (q15_t)0x4000, (q15_t)0x3fa8, (q15_t)0x4000, (q15_t)0x3fb5, (q15_t)0x4000, (q15_t)0x3fc1, (q15_t)0x4000,
     (q15_t)0x3fce, (q15_t)0x4000, (q15_t)0x3fda, (q15_t)0x4000, (q15_t)0x3fe7, (q15_t)0x4000, (q15_t)0x3ff3, (q15_t)0x4000,
 };
-# 44463 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 44463 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t __attribute__((aligned(4))) realCoefBQ15[8192] = {
     (q15_t)0x4000, (q15_t)0x4000, (q15_t)0x400d, (q15_t)0x4000, (q15_t)0x4019, (q15_t)0x4000, (q15_t)0x4026, (q15_t)0x4000,
     (q15_t)0x4032, (q15_t)0x4000, (q15_t)0x403f, (q15_t)0x4000, (q15_t)0x404b, (q15_t)0x4000, (q15_t)0x4058, (q15_t)0x4000,
@@ -47453,7 +47453,7 @@ const q15_t __attribute__((aligned(4))) realCoefBQ15[8192] = {
     (q15_t)0x4065, (q15_t)0xc000, (q15_t)0x4058, (q15_t)0xc000, (q15_t)0x404b, (q15_t)0xc000, (q15_t)0x403f, (q15_t)0xc000,
     (q15_t)0x4032, (q15_t)0xc000, (q15_t)0x4026, (q15_t)0xc000, (q15_t)0x4019, (q15_t)0xc000, (q15_t)0x400d, (q15_t)0xc000,
 };
-# 45541 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 45541 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
     const float32_t Weights_128[256] = {
   1.000000000000000000f, 0.000000000000000000f, 0.999924701839144500f, -0.012271538285719925f,
   0.999698818696204250f, -0.024541228522912288f, 0.999322384588349540f, -0.036807222941358832f,
@@ -63313,7 +63313,7 @@ const q15_t __attribute__((aligned(4))) realCoefBQ15[8192] = {
   0.001342233088643682f, 0.000958737955710053f, 0.000575242787525925f,
     0.000191747598192208f
 };
-# 61444 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 61444 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
     const q15_t __attribute__((aligned(4))) WeightsQ15_128[256] = {
   (q15_t)0x7fff, (q15_t)0x0, (q15_t)0x7ffd, (q15_t)0xfe6e, (q15_t)0x7ff6, (q15_t)0xfcdc, (q15_t)0x7fe9, (q15_t)0xfb4a,
   (q15_t)0x7fd8, (q15_t)0xf9b9, (q15_t)0x7fc2, (q15_t)0xf827, (q15_t)0x7fa7, (q15_t)0xf696, (q15_t)0x7f87, (q15_t)0xf505,
@@ -67423,7 +67423,7 @@ const q15_t __attribute__((aligned(4))) realCoefBQ15[8192] = {
   (q15_t)0x61, (q15_t)0x5b, (q15_t)0x54, (q15_t)0x4e, (q15_t)0x48, (q15_t)0x41, (q15_t)0x3b, (q15_t)0x35,
   (q15_t)0x2f, (q15_t)0x28, (q15_t)0x22, (q15_t)0x1c, (q15_t)0x15, (q15_t)0xf, (q15_t)0x9, (q15_t)0x3
 };
-# 65592 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 65592 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
     const q31_t WeightsQ31_128[256] = {
   (q31_t)0x7fffffff, (q31_t)0x00000000, (q31_t)0x7ffd885a, (q31_t)0xfe6de2e0, (q31_t)0x7ff62182, (q31_t)0xfcdbd541, (q31_t)0x7fe9cbc0, (q31_t)0xfb49e6a3,
   (q31_t)0x7fd8878e, (q31_t)0xf9b82684, (q31_t)0x7fc25596, (q31_t)0xf826a462, (q31_t)0x7fa736b4, (q31_t)0xf6956fb7, (q31_t)0x7f872bf3, (q31_t)0xf50497fb,
@@ -71865,7 +71865,7 @@ const q15_t __attribute__((aligned(4))) realCoefBQ15[8192] = {
   (q31_t)0x6163a5, (q31_t)0x5b1b27, (q31_t)0x54d2aa, (q31_t)0x4e8a2c, (q31_t)0x4841af, (q31_t)0x41f931, (q31_t)0x3bb0b3, (q31_t)0x356835,
   (q31_t)0x2f1fb6, (q31_t)0x28d738, (q31_t)0x228eb9, (q31_t)0x1c463b, (q31_t)0x15fdbc, (q31_t)0xfb53d, (q31_t)0x96cbe, (q31_t)0x3243f
 };
-# 70047 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 70047 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t __attribute__((aligned(4))) armRecipTableQ15[64] = {
  0x7F03, 0x7D13, 0x7B31, 0x795E, 0x7798, 0x75E0,
  0x7434, 0x7294, 0x70FF, 0x6F76, 0x6DF6, 0x6C82,
@@ -71879,7 +71879,7 @@ const q15_t __attribute__((aligned(4))) armRecipTableQ15[64] = {
  0x4521, 0x448D, 0x43FC, 0x436C, 0x42DF, 0x4255,
  0x41CC, 0x4146, 0x40C2, 0x4040
 };
-# 70068 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 70068 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t armRecipTableQ31[64] = {
   0x7F03F03F, 0x7D137420, 0x7B31E739, 0x795E9F94, 0x7798FD29, 0x75E06928,
   0x7434554D, 0x72943B4B, 0x70FF9C40, 0x6F760031, 0x6DF6F593, 0x6C8210E3,
@@ -71893,7 +71893,7 @@ const q31_t armRecipTableQ31[64] = {
   0x4521CCE1, 0x448DB244, 0x43FC0CFA, 0x436CCD78, 0x42DFE4B4, 0x42554426,
   0x41CCDDB6, 0x4146A3C6, 0x40C28923, 0x40408102
 };
-# 70097 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 70097 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const float32_t sinTable_f32[512 + 1] = {
    0.00000000f, 0.01227154f, 0.02454123f, 0.03680722f, 0.04906767f, 0.06132074f,
    0.07356456f, 0.08579731f, 0.09801714f, 0.11022221f, 0.12241068f, 0.13458071f,
@@ -71990,7 +71990,7 @@ const float32_t sinTable_f32[512 + 1] = {
    -0.11022221f, -0.09801714f, -0.08579731f, -0.07356456f, -0.06132074f,
    -0.04906767f, -0.03680722f, -0.02454123f, -0.01227154f, -0.00000000f
 };
-# 70214 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 70214 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t sinTable_q31[512 + 1] = {
  0L, 26352928L, 52701887L, 79042909L, 105372028L, 131685278L, 157978697L,
  184248325L, 210490206L, 236700388L, 262874923L, 289009871L, 315101295L,
@@ -72084,7 +72084,7 @@ const q31_t sinTable_q31[512 + 1] = {
  -315101295L, -289009871L, -262874923L, -236700388L, -210490206L, -184248325L,
  -157978697L, -131685278L, -105372028L, -79042909L, -52701887L, -26352928L, 0
 };
-# 70329 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 70329 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q15_t sinTable_q15[512 + 1] = {
  0, 402, 804, 1206, 1608, 2009, 2411, 2811, 3212, 3612, 4011, 4410, 4808,
  5205, 5602, 5998, 6393, 6787, 7180, 7571, 7962, 8351, 8740, 9127, 9512,
@@ -72140,7 +72140,7 @@ const q15_t sinTable_q15[512 + 1] = {
  -5998, -5602, -5205, -4808, -4410, -4011, -3612, -3212, -2811, -2411,
  -2009, -1608, -1206, -804, -402, 0
 };
-# 70525 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\arm_common_tables.c"
+# 70525 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\arm_common_tables.c"
 const q31_t sqrt_initial_lut_q31[32]={536870912, 506166750, 480191942, 457845052, 438353264, 421156193,
  405836263, 392075079, 379625062, 368290407, 357913941, 348367849,
  339546978, 331363921, 323745341, 316629190, 309962566, 303700050,

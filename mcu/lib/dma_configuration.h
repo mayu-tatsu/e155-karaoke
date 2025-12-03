@@ -24,6 +24,10 @@ extern float32_t input_signal[FFT_LENGTH];
 extern uint32_t dma_test_send[16];
 extern uint32_t dma_test_receive[16];
 
+extern volatile int16_t pcm_dma_buffer[FFT_LENGTH];
+extern volatile int16_t pcm_dma_signal[FFT_LENGTH];
+extern float32_t float_buffer[FFT_LENGTH];
+
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
