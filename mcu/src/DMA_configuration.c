@@ -60,7 +60,7 @@ void dma_configuration(void)
 
   // determines the DMA data transfer length (i.e. the number of samples present)
   // TODO: double-check
-  DMA1_Channel2 -> CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, FFT_LENGTH);    // MAYU: just FFT_LENGTH?????
+  DMA1_Channel2 -> CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, 16);     // FFT_LENGTH);
   
   // selects Channel 2
   DMA1_CSELR -> CSELR |= _VAL2FLD(DMA_CSELR_C2S, 0b0001); // _VAL2FLD(DMA_CSELR_C2S, 4);

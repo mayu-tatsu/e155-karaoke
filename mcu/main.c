@@ -73,7 +73,7 @@ int main(void)
   while (1)
   {
 
-    printf("%x\n", SPI1->DR);
+    // printf("%x\n", SPI1->DR);
      
     //for (int i = 0; i < FFT_LENGTH; i++)
     //{
@@ -95,19 +95,24 @@ int main(void)
 
       // float32_t float_buffer[FFT_LENGTH];
       for (int i = 0; i < FFT_LENGTH; i++) {
-        float_buffer[i] = (float32_t)pcm_dma_signal[i];
+
 
         if (i == 0) {printf("start: ");}
-        printf("%x, ", float_buffer[i]);
+        printf("%x, ", pcm_dma_signal[i]);
         if (i == FFT_LENGTH - 1) {printf("\n");}
+
+        float_buffer[i] = (float32_t)pcm_dma_signal[i];
+
+        
       }
 
       // determines the dominant frequency of the detected audio
       note_frequency = frequency_determiner(float_buffer);       // (input_signal);
-      
+      // printf("note frequency: %d\n", note_frequency);
+
       // raises the FFT-completed flag
       fft_calculations_complete = 1;
-      printf("finished!");
+      printf("finished!\n");
     }
 
 
