@@ -21,19 +21,22 @@ void mcu_configuration(void)
   RCC -> APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
   // 
+  RCC -> APB2ENR  |= RCC_APB2ENR_TIM15EN;
   RCC -> APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
-  RCC -> APB2ENR |= RCC_APB2ENR_TIM15EN;
 
   // initializes a timer for delay
   initTIM(DELAY_TIM);
+
+  // initializes a timer for PWM generation
+  //timer_initialization(PWM_TIM);
 
   // enables all GPIO ports
   RCC -> AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN | RCC_AHB2ENR_GPIOCEN);
 
   // assigns two GPIO pins to act as the Load and Done signals
   // CHANGE THIS PINS LATER
-  //pinMode(LOAD, GPIO_OUTPUT);
-  //pinMode(DONE, GPIO_INPUT);
+  pinMode(LOAD, GPIO_OUTPUT);
+  pinMode(DONE, GPIO_INPUT);
   
   // TODO: DELETE
   // DEBUGGING CODE
@@ -53,8 +56,8 @@ void mcu_configuration(void)
   initSPI(1, 0, 0);
 
   // assigns a GPIO pin to act as the Chip Select signal
-  //pinMode(CS, GPIO_OUTPUT);
-  //digitalWrite(CS, 1);
+  pinMode(CS, GPIO_OUTPUT);
+  digitalWrite(CS, 1);
 
 }
 

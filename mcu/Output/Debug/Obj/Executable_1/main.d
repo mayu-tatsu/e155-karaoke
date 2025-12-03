@@ -65,4 +65,5 @@ Output/Debug/Obj/Executable_1/main.o: \
  C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/frequency_determiner.h \
  C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/frequency_determiner.h \
  C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/note_determiner.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/lcd_display.h
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/lcd_display.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/songs.h

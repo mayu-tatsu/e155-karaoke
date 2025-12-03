@@ -13,6 +13,7 @@ Purpose:
 #include "lib/frequency_determiner.h"
 #include "lib/note_determiner.h"
 #include "lib/lcd_display.h"
+#include "lib/songs.h"
 
 // 
 int main(void)
@@ -34,39 +35,26 @@ int main(void)
   // instantiates a variable to store the dominant frequency of a given audio input
   float32_t note_frequency;
 
-  // 
-  //while (1) {char* string = "!"; uint16_t number = character_converter(string); printf("%x\n", number); printf("%d\n", inString(string, "!"));}
-  //char* message_test = "wtf ahh"; int message_length = strlen(message_test);
-  //char* message = "You";
-  //for (int i = 0; i < message_length; i++)
-  //{
-  //  char message_test_i = message_test[i];
-  //  printf("%c\n", message_test[i]);
-  //  printf("%x\n", character_converter(&message_test[i]));
-  //}
-  //while(1);
+  // TODO: DELETE
+  // TEST CODE
+  // EXAMPLE MESSAGE
+  char* message[] = {"fuck ", "uPs ", ":')"};
 
-  //printf("test: %x\n", character_converter(&message_test[2]));
-  //printf("test 2: %d\n", inString(&message_test[2], "9"));
-  //printf("test 3: %d\n", inString(&message_test[2], "^"));
-  //printf("test 4: %d\n", inString(&message_test[2], "%"));
-  //printf("test 5: %d\n", inString(&message_test[2], &message_test[5]));
-  //printf("test 6: %x\n", strchr(&message_test[2], (char)&message_test[5]));
+  // initializes the LCD display so that it is ready to use
+  lcd_display_initialization();
 
-
-
-  // char* character = "^";
-  // printf("%d\n", inString(character, "9"));
-  // printf("%x\n", character_converter(character));
-  //while(1) {}
-
-  // 
-  //lcd_display_initialization();
-  //display_message(&message);
-  //lcd_test();
-
-  // runs continuously
-  // while (1) {}
+  // TODO: DELETE
+  // TEST CODE
+  // WRITES EXAMPLE MESSAGE
+  for (int i = 0; i < (sizeof(mr_brightside_lyrics) / sizeof(mr_brightside_lyrics[0])); i++)
+  {
+    display_message(mr_brightside_lyrics[i]);
+    delay_secs(DELAY_TIM, 5);
+    lcd_display_reset();
+  }
+  //display_message("hello world!");
+  
+  while (1) {}
 
   
   // uncomment this later: mayu
@@ -118,7 +106,7 @@ int main(void)
 
 
 
-    // 
+  
     
     
 
@@ -127,6 +115,16 @@ int main(void)
     // determines what the actual note is
     const char* note = note_determiner(note_frequency);
 
+    // TODO: DELETE
+    // DEBUGGING CODE
+    //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);
+    //printf("%d, %d, %d, %d", dma_test_receive[4], dma_test_receive[5], dma_test_receive[6], dma_test_receive[7]);
+    //printf("%d, %d, %d, %d", dma_test_receive[8], dma_test_receive[9], dma_test_receive[10], dma_test_receive[11]);
+    //printf("%d, %d, %d, %d\n", dma_test_receive[12], dma_test_receive[13], dma_test_receive[14], dma_test_receive[15]);
+    //printf("SPI DR: %x\n", SPI1->DR);
+    //printf("Note frequency: %f\n", note_frequency);
+    //printf(note); printf("\n");
+  }
     // TODO: DELETE
     // DEBUGGING CODE
     //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);

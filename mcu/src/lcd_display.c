@@ -3,7 +3,7 @@ Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
 Date:     November 23, 2025
 
-Purpose: 
+Purpose: To allow the MCU to interface with an LCD display and write messages of the user's choosing.
 */
 
 #include "../lib/lcd_display.h"
@@ -12,12 +12,6 @@ Purpose:
 // performs the LCD initialization sequence
 void lcd_display_initialization(void)
 {
-
-
-  GPIOB->MODER&=~(3<<(7*2));
-  GPIOB->MODER|=(1<<(7*2));
-  GPIOB->AFR[0]&=~(0xF<<(7*4));
-
 
   // configures all of the necessary GPIO pins as outputs
   pinMode(E,  GPIO_OUTPUT); digitalWrite(E,  PIO_LOW);
@@ -30,12 +24,6 @@ void lcd_display_initialization(void)
   pinMode(D5, GPIO_OUTPUT); digitalWrite(D5, PIO_LOW);
   pinMode(D6, GPIO_OUTPUT); digitalWrite(D6, PIO_LOW);
   pinMode(D7, GPIO_OUTPUT); digitalWrite(D7, PIO_LOW);
-
-
-  
-  // GPIOB -> PUPDR |= _VAL2FLD(GPIO_PUPDR_PUPD7, GPIO_PULL_DOWN);
-
-
 
   // allows buffer time for Vdd to reach > 4.5 V
   delay_millis(DELAY_TIM, 45);   // wait time: > 40 ms
@@ -73,75 +61,9 @@ void lcd_display_initialization(void)
   lcd_display_write(0x0F);
   delay_millis(DELAY_TIM, 2);
   
-  // sets cursor address to be Row 1, Column 1
+  // sets cursor address to be Row 0, Column 0
   lcd_display_write(0x80);
   delay_millis(DELAY_TIM, 1);
-
-
-
-  // writes "µ!µ!µ!µ!µ!µ!µ!µ!µ!µ!µ!µ!"
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
-
-  //// writes "µPs!"
-  ////lcd_display_write(0b111100100);
-  //lcd_display_write(0x1E4);
-  //delay_millis(TIM2, 1);
-  ////lcd_display_write(0b101010000);
-  //lcd_display_write(0x150);
-  //delay_millis(TIM2, 1);
-  ////lcd_display_write(0b101110011);
-  //lcd_display_write(0x173);
-  //delay_millis(TIM2, 1);
-  ////lcd_display_write(0b100100001);
-  //lcd_display_write(0x121);
-  //delay_millis(TIM2, 1);
 
 }
 
@@ -165,8 +87,25 @@ void lcd_display_write(uint16_t data)
 
 }
 
-// 
-void display_message(char* message[])
+// configures the LCD to display the desired message
+void display_message(char message[])
+{
+
+  // computes the length of the message string
+  int message_length = strlen(message);
+  
+  // iterates through each character in the message
+  for (int i = 0; i < message_length; i++)
+  {
+    // tells the LCD to display the current character
+    lcd_display_write(character_converter(&message[i]));
+    delay_millis(DELAY_TIM, 100);
+  }
+
+}
+
+// clears the LCD display and resets the cursor position to (0, 0)
+void lcd_display_reset(void)
 {
 
   // turns display off
@@ -182,32 +121,20 @@ void display_message(char* message[])
   lcd_display_write(0x0F);
   delay_millis(DELAY_TIM, 200);
 
-  // sets cursor address to be Row 1, Column 1
+  // sets cursor address to be Row 0, Column 0
   lcd_display_write(0x80);
   delay_millis(DELAY_TIM, 100);
 
-  // 
-  int message_length = strlen(*message);
-  
-  // 
-  for (int i = 0; i < message_length; i++)
-  {
-    // 
-    lcd_display_write(character_converter(message[i]));
-    delay_millis(DELAY_TIM, 100);
-  }
-
 }
 
-// 
+// converts characters from the message string into an LCD-readable code
 uint16_t character_converter(char* character)
 {
   
-  // 
+  // initializes variable
   uint16_t character_code;
 
-  // 
-  
+  // returns the code corresponding to the character currently being detected
   if      (inString(character, "!")  > 0) {return character_code = 0x121;}
   else if (inString(character, "\"") > 0) {return character_code = 0x122;}
   else if (inString(character, "#")  > 0) {return character_code = 0x123;}
@@ -408,130 +335,13 @@ uint16_t character_converter(char* character)
 
 }
 
-
-// FROM TUTORIAL CODE
-// determines whether a given character sequence is in a char array request
+// determines whether a given character is in a char array
 // returns 1 if present and -1 if not present
+// note: modified E155 starter code
 int inString(char request[], char des[])
 {
 
-  // printf("inString req: %x\n", request);
-  // printf("inString des: %x\n", des);
   if (request[0] == des[0]) {return 1;}
   return -1;
 
-}
-
-
-
-
-// -----------------------------
-// HD44780 Initialization (8-bit)
-// -----------------------------
-void lcd_init(void)
-{
-    pinMode(E,  GPIO_OUTPUT);
-    pinMode(RS, GPIO_OUTPUT);
-
-    pinMode(D0, GPIO_OUTPUT);
-    pinMode(D1, GPIO_OUTPUT);
-    pinMode(D2, GPIO_OUTPUT);
-    pinMode(D3, GPIO_OUTPUT);
-    pinMode(D4, GPIO_OUTPUT);
-    pinMode(D5, GPIO_OUTPUT);
-    pinMode(D6, GPIO_OUTPUT);
-    pinMode(D7, GPIO_OUTPUT);
-
-    // Wait >40 ms after power-up
-    delay_millis(TIM2, 50);
-
-    // ===== Function Set 0x30 (x3 during initialization) =====
-    lcd_cmd_raw(0x30);
-    delay_millis(TIM2, 5);
-
-    lcd_cmd_raw(0x30);
-    delay_micros(TIM2, 200);
-
-    lcd_cmd_raw(0x30);
-    delay_micros(TIM2, 200);
-
-    // ===== Function Set: 8-bit, 2 lines, 5×8 dots (0x38) =====
-    lcd_cmd_raw(0x38);
-    delay_micros(TIM2, 50);
-
-    // ===== Display OFF (0x08) =====
-    lcd_cmd_raw(0x08);
-    delay_micros(TIM2, 50);
-
-    // ===== Display Clear (0x01) =====
-    lcd_cmd_raw(0x01);
-    delay_millis(TIM2, 2);  // Must be >= 1.52ms
-
-    // ===== Entry Mode Set: Increment, No Shift (0x06) =====
-    lcd_cmd_raw(0x06);
-    delay_micros(TIM2, 50);
-
-    // ===== Display ON, Cursor OFF, Blink OFF (0x0C) =====
-    lcd_cmd_raw(0x0C);
-    delay_micros(TIM2, 50);
-}
-
-// -----------------------------
-// Low-level byte writer
-// -----------------------------
-void lcd_write_bus(uint8_t data)
-{
-    digitalWrite(D7, (data >> 7) & 1);
-    digitalWrite(D6, (data >> 6) & 1);
-    digitalWrite(D5, (data >> 5) & 1);
-    digitalWrite(D4, (data >> 4) & 1);
-    digitalWrite(D3, (data >> 3) & 1);
-    digitalWrite(D2, (data >> 2) & 1);
-    digitalWrite(D1, (data >> 1) & 1);
-    digitalWrite(D0,  data       & 1);
-
-    digitalWrite(E, 1);
-    delay_micros(TIM2, 1); // >450ns pulse
-    digitalWrite(E, 0);
-}
-
-// -----------------------------
-// Command (RS=0)
-// -----------------------------
-void lcd_cmd_raw(uint8_t cmd)
-{
-    digitalWrite(RS, 0);
-    lcd_write_bus(cmd);
-}
-
-// -----------------------------
-// Data (RS=1)
-// -----------------------------
-void lcd_data(uint8_t data)
-{
-    digitalWrite(RS, 1);
-    lcd_write_bus(data);
-}
-
-// -----------------------------
-// Set cursor line/column
-// 4×16 displays wrap after col=16
-// -----------------------------
-void lcd_set_cursor(uint8_t line, uint8_t col)
-{
-    uint8_t base_addr[] = {0x00, 0x40, 0x10, 0x50};  // 4×16 mapping
-    lcd_cmd_raw(0x80 | (base_addr[line] + col));
-    delay_micros(TIM2, 50);
-}
-
-// -----------------------------
-// Example: initialize + print “!”
-// -----------------------------
-void lcd_test(void)
-{
-    lcd_init();
-
-    lcd_set_cursor(0, 0);  // Line 0, Column 0
-
-    lcd_data('!');  // ASCII 0x21
 }
