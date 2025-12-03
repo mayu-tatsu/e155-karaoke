@@ -24,39 +24,51 @@ void initSPI(int br, int cpol, int cpha) {
   GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 0b0101);          // sets the necessary bits accordingly
 
   // sets the baud rate to a value of the user's choosing
-  SPI1 -> CR1 |= (br << 3);
+  // SPI1 -> CR1 |= (br << 3);
 
   // sets the clock polarity and clock phase to values of the user's choosing
   SPI1 -> CR1 &= ~((1 << 1) | (1 << 0));          // clears the register
   SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_CPOL, cpol);    // sets the necessary bits accordingly
   SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_CPHA, cpha);    // sets the necessary bits accordingly
-  
+
+
+
+  // asserts the MCU as the peripheral
+  SPI1 -> CR1 &= ~SPI_CR1_MSTR;
+  SPI1 -> CR1 &= ~SPI_CR1_RXONLY;
+  // SPI1 -> CR1 |= SPI_CR1_RXONLY;
+  // SPI1 -> CR1 |= SPI_CR1_MSTR;
+
+  // receives the MSB first
+  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_LSBFIRST, 0);
+
+  // configures pin as a manually toggle-able CE signal
+  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSM, 0); // SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSI, 1); // SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_NSSP, 0);
+
   // selects a data frame format
   SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_DS, 0b1111);
 
   // generates RXNE events for 16-bit data
-  SPI1 -> CR2 &= ~SPI_CR2_FRXTH;
+  SPI1 -> CR2 &= ~SPI_CR2_FRXTH;      // ?
 
-  // sends the MSB first
-  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_LSBFIRST, 0);
+  
 
-  // configures pin as a manually toggle-able CE signal
-  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSM, 1); SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSI, 1); SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_NSSP, 0);
+  
 
   // initially assigns SPI pins
-  pinMode(SPI_SCK, GPIO_INPUT); // SPI1_SCK
-  // pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK
+  // pinMode(SPI_SCK, GPIO_INPUT); // SPI1_SCK
+  pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK (PB3 AF5)
   GPIOB -> OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
   pinMode(SPI_MISO, GPIO_ALT);  // SPI1_MISO
   pinMode(SPI_MOSI, GPIO_ALT);  // SPI1_MOSI
-  pinMode(SPI_CE, GPIO_OUTPUT); //  Manual CS
+  pinMode(SPI_CE, GPIO_INPUT);  //  CS from FPGA
 
-  // asserts the MCU as the peripheral
-  SPI1 -> CR1 &= ~SPI_CR1_MSTR; SPI1 -> CR1 |= SPI_CR1_RXONLY;
-  // SPI1 -> CR1 |= SPI_CR1_MSTR;
-
+  
   // allows SPI to work in multi-master environments
   SPI1 -> CR2 &= ~SPI_CR2_SSOE;
+
+
+
 
   // enables the generation of DMA requests whenever the RXNE flag is set
   SPI1 -> CR2 |= SPI_CR2_RXDMAEN;

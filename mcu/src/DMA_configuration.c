@@ -13,6 +13,10 @@ volatile uint32_t fft_calculations_complete;
 float32_t next_input_signal[FFT_LENGTH];
 float32_t input_signal[FFT_LENGTH];
 
+volatile int16_t pcm_dma_buffer[FFT_LENGTH];    // MAYU
+volatile int16_t pcm_dma_signal[FFT_LENGTH];    // MAYU
+float32_t float_buffer[FFT_LENGTH];
+
 // TODO: DELETE
 // DEBUGGING CODE
 volatile uint32_t dma_transfer_complete = 0;
@@ -36,7 +40,10 @@ void dma_configuration(void)
   DMA1_Channel2 -> CCR &= ~(0xFFFFFFFF);
 
   // reconfigures Channel 2 as desired
-  DMA1_Channel2 -> CCR |= (_VAL2FLD(DMA_CCR_MEM2MEM, 0b1)  | _VAL2FLD(DMA_CCR_MSIZE, 0b01) | _VAL2FLD(DMA_CCR_PSIZE, 0b01) | _VAL2FLD(DMA_CCR_PINC, 0b1));
+  // MEM2MEM disabled & PSIZE (peripheral), MSIZE (memory) = 16 bits & PINC?????
+  // MINC (memory increment) enabled & DIR: 0 (per->mem)
+
+  DMA1_Channel2 -> CCR |= (_VAL2FLD(DMA_CCR_MEM2MEM, 0b0)  | _VAL2FLD(DMA_CCR_MSIZE, 0b01) | _VAL2FLD(DMA_CCR_PSIZE, 0b01) | _VAL2FLD(DMA_CCR_PINC, 0b1));
   DMA1_Channel2 -> CCR |= (_VAL2FLD(DMA_CCR_PL,      0b10) | _VAL2FLD(DMA_CCR_MINC,  0b1)  | _VAL2FLD(DMA_CCR_CIRC,  0b1)  | _VAL2FLD(DMA_CCR_DIR,  0b0));
 
   // TODO: DELETE
@@ -45,15 +52,15 @@ void dma_configuration(void)
   //DMA1_Channel2 -> CPAR = _VAL2FLD(DMA_CPAR_PA, (uint32_t)&dma_test_send);
   //DMA1_Channel2 -> CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, 16);
 
-  // sets the DMA destination address (which, in this case, should be a global array)
-  DMA1_Channel2 -> CMAR = _VAL2FLD(DMA_CMAR_MA, (uint32_t)&next_input_signal);
+  // sets the DMA destination address (which, in this case, should be a global array) [PERIPHERAL ADDRESS]
+  DMA1_Channel2 -> CMAR = _VAL2FLD(DMA_CMAR_MA, (uint32_t)pcm_dma_buffer);        // MAYU: (uint32_t)&next_input_signal);
 
-  // sets the DMA source address (which, in this case, should be the SPI data register)
-  DMA1_Channel2 -> CPAR = _VAL2FLD(DMA_CPAR_PA, (uint32_t)&(SPI1 -> DR));
+  // sets the DMA source address (which, in this case, should be the SPI data register) [MEMORY ADDRESS]
+  DMA1_Channel2 -> CPAR = _VAL2FLD(DMA_CPAR_PA, (uint32_t)&(SPI1 -> DR));         // MAYU: (uint32_t)&(SPI1->DR)
 
   // determines the DMA data transfer length (i.e. the number of samples present)
   // TODO: double-check
-  DMA1_Channel2 -> CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, FFT_LENGTH);
+  DMA1_Channel2 -> CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, 16);     // FFT_LENGTH);
   
   // selects Channel 2
   DMA1_CSELR -> CSELR |= _VAL2FLD(DMA_CSELR_C2S, 0b0001); // _VAL2FLD(DMA_CSELR_C2S, 4);
@@ -86,19 +93,31 @@ void DMA1_Channel2_IRQHandler(void)
     DMA1 -> IFCR = DMA_IFCR_CGIF2;
 
     // disables DMA1
-    DMA1_Channel2 -> CCR &= ~(DMA_CCR_EN);
+    // DMA1_Channel2 -> CCR &= ~(DMA_CCR_EN);
 
     // returns immediately if the FFT calculations are still in progress
     if (fft_calculations_complete != 1) {return;}
 
     // TODO: double buffering?
 
+
+    // only process data if chip select is active (LOW)
+    //if((GPIOA->IDR & (1 << 11)) == 0) {                   // pin 11 is CS
+    //}
+
+    // MAYU:
+    //for (int i = 0; i < FFT_LENGTH; i++) {
+    //    float_buffer[i] = (float32_t)pcm_dma_buffer[i];
+    //}
+
     // copies the contents now stored in DMA1, Channel 2 into the input_signal buffer
     // note: this is done so that the FFT may subsequently process them
-    memcpy(input_signal, next_input_signal, FFT_LENGTH);
+    // memcpy(input_signal, next_input_signal, FFT_LENGTH);
+    memcpy(pcm_dma_signal, pcm_dma_buffer, FFT_LENGTH);
 
     // resets the FFT-completed flag
     fft_calculations_complete = 0;
+
 
     // re-enables DMA1
     DMA1_Channel2 -> CCR |= DMA_CCR_EN;

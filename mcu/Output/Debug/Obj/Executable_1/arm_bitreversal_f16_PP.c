@@ -1,22 +1,22 @@
-# 0 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
-# 1 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test//"
+# 0 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
+# 1 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
-# 29 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h" 1
-# 30 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types_f16.h" 1
-# 29 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types_f16.h"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h" 1
-# 44 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h"
+# 1 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
+# 29 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h" 1
+# 30 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types_f16.h" 1
+# 29 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types_f16.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h" 1
+# 44 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h"
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
-# 82 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 1
-# 28 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
+# 82 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 1
+# 28 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/stdint.h" 1 3 4
 # 20 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/stdint.h" 3 4
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/__SEGGER_RTL.h" 1 3 4
@@ -712,15 +712,15 @@ typedef unsigned int uintptr_t;
 
 typedef long long int intmax_t;
 typedef long long unsigned int uintmax_t;
-# 29 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
-# 54 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h" 1
-# 29 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 29 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
+# 54 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h" 1
+# 29 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
-# 71 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 71 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpacked"
 #pragma GCC diagnostic ignored "-Wattributes"
@@ -758,7 +758,7 @@ typedef long long unsigned int uintmax_t;
 #pragma GCC diagnostic ignored "-Wattributes"
   struct __attribute__((packed, aligned(1))) T_UINT32_READ { uint32_t v; };
 #pragma GCC diagnostic pop
-# 131 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 131 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void __cmsis_start(void)
 {
   extern void _start(void) __attribute__((__noreturn__));
@@ -793,7 +793,7 @@ __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void 
 
   _start();
 }
-# 258 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 258 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __ISB(void)
 {
   __asm volatile ("isb 0xF":::"memory");
@@ -820,7 +820,7 @@ __attribute__((always_inline)) static inline void __DMB(void)
 {
   __asm volatile ("dmb 0xF":::"memory");
 }
-# 292 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 292 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 {
 
@@ -832,7 +832,7 @@ __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 
 
 }
-# 311 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 311 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
 {
   uint32_t result;
@@ -840,7 +840,7 @@ __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
   __asm ("rev16 %0, %1" : "=r" (result) : "r" (value) );
   return result;
 }
-# 326 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 326 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 {
 
@@ -852,7 +852,7 @@ __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 
 
 }
-# 346 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 346 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32_t op2)
 {
   op2 %= 32U;
@@ -862,7 +862,7 @@ __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32
   }
   return (op1 >> op2) | (op1 << (32U - op2));
 }
-# 373 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 373 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 {
   uint32_t result;
@@ -871,20 +871,20 @@ __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 
 
    __asm ("rbit %0, %1" : "=r" (result) : "r" (value) );
-# 393 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 393 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   return result;
 }
-# 403 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 403 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __CLZ(uint32_t value)
 {
-# 414 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 414 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   if (value == 0U)
   {
     return 32U;
   }
   return __builtin_clz(value);
 }
-# 432 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 432 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *addr)
 {
     uint32_t result;
@@ -899,7 +899,7 @@ __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *
 
    return ((uint8_t) result);
 }
-# 454 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 454 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t *addr)
 {
     uint32_t result;
@@ -914,7 +914,7 @@ __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t
 
    return ((uint16_t) result);
 }
-# 476 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 476 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t *addr)
 {
     uint32_t result;
@@ -922,7 +922,7 @@ __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t
    __asm volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
    return(result);
 }
-# 493 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 493 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
 {
    uint32_t result;
@@ -930,7 +930,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, vo
    __asm volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 510 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 510 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
 {
    uint32_t result;
@@ -938,7 +938,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, v
    __asm volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 527 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 527 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
 {
    uint32_t result;
@@ -956,7 +956,7 @@ __attribute__((always_inline)) static inline void __CLREX(void)
 {
   __asm volatile ("clrex" ::: "memory");
 }
-# 593 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 593 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
 {
   uint32_t result;
@@ -964,7 +964,7 @@ __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
   __asm volatile ("rrx %0, %1" : "=r" (result) : "r" (value) );
   return(result);
 }
-# 608 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 608 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *ptr)
 {
     uint32_t result;
@@ -979,7 +979,7 @@ __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *p
 
    return ((uint8_t) result);
 }
-# 630 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 630 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t *ptr)
 {
     uint32_t result;
@@ -994,7 +994,7 @@ __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t 
 
    return ((uint16_t) result);
 }
-# 652 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 652 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *ptr)
 {
     uint32_t result;
@@ -1002,22 +1002,22 @@ __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *
    __asm volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
    return(result);
 }
-# 667 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 667 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRBT(uint8_t value, volatile uint8_t *ptr)
 {
    __asm volatile ("strbt %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 679 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 679 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRHT(uint16_t value, volatile uint16_t *ptr)
 {
    __asm volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 691 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 691 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRT(uint32_t value, volatile uint32_t *ptr)
 {
    __asm volatile ("strt %1, %0" : "=Q" (*ptr) : "r" (value) );
 }
-# 949 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 949 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_irq(void)
 {
   __asm volatile ("cpsie i" : : : "memory");
@@ -1047,13 +1047,13 @@ __attribute__((always_inline)) static inline uint32_t __get_CONTROL(void)
   __asm volatile ("MRS %0, control" : "=r" (result) );
   return(result);
 }
-# 1001 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1001 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_CONTROL(uint32_t control)
 {
   __asm volatile ("MSR control, %0" : : "r" (control) : "memory");
   __ISB();
 }
-# 1027 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1027 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_IPSR(void)
 {
   uint32_t result;
@@ -1103,12 +1103,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PSP(void)
   __asm volatile ("MRS %0, psp" : "=r" (result) );
   return(result);
 }
-# 1099 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1099 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PSP(uint32_t topOfProcStack)
 {
   __asm volatile ("MSR psp, %0" : : "r" (topOfProcStack) : );
 }
-# 1123 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1123 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
 {
   uint32_t result;
@@ -1116,12 +1116,12 @@ __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
   __asm volatile ("MRS %0, msp" : "=r" (result) );
   return(result);
 }
-# 1153 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1153 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_MSP(uint32_t topOfMainStack)
 {
   __asm volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
 }
-# 1204 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1204 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
 {
   uint32_t result;
@@ -1129,12 +1129,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
   __asm volatile ("MRS %0, primask" : "=r" (result) );
   return(result);
 }
-# 1234 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1234 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PRIMASK(uint32_t priMask)
 {
   __asm volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
 }
-# 1261 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1261 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_fault_irq(void)
 {
   __asm volatile ("cpsie f" : : : "memory");
@@ -1164,12 +1164,12 @@ __attribute__((always_inline)) static inline uint32_t __get_BASEPRI(void)
   __asm volatile ("MRS %0, basepri" : "=r" (result) );
   return(result);
 }
-# 1313 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1313 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI(uint32_t basePri)
 {
   __asm volatile ("MSR basepri, %0" : : "r" (basePri) : "memory");
 }
-# 1338 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1338 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI_MAX(uint32_t basePri)
 {
   __asm volatile ("MSR basepri_max, %0" : : "r" (basePri) : "memory");
@@ -1188,15 +1188,15 @@ __attribute__((always_inline)) static inline uint32_t __get_FAULTMASK(void)
   __asm volatile ("MRS %0, faultmask" : "=r" (result) );
   return(result);
 }
-# 1379 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1379 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_FAULTMASK(uint32_t faultMask)
 {
   __asm volatile ("MSR faultmask, %0" : : "r" (faultMask) : "memory");
 }
-# 1588 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1588 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 {
-# 1604 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1604 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   return(0U);
 
 }
@@ -1209,11 +1209,11 @@ __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 
 __attribute__((always_inline)) static inline void __set_FPSCR(uint32_t fpscr)
 {
-# 1627 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1627 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
   (void)fpscr;
 
 }
-# 1643 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1643 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __SADD8(uint32_t op1, uint32_t op2)
 {
   uint32_t result;
@@ -1519,7 +1519,7 @@ __attribute__((always_inline)) static inline uint32_t __USADA8(uint32_t op1, uin
   __asm ("usada8 %0, %1, %2, %3" : "=r" (result) : "r" (op1), "r" (op2), "r" (op3) );
   return(result);
 }
-# 1965 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 1965 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __UXTB16(uint32_t op1)
 {
   uint32_t result;
@@ -1730,7 +1730,7 @@ __attribute__((always_inline)) static inline int32_t __QSUB( int32_t op1, int32_
   __asm volatile ("qsub %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
   return(result);
 }
-# 2197 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
+# 2197 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
 {
  int32_t result;
@@ -1744,8 +1744,8 @@ __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32
 
 
 #pragma GCC diagnostic pop
-# 55 "C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
-# 83 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h" 2
+# 55 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h" 2
+# 83 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h" 2
 
 
 
@@ -1802,7 +1802,7 @@ char * (strerror) (int __num);
 int (ffs) (int __i);
 int (ffsl) (long __i);
 int (ffsll) (long long __i);
-# 88 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h" 2
+# 88 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h" 2
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/math.h" 1 3 4
 # 20 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/math.h" 3 4
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/__SEGGER_RTL_FP.h" 1 3 4
@@ -2329,14 +2329,14 @@ long double nanl (const char *__tag);
 float fmaf (float __x, float __y, float __z);
 double fma (double __x, double __y, double __z);
 long double fmal (long double __x, long double __y, long double __z);
-# 89 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h" 2
+# 89 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h" 2
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/float.h" 1 3 4
-# 90 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h" 2
+# 90 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h" 2
 # 1 "C:/Program Files/SEGGER/SEGGER Embedded Studio 8.24/include/limits.h" 1 3 4
-# 91 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h" 2
-# 250 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h"
+# 91 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h" 2
+# 250 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h"
 #pragma GCC diagnostic pop
-# 282 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h"
+# 282 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h"
   typedef int8_t q7_t;
 
 
@@ -2365,7 +2365,7 @@ long double fmal (long double __x, long double __y, long double __z);
 
 
   typedef double float64_t;
-# 599 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h"
+# 599 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h"
   typedef enum
   {
     ARM_MATH_SUCCESS = 0,
@@ -2377,12 +2377,12 @@ long double fmal (long double __x, long double __y, long double __z);
     ARM_MATH_TEST_FAILURE = -6,
     ARM_MATH_DECOMPOSITION_FAILURE = -7
   } arm_status;
-# 30 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types_f16.h" 2
-# 55 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types_f16.h"
+# 30 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types_f16.h" 2
+# 55 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types_f16.h"
       typedef __fp16 float16_t;
-# 31 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h" 2
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_memory.h" 1
-# 76 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_memory.h"
+# 31 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h" 2
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_memory.h" 1
+# 76 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_memory.h"
 __attribute__((always_inline)) static inline q31_t read_q15x2 (
   q15_t const * pQ15)
 {
@@ -2396,7 +2396,7 @@ __attribute__((always_inline)) static inline q31_t read_q15x2 (
 
   return (val);
 }
-# 110 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_memory.h"
+# 110 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_memory.h"
 __attribute__((always_inline)) static inline void write_q15x2_ia (
   q15_t ** pQ15,
   q31_t value)
@@ -2450,7 +2450,7 @@ __attribute__((always_inline)) static inline q31_t read_q7x4 (
 
   return (val);
 }
-# 184 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_memory.h"
+# 184 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_memory.h"
 __attribute__((always_inline)) static inline void write_q7x4_ia (
   q7_t ** pQ7,
   q31_t value)
@@ -2467,13 +2467,13 @@ __attribute__((always_inline)) static inline void write_q7x4_ia (
 
   *pQ7 += 4;
 }
-# 32 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h" 2
+# 32 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h" 2
 
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/none.h" 1
-# 40 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/none.h"
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h" 1
-# 41 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/none.h" 2
-# 136 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/none.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/none.h" 1
+# 40 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/none.h"
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h" 1
+# 41 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/none.h" 2
+# 136 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/none.h"
   __attribute__((always_inline)) static inline q31_t clip_q63_to_q31(
   q63_t x)
   {
@@ -2521,9 +2521,9 @@ __attribute__((always_inline)) static inline void write_q7x4_ia (
     return ((((q63_t) (x & 0x00000000FFFFFFFF) * y) >> 32) +
             (((q63_t) (x >> 32) * y) ) );
   }
-# 34 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h" 2
-# 1 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/utils.h" 1
-# 51 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/utils.h"
+# 34 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h" 2
+# 1 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/utils.h" 1
+# 51 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/utils.h"
   __attribute__((always_inline)) static inline uint32_t arm_recip_q31(
         q31_t in,
         q31_t * dst,
@@ -2621,7 +2621,7 @@ __attribute__((always_inline)) static inline void write_q7x4_ia (
 
     return (signBits + 1);
   }
-# 156 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/utils.h"
+# 156 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/utils.h"
 static inline void arm_norm_64_to_32u(uint64_t in, int32_t * normalized, int32_t *norm)
 {
     int32_t n1;
@@ -2700,8 +2700,8 @@ static inline q31_t arm_div_q63_to_q31(q63_t num, q31_t den)
 
     return result;
 }
-# 35 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h" 2
-# 49 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h"
+# 35 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h" 2
+# 49 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h"
   typedef struct
   {
           uint16_t fftLen;
@@ -2738,7 +2738,7 @@ static inline q31_t arm_div_q63_to_q31(q63_t num, q31_t den)
     const float16_t *pTwiddle;
     const uint16_t *pBitRevTable;
           uint16_t bitRevLength;
-# 93 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h"
+# 93 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h"
   } arm_cfft_instance_f16;
 
 
@@ -2830,15 +2830,15 @@ arm_status arm_mfcc_init_f16(
   const float16_t *filterCoefs,
   const float16_t *windowCoefs
   );
-# 194 "C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/dsp/transform_functions_f16.h"
+# 194 "C:/Users/mtatsumi/Documents/SEGGER Embedded Studio Projects/e155-karaoke/mcu/lib/arm_math/dsp/transform_functions_f16.h"
   void arm_mfcc_f16(
   const arm_mfcc_instance_f16 * S,
   float16_t *pSrc,
   float16_t *pDst,
   float16_t *pTmp
   );
-# 30 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c" 2
-# 42 "C:\\Users\\peppe\\OneDrive\\Desktop\\fft_test\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
+# 30 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c" 2
+# 42 "C:\\Users\\mtatsumi\\Documents\\SEGGER Embedded Studio Projects\\e155-karaoke\\mcu\\lib\\arm_math\\dsp\\TransformFunctions\\arm_bitreversal_f16.c"
 void arm_bitreversal_f16(
 float16_t * pSrc,
 uint16_t fftSize,
