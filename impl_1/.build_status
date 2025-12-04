@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuildStatus>
+    <Strategy name="Strategy1">
+        <Milestone name="Export" build_result="2" build_time="1764842835">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1764842835"/>
+            <Task name="IBIS" build_result="0" update_result="3" update_time="0"/>
+            <Task name="TimingSimFileVlg" build_result="0" update_result="3" update_time="0"/>
+        </Milestone>
+        <Milestone name="Map" build_result="2" build_time="1764842592">
+            <Task name="Map" build_result="2" update_result="0" update_time="1764842592"/>
+            <Task name="MapTrace" build_result="0" update_result="3" update_time="0"/>
+        </Milestone>
+        <Milestone name="PAR" build_result="2" build_time="1764842798">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1764842798"/>
+            <Task name="PostParVM" build_result="0" update_result="3" update_time="0"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1764842822"/>
+            <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
+        </Milestone>
+        <Milestone name="Synthesis" build_result="2" build_time="1764842580">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1764842580"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1764842822"/>
+            <Task name="LSE_Lint" build_result="0" update_result="3" update_time="0"/>
+            <Task name="SynTrace" build_result="0" update_result="3" update_time="0"/>
+            <Task name="SynVerilogSimFile" build_result="0" update_result="3" update_time="0"/>
+        </Milestone>
+        <Milestone name="TOOL_Report" build_result="0" build_time="0">
+            <Task name="HDLE" build_result="0" update_result="3" update_time="0"/>
+            <Task name="BKM" build_result="0" update_result="3" update_time="0"/>
+            <Task name="SSO" build_result="0" update_result="3" update_time="0"/>
+            <Task name="PIODRC" build_result="0" update_result="3" update_time="0"/>
+            <Task name="DEC" build_result="0" update_result="3" update_time="0"/>
+        </Milestone>
+        <Report name="e155_karaoke_impl_1.bgn" last_build_time="1764842835" last_build_size="1322"/>
+        <Report name="e155_karaoke_impl_1.bin" last_build_time="1764842835" last_build_size="104156"/>
+        <Report name="e155_karaoke_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
+        <Report name="e155_karaoke_impl_1.twr.html" last_build_time="1764842821" last_build_size="191877"/>
+        <Report name="e155_karaoke_impl_1.udb" last_build_time="1764842798" last_build_size="541481"/>
+        <Report name="e155_karaoke_impl_1_map.udb" last_build_time="1764842590" last_build_size="315386"/>
+        <Report name="e155_karaoke_impl_1_rtl.udb" last_build_time="1764842568" last_build_size="167401"/>
+        <Report name="e155_karaoke_impl_1_syn.udb" last_build_time="1764842579" last_build_size="163706"/>
+    </Strategy>
+</BuildStatus>

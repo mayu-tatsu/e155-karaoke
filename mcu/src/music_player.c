@@ -48,13 +48,11 @@ void music_player(int song)
       // 
       note_done = 0;
 
-      // generates each note's frequency 
-      //pwm_generation(PWM_TIM, fur_elise_notes[i][0]);
+      // generates each note's frequency
       pwm_generation(PWM_TIM, mr_brightside_notes[i][0]);
 
       // prolongs each note for however long is deemed necessary
-      //delay_ms(DELAY_TIM, fur_elise_notes[i][1]);
-      delay_ms(DELAY_TIM, mr_brightside_notes[i][1] / 2);
+      delay_ms(DELAY_TIM, mr_brightside_notes[i][1]);
 
       // 
       if (mr_brightside_lyric_timing[i] != 0)
@@ -84,12 +82,10 @@ void music_player(int song)
       // 
       note_done = 0;
 
-      // generates each note's frequency 
-      //pwm_generation(PWM_TIM, fur_elise_notes[i][0]);
+      // generates each note's frequency
       pwm_generation(PWM_TIM, golden_notes[i][0]);
 
       // prolongs each note for however long is deemed necessary
-      //delay_ms(DELAY_TIM, fur_elise_notes[i][1]);
       delay_ms(DELAY_TIM, golden_notes[i][1]);
 
       // 

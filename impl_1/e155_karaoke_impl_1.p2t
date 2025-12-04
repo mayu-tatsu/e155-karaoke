@@ -1,0 +1,9 @@
+-w
+-gui
+-msgset "C:/Users/peppe/OneDrive/Desktop/Fall 2025 - Spring 2026/ENGR 155/e155-karaoke/promote.xml"
+-n 1
+-t 1
+-s 1
+-cores 1
+-hsp m
+-exp parPathBased=ON

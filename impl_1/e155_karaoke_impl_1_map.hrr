@@ -1,0 +1,70 @@
+---------------------------------------------------
+Report for cell karaoke_top
+   Instance path: karaoke_top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	       4984        100.0
+                               LUTGATE	       1892        100.0
+                                LUTCCU	       3092        100.0
+                                 IOBUF	         23        100.0
+                                PFUREG	       2420        100.0
+                                   DSP	          8        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                                   cic	          1         8.4
+                               clk_gen	          1         0.3
+                                   fir	          1        51.4
+                                    hb	          1         9.4
+                                   spi	          1         0.8
+                          synchronizer	          1         0.0
+---------------------------------------------------
+Report for cell hb
+   Instance path: karaoke_top/halfband
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        468         9.4
+                               LUTGATE	          4         0.2
+                                LUTCCU	        464        15.0
+                                PFUREG	        818        33.8
+                                   DSP	          5        62.5
+---------------------------------------------------
+Report for cell spi
+   Instance path: karaoke_top/spi_interface
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         38         0.8
+                               LUTGATE	         38         2.0
+                                PFUREG	         46         1.9
+---------------------------------------------------
+Report for cell clk_gen
+   Instance path: karaoke_top/clk_generator
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         14         0.3
+                               LUTGATE	         14         0.7
+                                PFUREG	         17         0.7
+---------------------------------------------------
+Report for cell fir
+   Instance path: karaoke_top/generic_fir
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	       2560        51.4
+                               LUTGATE	        192        10.1
+                                LUTCCU	       2368        76.6
+                                PFUREG	       1303        53.8
+---------------------------------------------------
+Report for cell cic
+   Instance path: karaoke_top/cic_decimator
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        421         8.4
+                               LUTGATE	        161         8.5
+                                LUTCCU	        260         8.4
+                                PFUREG	        234         9.7
+                                   DSP	          3        37.5
+---------------------------------------------------
+Report for cell synchronizer
+   Instance path: karaoke_top/pdm_synchronizer
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                PFUREG	          2         0.1
