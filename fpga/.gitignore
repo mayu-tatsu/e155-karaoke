@@ -1,7 +1,7 @@
 *.dir/
 
 *.html
-/impl*/
+/impl_1/
 *.xml
 .build_status
 
@@ -19,3 +19,5 @@
 
 
 transcript
+
+!impl_1/e155_karaoke_impl_1.bin
