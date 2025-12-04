@@ -1955,8 +1955,18 @@ const int fur_elise_notes[][2] =
   {0, 20000}
 };
 
+const int a_four[][2] = 
+{
+  {440, 2000},
+  {440, 2000},
+  {440, 2000},
+  {440, 2000},
+  {440, 2000}
+};
+
 // 
 int mr_brightside_song_length = (sizeof(mr_brightside_notes) / sizeof(mr_brightside_notes[0]));
 int golden_song_length        = (sizeof(golden_notes)        / sizeof(golden_notes[0]));
+int a_four_length = (sizeof(a_four) / sizeof(a_four[0]));
 
 #endif

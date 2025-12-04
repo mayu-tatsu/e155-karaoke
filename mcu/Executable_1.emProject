@@ -195,6 +195,7 @@
       <file file_name="lib/mic_audio_receiver.h" />
       <file file_name="lib/music_player.h" />
       <file file_name="lib/note_determiner.h" />
+      <file file_name="lib/singing_grader.h" />
       <file file_name="lib/songs.h" />
     </folder>
     <folder Name="Script Files">
@@ -221,6 +222,7 @@
       <file file_name="src/note_determiner.c">
         <configuration Name="Debug" build_exclude_from_build="No" />
       </file>
+      <file file_name="src/singing_grader.c" />
     </folder>
     <folder Name="System Files">
       <file file_name="SEGGER_THUMB_Startup.s" />

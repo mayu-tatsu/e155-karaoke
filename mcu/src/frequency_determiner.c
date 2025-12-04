@@ -60,14 +60,5 @@ float32_t frequency_determiner(float32_t input_signal[])
 
   // returns the dominant frequency
   return ((float32_t)maximum_magnitude_index * SAMPLING_RATE / FFT_LENGTH);
-
-  // TODO: DELETE
-  // DEBUGGING CODE
-  //for(int i = 0; i < FFT_LENGTH / 2; i++)
-  //{
-  //  //printf("%f\n", input_signal[i]);
-  //  printf("frequency %f: %f \n", ((float32_t)(i * SAMPLING_RATE) / FFT_LENGTH), output_fft_magnitude[i]);
-  //}
-  //while(1);
   
 }

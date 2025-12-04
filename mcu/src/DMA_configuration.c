@@ -100,6 +100,7 @@ void dma_configuration(void)
 // loads the next audio sample for the FFT to process and subsequently resets the FFT-completed flag
 void DMA1_Channel2_IRQHandler(void)
 {
+printf("DMA INTERRUPTED\n");
   
   // checks to see if the Channel 2 data transfer has actually been completed
   if ((DMA1 -> ISR) & (DMA_ISR_TCIF2))
@@ -141,6 +142,7 @@ void DMA1_Channel2_IRQHandler(void)
 
     // resets the FFT-completed flag
     fft_calculations_complete = 0;
+    printf("DMA INTERRUPTED post flag\n");
 
     // re-enables DMA1
     DMA1_Channel2 -> CCR |= DMA_CCR_EN;

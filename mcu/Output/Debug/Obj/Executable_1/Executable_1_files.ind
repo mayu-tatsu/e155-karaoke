@@ -80,6 +80,7 @@
 "Output/Debug/Obj/Executable_1/mcu_configuration.o"
 "Output/Debug/Obj/Executable_1/music_player.o"
 "Output/Debug/Obj/Executable_1/note_determiner.o"
+"Output/Debug/Obj/Executable_1/singing_grader.o"
 "Output/Debug/Obj/Executable_1/SEGGER_THUMB_Startup.o"
 "Output/Debug/Obj/Executable_1/stm32l432xx_Vectors.o"
 "Output/Debug/Obj/Executable_1/STM32L4xx_Startup.o"

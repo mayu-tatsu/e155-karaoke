@@ -16,12 +16,13 @@ Purpose:
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-#define PWM PA6
+#define PWM                    PA6
+#define MR_BRIGHTSIDE_SELECTOR PA4
+#define GOLDEN_SELECTOR        PA7
+#define NOTE_DONE              PA0
 
-#define PLAY_MR_BRIGHTSIDE 1
-#define PLAY_GOLDEN        2
-
-extern volatile int note_done;
+#define PLAY_MR_BRIGHTSIDE 0
+#define PLAY_GOLDEN        1
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
