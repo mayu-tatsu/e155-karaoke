@@ -16,12 +16,13 @@ module karaoke_top (
     output logic        audio_valid,    // unused (for debugging)
 
     output logic        sck,            // to MCU (SPI SCK)
-    output logic        sdo,            // to MCU (MOSI)
+    output logic        sdo,           	// to MCU (MOSI)
+	output logic		cs
 	
 	
-	output logic 		 led,			 // for debugging
-	output logic		 led1,
-	output logic		 led2
+	// output logic      led,			 // for debugging
+	// output logic		 led1,
+	// output logic		 led2
 );
 
 	
@@ -98,14 +99,13 @@ module karaoke_top (
 		.debug2(bug2),
 
         .sck(sck),
-        .sdo(sdo)
+        .sdo(sdo),
+		.cs(cs)
     );
 	
+	// debug assignments
+	// assign led = audio_valid;
+	// assign led1 = bug1;
+	// assign led2 = bug2;
 	
-		
-	assign led = audio_valid;
-	assign led1 = bug1;
-	assign led2 = bug2;
-    
-    
 endmodule

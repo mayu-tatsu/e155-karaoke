@@ -15,6 +15,7 @@ module spi (
 
     output logic        sck,           // to MCU (SPI SCK)
     output logic        sdo,            // to MCU (MOSI)
+	output logic        cs,
 	
 	
 	output logic debug1,			// for debugging
@@ -93,7 +94,7 @@ module spi (
             pcm_latched <= 16'h0000;
         end else begin
             if (audio_valid_rise) begin
-                pcm_latched <= fake_data;
+                pcm_latched <=  fake_data;			// pcm_out;
                 req_toggle  <= ~req_toggle;
             end
         end
@@ -187,4 +188,6 @@ module spi (
 	
 	assign debug1 = sck_enable;
 	assign debug2 = busy;
+	
+	assign cs = ~busy;
 endmodule

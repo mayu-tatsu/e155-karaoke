@@ -27,344 +27,112 @@
 # Compile of top_tb.sv was successful.
 # Compile of spi_tb.sv was successful.
 # 12 compiles, 0 failed with no errors.
-vsim -gui work.spi_tb -voptargs=+acc
-# vsim -gui work.spi_tb -voptargs="+acc" 
-# Start time: 14:36:55 on Dec 02,2025
+vsim -gui work.fir_tb -voptargs=+acc
+# vsim -gui work.fir_tb -voptargs="+acc" 
+# Start time: 19:03:48 on Dec 03,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Warning: C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 9, found 7.
-# ** Warning: C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'new_request_6mhz_out'.
-# ** Warning: C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'sck_enable_out'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
-# Loading work.spi_tb(fast)
-# Loading work.spi(fast)
+# Loading work.fir_tb(fast)
+# Loading work.fir(fast)
 add wave  \
-sim:/spi_tb/dut/clk \
-sim:/spi_tb/dut/clk_6mhz \
-sim:/spi_tb/dut/reset_n \
-sim:/spi_tb/dut/audio_valid \
-sim:/spi_tb/dut/pcm_out \
-sim:/spi_tb/dut/sck \
-sim:/spi_tb/dut/sdo \
-sim:/spi_tb/dut/sck_enable_out \
-sim:/spi_tb/dut/new_request_6mhz_out \
-sim:/spi_tb/dut/audio_valid_d \
-sim:/spi_tb/dut/req_toggle \
-sim:/spi_tb/dut/pcm_latched \
-sim:/spi_tb/dut/audio_valid_rise \
-sim:/spi_tb/dut/fake_data \
-sim:/spi_tb/dut/req_sync0 \
-sim:/spi_tb/dut/req_sync1 \
-sim:/spi_tb/dut/req_toggle_local \
-sim:/spi_tb/dut/new_request_6mhz \
-sim:/spi_tb/dut/busy \
-sim:/spi_tb/dut/shift_reg \
-sim:/spi_tb/dut/bit_count \
-sim:/spi_tb/dut/sck_enable
+sim:/fir_tb/CLK_PERIOD \
+sim:/fir_tb/CYCLE_PER_SAMPLE \
+sim:/fir_tb/INPUT_RATE \
+sim:/fir_tb/OUTPUT_RATE \
+sim:/fir_tb/NUM_SAMPLES \
+sim:/fir_tb/clk \
+sim:/fir_tb/reset_n \
+sim:/fir_tb/x_in \
+sim:/fir_tb/x_in_valid \
+sim:/fir_tb/y_out \
+sim:/fir_tb/y_out_valid
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mayut  Hostname: MAYUS-DESKTOP  ProcessID: 31904
-#           Attempting to use alternate WLF file "./wlftg45cjb".
+#           Attempting to use alternate WLF file "./wlftyih3cj".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftg45cjb
-run 1000000000
+#           Using alternate file: ./wlftyih3cj
+run 10000000000
 # ========================================
-# Starting SPI Testbench
+# FIR Filter Testbench (Decimation by 2)
+# Input Rate: 32 kHz
+# Output Rate: 16 kHz
 # ========================================
-# [0] <<< SPI BUSY deasserted, transmission complete
-# [6185000] Reset released
-# [19206000] Initialization complete, ready for tests
 # 
-# --- Test 1: Single Sample Transmission ---
-# [19206000] Waiting for SPI transmission to start...
-# [20508000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [20508000] Sent audio sample: 0xa5a5
-# [21582000 DEBUG] new_request detected in 6MHz domain
-# [21582000] >>> SPI BUSY asserted, transmission starting
-# [21749000] SPI transmission started
-# [21749000] Bit 0 captured: SDO=1
-# [22082000] Bit 1 captured: SDO=1
-# [22416000] Bit 2 captured: SDO=0
-# [22749000] Bit 3 captured: SDO=0
-# [23082000] Bit 4 captured: SDO=1
-# [23416000] Bit 5 captured: SDO=1
-# [23749000] Bit 6 captured: SDO=0
-# [24082000] Bit 7 captured: SDO=0
-# [24416000] Bit 8 captured: SDO=1
-# [24749000] Bit 9 captured: SDO=1
-# [25082000] Bit 10 captured: SDO=0
-# [25416000] Bit 11 captured: SDO=0
-# [25749000] Bit 12 captured: SDO=1
-# [26082000] Bit 13 captured: SDO=1
-# [26416000] Bit 14 captured: SDO=0
-# [26749000] Bit 15 captured: SDO=0
-# [26749000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [26916000] <<< SPI BUSY deasserted, transmission complete
 # 
-# --- Test 2: Second Sample Transmission ---
-# [35082000] Waiting for SPI transmission to start...
-# [36133000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [36133000] Sent audio sample: 0x5a5a
-# [37249000 DEBUG] new_request detected in 6MHz domain
-# [37249000] >>> SPI BUSY asserted, transmission starting
-# [37415000] SPI transmission started
-# [37415000] Bit 0 captured: SDO=1
-# [37748000] Bit 1 captured: SDO=1
-# [38082000] Bit 2 captured: SDO=0
-# [38415000] Bit 3 captured: SDO=0
-# [38748000] Bit 4 captured: SDO=1
-# [39082000] Bit 5 captured: SDO=1
-# [39415000] Bit 6 captured: SDO=0
-# [39748000] Bit 7 captured: SDO=0
-# [40082000] Bit 8 captured: SDO=1
-# [40415000] Bit 9 captured: SDO=1
-# [40748000] Bit 10 captured: SDO=0
-# [41082000] Bit 11 captured: SDO=0
-# [41415000] Bit 12 captured: SDO=1
-# [41748000] Bit 13 captured: SDO=1
-# [42082000] Bit 14 captured: SDO=0
-# [42415000] Bit 15 captured: SDO=0
-# [42415000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [42582000] <<< SPI BUSY deasserted, transmission complete
+# ----------------------------------------
+# Test 1: Impulse Response
+# ----------------------------------------
+#   Total outputs collected: 0
+#   Expected: ~50 outputs (100 inputs / 2)
 # 
-# --- Test 3: All 1s Pattern ---
-# [50748000] Waiting for SPI transmission to start...
-# [51758000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [51758000] Sent audio sample: 0xffff
-# [52748000 DEBUG] new_request detected in 6MHz domain
-# [52748000] >>> SPI BUSY asserted, transmission starting
-# [52915000] SPI transmission started
-# [52915000] Bit 0 captured: SDO=1
-# [53248000] Bit 1 captured: SDO=1
-# [53581000] Bit 2 captured: SDO=0
-# [53915000] Bit 3 captured: SDO=0
-# [54248000] Bit 4 captured: SDO=1
-# [54581000] Bit 5 captured: SDO=1
-# [54914000] Bit 6 captured: SDO=0
-# [55248000] Bit 7 captured: SDO=0
-# [55581000] Bit 8 captured: SDO=1
-# [55914000] Bit 9 captured: SDO=1
-# [56248000] Bit 10 captured: SDO=0
-# [56581000] Bit 11 captured: SDO=0
-# [56914000] Bit 12 captured: SDO=1
-# [57248000] Bit 13 captured: SDO=1
-# [57581000] Bit 14 captured: SDO=0
-# [57914000] Bit 15 captured: SDO=0
-# [57914000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [58081000] <<< SPI BUSY deasserted, transmission complete
+# ----------------------------------------
+# Test 2: DC Input (Unity Gain Test)
+# ----------------------------------------
+# ** Error (suppressible): (vsim-8604) C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv(155): NaN (not a number) resulted from a division operation.
+#   Input: 0.5
+#   Output samples collected: 0
+#   Average Output: -nan(ind)
+# ** Error (suppressible): (vsim-8604) C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv(159): NaN (not a number) resulted from a division operation.
+#   Gain: -nan(ind) dB
+#   FAIL: DC gain error too large
 # 
-# --- Test 4: All 0s Pattern ---
-# [66247000] Waiting for SPI transmission to start...
-# [67383000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [67383000] Sent audio sample: 0x0000
-# [68414000 DEBUG] new_request detected in 6MHz domain
-# [68414000] >>> SPI BUSY asserted, transmission starting
-# [68581000] SPI transmission started
-# [68581000] Bit 0 captured: SDO=1
-# [68914000] Bit 1 captured: SDO=1
-# [69247000] Bit 2 captured: SDO=0
-# [69581000] Bit 3 captured: SDO=0
-# [69914000] Bit 4 captured: SDO=1
-# [70247000] Bit 5 captured: SDO=1
-# [70581000] Bit 6 captured: SDO=0
-# [70914000] Bit 7 captured: SDO=0
-# [71247000] Bit 8 captured: SDO=1
-# [71580000] Bit 9 captured: SDO=1
-# [71914000] Bit 10 captured: SDO=0
-# [72247000] Bit 11 captured: SDO=0
-# [72580000] Bit 12 captured: SDO=1
-# [72914000] Bit 13 captured: SDO=1
-# [73247000] Bit 14 captured: SDO=0
-# [73580000] Bit 15 captured: SDO=0
-# [73580000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [73747000] <<< SPI BUSY deasserted, transmission complete
+# ----------------------------------------
+# Test: Sine Wave at 1000 Hz
+# ----------------------------------------
+#   DEBUG: i=0, t=0.000000, input_val=0.000000, input_sample=0x0000 (0)
+#   DEBUG: i=1, t=0.000031, input_val=0.097545, input_sample=0x0c7c (3196)
+#   DEBUG: i=2, t=0.000063, input_val=0.191342, input_sample=0x187d (6269)
+#   DEBUG: i=3, t=0.000094, input_val=0.277785, input_sample=0x238e (9102)
+#   DEBUG: i=4, t=0.000125, input_val=0.353553, input_sample=0x2d41 (11585)
+run 1000000000000
+#   ERROR: No output samples collected!
 # 
-# --- Test 5: Realistic 16 kHz Sample Rate ---
-# Expected: 62.5 us between samples (16 kHz)
-# [83008000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [83008000] Sent audio sample: 0x1234
-# [84080000 DEBUG] new_request detected in 6MHz domain
-# [84080000] >>> SPI BUSY asserted, transmission starting
-# [89413000] <<< SPI BUSY deasserted, transmission complete
-# [146810000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [146810000] Sent audio sample: 0x5678
-# [147911000 DEBUG] new_request detected in 6MHz domain
-# [147911000] >>> SPI BUSY asserted, transmission starting
-# [153244000] <<< SPI BUSY deasserted, transmission complete
-# [210611000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [210611000] Sent audio sample: 0x9abc
-# [211742000 DEBUG] new_request detected in 6MHz domain
-# [211742000] >>> SPI BUSY asserted, transmission starting
-# [217075000] <<< SPI BUSY deasserted, transmission complete
+# ----------------------------------------
+# Test: Sine Wave at 4000 Hz
+# ----------------------------------------
+#   DEBUG: i=0, t=0.000000, input_val=0.000000, input_sample=0x0000 (0)
+#   DEBUG: i=1, t=0.000031, input_val=0.353553, input_sample=0x2d41 (11585)
+#   DEBUG: i=2, t=0.000063, input_val=0.500000, input_sample=0x4000 (16384)
+#   DEBUG: i=3, t=0.000094, input_val=0.353553, input_sample=0x2d41 (11585)
+#   DEBUG: i=4, t=0.000125, input_val=-0.000000, input_sample=0x0000 (0)
+#   ERROR: No output samples collected!
+# 
+# ----------------------------------------
+# Test: Sine Wave at 7000 Hz
+# ----------------------------------------
+#   DEBUG: i=0, t=0.000000, input_val=0.000000, input_sample=0x0000 (0)
+#   DEBUG: i=1, t=0.000031, input_val=0.490393, input_sample=0x3ec5 (16069)
+#   DEBUG: i=2, t=0.000063, input_val=0.191342, input_sample=0x187d (6269)
+#   DEBUG: i=3, t=0.000094, input_val=-0.415735, input_sample=0xcaca (-13622)
+#   DEBUG: i=4, t=0.000125, input_val=-0.353553, input_sample=0xd2bf (-11585)
+#   ERROR: No output samples collected!
+# 
+# ----------------------------------------
+# Test: Sine Wave at 14000 Hz
+# ----------------------------------------
+#   DEBUG: i=0, t=0.000000, input_val=0.000000, input_sample=0x0000 (0)
+#   DEBUG: i=1, t=0.000031, input_val=0.191342, input_sample=0x187d (6269)
+#   DEBUG: i=2, t=0.000063, input_val=-0.353553, input_sample=0xd2bf (-11585)
+#   DEBUG: i=3, t=0.000094, input_val=0.461940, input_sample=0x3b20 (15136)
+#   DEBUG: i=4, t=0.000125, input_val=-0.500000, input_sample=0xc000 (-16384)
+#   ERROR: No output samples collected!
+# 
+# ----------------------------------------
+# Test 7: Mixed Frequency Signal
+# ----------------------------------------
+#   Combining 1 kHz + 4 kHz + 14 kHz
+#   Input samples sent: 400
+#   Output samples collected: 0
+#   Expected: ~200 outputs (decimation by 2)
+#   Result: 1 kHz and 4 kHz should pass, 14 kHz attenuated
+#   PASS: Mixed signal test completed
 # 
 # ========================================
-# Testbench Complete
+# All tests completed!
 # ========================================
-# ** Note: $finish    : C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(188)
-#    Time: 227240910 ps  Iteration: 1  Instance: /spi_tb
+# ** Note: $finish    : C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv(100)
+#    Time: 57862445 ns  Iteration: 1  Instance: /fir_tb
 # 1
-# Break in Module spi_tb at C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv line 188
-# Compile of cic.sv was successful.
-# Compile of clk_gen.sv was successful.
-# Compile of fir.sv was successful.
-# Compile of karaoke_top.sv was successful.
-# Compile of spi.sv was successful.
-# Compile of synchronizer.sv was successful.
-# Compile of cic_tb.sv was successful.
-# Compile of fir_tb.sv was successful.
-# Compile of hb.sv was successful.
-# Compile of hb_tb.sv was successful.
-# Compile of top_tb.sv was successful.
-# Compile of spi_tb.sv was successful.
-# 12 compiles, 0 failed with no errors.
-restart -f
-# Closing VCD file "spi_tb.vcd"
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Warning: C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 9, found 7.
-# ** Warning: C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'debug2'.
-# ** Warning: C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'debug1'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
-# Loading sv_std.std
-# Loading work.spi_tb(fast)
-# Loading work.spi(fast)
-# Warning in wave window restart: (vish-4014) No objects found matching '/spi_tb/dut/sck_enable_out'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/spi_tb/dut/new_request_6mhz_out'. 
-run 1000000000
-# ========================================
-# Starting SPI Testbench
-# ========================================
-# [0] <<< SPI BUSY deasserted, transmission complete
-# [6185000] Reset released
-# [19206000] Initialization complete, ready for tests
-# 
-# --- Test 1: Single Sample Transmission ---
-# [19206000] Waiting for SPI transmission to start...
-# [20508000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [20508000] Sent audio sample: 0xa5a5
-# [21582000 DEBUG] new_request detected in 6MHz domain
-# [21582000] >>> SPI BUSY asserted, transmission starting
-# [21749000] SPI transmission started
-# [21749000] Bit 0 captured: SDO=1
-# [22082000] Bit 1 captured: SDO=1
-# [22416000] Bit 2 captured: SDO=0
-# [22749000] Bit 3 captured: SDO=0
-# [23082000] Bit 4 captured: SDO=1
-# [23416000] Bit 5 captured: SDO=1
-# [23749000] Bit 6 captured: SDO=0
-# [24082000] Bit 7 captured: SDO=0
-# [24416000] Bit 8 captured: SDO=1
-# [24749000] Bit 9 captured: SDO=1
-# [25082000] Bit 10 captured: SDO=0
-# [25416000] Bit 11 captured: SDO=0
-# [25749000] Bit 12 captured: SDO=1
-# [26082000] Bit 13 captured: SDO=1
-# [26416000] Bit 14 captured: SDO=0
-# [26749000] Bit 15 captured: SDO=0
-# [26749000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [26916000] <<< SPI BUSY deasserted, transmission complete
-# 
-# --- Test 2: Second Sample Transmission ---
-# [35082000] Waiting for SPI transmission to start...
-# [36133000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [36133000] Sent audio sample: 0x5a5a
-# [37249000 DEBUG] new_request detected in 6MHz domain
-# [37249000] >>> SPI BUSY asserted, transmission starting
-# [37415000] SPI transmission started
-# [37415000] Bit 0 captured: SDO=1
-# [37748000] Bit 1 captured: SDO=1
-# [38082000] Bit 2 captured: SDO=0
-# [38415000] Bit 3 captured: SDO=0
-# [38748000] Bit 4 captured: SDO=1
-# [39082000] Bit 5 captured: SDO=1
-# [39415000] Bit 6 captured: SDO=0
-# [39748000] Bit 7 captured: SDO=0
-# [40082000] Bit 8 captured: SDO=1
-# [40415000] Bit 9 captured: SDO=1
-# [40748000] Bit 10 captured: SDO=0
-# [41082000] Bit 11 captured: SDO=0
-# [41415000] Bit 12 captured: SDO=1
-# [41748000] Bit 13 captured: SDO=1
-# [42082000] Bit 14 captured: SDO=0
-# [42415000] Bit 15 captured: SDO=0
-# [42415000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [42582000] <<< SPI BUSY deasserted, transmission complete
-# 
-# --- Test 3: All 1s Pattern ---
-# [50748000] Waiting for SPI transmission to start...
-# [51758000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [51758000] Sent audio sample: 0xffff
-# [52748000 DEBUG] new_request detected in 6MHz domain
-# [52748000] >>> SPI BUSY asserted, transmission starting
-# [52915000] SPI transmission started
-# [52915000] Bit 0 captured: SDO=1
-# [53248000] Bit 1 captured: SDO=1
-# [53581000] Bit 2 captured: SDO=0
-# [53915000] Bit 3 captured: SDO=0
-# [54248000] Bit 4 captured: SDO=1
-# [54581000] Bit 5 captured: SDO=1
-# [54914000] Bit 6 captured: SDO=0
-# [55248000] Bit 7 captured: SDO=0
-# [55581000] Bit 8 captured: SDO=1
-# [55914000] Bit 9 captured: SDO=1
-# [56248000] Bit 10 captured: SDO=0
-# [56581000] Bit 11 captured: SDO=0
-# [56914000] Bit 12 captured: SDO=1
-# [57248000] Bit 13 captured: SDO=1
-# [57581000] Bit 14 captured: SDO=0
-# [57914000] Bit 15 captured: SDO=0
-# [57914000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [58081000] <<< SPI BUSY deasserted, transmission complete
-# 
-# --- Test 4: All 0s Pattern ---
-# [66247000] Waiting for SPI transmission to start...
-# [67383000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [67383000] Sent audio sample: 0x0000
-# [68414000 DEBUG] new_request detected in 6MHz domain
-# [68414000] >>> SPI BUSY asserted, transmission starting
-# [68581000] SPI transmission started
-# [68581000] Bit 0 captured: SDO=1
-# [68914000] Bit 1 captured: SDO=1
-# [69247000] Bit 2 captured: SDO=0
-# [69581000] Bit 3 captured: SDO=0
-# [69914000] Bit 4 captured: SDO=1
-# [70247000] Bit 5 captured: SDO=1
-# [70581000] Bit 6 captured: SDO=0
-# [70914000] Bit 7 captured: SDO=0
-# [71247000] Bit 8 captured: SDO=1
-# [71580000] Bit 9 captured: SDO=1
-# [71914000] Bit 10 captured: SDO=0
-# [72247000] Bit 11 captured: SDO=0
-# [72580000] Bit 12 captured: SDO=1
-# [72914000] Bit 13 captured: SDO=1
-# [73247000] Bit 14 captured: SDO=0
-# [73580000] Bit 15 captured: SDO=0
-# [73580000] === SPI transmission complete. Received: 0xcccc (binary: 1100110011001100) ===
-# [73747000] <<< SPI BUSY deasserted, transmission complete
-# 
-# --- Test 5: Realistic 16 kHz Sample Rate ---
-# Expected: 62.5 us between samples (16 kHz)
-# [83008000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [83008000] Sent audio sample: 0x1234
-# [84080000 DEBUG] new_request detected in 6MHz domain
-# [84080000] >>> SPI BUSY asserted, transmission starting
-# [89413000] <<< SPI BUSY deasserted, transmission complete
-# [146810000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [146810000] Sent audio sample: 0x5678
-# [147911000 DEBUG] new_request detected in 6MHz domain
-# [147911000] >>> SPI BUSY asserted, transmission starting
-# [153244000] <<< SPI BUSY deasserted, transmission complete
-# [210611000 DEBUG] audio_valid pulse detected in 1.536MHz domain
-# [210611000] Sent audio sample: 0x9abc
-# [211742000 DEBUG] new_request detected in 6MHz domain
-# [211742000] >>> SPI BUSY asserted, transmission starting
-# [217075000] <<< SPI BUSY deasserted, transmission complete
-# 
-# ========================================
-# Testbench Complete
-# ========================================
-# ** Note: $finish    : C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv(188)
-#    Time: 227240910 ps  Iteration: 1  Instance: /spi_tb
-# 1
-# Break in Module spi_tb at C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv line 188
+# Break in Module fir_tb at C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv line 100
