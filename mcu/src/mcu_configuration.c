@@ -56,8 +56,8 @@ void mcu_configuration(void)
   initSPI(1, 0, 0);
 
   // assigns a GPIO pin to act as the Chip Select signal
-  pinMode(CS, GPIO_OUTPUT);
-  digitalWrite(CS, 1);
+  //pinMode(CS, GPIO_OUTPUT);
+  //digitalWrite(CS, 1);
 
 }
 

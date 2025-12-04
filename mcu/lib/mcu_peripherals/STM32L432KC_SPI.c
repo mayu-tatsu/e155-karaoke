@@ -14,68 +14,67 @@
  * Refer to the datasheet for more low-level details. */ 
 void initSPI(int br, int cpol, int cpha) {
 
-  // enables the SPI1 peripheral
+  // Enable SPI1 peripheral
   RCC -> APB2ENR |= RCC_APB2ENR_SPI1EN;
 
-  // enables alternate functions for the desired GPIO pins 
-  GPIOB -> AFR[0] &= ~((0xF << 12) | (0xF << 16) | (0xF << 20));  // clears the register
-  GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 0b0101);          // sets the necessary bits accordingly
-  GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 0b0101);          // sets the necessary bits accordingly
-  GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 0b0101);          // sets the necessary bits accordingly
+  // Force PB5 (MISO) to safe input mode
+  GPIOB->MODER &= ~(0b11 << (5 * 2));
 
-  // sets the baud rate to a value of the user's choosing
-  // SPI1 -> CR1 |= (br << 3);
-
-  // sets the clock polarity and clock phase to values of the user's choosing
-  SPI1 -> CR1 &= ~((1 << 1) | (1 << 0));          // clears the register
-  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_CPOL, cpol);    // sets the necessary bits accordingly
-  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_CPHA, cpha);    // sets the necessary bits accordingly
+  // Enable alternate functions
+  GPIOB->AFR[0] &= ~((0xF << 12) | (0xF << 16) | (0xF << 20));    // clears registers
+  GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 0b0101);            // PB3 = SCK
+  GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 0b0101);            // PB4 = MOSI
+  // GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 0b0101);          // PB5 = MISO
+  
+  // GPIOA -> AFR[1] &= ~(0xF << 12);
+  // GPIOA -> AFR[1] |= _VAL2FLD(GPIO_AFRH_AFSEL11, 0b0101);         // configures PA11 (CS) as alternate function
 
 
+  // Clear CR1
+  SPI1->CR1 = 0;
 
-  // asserts the MCU as the peripheral
-  SPI1 -> CR1 &= ~SPI_CR1_MSTR;
-  SPI1 -> CR1 &= ~SPI_CR1_RXONLY;
-  // SPI1 -> CR1 |= SPI_CR1_RXONLY;
-  // SPI1 -> CR1 |= SPI_CR1_MSTR;
+  // set SPI Mode 0 (based on params)
+  // SPI1 -> CR1 |= (br << 3);                     // set baud rate (param); unecessary for this config
+  SPI1->CR1 |= _VAL2FLD(SPI_CR1_CPOL, cpol);    // set cpol (param)
+  SPI1->CR1 |= _VAL2FLD(SPI_CR1_CPHA, cpha);    // set cpha (param)
 
-  // receives the MSB first
-  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_LSBFIRST, 0);
+  // FPGA is controller, MCU peripheral
+  SPI1->CR1 &= ~SPI_CR1_MSTR;            // Slave mode
+  SPI1->CR1 |= SPI_CR1_BIDIMODE;         // ← BIDIRECTIONAL (single wire) mode
+  SPI1->CR1 &= ~SPI_CR1_BIDIOE;          // ← Receive only (disable output)
 
-  // configures pin as a manually toggle-able CE signal
-  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSM, 0); // SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SSI, 1); // SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_NSSP, 0);
+  SPI1->CR1 &= ~SPI_CR1_LSBFIRST;        // MSB first
+  SPI1->CR1 |= SPI_CR1_SSM;              // Software NSS
+  SPI1->CR1 &= ~SPI_CR1_SSI;             // NSS = 0
 
-  // selects a data frame format
-  SPI1 -> CR2 |= _VAL2FLD(SPI_CR2_DS, 0b1111);
 
-  // generates RXNE events for 16-bit data
-  SPI1 -> CR2 &= ~SPI_CR2_FRXTH;      // ?
+  // Clear CR2
+  SPI1->CR2 = 0;
+
+  SPI1->CR2 |= _VAL2FLD(SPI_CR2_DS, 0b1111);   // 16-bit data
+  SPI1->CR2 &= ~SPI_CR2_FRXTH;                 // 16-bit threshold
+  SPI1->CR2 &= ~SPI_CR2_SSOE;                  // No NSS output
+  SPI1->CR2 |= SPI_CR2_RXDMAEN;                // DMA on RX
+
+
+  // Assign GPIO pins as SPI
+  pinMode(SPI_SCK, GPIO_ALT);   // SCK: PB3
+  pinMode(SPI_MOSI, GPIO_ALT);  // MOSI: PB4
+  // pinMode(SPI_MISO, GPIO_ALT);  // MISO
+  // pinMode(SPI_CE, GPIO_ALT);    // CS
+
+  // Clear all pull up/down resistors
+  GPIOB->PUPDR &= ~((0b11 << (3 * 2)) | (0b11 << (4 * 2)) | (0b11 << (5 * 2)));
+
+  // Fast for SCK, MOSI
+  GPIOB->OSPEEDR |= (GPIO_OSPEEDR_OSPEED3 | GPIO_OSPEEDR_OSPEED4);
 
   
-
-  
-
-  // initially assigns SPI pins
-  // pinMode(SPI_SCK, GPIO_INPUT); // SPI1_SCK
-  pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK (PB3 AF5)
-  GPIOB -> OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
-  pinMode(SPI_MISO, GPIO_ALT);  // SPI1_MISO
-  pinMode(SPI_MOSI, GPIO_ALT);  // SPI1_MOSI
-  pinMode(SPI_CE, GPIO_INPUT);  //  CS from FPGA
-
-  
-  // allows SPI to work in multi-master environments
-  SPI1 -> CR2 &= ~SPI_CR2_SSOE;
-
-
-
-
   // enables the generation of DMA requests whenever the RXNE flag is set
-  SPI1 -> CR2 |= SPI_CR2_RXDMAEN;
+  // SPI1 -> CR2 |= SPI_CR2_RXDMAEN;     // MAYU
 
-  // enables SPI
-  SPI1 -> CR1 |= _VAL2FLD(SPI_CR1_SPE, 1);
-
+  // Enable SPI
+  SPI1->CR1 |= SPI_CR1_SPE;
 }
 
 /* Transmits a character (1 byte) over SPI and returns the received character.
