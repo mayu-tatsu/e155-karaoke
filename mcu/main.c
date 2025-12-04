@@ -124,7 +124,7 @@ int main(void)
     //printf("SPI DR: %x\n", SPI1->DR);
     //printf("Note frequency: %f\n", note_frequency);
     //printf(note); printf("\n");
-  }
+  
     // TODO: DELETE
     // DEBUGGING CODE
     //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);

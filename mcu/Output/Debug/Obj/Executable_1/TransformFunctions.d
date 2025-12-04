@@ -1,2 +1,2 @@
 Output/Debug/Obj/Executable_1/TransformFunctions.o: \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib\arm_math\dsp\TransformFunctions\TransformFunctions.c
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib\arm_math\dsp\TransformFunctions\TransformFunctions.c

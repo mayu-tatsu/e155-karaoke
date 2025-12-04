@@ -1,30 +1,33 @@
 /*
 Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
-Date:     November 16, 2025
+Date:     December 3, 2025
 
-Purpose: To allow the MCU configuration functions to actually be used.
+Purpose: 
 */
 
-#ifndef MCU_CONFIGURATION_H
-#define MCU_CONFIGURATION_H
+#ifndef MUSIC_PLAYER_H
+#define MUSIC_PLAYER_H
 
 #include "mcu_peripherals/STM32L432KC.h"
+#include "arm_math/arm_math.h"
+#include "frequency_determiner.h"
 #include "stdio.h"
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-#define DELAY_TIM TIM15
-#define PWM_TIM   TIM16
+#define PWM PA2
 
-#define LOAD PA0
-#define DONE PA1
-#define CS   PA11
+#define PLAY_MR_BRIGHTSIDE 1
+#define PLAY_GOLDEN        2
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-void mcu_configuration(void);
+void music_player(int song);
+
+void pwm_initialization(TIM_TypeDef * TIMx);
+void pwm_generation(TIM_TypeDef * TIMx, int frequency);
 
 #endif

@@ -58,17 +58,17 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="89" useTextEdit="1" path="main.c" left="0" selected="1" top="73" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="48" useTextEdit="1" path="src/mcu_configuration.c" left="0" top="10" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="48" y="59" useTextEdit="1" path="src/DMA_configuration.c" left="0" top="54" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="23" useTextEdit="1" path="src/frequency_determiner.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="33" y="32" useTextEdit="1" path="src/note_determiner.c" left="0" top="30" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="26" useTextEdit="1" path="main.c" left="0" selected="1" top="7" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="19" y="16" useTextEdit="1" path="src/mcu_configuration.c" left="0" top="4" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="60" useTextEdit="1" path="src/DMA_configuration.c" left="0" top="30" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="23" useTextEdit="1" path="src/frequency_determiner.c" left="0" top="23" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="33" y="32" useTextEdit="1" path="src/note_determiner.c" left="0" top="20" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="19" useTextEdit="1" path="lib/mcu_configuration.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="38" y="26" useTextEdit="1" path="lib/dma_configuration.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="18" useTextEdit="1" path="lib/frequency_determiner.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="19" useTextEdit="1" path="lib/dma_configuration.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="17" useTextEdit="1" path="lib/frequency_determiner.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="27" y="3" useTextEdit="1" path="lib/note_determiner.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="25" useTextEdit="1" path="lib/mcu_peripherals/STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="61" useTextEdit="1" path="lib/mcu_peripherals/STM32L432KC_SPI.c" left="0" top="9" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="6038" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="6025" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="lib/mcu_peripherals/STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="Executable_1" fileDialogDefaultFilter="*.c;*.h" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/peppe/OneDrive/Desktop/fft_test/v1/lib/arm_math" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <EMStudioWindow activeProject="Executable_1" fileDialogDefaultFilter="*.c;*.h" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/peppe/OneDrive/Desktop/fft_test/v1/lib/arm_math" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
