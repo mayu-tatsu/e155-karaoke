@@ -1,6 +1,0 @@
-#Start recording tcl command: 12/4/2025 02:02:31
-#Project Location: C:/Users/peppe/OneDrive/Desktop/Fall 2025 - Spring 2026/ENGR 155/e155-karaoke; Project name: e155_karaoke
-prj_open "C:/Users/peppe/OneDrive/Desktop/Fall 2025 - Spring 2026/ENGR 155/e155-karaoke/e155_karaoke.rdf"
-prj_run PAR -impl impl_1
-prj_run Export -impl impl_1
-#Stop recording: 12/4/2025 02:36:14

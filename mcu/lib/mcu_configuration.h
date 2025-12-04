@@ -17,9 +17,7 @@ Purpose: To allow the MCU configuration functions to actually be used.
 #define DELAY_TIM TIM15
 #define PWM_TIM   TIM16
 
-#define LOAD PA0
-#define DONE PA1
-#define CS   PA11
+#define CS PA11
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

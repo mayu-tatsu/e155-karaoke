@@ -1,4 +1,4 @@
- // STM32F401RE_SPI.h
+// STM32F401RE_SPI.h
 // Header for SPI functions
 
 #ifndef STM32L4_SPI_H
@@ -9,8 +9,7 @@
 
 #define SPI_CE   PA11
 #define SPI_SCK  PB3
-#define SPI_MOSI PB4  // originally PB5 (following silkscreen)
-// #define SPI_MISO PB5  // originally PB4  // commented out to remove overwriting
+#define SPI_MOSI PB4
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

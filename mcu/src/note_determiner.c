@@ -8,7 +8,6 @@ Purpose: To determine the note corresponding to a given frequency.
 
 #include "../lib/note_determiner.h"
 
-// TODO: fix note accuracy!!
 // returns the note that a given frequency corresponds to
 const char* note_determiner(float32_t note_frequency)
 {
