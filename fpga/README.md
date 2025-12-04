@@ -1,1 +1,1 @@
-"# e155-karaoke" 
+"# e155-karaoke, FPGA section" 
