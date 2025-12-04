@@ -25,8 +25,6 @@ module karaoke_top (
 	// output logic		 led2
 );
 
-	
-    
     logic pdm_data_sync;
     logic clk_6mhz;       // 6 MHz clock for SPI
 	

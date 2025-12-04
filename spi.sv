@@ -94,7 +94,7 @@ module spi (
             pcm_latched <= 16'h0000;
         end else begin
             if (audio_valid_rise) begin
-                pcm_latched <=  fake_data;			// pcm_out;
+                pcm_latched <=  pcm_out;			// fake_data;
                 req_toggle  <= ~req_toggle;
             end
         end

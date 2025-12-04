@@ -237,33 +237,32 @@ module fir (
     end
     
     // 5. scale (Q30 -> Q15) and output
-    logic signed [22:0] result_q15;
+	logic signed [22:0] result_q15;
 
-    always_ff @(posedge clk or negedge reset_n) begin
-        if (~reset_n) begin
-            y_out <= 16'sd0;
-            y_out_valid <= 1'b0;
-            valid_pipeline[3] <= 1'b0;
-        end else begin
-            // right shift by 15: Q30 -> Q15
-            // y_out <= $signed(accumulator) >>> 15;
-
-            // note: we may need to clamp in case values go outside of 16 bit range
-            // convert Q30 -> Q15 (only need 15-BIT shift on full signed accumulator)
-            
-            result_q15 = $signed(accumulator) >>> 15;
-
-			// limiting max/min since we're limiting to 16-bit
-			if (result_q15 > 23'sd32767) begin // Max Q15 value
-				y_out <= 16'sd32767;
-			end else if (result_q15 < -23'sd32768) begin // Min Q15 value
-				y_out <= -16'sd32768;
-			end else begin
-				y_out <= result_q15[15:0];
+	always_ff @(posedge clk or negedge reset_n) begin
+		if (~reset_n) begin
+			y_out <= 16'sd0;
+			y_out_valid <= 1'b0;
+			valid_pipeline[3] <= 1'b0;
+		end else begin
+			// Compute the one-cycle pulse FIRST
+			y_out_valid <= valid_pipeline[2] & ~valid_pipeline[3];
+			valid_pipeline[3] <= valid_pipeline[2];
+			
+			// ONLY update y_out when y_out_valid will be high
+			if (valid_pipeline[2] & ~valid_pipeline[3]) begin
+				result_q15 = $signed(accumulator) >>> 15;
+				
+				// Limiting max/min since we're limiting to 16-bit
+				if (result_q15 > 23'sd32767) begin
+					y_out <= 16'sd32767;
+				end else if (result_q15 < -23'sd32768) begin
+					y_out <= -16'sd32768;
+				end else begin
+					y_out <= result_q15[15:0];
+				end
 			end
-            
-            y_out_valid <= valid_pipeline[2] & ~valid_pipeline[3];  // one-cycle pulse
-            valid_pipeline[3] <= valid_pipeline[2];                 // store previous state
-        end
-    end
+			// else: y_out holds its previous value
+		end
+	end
 endmodule
