@@ -31,7 +31,6 @@ void music_player(int song)
   // sets a GPIO pin to alternating function to actually output the PWM
   pinMode(PWM, GPIO_ALT);
 
-  // TODO: FIX THIS MAYBE??
   // enables AF14 for the PWM pin
   GPIOA -> AFR[0] &= ~GPIO_AFRL_AFSEL6_0; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_1; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_2; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_3; 
 
@@ -47,7 +46,7 @@ void music_player(int song)
     for (uint32_t i = 0; i < mr_brightside_song_length; i++) 
     {
       // 
-      //note_done = 0;
+      note_done = 0;
 
       // generates each note's frequency 
       //pwm_generation(PWM_TIM, fur_elise_notes[i][0]);
@@ -68,22 +67,22 @@ void music_player(int song)
       delay_micros(DELAY_TIM, 50);
   
       // 
-      //note_done = 1;
+      note_done = 1;
     }
   }
 
   else if (song == PLAY_GOLDEN)
   {
     // 
-    //display_message(golden_lyrics[0]);
-    //delay_secs(DELAY_TIM, 5);
-    //lcd_display_reset();
+    display_message(golden_lyrics[0]);
+    delay_secs(DELAY_TIM, 5);
+    lcd_display_reset();
   
     // loops through every note of the desired song
     for (uint32_t i = 0; i < golden_song_length; i++) 
     {
       // 
-      //note_done = 0;
+      note_done = 0;
 
       // generates each note's frequency 
       //pwm_generation(PWM_TIM, fur_elise_notes[i][0]);
@@ -93,18 +92,18 @@ void music_player(int song)
       //delay_ms(DELAY_TIM, fur_elise_notes[i][1]);
       delay_ms(DELAY_TIM, golden_notes[i][1]);
 
-      //// 
-      //if (golden_lyric_timing[i] != 0)
-      //{
-      //  lcd_display_reset();
-      //  display_message(golden_lyrics[golden_lyric_timing[i]]);
-      //}
+      // 
+      if (golden_lyric_timing[i] != 0)
+      {
+        lcd_display_reset();
+        display_message(golden_lyrics[golden_lyric_timing[i]]);
+      }
 
       // 
       delay_micros(DELAY_TIM, 50);
   
       // 
-      //note_done = 1;
+      note_done = 1;
     }
   }
 
