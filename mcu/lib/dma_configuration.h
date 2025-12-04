@@ -28,6 +28,10 @@ extern volatile int16_t pcm_dma_buffer[FFT_LENGTH];
 extern volatile int16_t pcm_dma_signal[FFT_LENGTH];
 extern float32_t float_buffer[FFT_LENGTH];
 
+
+// debugging code
+extern volatile uint32_t total_dma_transfers;
+
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////

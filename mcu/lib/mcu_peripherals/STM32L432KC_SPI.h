@@ -9,8 +9,8 @@
 
 #define SPI_CE   PA11
 #define SPI_SCK  PB3
-#define SPI_MOSI PB4
-//#define SPI_MISO PB5
+#define SPI_MOSI PB4  // originally PB5 (following silkscreen)
+// #define SPI_MISO PB5  // originally PB4  // commented out to remove overwriting
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

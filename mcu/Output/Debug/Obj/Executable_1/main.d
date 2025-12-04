@@ -29,41 +29,41 @@ Output/Debug/Obj/Executable_1/main.o: \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/__SEGGER_RTL_FP.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/float.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/limits.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/arm_math_memory.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/none.h \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_types.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/utils.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/basic_math_functions.h \
- C:/Users/peppe/OneDrive/Desktop/fft_test/lib/arm_math/arm_math_memory.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/none.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/utils.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/interpolation_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/bayes_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/statistics_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/basic_math_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/fast_math_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/matrix_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/complex_math_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/statistics_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/controller_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/support_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/distance_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/matrix_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/svm_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/svm_defines.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/fast_math_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/transform_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/complex_math_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/filtering_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/support_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/quaternion_math_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/dsp/window_functions.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_configuration.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/dma_configuration.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/arm_math.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/frequency_determiner.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/frequency_determiner.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/note_determiner.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/lcd_display.h \
- C:\Users\peppe\OneDrive\Desktop\fft_test\lib/music_player.h
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/arm_math_memory.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/none.h \
+ C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/lib/arm_math/arm_math_types.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/utils.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/basic_math_functions.h \
+ C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/lib/arm_math/arm_math_memory.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/none.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/utils.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/interpolation_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/bayes_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/statistics_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/basic_math_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/fast_math_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/matrix_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/complex_math_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/statistics_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/controller_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/support_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/distance_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/matrix_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/svm_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/svm_defines.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/fast_math_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/transform_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/complex_math_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/filtering_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/support_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/quaternion_math_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/dsp/window_functions.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_configuration.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/dma_configuration.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/arm_math.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/frequency_determiner.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/frequency_determiner.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/note_determiner.h \
+ C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/lcd_display.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/songs.h
