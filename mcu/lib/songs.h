@@ -10,43 +10,7 @@ Purpose:
 #define SONGS_H
 
 // pitches (Hz)
-#define A3_NOTE       220
-#define A3_SHARP_NOTE 233.1
-#define B3_FLAT_NOTE  233.1
-#define B3_NOTE       246.9
-#define C4_NOTE       261.6
-#define C4_SHARP_NOTE 277.2
-#define D4_FLAT_NOTE  277.2
-#define D4_NOTE       293.7
-#define D4_SHARP_NOTE 311.1
-#define E4_FLAT_NOTE  311.1
-#define E4_NOTE       329.6
-#define F4_NOTE       349.2
-#define F4_SHARP_NOTE 370
-#define G4_FLAT_NOTE  370
-#define G4_NOTE       392
-#define G4_SHARP_NOTE 415.3
-#define A4_FLAT_NOTE  415.3
-#define A4_NOTE       440
-#define A4_SHARP_NOTE 466.2
-#define B4_FLAT_NOTE  466.2
-#define B4_NOTE       493.9
-#define C5_NOTE       523.3
-#define C5_SHARP_NOTE 554.4
-#define D5_FLAT_NOTE  554.4
-#define D5_NOTE       587.3
-#define D5_SHARP_NOTE 622.2
-#define E5_FLAT_NOTE  622.2
-#define E5_NOTE       659.2
-#define F5_NOTE       698.4
-#define F5_SHARP_NOTE 740.9
-#define G5_FLAT_NOTE  740.9
-#define G5_NOTE       784
-#define G5_SHARP_NOTE 830.6
-#define A5_FLAT_NOTE  830.6
-#define A5_NOTE       880
-
-#define MR_BRIGHTSIDE_BPM 148
+#include "arm_math/arm_math_types.h"
 
 // Mr. Brightside lyrics
 // FIRST LINE          THIRD LINE          SECOND LINE         FOURTH LINE
@@ -90,453 +54,1474 @@ char* mr_brightside_lyrics[] =
 };
 
 // Mr. Brightside notes 
-// {pitch (Hz), duration (s)}
+// {pitch (Hz), duration (ms)}
 // D Major / B minor
-const int mr_brightside_notes[][2] = 
+const uint32_t mr_brightside_notes[][2] = 
 {
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // com
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // out
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // of
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // cage
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I've
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // been
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // do
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // just
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // fine
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // got
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ta
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // got
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ta
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // be
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // down
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // be
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // cause
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // want
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // it
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // all.
-    {0,      0.5 * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // It
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // start
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ed
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // out
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // with
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // kiss
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // How
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // did
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // it
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // end
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // up
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // like
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // this
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // It
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // was
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // on
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ly
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // kiss
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // It
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // was
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // on
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ly
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // kiss
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // Now
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I'm
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // fall
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // sleep
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // she's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // call
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // cab
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // while
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // he's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // hav
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // smoke
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // she's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // tak
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // drag
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // Now
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // they're
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // go
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // to
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // bed
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // stom
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ach
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // is
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // sick
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // And
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // it's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // all
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // in
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // head
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // but
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // she's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // touch
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // his
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // chest
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // now
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // He
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // takes
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // off
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // her
-    {554.37, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // dress
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // now
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // Let
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // me
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // go.
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // just
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // can't
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // look
-    {659.26, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // It's
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // kill
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {739.99, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // me
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {440,    1   * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {659.26, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // tak
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {659.26, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // con
-    {587.33, 3   * (60. / MR_BRIGHTSIDE_BPM)},  // trol
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // Jeal
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ous
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // y
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // turn
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // saints
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // in
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // to
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // the
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // sea
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // swim
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ming
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // through
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // sick
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // lull
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // bies
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // chok
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // on
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // your
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // al
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // i
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // bis
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // But
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // it's
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // just
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // the
-    {783.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // price
-    {739.99, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {739.99, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // pay
-    {783.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // Dest
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // in
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // y
-    {440,    1   * (60. / MR_BRIGHTSIDE_BPM)},  // is
-    {659.26, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // call
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // me
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // O
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // pen
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // up
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {783.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // eag
-    {739.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // er
-    {739.99, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // eyes
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // 'cause
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // I'm
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // Mis
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ter
-    {659.26, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // Bright
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // side
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // com
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // out
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // of
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // cage
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I've
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // been
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // do
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // just
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // fine
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // got
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ta
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // got
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ta
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // be
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // down
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // be
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // cause
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // want
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // it
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // all.
-    {0,      0.5 * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // It
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // start
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ed
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // out
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // with
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // kiss
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // How
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // did
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // it
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // end
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // up
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // like
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // this
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // It
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // was
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // on
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ly
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // kiss
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // It
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // was
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // on
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ly
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // kiss
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // Now
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I'm
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // fall
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // sleep
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // she's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // call
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // cab
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // while
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // he's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // hav
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // smoke
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // she's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // tak
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // drag
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // Now
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // they're
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // go
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // to
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // bed
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // stom
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ach
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // is
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // sick
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // And
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // it's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // all
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // in
-    {554.37, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // head
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // but
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // she's
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // touch
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // his
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // chest
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // now
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // He
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // takes
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // off
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // her
-    {554.37, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // dress
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // now
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // Let
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // me
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // go.
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // just
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // can't
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // look
-    {659.26, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // It's
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // kill
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {739.99, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // me
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {440,    1   * (60. / MR_BRIGHTSIDE_BPM)},  // and
-    {659.26, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // tak
-    {587.33, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {659.26, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // con
-    {587.33, 3   * (60. / MR_BRIGHTSIDE_BPM)},  // trol
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // Jeal
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ous
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // y
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // turn
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // saints
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // in
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // to
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // the
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // sea
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // swim
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ming
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // through
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // sick
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // lull
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // a
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // bies
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // chok
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // on
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // your
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // al
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // i
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // bis
-    {554.37, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // But
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // it's
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // just
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // the
-    {783.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // price
-    {739.99, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {739.99, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // pay
-    {783.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // Dest
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // in
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // y
-    {440,    1   * (60. / MR_BRIGHTSIDE_BPM)},  // is
-    {659.26, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // call
-    {587.33, 0.5 * (60. / MR_BRIGHTSIDE_BPM)},  // ing
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // me
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // O
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // pen
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // up
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // my
-    {783.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // eag
-    {739.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // er
-    {739.99, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // eyes
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // 'cause
-    {739.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // I'm
-    {659.26, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // Mis
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // ter
-    {659.26, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // Bright
-    {587.33, 2   * (60. / MR_BRIGHTSIDE_BPM)},  // side
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // nev
-    {587.33, 2.5 * (60. / MR_BRIGHTSIDE_BPM)},  // er
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {587.33, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {554.37, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // nev
-    {587.33, 2.5 * (60. / MR_BRIGHTSIDE_BPM)},  // er
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {783.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},  // I
-    {783.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},  // nev
-    {739.99, 5.5 * (60. / MR_BRIGHTSIDE_BPM)},  // er
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      2   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {783.99, 1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {783.99, 1.5 * (60. / MR_BRIGHTSIDE_BPM)},
-    {739.99, 5.5 * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      1   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
-    {0,      4   * (60. / MR_BRIGHTSIDE_BPM)},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   405 },
+  {587, 203 },  // com
+  {587, 203 },  // ing
+  {587, 203 },  // out
+  {587, 203 },  // of
+  {554, 203 },  // my
+  {587, 405 },  // cage
+  {587, 203 },  // and
+  {587, 203 },  // I've
+  {587, 203 },  // been
+  {587, 203 },  // do
+  {587, 203 },  // ing
+  {587, 405 },  // just
+  {587, 405 },  // fine
+  {587, 203 },  // got
+  {587, 203 },  // ta
+  {587, 203 },  // got
+  {587, 203 },  // ta
+  {554, 203 },  // be
+  {587, 405 },  // down
+  {587, 203 },  // be
+  {587, 203 },  // cause
+  {587, 203 },  // I
+  {587, 203 },  // want
+  {554, 203 },  // it
+  {587, 405 },  // all.
+  {0,   203 },
+  {587, 203 },  // It
+  {587, 203 },  // start
+  {587, 203 },  // ed
+  {587, 203 },  // out
+  {587, 203 },  // with
+  {554, 203 },  // a
+  {587, 405 },  // kiss
+  {587, 203 },  // How
+  {587, 203 },  // did
+  {587, 203 },  // it
+  {587, 203 },  // end
+  {587, 203 },  // up
+  {554, 405 },  // like
+  {587, 405 },  // this
+  {587, 203 },  // It
+  {587, 203 },  // was
+  {587, 203 },  // on
+  {587, 203 },  // ly
+  {554, 203 },  // a
+  {587, 608 },  // kiss
+  {587, 203 },  // It
+  {587, 203 },  // was
+  {587, 203 },  // on
+  {587, 203 },  // ly
+  {554, 203 },  // a
+  {587, 608 },  // kiss
+  {587, 203 },  // Now
+  {587, 203 },  // I'm
+  {587, 203 },  // fall
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // sleep
+  {587, 203 },  // and
+  {587, 203 },  // she's
+  {587, 203 },  // call
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // cab
+  {587, 203 },  // while
+  {587, 203 },  // he's
+  {587, 203 },  // hav
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // smoke
+  {587, 203 },  // and
+  {587, 203 },  // she's
+  {587, 203 },  // tak
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // drag
+  {587, 203 },  // Now
+  {587, 203 },  // they're
+  {587, 203 },  // go
+  {587, 203 },  // ing
+  {554, 203 },  // to
+  {587, 608 },  // bed
+  {587, 203 },  // and
+  {587, 203 },  // my
+  {587, 203 },  // stom
+  {587, 203 },  // ach
+  {554, 203 },  // is
+  {587, 608 },  // sick
+  {587, 203 },  // And
+  {587, 203 },  // it's
+  {587, 203 },  // all
+  {587, 203 },  // in
+  {554, 203 },  // my
+  {587, 608 },  // head
+  {587, 203 },  // but
+  {587, 203 },  // she's
+  {587, 203 },  // touch
+  {587, 203 },  // ing
+  {587, 405 },  // his
+  {587, 811 },  // chest
+  {587, 811 },  // now
+  {587, 405 },  // He
+  {587, 405 },  // takes
+  {587, 405 },  // off
+  {554, 405 },  // her
+  {554, 811 },  // dress
+  {587, 811 },  // now
+  {587, 811 },  // Let
+  {587, 811 },  // me
+  {587, 811 },  // go.
+  {0,   811 },
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   405 },
+  {740, 405 },  // I
+  {740, 405 },  // just
+  {740, 405 },  // can't
+  {587, 811 },  // look
+  {659, 811 },  // It's
+  {659, 405 },  // kill
+  {587, 405 },  // ing
+  {740, 811 },  // me
+  {0,   811 },
+  {0,   405 },
+  {440, 405 },  // and
+  {659, 608 },  // tak
+  {587, 608 },  // ing
+  {659, 811 },  // con
+  {587, 1216},  // trol
+  {0,   1622},
+  {0,   1622},
+  {554, 608 },  // Jeal
+  {587, 203 },  // ous
+  {587, 811 },  // y
+  {554, 405 },  // turn
+  {587, 405 },  // ing
+  {554, 405 },  // saints
+  {587, 405 },  // in
+  {554, 608 },  // to
+  {587, 203 },  // the
+  {587, 811 },  // sea
+  {554, 405 },  // swim
+  {587, 405 },  // ming
+  {554, 405 },  // through
+  {587, 405 },  // sick
+  {554, 608 },  // lull
+  {587, 203 },  // a
+  {587, 811 },  // bies
+  {554, 405 },  // chok
+  {587, 405 },  // ing
+  {554, 405 },  // on
+  {587, 405 },  // your
+  {554, 608 },  // al
+  {587, 203 },  // i
+  {587, 811 },  // bis
+  {554, 405 },  // But
+  {587, 405 },  // it's
+  {587, 405 },  // just
+  {659, 405 },  // the
+  {784, 608 },  // price
+  {740, 203 },  // I
+  {740, 811 },  // pay
+  {784, 405 },  // Dest
+  {740, 405 },  // in
+  {587, 405 },  // y
+  {440, 405 },  // is
+  {659, 608 },  // call
+  {587, 203 },  // ing
+  {587, 811 },  // me
+  {587, 405 },  // O
+  {587, 405 },  // pen
+  {587, 405 },  // up
+  {659, 405 },  // my
+  {784, 608 },  // eag
+  {740, 608 },  // er
+  {740, 811 },  // eyes
+  {0,   405 },
+  {0,   811 },
+  {587, 405 },  // 'cause
+  {740, 405 },  // I'm
+  {659, 405 },  // Mis
+  {587, 405 },  // ter
+  {659, 811 },  // Bright
+  {587, 811 },  // side
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   405 },
+  {587, 203 },  // com
+  {587, 203 },  // ing
+  {587, 203 },  // out
+  {587, 203 },  // of
+  {554, 203 },  // my
+  {587, 405 },  // cage
+  {587, 203 },  // and
+  {587, 203 },  // I've
+  {587, 203 },  // been
+  {587, 203 },  // do
+  {587, 203 },  // ing
+  {587, 405 },  // just
+  {587, 405 },  // fine
+  {587, 203 },  // got
+  {587, 203 },  // ta
+  {587, 203 },  // got
+  {587, 203 },  // ta
+  {554, 203 },  // be
+  {587, 405 },  // down
+  {587, 203 },  // be
+  {587, 203 },  // cause
+  {587, 203 },  // I
+  {587, 203 },  // want
+  {554, 203 },  // it
+  {587, 405 },  // all.
+  {0,   203 },
+  {587, 203 },  // It
+  {587, 203 },  // start
+  {587, 203 },  // ed
+  {587, 203 },  // out
+  {587, 203 },  // with
+  {554, 203 },  // a
+  {587, 405 },  // kiss
+  {587, 203 },  // How
+  {587, 203 },  // did
+  {587, 203 },  // it
+  {587, 203 },  // end
+  {587, 203 },  // up
+  {554, 405 },  // like
+  {587, 405 },  // this
+  {587, 203 },  // It
+  {587, 203 },  // was
+  {587, 203 },  // on
+  {587, 203 },  // ly
+  {554, 203 },  // a
+  {587, 608 },  // kiss
+  {587, 203 },  // It
+  {587, 203 },  // was
+  {587, 203 },  // on
+  {587, 203 },  // ly
+  {554, 203 },  // a
+  {587, 608 },  // kiss
+  {587, 203 },  // Now
+  {587, 203 },  // I'm
+  {587, 203 },  // fall
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // sleep
+  {587, 203 },  // and
+  {587, 203 },  // she's
+  {587, 203 },  // call
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // cab
+  {587, 203 },  // while
+  {587, 203 },  // he's
+  {587, 203 },  // hav
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // smoke
+  {587, 203 },  // and
+  {587, 203 },  // she's
+  {587, 203 },  // tak
+  {587, 203 },  // ing
+  {554, 203 },  // a
+  {587, 608 },  // drag
+  {587, 203 },  // Now
+  {587, 203 },  // they're
+  {587, 203 },  // go
+  {587, 203 },  // ing
+  {554, 203 },  // to
+  {587, 608 },  // bed
+  {587, 203 },  // and
+  {587, 203 },  // my
+  {587, 203 },  // stom
+  {587, 203 },  // ach
+  {554, 203 },  // is
+  {587, 608 },  // sick
+  {587, 203 },  // And
+  {587, 203 },  // it's
+  {587, 203 },  // all
+  {587, 203 },  // in
+  {554, 203 },  // my
+  {587, 608 },  // head
+  {587, 203 },  // but
+  {587, 203 },  // she's
+  {587, 203 },  // touch
+  {587, 203 },  // ing
+  {587, 405 },  // his
+  {587, 811 },  // chest
+  {587, 811 },  // now
+  {587, 405 },  // He
+  {587, 405 },  // takes
+  {587, 405 },  // off
+  {554, 405 },  // her
+  {554, 811 },  // dress
+  {587, 811 },  // now
+  {587, 811 },  // Let
+  {587, 811 },  // me
+  {587, 811 },  // go.
+  {0,   811 },
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   405 },
+  {740, 405 },  // I
+  {740, 405 },  // just
+  {740, 405 },  // can't
+  {587, 811 },  // look
+  {659, 811 },  // It's
+  {659, 405 },  // kill
+  {587, 405 },  // ing
+  {740, 811 },  // me
+  {0,   811 },
+  {0,   405 },
+  {440, 405 },  // and
+  {659, 608 },  // tak
+  {587, 608 },  // ing
+  {659, 811 },  // con
+  {587, 1216},  // trol
+  {0,   1622},
+  {0,   1622},
+  {554, 608 },  // Jeal
+  {587, 203 },  // ous
+  {587, 811 },  // y
+  {554, 405 },  // turn
+  {587, 405 },  // ing
+  {554, 405 },  // saints
+  {587, 405 },  // in
+  {554, 608 },  // to
+  {587, 203 },  // the
+  {587, 811 },  // sea
+  {554, 405 },  // swim
+  {587, 405 },  // ming
+  {554, 405 },  // through
+  {587, 405 },  // sick
+  {554, 608 },  // lull
+  {587, 203 },  // a
+  {587, 811 },  // bies
+  {554, 405 },  // chok
+  {587, 405 },  // ing
+  {554, 405 },  // on
+  {587, 405 },  // your
+  {554, 608 },  // al
+  {587, 203 },  // i
+  {587, 811 },  // bis
+  {554, 405 },  // But
+  {587, 405 },  // it's
+  {587, 405 },  // just
+  {659, 405 },  // the
+  {784, 608 },  // price
+  {740, 203 },  // I
+  {740, 811 },  // pay
+  {784, 405 },  // Dest
+  {740, 405 },  // in
+  {587, 405 },  // y
+  {440, 405 },  // is
+  {659, 608 },  // call
+  {587, 203 },  // ing
+  {587, 811 },  // me
+  {587, 405 },  // O
+  {587, 405 },  // pen
+  {587, 405 },  // up
+  {659, 405 },  // my
+  {784, 608 },  // eag
+  {740, 608 },  // er
+  {740, 811 },  // eyes
+  {0,   405 },
+  {0,   811 },
+  {587, 405 },  // 'cause
+  {740, 405 },  // I'm
+  {659, 405 },  // Mis
+  {587, 405 },  // ter
+  {659, 811 },  // Bright
+  {587, 811 },  // side
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
+  {0,   811 },
+  {0,   405 },
+  {587, 405 },  // I
+  {554, 608 },  // nev
+  {587, 1014},  // er
+  {0,   1622},
+  {0,   1622},
+  {0,   811 },
+  {0,   405 },
+  {587, 405 },  // I
+  {554, 608 },  // nev
+  {587, 1014},  // er
+  {0,   1622},
+  {0,   1622},
+  {0,   811 },
+  {0,   405 },
+  {784, 405 },  // I
+  {784, 608 },  // nev
+  {740, 2230},  // er
+  {0,   405 },
+  {0,   1622},
+  {0,   811 },
+  {0,   405 },
+  {784, 405 },
+  {784, 608 },
+  {740, 2230},
+  {0,   405 },
+  {0,   1622},
+  {0,   1622},
+  {0,   1622},
 };
 
 // 
 int mr_brightside_lyric_timing[] =
 {
-  0,  // opening sequence (no lyrics)
-  0,  // opening sequence (no lyrics)
-  0,  // opening sequence (no lyrics)
-  0,  // opening sequence (no lyrics)
-  1
+  0,
+  0, 
+  0,
+  0, 
+  1,  // "Coming out of my cage..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  2,  // "Gotta, gotta..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  3,  // "It started out with..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  4,  // "It was only a kiss..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  5,  // "Now I'm falling..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  6,  // "While he's..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  7,  // "Now they're going..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  8,  // "And it's all in..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  9,  // "He takes off her..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  10, // "I just can't..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  11, // "And taking..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  12, // "Jealousy..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  13, // "Swimming through..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  14, // "But it's just..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  15, // "Open up..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  16, // "Coming out of my cage..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  17, // "Gotta, gotta..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  18, // "It started out with..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  19, // "It was only..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  20, // "Now I'm falling..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  21, // "While he's..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  22, // "Now they're..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  23, // "And it's all in..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  24, // "He takes off her..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  25, // "I just can't..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  26, // "And taking..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  27, // "Jealousy..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  28, // "Swimming through..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  29, // "But it's just..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  30, // "Open up..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  31, // "I never..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  32, // "I never..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  33, // "I never..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  34, // "I never..."
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
 };
 
-// 
+// Golden lyrics
+// FIRST LINE          THIRD LINE          SECOND LINE         FOURTH LINE
 char* golden_lyrics[] =
 {
-  "Golden"
+  "Golden",
+  "I was a ghost,                          I was alone",
+  "Eoduwojin apgilsoge                     (Hah)",
+  "Given the throne,   believe (Hah)       I didn't know how to",
+  "I was the queen that                    I'm meant to be (Ah)",
+  "I lived two lives,  sides               tried to play both",
+  "But I couldn't find oh)                 my own place (Oh,",
+  "Called a problem    too wild            child, 'cause I got",
+  "But now that's how  kkeuteopsi on stage I'm getting paid,",
+  "I'm done hidin', now                    I'm shinin'",
+  "Like I'm born to be",
+  "We dreamin' hard, we                    came so far",
+  "Now I believe",
+  "We're goin' up, up,                     up",
+  "It's our moment",
+  "You know together                       we're glowing",
+  "Gonna be, gonna be                      goldеn",
+  "Oh, up, up, up",
+  "With our voices",
+  "Yeongwonhi kkaejil                      su еomneun",
+  "Gonna be, gonna be                      golden",
+  "Oh, I'm done hidin'                     now I'm shinin'",
+  "Like I'm born to be",
+  "Oh, our time, no                        fears, no lies",
+  "That's who we're                        born to be",
+  "Waited so long to   down                break these walls",
+  "To wake up and feel                     like me",
+  "Put these patterns                      all in the past now",
+  "And finally live    all see             like the girl they",
+  "No more hiding, I'll                    be shining",
+  "Like I'm born to be",
+  "'Cause we are       strong              hunters, voices",
+  "And I know I believe",
+  "We're goin' up, up,                     up",
+  "It's our moment",
+  "You know together                       we're glowing",
+  "Gonna be, gonna be                      golden",
+  "Oh, up, up, up",
+  "With our voices",
+  "Yeongwonhi kkaejil                      su eomneun",
+  "Gonna be, gonna be                      golden",
+  "Oh, I'm done hidin',                    now I'm shinin'",
+  "Like I'm born to be",
+  "Oh, our time, no                        fears, no lies",
+  "That's who we're                        born to be",
+  "You know we're gonna(Oh)                be, gonna be golden",
+  "We're gonna be,                         gonna be (Oh)",
+  "Born to be, born to                     be glowin' (Oh)",
+  "Balkge bitnaneun                        urin",
+  "You know that it's  no lies (Oh, oh)    our time, no fears,",
+  "That's who we're                        born to be"
+};
+
+// Golden notes
+// {pitch (Hz), duration (s)}
+// G Major / E minor
+const uint32_t golden_notes[][2] =
+{
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   484 },
+    {392, 161 },  // I
+    {440, 161 },  // was
+    {494, 161 },  // a
+    {494, 484 },  // ghost
+    {392, 161 },  // I
+    {440, 161 },  // was
+    {494, 161 },  // a
+    {494, 806 },  // lone
+    {587, 806 },  // Eo
+    {392, 161 },  // du
+    {392, 161 },  // wo
+    {440, 806 },  // jin
+    {587, 806 },  // ap
+    {370, 161 },  // gil
+    {370, 161 },  // so
+    {370, 323 },  // ge
+    {330, 645 },
+    {740, 323 },  // ah
+    {659, 323 },  // ah
+    {784, 323 },  // ah
+    {0,   484 },
+    {392, 161 },  // Giv
+    {440, 161 },  // en
+    {494, 161 },  // the
+    {494, 484 },  // throne
+    {392, 161 },  // I
+    {440, 161 },  // did
+    {494, 161 },  // n't
+    {494, 806 },  // know
+    {587, 806 },  // how
+    {392, 161 },  // to
+    {392, 161 },  // be
+    {440, 806 },  // lieve
+    {740, 806 },  // I
+    {659, 161 },  // was
+    {740, 161 },  // the
+    {659, 323 },  // queen
+    {659, 161 },  // that
+    {740, 323 },  // I'm
+    {659, 323 },  // meant
+    {659, 161 },  // to
+    {659, 161 },  // be
+    {587, 323 },  // e
+    {880, 484 },  // lived
+    {880, 484 },  // two
+    {880, 484 },  // lives
+    {587, 161 },  // tried
+    {587, 323 },  // to
+    {880, 484 },  // play
+    {880, 484 },  // both
+    {880, 645 },  // sides
+    {784, 484 },  // but
+    {880, 323 },  // I
+    {880, 323 },  // could
+    {880, 323 },  // n't
+    {880, 323 },  // find
+    {880, 323 },  // my
+    {880, 323 },  // own
+    {880, 161 },  // pla
+    {988, 484 },  // ce
+    {0,   645 },
+    {494, 161 },  // Called
+    {494, 323 },  // a
+    {880, 484 },  // prob
+    {880, 484 },  // lem
+    {880, 484 },  // child
+    {587, 161 },  // 'cause
+    {587, 323 },  // I
+    {880, 484 },  // got
+    {880, 484 },  // too
+    {880, 161 },  // wi
+    {988, 645 },  // ild
+    {587, 323 },  // but
+    {880, 323 },  // now
+    {880, 323 },  // that's
+    {880, 323 },  // how
+    {880, 323 },  // I'm
+    {784, 323 },  // get
+    {740, 323 },  // ting
+    {740, 161 },  // pa
+    {659, 484 },  // id
+    {587, 161 },  // kkeu
+    {659, 161 },  // teo
+    {659, 161 },  // psi
+    {659,  323 },  // on
+    {659,  484 },  // stage
+    {659,  484 },  // I'm
+    {784,  484 },  // done
+    {1047, 484 },  // hi
+    {988,  484 },  // din'
+    {587,  484 },  // now
+    {784,  484 },  // I'm
+    {1319, 484 },  // shi
+    {1175, 484 },  // nin'
+    {740,  484 },  // like
+    {880,  484 },  // I'm
+    {1175, 484 },  // born
+    {1047, 323 },  // to
+    {1047, 1613},  // be
+    {740,  484 },  // We
+    {659,  484 },  // drea
+    {784,  484 },  // min'
+    {1047, 484 },  // hard
+    {988,  484 },  // we
+    {587,  484 },  // came
+    {784,  484 },  // so
+    {1319, 484 },  // far
+    {1175, 484 },  // now
+    {740,  484 },  // I
+    {880,  484 },  // be
+    {1175, 1935},  // lieve
+    {988,  323 },  // We're
+    {988,  323 },  // go
+    {1319, 323 },  // in'
+    {1319, 484 },  // up
+    {1319, 484 },  // up
+    {1319, 323 },  // up
+    {988,  161 },  // it's
+    {988,  323 },  // ou
+    {1175, 161 },  // r
+    {1175, 484 },  // mo
+    {880,  484 },  // ment
+    {1175, 161 },  // You
+    {1175, 161 },  // know
+    {1175, 161 },  // to
+    {1175, 161 },  // ge
+    {1047, 161 },  // ther
+    {1047, 161 },  // we're
+    {1047, 323 },  // glow
+    {988,  161 },  // ing
+    {0,    484 },
+    {1175, 161 },  // gon
+    {1175, 161 },  // na
+    {1175, 161 },  // be
+    {1175, 161 },  // gon
+    {1047, 161 },  // na
+    {1047, 161 },  // be
+    {1047, 323 },  // gol
+    {988,  161 },  // den
+    {0,    484 },
+    {880,  323 },  // oh
+    {988,  323 },  // oh
+    {784,  323 },  // oh
+    {1319, 484 },  // up
+    {1319, 484 },  // up
+    {1568, 323 },  // up
+    {1480, 161 },  // with
+    {1319, 323 },  // ou
+    {1175, 161 },  // r
+    {1175, 484 },  // voi
+    {880,  484 },  // ces
+    {1175, 161 },  // Yeong
+    {1175, 161 },  // won
+    {1175, 161 },  // hi
+    {1175, 161 },  // kkae
+    {1047, 161 },  // jil
+    {1047, 161 },  // su
+    {1047, 323 },  // eom
+    {988,  161 },  // neun
+    {0,    484 },
+    {1175, 161 },  // gon
+    {1175, 161 },  // na
+    {1175, 161 },  // be
+    {1175, 161 },  // gon
+    {1047, 161 },  // na
+    {1047, 161 },  // be
+    {1047, 323 },  // gol
+    {988,  645 },  // den
+    {880,  323 },  // oh
+    {988,  323 },  // oh
+    {784,  323 },  // oh
+    {659,  484 },  // I'm
+    {784,  484 },  // done
+    {1047, 484 },  // hi
+    {988,  484 },  // din'
+    {587,  484 },  // now
+    {740,  484 },  // I'm
+    {1319, 484 },  // shi
+    {1175, 484 },  // nin'
+    {784,  484 },  // like
+    {988,  484 },  // I'm
+    {1760, 484 },  // born
+    {1480, 323 },  // to
+    {1568, 484 },  // be
+    {1319, 645 },  // e
+    {0,    484 },
+    {740,  484 },  // oh
+    {659,  484 },  // ou
+    {784,  484 },  // r
+    {1047, 484 },  // time
+    {988,  484 },  // no
+    {587,  484 },  // fears
+    {740,  484 },  // no
+    {1319, 484 },  // lies
+    {1175, 484 },  // that's
+    {784,  484 },  // who
+    {988,  484 },  // we're
+    {1760, 484 },  // born
+    {1480, 323 },  // to
+    {1568, 968 },  // be
+    {1319, 645 },  // e
+    {0,    484 },
+    {0,    968 },
+    {0,    323 },
+    {392,  323 },  // wait
+    {392,  323 },  // ed
+    {880,  323 },  // so
+    {784,  484 },  // long
+    {784,  323 },  // to
+    {740,  323 },  // break
+    {740,  323 },  // these
+    {740,  484 },  // walls
+    {587,  968 },  // down
+    {494,  161 },  // to
+    {494,  484 },  // wake
+    {659,  806 },  // up
+    {494,  242 },  // and
+    {494,  242 },  // feel
+    {494,  645 },  // like
+    {494,  968 },  // me
+    {0,    323 },
+    {392,  323 },  // put
+    {392,  323 },  // these
+    {880,  323 },  // pat
+    {784,  645 },  // terns
+    {740,  242 },  // all
+    {740,  242 },  // in
+    {740,  323 },  // the
+    {740,  484 },  // past
+    {659,  968 },  // now
+    {494,  161 },  // and
+    {494,  323 },  // fin
+    {659,  161 },  // ally
+    {659,  645 },  // live
+    {494,  161 },  // like
+    {494,  161 },  // the
+    {494,  323 },  // girl
+    {494,  323 },  // they
+    {494,  323 },  // all
+    {494,  968 },  // see
+    {0,   484 },
+    {0,   484 },
+    {330,  484 },  // no
+    {392, 484 },  // more
+    {523, 484 },  // hi
+    {494,  484 },  // ding
+    {294, 484 },  // I'll
+    {370,  484 },  // be
+    {659,  484 },  // shi
+    {587,  484 },  // ning
+    {494,  484 },  // like
+    {587,  484 },  // I'm
+    {880, 484 },  // born
+    {740,  323 },  // to
+    {784,  645 },  // be
+    {0,   484 },
+    {0,   484 },
+    {740,  484 },  // 'cause
+    {659,  484 },  // we
+    {784,  484 },  // are
+    {1047, 484 },  // hun
+    {988,  484 },  // ters
+    {587,  484 },  // voi
+    {784,  484 },  // ces
+    {1319, 484 },  // strong
+    {1175, 484 },  // and
+    {988,  806 },  // I
+    {988,  161 },  // know
+    {988,  323 },  // I
+    {1175, 484 },  // be
+    {1175, 806 },  // lieve
+    {1568, 323 },  // We're
+    {1480, 323 },  // go
+    {1319, 323 },  // in'
+    {1319, 484 },  // up
+    {1319, 484 },  // up
+    {1319, 323 },  // up
+    {988,  161 },  // it's
+    {988,  323 },  // ou
+    {1175, 161 },  // r
+    {1175, 484 },  // mo
+    {880, 484 },  // ment
+    {1175, 161 },  // you
+    {1175, 161 },  // know
+    {1175, 161 },  // to
+    {1175, 161 },  // ge
+    {1047, 161 },  // ther
+    {1047, 161 },  // we're
+    {1047, 323 },  // glow
+    {988,  645 },  // ing
+    {1175, 161 },  // gon
+    {1175, 161 },  // na
+    {1175, 161 },  // be
+    {1175, 161 },  // gon
+    {1047, 161 },  // na
+    {1047, 161 },  // be
+    {1047, 323 },  // gold
+    {988,  323 },  // en
+    {0,   323 },
+    {880, 323 },  // oh
+    {988,  323 },  // oh
+    {784,  323 },  // oh
+    {1319, 484 },  // up
+    {1319, 484 },  // up
+    {1568, 323 },  // up
+    {1480, 161 },  // with
+    {1319, 484 },  // our
+    {1175, 484 },  // voi
+    {880, 484 },  // ces
+    {1175, 161 },  // yeong
+    {1175, 161 },  // won
+    {1175, 161 },  // hi
+    {1175, 161 },  // kkae
+    {1047, 161 },  // jil
+    {1047, 161 },  // su
+    {1047, 323 },  // eom
+    {988,  323 },  // neun
+    {0,   323 },
+    {1175, 161 },  // gon
+    {1175, 161 },  // na
+    {1175, 161 },  // be
+    {1175, 161 },  // gon
+    {1047, 161 },  // na
+    {1047, 161 },  // be
+    {1047, 323 },  // gol
+    {988,  323 },  // den
+    {0,   323 },
+    {880, 323 },  // oh
+    {988,  323 },  // oh
+    {784,  323 },  // oh
+    {659,  484 },  // I'm
+    {784,  484 },  // done
+    {1047, 484 },  // hi
+    {988,  484 },  // din'
+    {587,  484 },  // now
+    {740,  484 },  // I'm
+    {1319, 484 },  // shi
+    {1175, 484 },  // nin'
+    {784,  484 },  // like
+    {988,  484 },  // I'm
+    {1760, 484 },  // born
+    {1480, 323 },  // to
+    {1568, 484 },  // be
+    {1319, 645 },  // e
+    {0,   484 },
+    {740,  484 },  // oh
+    {659,  484 },  // ou
+    {784,  484 },  // r
+    {1047, 484 },  // time
+    {988,  484 },  // no
+    {587,  484 },  // fears
+    {740,  484 },  // no
+    {1319, 484 },  // lies
+    {1175, 484 },  // that's
+    {784,  484 },  // who
+    {988,  484 },  // we're
+    {1760, 484 },  // born
+    {1480, 323 },  // to
+    {1568, 484 },  // be
+    {1319, 645 },  // e
+    {1175, 323 },  // you
+    {1175, 323 },  // know
+    {880, 323 },  // we're
+    {880, 161 },  // gon
+    {880, 161 },  // na
+    {880, 161 },  // be
+    {880, 161 },  // gon
+    {880, 161 },  // na
+    {880, 161 },  // be
+    {880, 323 },  // gold
+    {988,  484 },  // en
+    {784,  161 },  // we're
+    {880, 161 },  // gon
+    {880, 161 },  // na
+    {880, 161 },  // be
+    {880, 161 },  // gon
+    {880, 161 },  // na
+    {880, 161 },  // be
+    {0,   484 },
+    {0,   484 },
+    {880, 161 },  // born
+    {880, 161 },  // to
+    {880, 161 },  // be
+    {880, 161 },  // born
+    {880, 161 },  // to
+    {880, 161 },  // be
+    {880, 323 },  // gold
+    {988,  484 },  // en
+    {784,  161 },  // balk
+    {880, 161 },  // ge
+    {880, 161 },  // bit
+    {880, 161 },  // nan
+    {880, 161 },  // eun
+    {880, 161 },  // ur
+    {880, 161 },  // in
+    {0,   323 },
+    {880, 161 },  // you
+    {784,  323 },  // know
+    {740,  161 },  // that
+    {659,  484 },  // it's
+    {784,  484 },  // our
+    {1047, 484 },  // time
+    {988,  484 },  // no
+    {587,  484 },  // fears
+    {740,  484 },  // no
+    {1319, 484 },  // lies
+    {1175, 484 },  // that's
+    {784,  484 },  // who
+    {988,  484 },  // we're
+    {1760, 484 },  // born
+    {1480, 323 },  // to
+    {1568, 1613},  // be
+    {0,   484 },
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+    {0,   1935},
+};
+
+
+// 
+int golden_lyric_timing[] =
+{
+
 };
 
 // 
-const int golden_notes[][2] =
+const int fur_elise_notes[][2] = 
 {
-
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {494,	125},
+  {587,	125},
+  {523,	125},
+  {440,	250},
+  {  0,	125},
+  {262,	125},
+  {330,	125},
+  {440,	125},
+  {494,	250},
+  {  0,	125},
+  {330,	125},
+  {416,	125},
+  {494,	125},
+  {523,	250},
+  {  0,	125},
+  {330,	125},
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {494,	125},
+  {587,	125},
+  {523,	125},
+  {440,	250},
+  {  0,	125},
+  {262,	125},
+  {330,	125},
+  {440,	125},
+  {494,	250},
+  {  0,	125},
+  {330,	125},
+  {523,	125},
+  {494,	125},
+  {440,	250},
+  {  0,	125},
+  {494,	125},
+  {523,	125},
+  {587,	125},
+  {659,	375},
+  {392,	125},
+  {699,	125},
+  {659,	125},
+  {587,	375},
+  {349,	125},
+  {659,	125},
+  {587,	125},
+  {523,	375},
+  {330,	125},
+  {587,	125},
+  {523,	125},
+  {494,	250},
+  {  0,	125},
+  {330,	125},
+  {659,	125},
+  {  0,	250},
+  {659,	125},
+  {1319,125},
+  {  0,	250},
+  {623,	125},
+  {659,	125},
+  {  0,	250},
+  {623,	125},
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {494,	125},
+  {587,	125},
+  {523,	125},
+  {440,	250},
+  {  0,	125},
+  {262,	125},
+  {330,	125},
+  {440,	125},
+  {494,	250},
+  {  0,	125},
+  {330,	125},
+  {416,	125},
+  {494,	125},
+  {523,	250},
+  {  0,	125},
+  {330,	125},
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {623,	125},
+  {659,	125},
+  {494,	125},
+  {587,	125},
+  {523,	125},
+  {440,	250},
+  {  0,	125},
+  {262,	125},
+  {330,	125},
+  {440,	125},
+  {494,	250},
+  {  0,	125},
+  {330,	125},
+  {523,	125},
+  {494,	125},
+  {440,	500},
+  {0, 20000}
 };
 
 // 

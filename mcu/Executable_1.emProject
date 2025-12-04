@@ -216,7 +216,7 @@
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
       <file file_name="src/music_player.c">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </file>
       <file file_name="src/note_determiner.c">
         <configuration Name="Debug" build_exclude_from_build="No" />

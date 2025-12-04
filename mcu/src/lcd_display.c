@@ -119,7 +119,7 @@ void lcd_display_reset(void)
   delay_millis(DELAY_TIM, 1500);
 
   // turns display back on
-  lcd_display_write(0x0F);
+  lcd_display_write(0x0C);
   delay_millis(DELAY_TIM, 200);
 
   // sets cursor address to be Row 0, Column 0

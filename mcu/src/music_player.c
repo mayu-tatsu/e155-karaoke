@@ -11,6 +11,9 @@ Purpose:
 #include "../lib/lcd_display.h"
 #include "../lib/mcu_configuration.h"
 
+// defines global variables
+volatile int note_done;
+
 // 
 void music_player(int song)
 {
@@ -19,58 +22,90 @@ void music_player(int song)
   // i.e. don't let users spam buttons and start the process all over again??
   // not sure if this is completely necessary, though
 
-  // 
+  // resets the LCD screen
   lcd_display_reset();
 
-  // 
-  pwm_initialization(PWM_TIM);
+  // initializes a timer to output a PWM
+  timer_initialization(DELAY_TIM); pwm_initialization(PWM_TIM);
   
-  // sets PWM output pin to alternating function
+  // sets a GPIO pin to alternating function to actually output the PWM
   pinMode(PWM, GPIO_ALT);
 
-  // TODO: CHECK IF THIS IS NECESSARY?? + FIX IF IT IS
-  // enables AF14 for the GPIO pin PA6
-  // GPIO -> AFRL &= ~(1 << 24); GPIO -> AFRL |= (1 << 25); GPIO -> AFRL |= (1 << 26); GPIO -> AFRL |= (1 << 27); 
+  // TODO: FIX THIS MAYBE??
+  // enables AF14 for the PWM pin
+  GPIOA -> AFR[0] &= ~GPIO_AFRL_AFSEL6_0; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_1; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_2; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_3; 
 
-  // 
-  int song_length = ((song == PLAY_MR_BRIGHTSIDE) ? mr_brightside_song_length : golden_song_length);
-
-  // 
-  const int song_notes[song_length][2];
-
-  // 
+  // checks which song the user selected
   if (song == PLAY_MR_BRIGHTSIDE)
   {
-    memcpy(song_notes, mr_brightside_notes, mr_brightside_song_length);
-    display_message(mr_brightside_lyrics[0]);
-    delay_secs(DELAY_TIM, 7);
-    lcd_display_reset();
-  }
-  else
-  {
-    memcpy(song_notes, golden_notes, golden_song_length);
-    display_message(golden_lyrics[0]);
-    delay_secs(DELAY_TIM, 7);
-    lcd_display_reset();
-  }
-
-  // loops through every note of the desired song
-  for (int i = 0; i < song_length; i++) 
-  {
-    // generates each note's frequency 
-    pwm_generation(PWM_TIM, song_notes[i][0]);
-
-    // prolongs each note for however long is deemed necessary
-    delay_ms(DELAY_TIM, 1000 * song_notes[i][1]);
-
     // 
-    if (mr_brightside_lyric_timing[i] != 0)
+    display_message(mr_brightside_lyrics[0]);
+    delay_secs(DELAY_TIM, 5);
+    lcd_display_reset();
+
+    // loops through every note of the desired song
+    for (uint32_t i = 0; i < mr_brightside_song_length; i++) 
     {
-      lcd_display_reset();
-      display_message(mr_brightside_lyrics[mr_brightside_lyric_timing[i]]);
-    }
+      // 
+      //note_done = 0;
+
+      // generates each note's frequency 
+      //pwm_generation(PWM_TIM, fur_elise_notes[i][0]);
+      pwm_generation(PWM_TIM, mr_brightside_notes[i][0]);
+
+      // prolongs each note for however long is deemed necessary
+      //delay_ms(DELAY_TIM, fur_elise_notes[i][1]);
+      delay_ms(DELAY_TIM, mr_brightside_notes[i][1] / 2);
+
+      // 
+      if (mr_brightside_lyric_timing[i] != 0)
+      {
+        lcd_display_reset();
+        display_message(mr_brightside_lyrics[mr_brightside_lyric_timing[i]]);
+      }
+
+      // 
+      delay_micros(DELAY_TIM, 50);
   
-    // TODO: include a NOTE_FINISHED flag?
+      // 
+      //note_done = 1;
+    }
+  }
+
+  else if (song == PLAY_GOLDEN)
+  {
+    // 
+    //display_message(golden_lyrics[0]);
+    //delay_secs(DELAY_TIM, 5);
+    //lcd_display_reset();
+  
+    // loops through every note of the desired song
+    for (uint32_t i = 0; i < golden_song_length; i++) 
+    {
+      // 
+      //note_done = 0;
+
+      // generates each note's frequency 
+      //pwm_generation(PWM_TIM, fur_elise_notes[i][0]);
+      pwm_generation(PWM_TIM, golden_notes[i][0]);
+
+      // prolongs each note for however long is deemed necessary
+      //delay_ms(DELAY_TIM, fur_elise_notes[i][1]);
+      delay_ms(DELAY_TIM, golden_notes[i][1]);
+
+      //// 
+      //if (golden_lyric_timing[i] != 0)
+      //{
+      //  lcd_display_reset();
+      //  display_message(golden_lyrics[golden_lyric_timing[i]]);
+      //}
+
+      // 
+      delay_micros(DELAY_TIM, 50);
+  
+      // 
+      //note_done = 1;
+    }
   }
 
   // 
