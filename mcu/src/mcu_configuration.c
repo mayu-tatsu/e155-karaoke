@@ -43,7 +43,7 @@ void mcu_configuration(void)
   // enables global interrupts
   __enable_irq();
 
-  // 
+  // configures the pins and interrupts needed to calculate received vs. expected frequency error
   error_calculator_configuration();
   
   // configures the DMA peripheral as desired

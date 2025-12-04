@@ -63,4 +63,5 @@ Output/Debug/Obj/Executable_1/singing_grader.o: \
  C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/dma_configuration.h \
  C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/frequency_determiner.h \
  C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/frequency_determiner.h \
- C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/lcd_display.h
+ C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/lcd_display.h \
+ C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/music_player.h

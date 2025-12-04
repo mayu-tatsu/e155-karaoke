@@ -3,7 +3,7 @@ Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
 Date:     December 3, 2025
 
-Purpose: 
+Purpose: To actually allow the music-playing functions to be used.
 */
 
 #ifndef MUSIC_PLAYER_H
@@ -23,6 +23,7 @@ Purpose:
 
 #define PLAY_MR_BRIGHTSIDE 0
 #define PLAY_GOLDEN        1
+#define PLAY_TEST          5
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

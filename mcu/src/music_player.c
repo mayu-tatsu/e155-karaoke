@@ -28,7 +28,7 @@ void music_player(int song)
   // enables AF14 for the PWM pin
   GPIOA -> AFR[0] &= ~GPIO_AFRL_AFSEL6_0; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_1; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_2; GPIOA -> AFR[0] |= GPIO_AFRL_AFSEL6_3; 
   
-  // 
+  // resets the interrupt counter and error total
   interrupt_triggered_counter = 0; singing_error = 0;
 
   // checks which song the user selected
@@ -49,15 +49,18 @@ void music_player(int song)
     // loops through every note of the desired song
     for (uint32_t i = 0; i < mr_brightside_song_length; i++) 
     {
-      // 
+      // lowers the note-done flag
       digitalWrite(NOTE_DONE, PIO_LOW);
+
+      // resets the completed-FFT flag
+      fft_calculations_complete = 0;
 
       // generates each note's frequency
       pwm_generation(PWM_TIM, mr_brightside_notes[i][0]);
       expected_frequency = mr_brightside_notes[i][0];
 
       // prolongs each note for however long is deemed necessary
-      delay_ms(DELAY_TIM, mr_brightside_notes[i][1] / 1000);
+      delay_ms(DELAY_TIM, mr_brightside_notes[i][1]);
 
       // checks if it's time to switch lyrics
       if (mr_brightside_lyric_timing[i] != 0)
@@ -69,21 +72,20 @@ void music_player(int song)
       // adds a small delay to distinguish notes
       delay_micros(DELAY_TIM, 50);
   
-      // interrupt triggers, in singing_grader.c
+      // raises the note done flag (so that an interrupt triggers)
+      // note: you can find this interrupt in singing_grader.c
       digitalWrite(NOTE_DONE, PIO_HIGH);
-
-      // 
-      fft_calculations_complete = 0;
     }
   }
 
+  // checks which song the user selected
   // if it's Golden...
   if (song == PLAY_GOLDEN)
   {
     // tells the user which song they've chosen
-    //display_message(golden_lyrics[0]);
-    //delay_secs(DELAY_TIM, 5);
-    //lcd_display_reset();
+    display_message(golden_lyrics[0]);
+    delay_secs(DELAY_TIM, 5);
+    lcd_display_reset();
 
     // counts down until the start of the song
     display_message("3");     delay_secs(DELAY_TIM, 1); lcd_display_reset();
@@ -92,39 +94,70 @@ void music_player(int song)
     display_message("Sing!"); delay_secs(DELAY_TIM, 1); lcd_display_reset();
   
     // loops through every note of the desired song
-    //for (uint32_t i = 0; i < golden_song_length; i++) 
-    for (uint32_t i = 0; i < a_four_length; i++) 
+    for (uint32_t i = 0; i < golden_song_length; i++) 
     {
-      // 
+      // lowers the note-done flag
       digitalWrite(NOTE_DONE, PIO_LOW);
 
-      // 
+      // resets the completed-FFT flag
       fft_calculations_complete = 0;
 
       // generates each note's frequency
-      //pwm_generation(PWM_TIM, golden_notes[i][0]);
-      //expected_frequency = golden_notes[i][0];
-      pwm_generation(PWM_TIM, a_four[i][0]);
-      expected_frequency = a_four[i][0];
+      pwm_generation(PWM_TIM, golden_notes[i][0]);
+      expected_frequency = golden_notes[i][0];
 
       // prolongs each note for however long is deemed necessary
-      //delay_ms(DELAY_TIM, golden_notes[i][1] / 2);
-      delay_ms(DELAY_TIM, a_four[i][1]);
+      delay_ms(DELAY_TIM, golden_notes[i][1]);
 
       // checks if it's time to switch lyrics
-      //if (golden_lyric_timing[i] != 0)
-      //{
-      //  lcd_display_reset();
-      //  display_message(golden_lyrics[golden_lyric_timing[i]]);
-      //}
+      if (golden_lyric_timing[i] != 0)
+      {
+        lcd_display_reset();
+        display_message(golden_lyrics[golden_lyric_timing[i]]);
+      }
 
       // adds a small delay to distinguish notes
-      //delay_micros(DELAY_TIM, 50);
+      delay_micros(DELAY_TIM, 50);
   
-      // 
+      // raises the note done flag (so that an interrupt triggers)
+      // note: you can find this interrupt in singing_grader.c
       digitalWrite(NOTE_DONE, PIO_HIGH);
+    }
+  }
 
-      
+  // if the user wants to test the microphone's detection...
+  if (song == PLAY_TEST)
+  {
+    // confirms that it's a test run
+    display_message("Test notes!");
+    delay_secs(DELAY_TIM, 5);
+    lcd_display_reset();
+
+    // counts down until the start of the test
+    display_message("3");     delay_secs(DELAY_TIM, 1); lcd_display_reset();
+    display_message("2");     delay_secs(DELAY_TIM, 1); lcd_display_reset();
+    display_message("1");     delay_secs(DELAY_TIM, 1); lcd_display_reset();
+    display_message("Test!"); delay_secs(DELAY_TIM, 1); lcd_display_reset();
+  
+    // loops through every note of the test array
+    for (uint32_t i = 0; i < test_notes_length; i++) 
+    {
+      // lowers the note-done flag
+      digitalWrite(NOTE_DONE, PIO_LOW);
+
+      // resets the completed-FFT flag
+      fft_calculations_complete = 0;
+
+      // generates each note's frequency
+      pwm_generation(PWM_TIM, test_notes[i][0]);
+      expected_frequency = test_notes[i][0];
+
+      // prolongs each note for however long is deemed necessary
+      delay_ms(DELAY_TIM, test_notes[i][1]);
+  
+      // raises the note done flag (so that an interrupt triggers)
+      // note: you can find this interrupt in singing_grader.c
+      digitalWrite(NOTE_DONE, PIO_HIGH);
     }
   }
 

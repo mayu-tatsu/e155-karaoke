@@ -3,14 +3,16 @@ Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
 Date:     December 2, 2025
 
-Purpose: 
+Purpose: To store the note, lyric, and timing arrays for all playable songs.
 */
 
 #ifndef SONGS_H
 #define SONGS_H
 
-// pitches (Hz)
 #include "arm_math/arm_math_types.h"
+
+#define TEST_NOTE_FREQUENCY 440
+#define TEST_NOTE_DURATION  2000
 
 // Mr. Brightside lyrics
 // FIRST LINE          THIRD LINE          SECOND LINE         FOURTH LINE
@@ -50,7 +52,8 @@ char* mr_brightside_lyrics[] =
   "I never",
   "I never",
   "I never",
-  "I never"
+  "I never",
+  "Done! Grade                             calculating..."
 };
 
 // Mr. Brightside notes 
@@ -481,7 +484,7 @@ const uint32_t mr_brightside_notes[][2] =
   {0,   1622},
 };
 
-// 
+// Mr. Brightside timing array for lyrics
 int mr_brightside_lyric_timing[] =
 {
   0,
@@ -902,7 +905,7 @@ int mr_brightside_lyric_timing[] =
   0,
   0,
   0,
-  0,
+  35,
   0,
   0,
 };
@@ -961,11 +964,12 @@ char* golden_lyrics[] =
   "Born to be, born to                     be glowin' (Oh)",
   "Balkge bitnaneun                        urin",
   "You know that it's  no lies (Oh, oh)    our time, no fears,",
-  "That's who we're                        born to be"
+  "That's who we're                        born to be",
+  "Done! Grade                             calculating..."
 };
 
 // Golden notes
-// {pitch (Hz), duration (s)}
+// {pitch (Hz), duration (ms)}
 // G Major / E minor
 const uint32_t golden_notes[][2] =
 {
@@ -1403,7 +1407,7 @@ const uint32_t golden_notes[][2] =
     {0,   1935},
 };
 
-// 
+// Golden timing array for lyrics
 int golden_lyric_timing[] =
 {
   0,
@@ -1829,7 +1833,7 @@ int golden_lyric_timing[] =
   0,
   0,
   0,
-  0,
+  51,
   0,
   0,
   0,
@@ -1841,132 +1845,20 @@ int golden_lyric_timing[] =
   0,
 };
 
-// 
-const int fur_elise_notes[][2] = 
+// test array for user-defined notes
+// {pitch (Hz), duration (ms)}
+const int test_notes[][2] = 
 {
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {494,	125},
-  {587,	125},
-  {523,	125},
-  {440,	250},
-  {  0,	125},
-  {262,	125},
-  {330,	125},
-  {440,	125},
-  {494,	250},
-  {  0,	125},
-  {330,	125},
-  {416,	125},
-  {494,	125},
-  {523,	250},
-  {  0,	125},
-  {330,	125},
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {494,	125},
-  {587,	125},
-  {523,	125},
-  {440,	250},
-  {  0,	125},
-  {262,	125},
-  {330,	125},
-  {440,	125},
-  {494,	250},
-  {  0,	125},
-  {330,	125},
-  {523,	125},
-  {494,	125},
-  {440,	250},
-  {  0,	125},
-  {494,	125},
-  {523,	125},
-  {587,	125},
-  {659,	375},
-  {392,	125},
-  {699,	125},
-  {659,	125},
-  {587,	375},
-  {349,	125},
-  {659,	125},
-  {587,	125},
-  {523,	375},
-  {330,	125},
-  {587,	125},
-  {523,	125},
-  {494,	250},
-  {  0,	125},
-  {330,	125},
-  {659,	125},
-  {  0,	250},
-  {659,	125},
-  {1319,125},
-  {  0,	250},
-  {623,	125},
-  {659,	125},
-  {  0,	250},
-  {623,	125},
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {494,	125},
-  {587,	125},
-  {523,	125},
-  {440,	250},
-  {  0,	125},
-  {262,	125},
-  {330,	125},
-  {440,	125},
-  {494,	250},
-  {  0,	125},
-  {330,	125},
-  {416,	125},
-  {494,	125},
-  {523,	250},
-  {  0,	125},
-  {330,	125},
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {623,	125},
-  {659,	125},
-  {494,	125},
-  {587,	125},
-  {523,	125},
-  {440,	250},
-  {  0,	125},
-  {262,	125},
-  {330,	125},
-  {440,	125},
-  {494,	250},
-  {  0,	125},
-  {330,	125},
-  {523,	125},
-  {494,	125},
-  {440,	500},
-  {0, 20000}
+  {TEST_NOTE_FREQUENCY, TEST_NOTE_DURATION},
+  {TEST_NOTE_FREQUENCY, TEST_NOTE_DURATION},
+  {TEST_NOTE_FREQUENCY, TEST_NOTE_DURATION},
+  {TEST_NOTE_FREQUENCY, TEST_NOTE_DURATION},
+  {TEST_NOTE_FREQUENCY, TEST_NOTE_DURATION}
 };
 
-const int a_four[][2] = 
-{
-  {440, 2000},
-  {440, 2000},
-  {440, 2000},
-  {440, 2000},
-  {440, 2000}
-};
-
-// 
+// stores the lengths of each note array
 int mr_brightside_song_length = (sizeof(mr_brightside_notes) / sizeof(mr_brightside_notes[0]));
 int golden_song_length        = (sizeof(golden_notes)        / sizeof(golden_notes[0]));
-int a_four_length = (sizeof(a_four) / sizeof(a_four[0]));
+int test_notes_length         = (sizeof(test_notes)          / sizeof(test_notes[0]));
 
 #endif

@@ -23,50 +23,43 @@ int main(void)
   // sets up the MCU with all desired functionalities
   mcu_configuration();
 
-  // TODO: DELETE
-  // TEST CODE
-  // SIMULATED INPUT SINE WAVE 
-  //float32_t input_signal[FFT_LENGTH];
-  //float32_t frequency = 1900.0;
-  //for (int i = 0; i < FFT_LENGTH; i++)
-  //{
-  //  input_signal[i] =  arm_sin_f32(2 * PI * frequency * i / SAMPLING_RATE);
-  //}
-
   // initializes the LCD display so that it is ready to use
   lcd_display_initialization();
   
-  // 
+  // raises the completed FFT flag
   // note: this needs to be set to one initially in order for the DMA interrupt to occur
   fft_calculations_complete = 1;
+
+  // sets test-mode
+  // note: EXAMPLE CODE (not meant to be a part of the main program)
+  enable_test = 1;
 
   // runs continuously
   while (1)
   {
-    //printf("mr. brightside %d\n", digitalRead(MR_BRIGHTSIDE_SELECTOR));
-    //printf("golden %d\n", digitalRead(GOLDEN_SELECTOR));
-
     //
-    //if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1)
-    //{
-    //  // 
-    //  music_player(PLAY_MR_BRIGHTSIDE);
-    //  singing_grader();
-    //}
+    if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1)
+    {
+      //  
+      music_player(PLAY_MR_BRIGHTSIDE);
+      singing_grader();
+    }
 
     // 
-    //else if (digitalRead(GOLDEN_SELECTOR) == 1)
-    //{
-    
-
+    else if (digitalRead(GOLDEN_SELECTOR) == 1)
+    {
       // 
       music_player(PLAY_GOLDEN);
       singing_grader();
-      
-    //}
+    }
 
     // 
-    delay_secs(DELAY_TIM, 1);
+    if (enable_test == 1)
+    {
+      // 
+      music_player(PLAY_TEST);
+      singing_grader();
+    }
   }
 
 }

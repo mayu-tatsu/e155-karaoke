@@ -12,9 +12,9 @@
  *    -- cpha: clock phase (0: data captured on leading edge of clk and changed on next edge, 
  *          1: data changed on leading edge of clk and captured on next edge)
  * Refer to the datasheet for more low-level details. */ 
-void initSPI(int br, int cpol, int cpha) {
+void initSPI(int br, int cpol, int cpha)
+{
 
-  // Enable SPI1 peripheral
   // Enable SPI1 peripheral
   RCC -> APB2ENR |= RCC_APB2ENR_SPI1EN;
 
@@ -25,11 +25,6 @@ void initSPI(int br, int cpol, int cpha) {
   GPIOB->AFR[0] &= ~((0xF << 12) | (0xF << 16) | (0xF << 20));    // clears registers
   GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 0b0101);            // PB3 = SCK
   GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 0b0101);            // PB4 = MOSI
-  // GPIOB -> AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 0b0101);          // PB5 = MISO
-  
-  // GPIOA -> AFR[1] &= ~(0xF << 12);
-  // GPIOA -> AFR[1] |= _VAL2FLD(GPIO_AFRH_AFSEL11, 0b0101);         // configures PA11 (CS) as alternate function
-
 
   // Clear CR1
   SPI1->CR1 = 0;
@@ -48,7 +43,6 @@ void initSPI(int br, int cpol, int cpha) {
   SPI1->CR1 |= SPI_CR1_SSM;              // Software NSS
   SPI1->CR1 &= ~SPI_CR1_SSI;             // NSS = 0
 
-
   // Clear CR2
   SPI1->CR2 = 0;
 
@@ -57,12 +51,9 @@ void initSPI(int br, int cpol, int cpha) {
   SPI1->CR2 &= ~SPI_CR2_SSOE;                  // No NSS output
   SPI1->CR2 |= SPI_CR2_RXDMAEN;                // DMA on RX
 
-
   // Assign GPIO pins as SPI
   pinMode(SPI_SCK, GPIO_ALT);   // SCK: PB3
   pinMode(SPI_MOSI, GPIO_ALT);  // MOSI: PB4
-  // pinMode(SPI_MISO, GPIO_ALT);  // MISO
-  // pinMode(SPI_CE, GPIO_ALT);    // CS
 
   // Clear all pull up/down resistors
   GPIOB->PUPDR &= ~((0b11 << (3 * 2)) | (0b11 << (4 * 2)) | (0b11 << (5 * 2)));
@@ -70,12 +61,9 @@ void initSPI(int br, int cpol, int cpha) {
   // Fast for SCK, MOSI
   GPIOB->OSPEEDR |= (GPIO_OSPEEDR_OSPEED3 | GPIO_OSPEEDR_OSPEED4);
 
-  
-  // enables the generation of DMA requests whenever the RXNE flag is set
-  // SPI1 -> CR2 |= SPI_CR2_RXDMAEN;     // MAYU
-
   // Enable SPI
   SPI1->CR1 |= SPI_CR1_SPE;
+
 }
 
 /* Transmits a character (1 byte) over SPI and returns the received character.

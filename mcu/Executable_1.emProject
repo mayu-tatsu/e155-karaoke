@@ -189,10 +189,8 @@
       </folder>
       <file file_name="lib/dma_configuration.h" />
       <file file_name="lib/frequency_determiner.h" />
-      <file file_name="lib/i2c_configuration.h" />
       <file file_name="lib/lcd_display.h" />
       <file file_name="lib/mcu_configuration.h" />
-      <file file_name="lib/mic_audio_receiver.h" />
       <file file_name="lib/music_player.h" />
       <file file_name="lib/note_determiner.h" />
       <file file_name="lib/singing_grader.h" />
@@ -207,15 +205,11 @@
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="src/dma_configuration.c" />
       <file file_name="src/frequency_determiner.c" />
-      <file file_name="src/i2c_configuration.c" />
       <file file_name="src/lcd_display.c" />
       <file file_name="main.c">
         <configuration Name="Debug" c_files_are_cpp="No" />
       </file>
       <file file_name="src/mcu_configuration.c" />
-      <file file_name="src/mic_audio_receiver.c">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
-      </file>
       <file file_name="src/music_player.c">
         <configuration Name="Debug" build_exclude_from_build="No" />
       </file>

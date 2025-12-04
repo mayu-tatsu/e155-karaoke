@@ -3,7 +3,7 @@ Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
 Date:     December 4, 2025
 
-Purpose: 
+Purpose: To allow the error-calculation functions to actually be used.
 */
 
 #ifndef SINGING_GRADER_H
@@ -17,9 +17,10 @@ Purpose:
 
 #define MAX_16BIT_MAGNITUDE 32768.0f
 
-extern volatile uint32_t expected_frequency;
+extern volatile uint32_t  expected_frequency;
 extern volatile float32_t singing_error;
-extern volatile float interrupt_triggered_counter;
+extern volatile float     interrupt_triggered_counter;
+extern volatile int       enable_test;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
