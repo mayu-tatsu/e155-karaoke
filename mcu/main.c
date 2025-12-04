@@ -13,7 +13,7 @@ Purpose:
 #include "lib/frequency_determiner.h"
 #include "lib/note_determiner.h"
 #include "lib/lcd_display.h"
-#include "lib/songs.h"
+#include "lib/music_player.h"
 
 
 #define MAX_16BIT_MAGNITUDE 32768.0f
@@ -25,11 +25,21 @@ int main(void)
   // sets up the MCU with all desired functionalities
   mcu_configuration();
 
-  
+  // TODO: DELETE
+  // TEST CODE
+  // SIMULATED INPUT SINE WAVE 
+  //float32_t input_signal[FFT_LENGTH];
+  //float32_t frequency = 1900.0;
+  //for (int i = 0; i < FFT_LENGTH; i++)
+  //{
+  //  input_signal[i] =  -0.4;
+  //  printf("%f\n", input_signal[i]);
+  //  float32_t fft = frequency_determiner(input_signal);
+  //  printf("%f\n", fft);
+  //}
+
   // instantiates a variable to store the dominant frequency of a given audio input
   float32_t note_frequency;
-
-  /*
 
   // TODO: DELETE
   // TEST CODE
@@ -39,15 +49,11 @@ int main(void)
   // initializes the LCD display so that it is ready to use
   lcd_display_initialization();
 
+  music_player(2);
+
   // TODO: DELETE
   // TEST CODE
   // WRITES EXAMPLE MESSAGE
-  for (int i = 0; i < (sizeof(mr_brightside_lyrics) / sizeof(mr_brightside_lyrics[0])); i++)
-  {
-    display_message(mr_brightside_lyrics[i]);
-    delay_secs(DELAY_TIM, 5);
-    lcd_display_reset();
-  }
   //display_message("hello world!");
   
   while (1) {}
@@ -157,7 +163,7 @@ int main(void)
     //printf("SPI DR: %x\n", SPI1->DR);
     //printf("Note frequency: %f\n", note_frequency);
     //printf(note); printf("\n");
-  }
+  
     // TODO: DELETE
     // DEBUGGING CODE
     //printf("DMA: %d, %d, %d, %d", dma_test_receive[0], dma_test_receive[1], dma_test_receive[2], dma_test_receive[3]);

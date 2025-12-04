@@ -1,6 +1,6 @@
 Output/Debug/Obj/Executable_1/main.o: \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\main.c \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\main.c \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/stdio.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/__SEGGER_RTL.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/__SEGGER_RTL_ConfDefaults.h \
@@ -8,22 +8,22 @@ Output/Debug/Obj/Executable_1/main.o: \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/__SEGGER_RTL_Arm_Conf.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/stdlib.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/stdint.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/STM32L4xx/Device/Include/stm32l432xx.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/core_cm4.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_version.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/mpu_armv7.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/STM32L4xx/Device/Include/system_stm32l4xx.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC_GPIO.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC_RCC.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC_TIM.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC_FLASH.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC_USART.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/mcu_peripherals/STM32L432KC_SPI.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/arm_math.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/arm_math/arm_math_types.h \
- C:/Users/mtatsumi/Documents/SEGGER\ Embedded\ Studio\ Projects/e155-karaoke/mcu/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/STM32L4xx/Device/Include/stm32l432xx.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/core_cm4.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_version.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/mpu_armv7.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/STM32L4xx/Device/Include/system_stm32l4xx.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC_GPIO.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC_RCC.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC_TIM.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC_FLASH.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC_USART.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/mcu_peripherals/STM32L432KC_SPI.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/arm_math.h \
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/arm_math/arm_math_types.h \
+ C:/Users/peppe/OneDrive/Desktop/fft_test/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/string.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/math.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 8.24/include/__SEGGER_RTL_FP.h \
@@ -66,4 +66,4 @@ Output/Debug/Obj/Executable_1/main.o: \
  C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/frequency_determiner.h \
  C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/note_determiner.h \
  C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/lcd_display.h \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\lib/songs.h
+ C:\Users\peppe\OneDrive\Desktop\fft_test\lib/songs.h

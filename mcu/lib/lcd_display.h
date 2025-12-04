@@ -16,7 +16,7 @@ Purpose: To allow all LCD-related functions to actually be used.
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-#define E  PA6
+#define E  PB5
 #define RS PB1
 #define D0 PA12
 #define D1 PA9

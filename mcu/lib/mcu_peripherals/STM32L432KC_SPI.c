@@ -15,6 +15,7 @@
 void initSPI(int br, int cpol, int cpha) {
 
   // Enable SPI1 peripheral
+  // Enable SPI1 peripheral
   RCC -> APB2ENR |= RCC_APB2ENR_SPI1EN;
 
   // Force PB5 (MISO) to safe input mode

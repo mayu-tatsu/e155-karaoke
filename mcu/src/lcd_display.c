@@ -53,12 +53,13 @@ void lcd_display_initialization(void)
   delay_micros(DELAY_TIM, 1500);
   delay_micros(DELAY_TIM, 1500);
 
-  // sets entry mode: enables display, cursor, and cursor blink
+  // sets entry mode: enables automatic DDRAM increments and display shift
   lcd_display_write(0x06);
   delay_millis(DELAY_TIM, 1);
 
   // turns display back on
-  lcd_display_write(0x0F);
+  // additionally, disables cursor and cursor blink
+  lcd_display_write(0x0C);
   delay_millis(DELAY_TIM, 2);
   
   // sets cursor address to be Row 0, Column 0
@@ -118,7 +119,7 @@ void lcd_display_reset(void)
   delay_millis(DELAY_TIM, 1500);
 
   // turns display back on
-  lcd_display_write(0x0F);
+  lcd_display_write(0x0C);
   delay_millis(DELAY_TIM, 200);
 
   // sets cursor address to be Row 0, Column 0

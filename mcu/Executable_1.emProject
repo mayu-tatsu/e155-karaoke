@@ -193,6 +193,7 @@
       <file file_name="lib/lcd_display.h" />
       <file file_name="lib/mcu_configuration.h" />
       <file file_name="lib/mic_audio_receiver.h" />
+      <file file_name="lib/music_player.h" />
       <file file_name="lib/note_determiner.h" />
       <file file_name="lib/songs.h" />
     </folder>
@@ -215,7 +216,7 @@
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
       <file file_name="src/music_player.c">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </file>
       <file file_name="src/note_determiner.c">
         <configuration Name="Debug" build_exclude_from_build="No" />

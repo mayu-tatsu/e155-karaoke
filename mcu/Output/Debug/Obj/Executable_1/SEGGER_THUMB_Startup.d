@@ -1,2 +1,2 @@
 Output/Debug/Obj/Executable_1/SEGGER_THUMB_Startup.o: \
- C:\Users\mtatsumi\Documents\SEGGER\ Embedded\ Studio\ Projects\e155-karaoke\mcu\SEGGER_THUMB_Startup.s
+ C:\Users\peppe\OneDrive\Desktop\fft_test\SEGGER_THUMB_Startup.s

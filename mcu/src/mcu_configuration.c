@@ -21,14 +21,14 @@ void mcu_configuration(void)
   RCC -> APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
   // 
-  RCC -> APB2ENR  |= RCC_APB2ENR_TIM15EN;
-  RCC -> APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+  RCC -> APB2ENR |= RCC_APB2ENR_TIM15EN;
+  RCC -> APB2ENR |= RCC_APB2ENR_TIM16EN;
 
   // initializes a timer for delay
   initTIM(DELAY_TIM);
 
   // initializes a timer for PWM generation
-  //timer_initialization(PWM_TIM);
+  initTIM(PWM_TIM);
 
   // enables all GPIO ports
   RCC -> AHB2ENR |= (RCC_AHB2ENR_GPIOAEN | RCC_AHB2ENR_GPIOBEN | RCC_AHB2ENR_GPIOCEN);
@@ -60,4 +60,3 @@ void mcu_configuration(void)
   //digitalWrite(CS, 1);
 
 }
-
