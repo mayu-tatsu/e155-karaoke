@@ -1,0 +1,19 @@
+<top name = "karaoke_top"  library = "work"  arch = ""  entry = "Verilog">
+
+<clocks>
+    <clockitem name = "clk"  type = "net" />
+    <clockitem name = "clk_6mhz"  type = "net" />
+    <clockitem name = "clk_generator/clk_48mhz"  type = "net" />
+</clocks>
+
+<!--
+    //=============================================================
+    //  Number of Clocks processed: 3
+    //
+    //  If a clock cannot be found in the top level pins section,
+    //  that means it is an internal clock.
+    //
+    //=============================================================
+-->
+
+</top>
