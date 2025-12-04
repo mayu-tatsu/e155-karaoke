@@ -3,7 +3,8 @@ Name(s):  Quinn Miyamoto, Mayu Tatsumi
 Email(s): qmiyamoto@g.hmc.edu, mtatsumi@g.hmc.edu
 Date:     November 16, 2025
 
-Purpose: 
+Purpose: To create a karaoke machine that outputs the main melodies of pre-programmed songs and take the user's singing as input, 
+         ultimately giving them a grade based on accuracy in return.
 */
 
 #include "lib/mcu_peripherals/STM32L432KC.h"
@@ -16,7 +17,7 @@ Purpose:
 #include "lib/music_player.h"
 #include "lib/singing_grader.h"
 
-// 
+// configures and runs the karaoke machine
 int main(void)
 {
 
@@ -37,29 +38,27 @@ int main(void)
   // runs continuously
   while (1)
   {
-    //
-    if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1)
-    {
-      //  
-      music_player(PLAY_MR_BRIGHTSIDE);
-      singing_grader();
-    }
+    // clears the LCD screen
+    lcd_display_reset();
 
-    // 
-    else if (digitalRead(GOLDEN_SELECTOR) == 1)
-    {
-      // 
-      music_player(PLAY_GOLDEN);
-      singing_grader();
-    }
+    // displays a starter message for the user's understanding
+    display_message("Choose a song!"); delay_secs(DELAY_TIM, 3); lcd_display_reset();
+    display_message("Switch 1: Mr.       Switch 2: Golden    Brightside"); delay_secs(DELAY_TIM, 3); lcd_display_reset();
 
-    // 
-    if (enable_test == 1)
-    {
-      // 
-      music_player(PLAY_TEST);
-      singing_grader();
-    }
+    // adds a three second delay
+    delay_secs(DELAY_TIM, 3);
+
+    // if the user flips the first switch, begins to play Mr. Brightside
+    if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1) {music_player(PLAY_MR_BRIGHTSIDE);}
+
+    // if the user flips the second switch, begins to play Golden
+    else if (digitalRead(GOLDEN_SELECTOR) == 1) {music_player(PLAY_GOLDEN);}
+
+    // if test-mode is set, runs through some test code to display detected frequencies
+    else if (enable_test == 1) {music_player(PLAY_TEST);}
+
+    // outputs the user's grade
+    singing_grader();
   }
 
 }
