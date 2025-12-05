@@ -33,7 +33,7 @@ int main(void)
 
   // sets test-mode
   // note: EXAMPLE CODE (not meant to be a part of the main program)
-  enable_test = 1;
+  enable_test = 0;
 
   // runs continuously
   while (1)
@@ -49,16 +49,28 @@ int main(void)
     delay_secs(DELAY_TIM, 3);
 
     // if the user flips the first switch, begins to play Mr. Brightside
-    if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1) {music_player(PLAY_MR_BRIGHTSIDE);}
+    // subsequently outputs the user's grade
+    if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1) 
+    {
+        music_player(PLAY_MR_BRIGHTSIDE); 
+        singing_grader();
+      }
 
     // if the user flips the second switch, begins to play Golden
-    else if (digitalRead(GOLDEN_SELECTOR) == 1) {music_player(PLAY_GOLDEN);}
+    // subsequently outputs the user's grade
+    else if (digitalRead(GOLDEN_SELECTOR) == 1) 
+    {
+      music_player(PLAY_GOLDEN); 
+      singing_grader();
+    }
 
     // if test-mode is set, runs through some test code to display detected frequencies
-    else if (enable_test == 1) {music_player(PLAY_TEST);}
-
-    // outputs the user's grade
-    if ((digitalRead(MR_BRIGHTSIDE_SELECTOR) | digitalRead(GOLDEN_SELECTOR) | enable_test) == 1) {singing_grader();}
+    // subsequently outputs the user's grade
+    else if (enable_test == 1) 
+    {
+      music_player(PLAY_TEST); 
+      singing_grader();
+    }
   }
 
 }
