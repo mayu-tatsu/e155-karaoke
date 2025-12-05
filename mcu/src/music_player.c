@@ -11,6 +11,7 @@ Purpose: To play the main singing melody of pre-determined songs.
 #include "../lib/singing_grader.h"
 #include "../lib/lcd_display.h"
 #include "../lib/mcu_configuration.h"
+#include "../lib/dma_configuration.h"
 
 // plays either Mr. Brightside or Golden, depending on the user's input
 void music_player(int song)
@@ -159,6 +160,13 @@ void music_player(int song)
       // note: you can find this interrupt in singing_grader.c
       digitalWrite(NOTE_DONE, PIO_HIGH);
     }
+  }
+
+  for (int i = 0; i < sizeof(pcm_dma_buffer) / sizeof(pcm_dma_buffer[0]); i++) {
+    pcm_dma_buffer[i] = 0;
+  }
+  for (int i = 0; i < sizeof(pcm_dma_signal) / sizeof(pcm_dma_signal[0]); i++) {
+    pcm_dma_signal[i] = 0;
   }
 
   // resets the LCD display once more

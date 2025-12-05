@@ -64,4 +64,5 @@ Output/Debug/Obj/Executable_1/music_player.o: \
  C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/arm_math/arm_math_types.h \
  C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/singing_grader.h \
  C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/lcd_display.h \
- C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/mcu_configuration.h
+ C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/mcu_configuration.h \
+ C:/Users/peppe/OneDrive/Desktop/Fall\ 2025\ -\ Spring\ 2026/ENGR\ 155/e155-karaoke/mcu/lib/dma_configuration.h
