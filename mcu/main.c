@@ -58,7 +58,7 @@ int main(void)
     else if (enable_test == 1) {music_player(PLAY_TEST);}
 
     // outputs the user's grade
-    singing_grader();
+    if ((digitalRead(MR_BRIGHTSIDE_SELECTOR) | digitalRead(GOLDEN_SELECTOR) | enable_test) == 1) {singing_grader();}
   }
 
 }
