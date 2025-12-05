@@ -15,7 +15,7 @@ Purpose: To keep a running total of the user's errors when singing and grade the
 
 // defines global variables
 volatile uint32_t  expected_frequency;
-volatile float32_t singing_error;
+volatile float64_t singing_error;
 volatile float     interrupt_triggered_counter;
 volatile int       enable_test;
 
@@ -73,7 +73,7 @@ void EXTI0_IRQHandler(void)
     interrupt_triggered_counter += 1;
     
     // keeps a running total of the error
-    singing_error += (fabs(expected_frequency - note_frequency) / expected_frequency);
+    if (expected_frequency != 0) {singing_error += (fabs(expected_frequency - note_frequency) / expected_frequency);}
     
     // if the user enables test-mode, allows them full frequency-detection visibility
     if (enable_test == 1)
@@ -100,7 +100,7 @@ void singing_grader(void)
   lcd_display_reset();
   
   // calculates the user's average error over the length of the entire song
-  float32_t average_error = (singing_error / interrupt_triggered_counter);
+  float64_t average_error = (singing_error / interrupt_triggered_counter);
 
   // gives the user a letter grade based on their percent error
   if      (average_error < 0.1)  {display_message("Grade: A++");}

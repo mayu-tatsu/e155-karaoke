@@ -18,7 +18,7 @@ Purpose: To allow the error-calculation functions to actually be used.
 #define MAX_16BIT_MAGNITUDE 32768.0f
 
 extern volatile uint32_t  expected_frequency;
-extern volatile float32_t singing_error;
+extern volatile float64_t singing_error;
 extern volatile float     interrupt_triggered_counter;
 extern volatile int       enable_test;
 

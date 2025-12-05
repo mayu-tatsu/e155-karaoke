@@ -34,25 +34,25 @@ char* mr_brightside_lyrics[] =
   "Swimming through    choking on your     sick lullabies,     alibis",
   "But it's just the   is calling me       price I pay, destiny",
   "Open up my eager    Brightside          eyes, 'cause I'm Mr.",
-  "I'm coming out of mydoing just fine     cage, and I've been",
-  "Gotta, gotta be downall                 because I want it",
-  "It started out with end up like this?   a kiss, how did it",
-  "It was only a kiss,                     it was only a kiss",
-  "Now I'm falling     calling a cab       asleep, and she's",
-  "While he's having a taking a drag       smoke, and she's",
-  "Now they're going tois sick             bed, and my stomach",
-  "And it's all in my  touching his chest  head, but she's     now",
-  "He takes off her                        dress now, let me go",
-  "'Cause I just can't me                  look, it's killing",
-  "And taking control",
-  "Jealousy, turning                       saints into the sea",
-  "Swimming through    choking on your     sick lullabies,     alibis",
-  "But it's just the   is calling me       price I pay, destiny",
-  "Open up my eager    Brightside          eyes, 'cause I'm Mr.",
-  "I never",
-  "I never",
-  "I never",
-  "I never",
+  // "I'm coming out of mydoing just fine     cage, and I've been",
+  // "Gotta, gotta be downall                 because I want it",
+  // "It started out with end up like this?   a kiss, how did it",
+  // "It was only a kiss,                     it was only a kiss",
+  // "Now I'm falling     calling a cab       asleep, and she's",
+  // "While he's having a taking a drag       smoke, and she's",
+  // "Now they're going tois sick             bed, and my stomach",
+  // "And it's all in my  touching his chest  head, but she's     now",
+  // "He takes off her                        dress now, let me go",
+  // "'Cause I just can't me                  look, it's killing",
+  // "And taking control",
+  // "Jealousy, turning                       saints into the sea",
+  // "Swimming through    choking on your     sick lullabies,     alibis",
+  // "But it's just the   is calling me       price I pay, destiny",
+  // "Open up my eager    Brightside          eyes, 'cause I'm Mr.",
+  // "I never",
+  // "I never",
+  // "I never",
+  // "I never",
   "Done! Grade                             calculating..."
 };
 
@@ -65,7 +65,44 @@ const uint32_t mr_brightside_notes[][2] =
   //{0,   1622},
   //{0,   1622},
   //{0,   1622},
-  {0,   405 },
+  {0,   405},
+
+  {156, 203},
+  {349, 203},
+  {587, 203},
+  {349, 203},
+  {587, 203},
+  {659, 203},
+  {587, 203},
+  {349, 203},
+
+  {139, 203},
+  {349, 203},
+  {587, 203},
+  {349, 203},
+  {587, 203},
+  {659, 203},
+  {587, 203},
+  {349, 203},
+
+  {98, 203},
+  {349, 203},
+  {587, 203},
+  {349, 203},
+  {587, 203},
+  {659, 203},
+  {587, 203},
+  {349, 203},
+
+  {98, 203},
+  {349, 203},
+  {587, 203},
+  {349, 203},
+  {587, 203},
+  {659, 203},
+  {587, 203},
+  {349, 203},
+
   {587, 203 },  // com
   {587, 203 },  // ing
   {587, 203 },  // out
@@ -189,15 +226,15 @@ const uint32_t mr_brightside_notes[][2] =
   {659, 405 },  // kill
   {587, 405 },  // ing
   {740, 811 },  // me
-  //{0,   811 },
-  //{0,   405 },
+  {0,   811 },
+  {0,   405 },
   {440, 405 },  // and
   {659, 608 },  // tak
   {587, 608 },  // ing
   {659, 811 },  // con
   {587, 1216},  // trol
-  //{0,   1622},
-  //{0,   1622},
+  {0,   1622},
+  {0,   1622},
   {554, 608 },  // Jeal
   {587, 203 },  // ous
   {587, 811 },  // y
@@ -243,8 +280,8 @@ const uint32_t mr_brightside_notes[][2] =
   {784, 608 },  // eag
   {740, 608 },  // er
   {740, 811 },  // eyes
-  //{0,   405 },
-  //{0,   811 },
+  {0,   405 },
+  {0,   811 },
   {587, 405 },  // 'cause
   {740, 405 },  // I'm
   {659, 405 },  // Mis
@@ -491,6 +528,39 @@ int mr_brightside_lyric_timing[] =
   //0, 
   //0,
   //0, 
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  
   1,  // "Coming out of my cage..."
   0,
   0,
@@ -615,9 +685,13 @@ int mr_brightside_lyric_timing[] =
   0,
   0,
   0,
+  0,
+  0,
   11,
   //11, // "And taking..."
   //0,
+  0,
+  0,
   0,
   0,
   0,
@@ -670,8 +744,8 @@ int mr_brightside_lyric_timing[] =
   0,
   0,
   0,
-  //0,
-  //0,
+  0,
+  0,
   0,
   0,
   0,

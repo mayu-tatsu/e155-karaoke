@@ -33,7 +33,7 @@ int main(void)
 
   // sets test-mode
   // note: EXAMPLE CODE (not meant to be a part of the main program)
-  enable_test = 1;
+  enable_test = 0;
 
   // runs continuously
   while (1)
@@ -43,33 +43,28 @@ int main(void)
 
     // displays a starter message for the user's understanding
     display_message("Choose a song!"); delay_secs(DELAY_TIM, 3); lcd_display_reset();
-    display_message("Switch 1: Mr.       Switch 2: Golden    Brightside"); delay_secs(DELAY_TIM, 3); lcd_display_reset();
+    display_message("Switch 4: Mr.       Switch 2: Golden    Brightside"); delay_secs(DELAY_TIM, 3); lcd_display_reset();
 
-    // adds a three second delay
-    delay_secs(DELAY_TIM, 3);
+    // adds a one second delay
+    delay_secs(DELAY_TIM, 1);
+
+    // resets the errors calculated
+    singing_error = 0;
 
     // if the user flips the first switch, begins to play Mr. Brightside
     // subsequently outputs the user's grade
     if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1) 
     {
-      delay_secs(DELAY_TIM, 1); 
-      if (digitalRead(MR_BRIGHTSIDE_SELECTOR) == 1) 
-      {  
-        music_player(PLAY_MR_BRIGHTSIDE); 
-        singing_grader();
-      }
+      music_player(PLAY_MR_BRIGHTSIDE); 
+      singing_grader();
     }
 
     // if the user flips the second switch, begins to play Golden
     // subsequently outputs the user's grade
     else if (digitalRead(GOLDEN_SELECTOR) == 1) 
     {
-      delay_secs(DELAY_TIM, 1); 
-      if (digitalRead(GOLDEN_SELECTOR) == 1) 
-      {  
-        music_player(PLAY_GOLDEN); 
-        singing_grader();
-      }
+      music_player(PLAY_GOLDEN); 
+      singing_grader();
     }
 
     // if test-mode is set, runs through some test code to display detected frequencies
@@ -79,6 +74,7 @@ int main(void)
       music_player(PLAY_TEST); 
       singing_grader();
     }
+
   }
 
 }

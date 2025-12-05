@@ -161,13 +161,9 @@ void music_player(int song)
       digitalWrite(NOTE_DONE, PIO_HIGH);
     }
   }
-
-  for (int i = 0; i < sizeof(pcm_dma_buffer) / sizeof(pcm_dma_buffer[0]); i++) {
-    pcm_dma_buffer[i] = 0;
-  }
-  for (int i = 0; i < sizeof(pcm_dma_signal) / sizeof(pcm_dma_signal[0]); i++) {
-    pcm_dma_signal[i] = 0;
-  }
+  
+  // lowers the note-done flag
+  digitalWrite(NOTE_DONE, PIO_LOW);
 
   // resets the LCD display once more
   lcd_display_reset();
