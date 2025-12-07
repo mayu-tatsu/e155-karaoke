@@ -14,3 +14,5 @@ the Half-Band and FIR filters create a passband from 0 to 4000 Hz, with a stopba
 the three filters generate a 16-bit, 16 kHz PCM output, with a new sample indicated by a pulse. these signals are fed into the SPI module / `spi.sv`, which generates a CS, SCK, and SDO, acting as the controller in this case. all relevant testbenches are found in `fpga/testbench` and the modelsim project is found in `fpga/work`.
 the MCU then receives these values, acting as the peripheral, and accumulates them using the SPI peripheral, which is paired with the DMA peripheral.
 
+
+all files for the MCU can be found in the `mcu` folder, with the header files stored in `lib` and the function files stored in `src`.  with regard to the former, the `arm_math` folder contains both the entirety of the ARM math functions, as well as the function calls (downloaded from the internet) — including, most notably, the FFT function.  meanwhile, the `mcu_peripherals` contain the STM32 starter code we were given in previous E155 labs.
