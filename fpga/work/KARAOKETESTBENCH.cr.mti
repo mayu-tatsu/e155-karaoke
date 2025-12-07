@@ -1,79 +1,71 @@
-C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/synchronizer.sv
+C:/Users/mayut/source/e155/e155-karaoke/fpga/src/fir.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/src/fir.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module synchronizer
+-- Compiling module fir
 
 Top level modules:
-	synchronizer
+	fir
 
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/clk_gen.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module clk_gen
-
-Top level modules:
-	clk_gen
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/cic_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module cic_tb
-
-Top level modules:
-	cic_tb
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/spi.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module spi
-
-Top level modules:
-	spi
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/karaoke_top_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module karaoke_top
--- Compiling module karaoke_top_tb
-
-Top level modules:
-	karaoke_top_tb
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/fir_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module fir_tb
-
-Top level modules:
-	fir_tb
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/hb_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module hb_tb
-
-Top level modules:
-	hb_tb
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/cic.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module cic
-
-Top level modules:
-	cic
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/top_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/testbench/top_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module karaoke_top_tb
-
-Top level modules:
-	karaoke_top_tb
-
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/spi_tb.sv
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/spi_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/spi_tb.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module spi_tb
 
 Top level modules:
 	spi_tb
 
-} {} {}} C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-karaoke/hb.sv
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/src/hb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/src/hb.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module hb
 
 Top level modules:
 	hb
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/hb_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/hb_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module hb_tb
+
+Top level modules:
+	hb_tb
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/src/karaoke_top.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/src/karaoke_top.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module karaoke_top
+
+Top level modules:
+	karaoke_top
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/src/clk_gen.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/src/clk_gen.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module clk_gen
+
+Top level modules:
+	clk_gen
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/src/spi.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/src/spi.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module spi
+
+Top level modules:
+	spi
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/cic_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/cic_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module cic_tb
+
+Top level modules:
+	cic_tb
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/fir_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/testbench/fir_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module fir_tb
+
+Top level modules:
+	fir_tb
+
+} {} {}} C:/Users/mayut/source/e155/e155-karaoke/fpga/src/cic.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayut/source/e155/e155-karaoke/fpga/src/cic.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module cic
+
+Top level modules:
+	cic
 
 } {} {}}
